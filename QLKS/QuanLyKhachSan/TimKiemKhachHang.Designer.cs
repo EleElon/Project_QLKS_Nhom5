@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgvTimKiemKH = new System.Windows.Forms.DataGridView();
             this.btnTimKiemKH = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemKH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,12 +107,22 @@
             this.btnTimKiemKH.Text = "Tìm Kiếm";
             this.btnTimKiemKH.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(680, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "label4";
+            // 
             // TimKiemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(829, 501);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnTimKiemKH);
             this.Controls.Add(this.dgvTimKiemKH);
             this.Controls.Add(this.label3);
@@ -136,5 +147,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvTimKiemKH;
         private System.Windows.Forms.Button btnTimKiemKH;
+        private System.Windows.Forms.Label label4;
     }
 }
