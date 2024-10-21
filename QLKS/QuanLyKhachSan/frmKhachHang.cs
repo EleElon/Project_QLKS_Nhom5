@@ -40,6 +40,7 @@ namespace QuanLyKhachSan
         private void button1_Click(object sender, EventArgs e)
         {
             TimKiemKhachHang frm = new TimKiemKhachHang();
+            
             frm.Show();
         }
         public void LoadDL()
@@ -47,16 +48,17 @@ namespace QuanLyKhachSan
             LoadDuLieuLen();
             LoadMaDichVu();
         }
-
+        //Load dữu liệu lên tất cả form
         public void LoadDuLieuLen()
         {
             BUS_KhachHang.Instance.Xem(dgvDSKhachHang);
         }
+        //Load mã dịch vụ
         public void LoadMaDichVu()
         {
             BUS_KhachHang.Instance.LoadDichVu(cbMaDichVu);
         }
-
+        //Thêm khách hàng
         private void btnThemKH_Click(object sender, EventArgs e)
         {
             // Gọi hàm kiểm tra trước
@@ -74,7 +76,7 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        //Xóa làm mới tất cả
         private void ClearFormFields()
         {
             txtMaKH.Text = string.Empty;
@@ -88,19 +90,19 @@ namespace QuanLyKhachSan
             // Clear các trường khác nếu cần
 
         }
-
+        //Xóa khách hàng
         private void btnXoaDV_Click(object sender, EventArgs e)
         {
             BUS_KhachHang.Instance.Xoa(txtMaKH);
             LoadDuLieuLen();
             ClearFormFields();
         }
-
+        //DatagridView khách hàng
         private void dgvDSKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             BUS_KhachHang.Instance.LoadDGVLenForm(txtMaKH, cbMaDichVu, txtTenKH, txtCCCD, txtEmail, txtSDT, txtDiaChi, dgvDSKhachHang);
         }
-
+        //Sửa khách hàng
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -112,6 +114,8 @@ namespace QuanLyKhachSan
             }
            
         }
+
+        //ràng buộc sdt
         private void ValidateSDT()
         {
             ErrorProvider errorProvider1 = new ErrorProvider();
@@ -128,7 +132,7 @@ namespace QuanLyKhachSan
                 errorProvider1.SetError(txtSDT, "");  // Xóa lỗi nếu hợp lệ
             }
         }
-
+        //ràng buộc email
         private void ValidateEmail()
         {
             ErrorProvider errorProvider1 = new ErrorProvider();

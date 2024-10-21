@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,51 @@ namespace QuanLyKhachSan
         public TimKiemKhachHang()
         {
             InitializeComponent();
+        }
+
+       
+
+        private void txtMaKH_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMaKH.Text.Length > 0)
+            {
+                txtTenKH.ReadOnly = true;
+                txtTenKH.Text = "";
+               
+            }
+           
+        }
+        //Làm mới
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtMaKH.Text = "";
+            txtTenKH.Text = "";
+          
+            dgvTimKiemKH.DataSource = null;
+            txtMaKH.ReadOnly = false;
+            txtTenKH.ReadOnly = false;
+
+        }
+        //Tìm kiếm
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTenKH.ReadOnly == true)
+            {
+                BUS_TimKiemKhachHang.Instance.TimKiemMaKH(txtMaKH, dgvTimKiemKH);
+            }
+            if (txtMaKH.ReadOnly == true)
+            {
+                BUS_TimKiemKhachHang.Instance.TimKiemMaKH(txtTenKH, dgvTimKiemKH);
+            }
+        }
+
+        private void txtTenKH_TextChanged(object sender, EventArgs e)
+        {
+          if (txtTenKH.Text.Length > 0)
+            {
+                txtMaKH.ReadOnly = true;
+                txtMaKH.Text = "";
+            }
         }
     }
 }

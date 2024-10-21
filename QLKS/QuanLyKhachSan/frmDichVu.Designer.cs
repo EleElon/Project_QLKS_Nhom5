@@ -104,7 +104,7 @@
             this.tbDichVu.Location = new System.Drawing.Point(0, 4);
             this.tbDichVu.Name = "tbDichVu";
             this.tbDichVu.SelectedIndex = 0;
-            this.tbDichVu.Size = new System.Drawing.Size(1376, 630);
+            this.tbDichVu.Size = new System.Drawing.Size(1376, 638);
             this.tbDichVu.TabIndex = 0;
             // 
             // tabPage1
@@ -307,7 +307,7 @@
             this.tbSĐichVu.Location = new System.Drawing.Point(4, 31);
             this.tbSĐichVu.Name = "tbSĐichVu";
             this.tbSĐichVu.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSĐichVu.Size = new System.Drawing.Size(1368, 595);
+            this.tbSĐichVu.Size = new System.Drawing.Size(1368, 603);
             this.tbSĐichVu.TabIndex = 1;
             this.tbSĐichVu.Text = "Danh sách sử dụng dịch vụ";
             this.tbSĐichVu.Click += new System.EventHandler(this.tbSĐichVu_Click);
@@ -315,7 +315,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(283, 526);
+            this.btnThem.Location = new System.Drawing.Point(283, 550);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(148, 48);
@@ -327,7 +327,7 @@
             // btnCapNhap
             // 
             this.btnCapNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhap.Location = new System.Drawing.Point(1006, 540);
+            this.btnCapNhap.Location = new System.Drawing.Point(996, 550);
             this.btnCapNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(148, 48);
@@ -339,7 +339,7 @@
             // btnHuyPhieu
             // 
             this.btnHuyPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyPhieu.Location = new System.Drawing.Point(661, 540);
+            this.btnHuyPhieu.Location = new System.Drawing.Point(663, 550);
             this.btnHuyPhieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuyPhieu.Name = "btnHuyPhieu";
             this.btnHuyPhieu.Size = new System.Drawing.Size(148, 48);
@@ -469,7 +469,7 @@
             // btnThoatt
             // 
             this.btnThoatt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoatt.Location = new System.Drawing.Point(23, 535);
+            this.btnThoatt.Location = new System.Drawing.Point(23, 550);
             this.btnThoatt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoatt.Name = "btnThoatt";
             this.btnThoatt.Size = new System.Drawing.Size(148, 48);
