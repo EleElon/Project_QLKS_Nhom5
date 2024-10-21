@@ -476,6 +476,7 @@
             this.btnThoatt.TabIndex = 20;
             this.btnThoatt.Text = "Thoát";
             this.btnThoatt.UseVisualStyleBackColor = true;
+            this.btnThoatt.Click += new System.EventHandler(this.btnThoatt_Click);
             // 
             // label10
             // 

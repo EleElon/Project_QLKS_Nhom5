@@ -159,5 +159,10 @@ namespace QuanLyKhachSan
                 errorProvider1.SetError(txtMaSDDV, ""); // Xóa lỗi nếu hợp lệ
             }
         }
+
+        private void btnThoatt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
