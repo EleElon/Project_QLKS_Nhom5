@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,8 @@ namespace QuanLyKhachSan
 {
     public partial class frmDichVu : Form
     {
+        private ErrorProvider errorProvider1 = new ErrorProvider(); // Khai báo ErrorProvider
+
         public frmDichVu()
         {
 
@@ -56,25 +59,34 @@ namespace QuanLyKhachSan
         }
         private void dgvSuDungDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
-            LoadDuLieuLenForm();
-            ClearFormFields();
+            if (ValidateForm())
+            {
+                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                LoadDuLieuLenForm();
+                ClearFormFields();
+            }
         }
 
         private void btnHuyPhieu_Click(object sender, EventArgs e)
         {
-            BUS_DanhSachDichVu.Instance.Xoa(txtMaSDDV);
-            ClearFormFields();
-            LoadDuLieuLenForm();
+            if (ValidateForm())
+            {
+                BUS_DanhSachDichVu.Instance.Xoa(txtMaSDDV);
+                ClearFormFields();
+                LoadDuLieuLenForm();
+            }
+
         }
         // Hàm để làm sạch các trường trong form
         private void ClearFormFields()
         {
+            txtMaSDDV.ReadOnly = false;
             txtMaSDDV.Text = string.Empty;
             cbMaDichVu.SelectedIndex = 0;
             cbMaDatPhong.SelectedIndex = 0;
@@ -86,8 +98,66 @@ namespace QuanLyKhachSan
 
         private void btnCapNhap_Click(object sender, EventArgs e)
         {
-            BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV,cbMaDichVu,cbMaDatPhong,txtSoLuong);
-            LoadDuLieuLenForm();
+
+          
+            if (ValidateForm())
+            {
+                txtMaSDDV.ReadOnly = true;
+                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                LoadDuLieuLenForm();
+                ClearFormFields();
+            }
+
+        }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            ValidateSoLuong();
+        }
+
+        private void txtMaSDDV_TextChanged(object sender, EventArgs e)
+        {
+            ValidateMaSDDV();
+
+        }
+        // Hàm kiểm tra toàn bộ form
+        private bool ValidateForm()
+        {
+            ValidateSoLuong(); // Kiểm tra số lượng
+            ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
+
+            // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
+            return string.IsNullOrEmpty(errorProvider1.GetError(txtSoLuong)) &&
+                   string.IsNullOrEmpty(errorProvider1.GetError(txtMaSDDV));
+        }
+        // Hàm kiểm tra giá trị trong txtSoLuong
+        private void ValidateSoLuong()
+        {
+            if (string.IsNullOrEmpty(txtSoLuong.Text)) // Nếu rỗng
+            {
+                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số lượng!"); // Đặt lỗi
+            }
+            else if (!int.TryParse(txtSoLuong.Text, out _)) // Nếu không phải là số
+            {
+                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số hợp lệ!"); // Đặt lỗi nếu không phải số
+            }
+            else
+            {
+                errorProvider1.SetError(txtSoLuong, ""); // Xóa lỗi nếu hợp lệ
+            }
+        }
+
+        // Hàm kiểm tra giá trị trong txtMaSDDV
+        private void ValidateMaSDDV()
+        {
+            if (string.IsNullOrEmpty(txtMaSDDV.Text)) // Nếu rỗng
+            {
+                errorProvider1.SetError(txtMaSDDV, "Vui lòng nhập mã sử dụng dịch vụ!"); // Đặt lỗi
+            }
+            else
+            {
+                errorProvider1.SetError(txtMaSDDV, ""); // Xóa lỗi nếu hợp lệ
+            }
         }
     }
 }
