@@ -34,8 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvTimKiemKH = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
+=======
+            this.btnTimKiemKH = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+>>>>>>> origin/main
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemKH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,14 +127,28 @@
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(680, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "label4";
+            // 
             // TimKiemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(829, 501);
+<<<<<<< HEAD
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnLamMoi);
+=======
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnTimKiemKH);
+>>>>>>> origin/main
             this.Controls.Add(this.dgvTimKiemKH);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenKH);
@@ -153,7 +172,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvTimKiemKH;
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnTimKiem;
+=======
+        private System.Windows.Forms.Button btnTimKiemKH;
+        private System.Windows.Forms.Label label4;
+>>>>>>> origin/main
     }
 }
