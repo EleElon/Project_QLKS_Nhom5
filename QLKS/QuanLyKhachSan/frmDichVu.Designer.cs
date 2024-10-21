@@ -315,7 +315,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(283, 477);
+            this.btnThem.Location = new System.Drawing.Point(283, 526);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(148, 48);
@@ -363,7 +363,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(419, 377);
+            this.groupBox3.Size = new System.Drawing.Size(438, 377);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Phiếu Sử dụng dịch vụ";
@@ -392,6 +392,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(196, 28);
             this.txtSoLuong.TabIndex = 2;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
             // label6
             // 
@@ -427,6 +428,7 @@
             this.txtMaSDDV.Name = "txtMaSDDV";
             this.txtMaSDDV.Size = new System.Drawing.Size(196, 28);
             this.txtMaSDDV.TabIndex = 2;
+            this.txtMaSDDV.TextChanged += new System.EventHandler(this.txtMaSDDV_TextChanged);
             // 
             // label9
             // 

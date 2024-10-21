@@ -109,14 +109,20 @@ namespace DAO
             {
                 using(DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-                   DanhSachSuDungDichVu dp = new DanhSachSuDungDichVu();
-                    dp.MaSuDungDichVu = maSDDichVu.Text;
-                    dp.MaDichVu = maDichVu.Text;
-                    dp.MaDatPhong = maDatPhong.Text;
-                    dp.SoLuong = int.Parse(soLuong.Text);
+                   
+                        DanhSachSuDungDichVu dp = new DanhSachSuDungDichVu();
+                        dp.MaSuDungDichVu = maSDDichVu.Text;
+                        dp.MaDichVu = maDichVu.Text;
+                        dp.MaDatPhong = maDatPhong.Text;
+                       
+                   
+                        dp.SoLuong = int.Parse(soLuong.Text);
+                   
+
                     db.DanhSachSuDungDichVus.InsertOnSubmit(dp);
-                    db.SubmitChanges();
-                    MessageBox.Show("Thêm thành công");
+                        db.SubmitChanges();
+                        MessageBox.Show("Thêm thành công");
+                    
                 }
             }
             catch (Exception ex)
