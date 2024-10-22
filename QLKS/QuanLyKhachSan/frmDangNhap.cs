@@ -26,13 +26,13 @@ namespace QuanLyKhachSan
         {
             string use = txtTenDangNhap.Text;
             string pass = txtMatKhau.Text;
-            
-            bool dangNhap = bus_dangNhap.CheckDangNhap(use,pass);
+
+            bool dangNhap = bus_dangNhap.CheckDangNhap(use, pass);
             if (dangNhap == true || use == "admin" || pass == "admin")
             {
                 FrmMain frmMain = new FrmMain();
                 frmMain.Show();
-               this.Hide();
+                this.Hide();
             }
             else
             {
@@ -54,6 +54,11 @@ namespace QuanLyKhachSan
         {
             showPW = !showPW;
             txtMatKhau.PasswordChar = showPW ? '\0' : '*';
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

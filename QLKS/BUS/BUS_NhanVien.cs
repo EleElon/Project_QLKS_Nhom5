@@ -23,7 +23,7 @@ namespace BUS
 
         public bool SuaNhanVien(string maNV, string maPhong, string tenNV, string chucVu, float luong)
         {
-            return dao_nv.ThemNhanVien(maNV, maPhong, tenNV, chucVu, luong);
+            return dao_nv.SuaNhanVien(maNV, maPhong, tenNV, chucVu, luong);
         }
 
         public List<NhanVien> View()

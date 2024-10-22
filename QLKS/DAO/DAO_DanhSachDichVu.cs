@@ -47,10 +47,10 @@ namespace DAO
 
                     data.Add(dvu);
                 }
-
             }
             return data;
         }
+
         public void LoadComBoBoxDatPhong(ComboBox cb)
         {
             Dictionary<string, string> dp = new Dictionary<string, string>();
@@ -79,7 +79,6 @@ namespace DAO
                             select (
                                 ma.MaDichVu);
 
-
                 foreach (var item in tenDV)
                 {
                     dp.Add(item, item);
@@ -100,34 +99,28 @@ namespace DAO
                 maDichVu.Text = row.Cells[1].Value.ToString().Trim();
                 maDatPhong.Text = row.Cells[2].Value.ToString().Trim();
                 soLuong.Text = row.Cells[3].Value.ToString().Trim();
-
             }
         }
         public void Them(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong)
         {
             try
             {
-                using(DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+                using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-                   
-                        DanhSachSuDungDichVu dp = new DanhSachSuDungDichVu();
-                        dp.MaSuDungDichVu = maSDDichVu.Text;
-                        dp.MaDichVu = maDichVu.Text;
-                        dp.MaDatPhong = maDatPhong.Text;
-                       
-                   
-                        dp.SoLuong = int.Parse(soLuong.Text);
-                   
+
+                    DanhSachSuDungDichVu dp = new DanhSachSuDungDichVu();
+                    dp.MaSuDungDichVu = maSDDichVu.Text;
+                    dp.MaDichVu = maDichVu.Text;
+                    dp.MaDatPhong = maDatPhong.Text;
+                    dp.SoLuong = int.Parse(soLuong.Text);
 
                     db.DanhSachSuDungDichVus.InsertOnSubmit(dp);
-                        db.SubmitChanges();
-                        MessageBox.Show("Thêm thành công");
-                    
+                    db.SubmitChanges();
+                    MessageBox.Show("Thêm thành công");
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Thêm vào bị lỗi " + ex);
             }
         }
@@ -146,7 +139,7 @@ namespace DAO
         }
         public bool Sua(DanhSachSuDungDichVu daDV)
         {
-            using(DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var maSDDV = db.DanhSachSuDungDichVus.SingleOrDefault(a => a.MaSuDungDichVu == daDV.MaSuDungDichVu);
                 if (maSDDV != null)
@@ -158,7 +151,6 @@ namespace DAO
                     db.SubmitChanges();
                     MessageBox.Show("Sửa thành công");
                     return true;
-                 
                 }
                 return false;
             }

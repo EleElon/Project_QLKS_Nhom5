@@ -123,12 +123,12 @@ namespace QuanLyKhachSan
             //fr.MdiParent = this;
         }
 
-        
-        
+
+
 
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
-            frmThongKeDoanhThu fr  = new frmThongKeDoanhThu();
+            frmThongKeDoanhThu fr = new frmThongKeDoanhThu();
             // Đặt form không phải là form chính
             fr.StartPosition = FormStartPosition.Manual;
 
@@ -157,6 +157,12 @@ namespace QuanLyKhachSan
 
             frm.Show();
             //frm.MdiParent = this;
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmDangNhap frmLogin = new frmDangNhap();
+            frmLogin.Show();
         }
     }
 }
