@@ -28,7 +28,7 @@ namespace QuanLyKhachSan
             string pass = txtMatKhau.Text;
             
             bool dangNhap = bus_dangNhap.CheckDangNhap(use,pass);
-            if (dangNhap == true || use == "admin" || pass == "admin")
+            if (dangNhap == true)
             {
                 FrmMain frmMain = new FrmMain();
                 frmMain.Show();

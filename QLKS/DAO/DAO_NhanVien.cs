@@ -9,7 +9,7 @@ namespace DAO
 {
     public class DAO_NhanVien
     {
-        private DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext();
+        private DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString());
 
         public bool ThemNhanVien(string maNV, string maPhong, string tenNV, string chucVu, float luong)
         {
