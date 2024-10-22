@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_LoaiPhong.cs" />
+    <Compile Include="BUS_Phong.cs" />
     <Compile Include="BUS_TimKiemKhachHang.cs" />
     <Compile Include="BUS_DangNhap.cs" />
     <Compile Include="BUS_DanhSachDichVu.cs" />

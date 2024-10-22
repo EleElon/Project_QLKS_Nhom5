@@ -30,8 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbPhong = new System.Windows.Forms.TabPage();
-            this.tbLPhong = new System.Windows.Forms.TabPage();
-            this.btnTim = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSachPhong = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,6 +46,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.tbLPhong = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,19 +55,19 @@
             this.txtMaLoaiPhong = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvLoaiPhong = new System.Windows.Forms.DataGridView();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoaPhong = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnThemPhong = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tbPhong.SuspendLayout();
-            this.tbLPhong.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhong)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tbLPhong.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).BeginInit();
@@ -88,7 +87,6 @@
             // tbPhong
             // 
             this.tbPhong.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbPhong.Controls.Add(this.btnTim);
             this.tbPhong.Controls.Add(this.groupBox2);
             this.tbPhong.Controls.Add(this.groupBox1);
             this.tbPhong.Controls.Add(this.btnXoa);
@@ -102,35 +100,6 @@
             this.tbPhong.Size = new System.Drawing.Size(1248, 616);
             this.tbPhong.TabIndex = 0;
             this.tbPhong.Text = "Phòng";
-            // 
-            // tbLPhong
-            // 
-            this.tbLPhong.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbLPhong.Controls.Add(this.groupBox3);
-            this.tbLPhong.Controls.Add(this.label9);
-            this.tbLPhong.Controls.Add(this.groupBox4);
-            this.tbLPhong.Controls.Add(this.btnCapNhat);
-            this.tbLPhong.Controls.Add(this.btnXoaPhong);
-            this.tbLPhong.Controls.Add(this.button1);
-            this.tbLPhong.Controls.Add(this.btnThemPhong);
-            this.tbLPhong.Location = new System.Drawing.Point(4, 38);
-            this.tbLPhong.Name = "tbLPhong";
-            this.tbLPhong.Padding = new System.Windows.Forms.Padding(3);
-            this.tbLPhong.Size = new System.Drawing.Size(1248, 616);
-            this.tbLPhong.TabIndex = 1;
-            this.tbLPhong.Text = "Loại Phòng";
-            // 
-            // btnTim
-            // 
-            this.btnTim.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(1041, 534);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(148, 48);
-            this.btnTim.TabIndex = 39;
-            this.btnTim.Text = "Tìm kiếm";
-            this.btnTim.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -146,6 +115,7 @@
             // 
             // dgvDanhSachPhong
             // 
+            this.dgvDanhSachPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachPhong.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvDanhSachPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachPhong.Location = new System.Drawing.Point(7, 33);
@@ -155,6 +125,7 @@
             this.dgvDanhSachPhong.RowTemplate.Height = 24;
             this.dgvDanhSachPhong.Size = new System.Drawing.Size(802, 371);
             this.dgvDanhSachPhong.TabIndex = 23;
+            this.dgvDanhSachPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachPhong_CellContentClick_1);
             // 
             // groupBox1
             // 
@@ -179,6 +150,9 @@
             // 
             this.cbtinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbtinhTrang.FormattingEnabled = true;
+            this.cbtinhTrang.Items.AddRange(new object[] {
+            "Trống",
+            "Đang Sử Dụng"});
             this.cbtinhTrang.Location = new System.Drawing.Point(203, 220);
             this.cbtinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbtinhTrang.Name = "cbtinhTrang";
@@ -264,18 +238,20 @@
             this.btnXoa.TabIndex = 35;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(753, 534);
+            this.btnSua.Location = new System.Drawing.Point(866, 534);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(148, 48);
             this.btnSua.TabIndex = 36;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click_1);
             // 
             // btnThoat
             // 
@@ -288,6 +264,7 @@
             this.btnThoat.TabIndex = 34;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
             // btnThem
             // 
@@ -300,6 +277,7 @@
             this.btnThem.TabIndex = 33;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_2);
             // 
             // label5
             // 
@@ -311,6 +289,23 @@
             this.label5.Size = new System.Drawing.Size(382, 42);
             this.label5.TabIndex = 32;
             this.label5.Text = "Danh sách các phòng";
+            // 
+            // tbLPhong
+            // 
+            this.tbLPhong.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbLPhong.Controls.Add(this.groupBox3);
+            this.tbLPhong.Controls.Add(this.label9);
+            this.tbLPhong.Controls.Add(this.groupBox4);
+            this.tbLPhong.Controls.Add(this.btnCapNhat);
+            this.tbLPhong.Controls.Add(this.btnXoaPhong);
+            this.tbLPhong.Controls.Add(this.button1);
+            this.tbLPhong.Controls.Add(this.btnThemPhong);
+            this.tbLPhong.Location = new System.Drawing.Point(4, 38);
+            this.tbLPhong.Name = "tbLPhong";
+            this.tbLPhong.Padding = new System.Windows.Forms.Padding(3);
+            this.tbLPhong.Size = new System.Drawing.Size(1248, 616);
+            this.tbLPhong.TabIndex = 1;
+            this.tbLPhong.Text = "Loại Phòng";
             // 
             // groupBox3
             // 
@@ -337,7 +332,6 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(172, 34);
             this.txtGia.TabIndex = 2;
-            this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             // 
             // label6
             // 
@@ -408,6 +402,7 @@
             // 
             // dgvLoaiPhong
             // 
+            this.dgvLoaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoaiPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiPhong.Location = new System.Drawing.Point(5, 40);
@@ -417,6 +412,7 @@
             this.dgvLoaiPhong.RowTemplate.Height = 24;
             this.dgvLoaiPhong.Size = new System.Drawing.Size(788, 390);
             this.dgvLoaiPhong.TabIndex = 0;
+            this.dgvLoaiPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiPhong_CellContentClick);
             // 
             // btnCapNhat
             // 
@@ -428,6 +424,7 @@
             this.btnCapNhat.TabIndex = 19;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
             // 
             // btnXoaPhong
             // 
@@ -439,6 +436,7 @@
             this.btnXoaPhong.TabIndex = 20;
             this.btnXoaPhong.Text = "Xóa Phòng";
             this.btnXoaPhong.UseVisualStyleBackColor = true;
+            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaPhong_Click_1);
             // 
             // button1
             // 
@@ -450,6 +448,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnThemPhong
             // 
@@ -461,6 +460,7 @@
             this.btnThemPhong.TabIndex = 22;
             this.btnThemPhong.Text = "Thêm Phòng:";
             this.btnThemPhong.UseVisualStyleBackColor = true;
+            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
             // 
             // frmDSPhong
             // 
@@ -476,12 +476,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tbPhong.ResumeLayout(false);
             this.tbPhong.PerformLayout();
-            this.tbLPhong.ResumeLayout(false);
-            this.tbLPhong.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhong)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tbLPhong.ResumeLayout(false);
+            this.tbLPhong.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -494,7 +494,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbPhong;
-        private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvDanhSachPhong;
         private System.Windows.Forms.GroupBox groupBox1;

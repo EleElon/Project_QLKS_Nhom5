@@ -49,7 +49,9 @@
   <ItemGroup>
     <Compile Include="DAO_DangNhap.cs" />
     <Compile Include="DAO_DanhSachDichVu.cs" />
+    <Compile Include="DAO_DSPhong.cs" />
     <Compile Include="DAO_KhachHang.cs" />
+    <Compile Include="DAO_LoaiPhong.cs" />
     <Compile Include="DAO_Luong.cs" />
     <Compile Include="DAO_NhanVien.cs" />
     <Compile Include="DAO_TimKiemKhachHang.cs" />
