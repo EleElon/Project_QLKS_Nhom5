@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="BUS_DichVu.cs" />
     <Compile Include="BUS_LoaiDichVu.cs" />
+    <Compile Include="BUS_LoaiPhong.cs" />
+    <Compile Include="BUS_Phong.cs" />
     <Compile Include="BUS_TimKiemKhachHang.cs" />
     <Compile Include="BUS_DangNhap.cs" />
     <Compile Include="BUS_DanhSachDichVu.cs" />
