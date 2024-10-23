@@ -138,11 +138,13 @@ namespace QuanLyKhachSan
 
             // Clear các trường khác nếu cần
             // Form LoaiDichVu
+            txtMaLoaiDV.Enabled = true;
             txtMaLoaiDV.Text = string.Empty;
             txtTenLDV.Text = string.Empty;
             txtMaLoaiPhong.Text = string.Empty;
 
             // Form DichVu
+            txtMaDV.Enabled = true;
             txtMaDV.Text = string.Empty;
             cbLoaiDichVu.SelectedIndex = 0;
             txtTenDV.Text = string.Empty;
@@ -218,7 +220,10 @@ namespace QuanLyKhachSan
         /// 
         private bool ValidateFormLoaiDV()
         {
-            ValidateMaLDV();
+            //if (txtMaLoaiDV.Enabled)
+            //{
+            //    ValidateMaLDV();
+            //}
             ValidateTenLDV();
             ValidateMaLoaiPhong();
 
@@ -290,7 +295,10 @@ namespace QuanLyKhachSan
         /// </summary>
         private bool ValidateFormDV()
         {
-            ValidateMaDV();
+            //if (txtMaDV.Enabled)
+            //{
+            //    ValidateMaDV();
+            //}
             ValidateTenDV();
             ValidateGia();
 
@@ -445,6 +453,8 @@ namespace QuanLyKhachSan
             txtMaLoaiDV.Text = row.Cells[0].Value.ToString();
             txtTenLDV.Text = row.Cells[1].Value.ToString();
             txtMaLoaiPhong.Text = row.Cells[2].Value.ToString();
+
+            txtMaLoaiDV.Enabled = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -485,11 +495,25 @@ namespace QuanLyKhachSan
         private void dataGridViewDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             BUS_DichVu.Instance.LoadDGVLenForm(txtMaDV, cbLoaiDichVu, txtTenDV, txtGia, dataGridViewDichVu);
+
+            txtMaDV.Enabled = false;
+        }
+        private void CheckEmptyFields()
+        {
+            // Nếu các trường khác trống thì enable txtMaDV lại và kiểm tra validate
+            if (string.IsNullOrEmpty(txtTenDV.Text) || string.IsNullOrEmpty(txtGia.Text))
+            {
+                txtMaDV.ReadOnly = false;  // Enable lại txtMaDV
+                ValidateFormDV();  // Kích hoạt lại quá trình validate
+            }
         }
 
         private void txtMaLoaiDV_TextChanged(object sender, EventArgs e)
         {
-            ValidateMaLDV();
+            if (txtMaLoaiDV.Enabled)
+            {
+                ValidateMaLDV();
+            }
         }
 
         private void txtTenLDV_TextChanged(object sender, EventArgs e)
@@ -504,7 +528,10 @@ namespace QuanLyKhachSan
 
         private void txtMaDV_TextChanged(object sender, EventArgs e)
         {
-            ValidateMaDV();
+            if (txtMaDV.Enabled)
+            {
+                ValidateMaDV();
+            }
         }
 
         private void txtTenDV_TextChanged(object sender, EventArgs e)
@@ -515,6 +542,16 @@ namespace QuanLyKhachSan
         private void txtGia_TextChanged(object sender, EventArgs e)
         {
             ValidateGia();
+        }
+
+        private void btnLamMoiDV_Click(object sender, EventArgs e)
+        {
+            ClearFormFields();
+        }
+
+        private void btnLamMoiLDV_Click(object sender, EventArgs e)
+        {
+            ClearFormFields();
         }
     }
 }
