@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -155,5 +156,15 @@ namespace DAO
                 return false;
             }
         }
+        public bool CheckMaSDDVExists(string maSDDV)
+        {
+            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
+            {
+                // Sử dụng LINQ để kiểm tra trùng mã
+                return context.DanhSachSuDungDichVus.Any(dv => dv.MaSuDungDichVu == maSDDV);
+            }
+        }
+
+
     }
 }

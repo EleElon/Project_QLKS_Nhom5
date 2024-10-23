@@ -42,9 +42,11 @@
             this.txtTenChuoi.Name = "txtTenChuoi";
             this.txtTenChuoi.Size = new System.Drawing.Size(244, 30);
             this.txtTenChuoi.TabIndex = 0;
+            this.txtTenChuoi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenChuoi_KeyDown);
             // 
             // btnThayDoi
             // 
+            this.btnThayDoi.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThayDoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThayDoi.Location = new System.Drawing.Point(423, 244);
             this.btnThayDoi.Name = "btnThayDoi";
@@ -53,6 +55,7 @@
             this.btnThayDoi.Text = "Thay Đổi";
             this.btnThayDoi.UseVisualStyleBackColor = true;
             this.btnThayDoi.Click += new System.EventHandler(this.btnThayDoi_Click);
+            this.btnThayDoi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnThayDoi_KeyDown);
             // 
             // label1
             // 
@@ -79,6 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.CancelButton = this.btnThayDoi;
             this.ClientSize = new System.Drawing.Size(679, 408);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);

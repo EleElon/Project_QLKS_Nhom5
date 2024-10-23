@@ -69,5 +69,11 @@ namespace BUS
             };
             DAO_DanhSachDichVu.Instance.Sua(dsdv);
         }
+        // Phương thức gọi DAL để kiểm tra trùng mã sử dụng dịch vụ
+        public bool CheckMaSDDVExists(string maSDDV)
+        {
+            return DAO_DanhSachDichVu.Instance.CheckMaSDDVExists(maSDDV);
+        }
+
     }
 }

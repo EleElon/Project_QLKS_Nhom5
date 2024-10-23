@@ -62,7 +62,7 @@ namespace QuanLyKhachSan
         private void btnThemKH_Click(object sender, EventArgs e)
         {
             // Gọi hàm kiểm tra trước
-
+            ValidateMaKH();
             // Nếu không có lỗi nào trong form thì mới thêm khách hàng
             if (ValidateForm())
             {
@@ -157,16 +157,7 @@ namespace QuanLyKhachSan
         {
             bool isValid = true;
 
-            // Kiểm tra mã khách hàng
-            if (string.IsNullOrEmpty(txtMaKH.Text))
-            {
-                errorProvider1.SetError(txtMaKH, "Vui lòng nhập mã khách hàng!");
-                isValid = false;
-            }
-            else
-            {
-                errorProvider1.SetError(txtMaKH, "");  // Xóa lỗi nếu hợp lệ
-            }
+           
 
             // Kiểm tra tên khách hàng
             if (string.IsNullOrEmpty(txtTenKH.Text))
@@ -210,10 +201,15 @@ namespace QuanLyKhachSan
         {
             ValidateEmail(); // Kiểm tra email
             ValidateSDT(); // Kiểm tra sdt
-
+            ValidateMaKH(); //kiểm tra mã
+            ValidateFormFields();
 
             // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
-            return ValidateFormFields();
+            return ValidateFormFields() && string.IsNullOrEmpty(errorProvider1.GetError(txtMaKH));
+
+            // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
+            //return string.IsNullOrEmpty(errorProvider1.GetError(txtMaKH)) &&
+            //       string.IsNullOrEmpty(errorProvider1.GetError(txtSDT));
         }
         private void txtSDT_Leave(object sender, EventArgs e)
         {
@@ -234,21 +230,12 @@ namespace QuanLyKhachSan
 
         private void txtMaKH_Leave(object sender, EventArgs e)
         {
-               // Kiểm tra txtMaKH
-            if (string.IsNullOrEmpty(txtMaKH.Text))
-            {
-                errorProvider1.SetError(txtMaKH, "Vui lòng nhập mã khách hàng!");
-
-            }
-            else
-            {
-                errorProvider1.SetError(txtMaKH, ""); // Xóa lỗi nếu hợp lệ
-            }
+            ValidateMaKH();
         }
 
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
-           
+            ValidateMaKH();
         }
 
         private void txtTenKH_TextChanged(object sender, EventArgs e)
@@ -311,6 +298,22 @@ namespace QuanLyKhachSan
             {
                 errorProvider1.SetError(txtMaKH, "Vui lòng nhập mã khách hàng!");
 
+            }
+            else
+            {
+                errorProvider1.SetError(txtMaKH, ""); // Xóa lỗi nếu hợp lệ
+            }
+        }
+        // Hàm kiểm tra giá trị trong txtMaSDDV
+        private void ValidateMaKH()
+        {
+            if (string.IsNullOrEmpty(txtMaKH.Text)) // Nếu rỗng
+            {
+                errorProvider1.SetError(txtMaKH, "Vui lòng nhập mã khách hàng!"); // Đặt lỗi
+            }
+            else if (BUS_KhachHang.Instance.CheckMaExists(txtMaKH.Text)) // Gọi BUS để kiểm tra trùng mã
+            {
+                errorProvider1.SetError(txtMaKH, "Mã khách hàng đã tồn tại, vui lòng nhập mã khác!"); // Đặt lỗi khi mã bị trùng
             }
             else
             {

@@ -160,5 +160,15 @@ namespace DAO
                 return false;
             }
         }
+        //kiểm tra trùng mã
+        public bool CheckMaExists(string maKH)
+        {
+            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
+            {
+                // Sử dụng LINQ để kiểm tra trùng mã
+                return context.KhachHangs.Any(dv => dv.MaKhachHang == maKH);
+            }
+        }
+
     }
 }

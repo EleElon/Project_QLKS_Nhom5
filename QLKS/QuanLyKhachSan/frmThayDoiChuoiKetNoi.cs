@@ -16,6 +16,9 @@ namespace QuanLyKhachSan
         public frmThayDoiChuoiKetNoi()
         {
             InitializeComponent();
+
+            // Gán sự kiện KeyDown cho các TextBox
+            txtTenChuoi.KeyDown += new KeyEventHandler(txtTenChuoi_KeyDown);
         }
         private void DoiChuoiKetNoi(string chuoi)
         {
@@ -30,6 +33,19 @@ namespace QuanLyKhachSan
             frm.Show();
             this.Hide();
           
+        }
+
+        private void btnThayDoi_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void txtTenChuoi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnThayDoi_Click(sender, e); // Gọi sự kiện tìm kiếm
+            }
         }
     }
 }

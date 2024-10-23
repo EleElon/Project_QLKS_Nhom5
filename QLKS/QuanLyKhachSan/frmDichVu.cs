@@ -182,6 +182,10 @@ namespace QuanLyKhachSan
             {
                 errorProvider1.SetError(txtMaSDDV, "Vui lòng nhập mã sử dụng dịch vụ!"); // Đặt lỗi
             }
+            else if (BUS_DanhSachDichVu.Instance.CheckMaSDDVExists(txtMaSDDV.Text)) // Gọi BUS để kiểm tra trùng mã
+            {
+                errorProvider1.SetError(txtMaSDDV, "Mã sử dụng dịch vụ đã tồn tại, vui lòng nhập mã khác!"); // Đặt lỗi khi mã bị trùng
+            }
             else
             {
                 errorProvider1.SetError(txtMaSDDV, ""); // Xóa lỗi nếu hợp lệ
