@@ -190,6 +190,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(163, 28);
             this.txtGia.TabIndex = 2;
+            this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             // 
             // label5
             // 
@@ -208,6 +209,7 @@
             this.txtTenDV.Name = "txtTenDV";
             this.txtTenDV.Size = new System.Drawing.Size(163, 28);
             this.txtTenDV.TabIndex = 2;
+            this.txtTenDV.TextChanged += new System.EventHandler(this.txtTenDV_TextChanged);
             // 
             // label4
             // 
@@ -236,6 +238,7 @@
             this.txtMaDV.Name = "txtMaDV";
             this.txtMaDV.Size = new System.Drawing.Size(163, 28);
             this.txtMaDV.TabIndex = 2;
+            this.txtMaDV.TextChanged += new System.EventHandler(this.txtMaDV_TextChanged);
             // 
             // label2
             // 
@@ -628,6 +631,7 @@
             this.txtMaLoaiPhong.Name = "txtMaLoaiPhong";
             this.txtMaLoaiPhong.Size = new System.Drawing.Size(130, 24);
             this.txtMaLoaiPhong.TabIndex = 4;
+            this.txtMaLoaiPhong.TextChanged += new System.EventHandler(this.txtMaLoaiPhong_TextChanged);
             // 
             // label13
             // 
@@ -646,6 +650,7 @@
             this.txtTenLDV.Name = "txtTenLDV";
             this.txtTenLDV.Size = new System.Drawing.Size(130, 24);
             this.txtTenLDV.TabIndex = 2;
+            this.txtTenLDV.TextChanged += new System.EventHandler(this.txtTenLDV_TextChanged);
             // 
             // label11
             // 
@@ -664,6 +669,7 @@
             this.txtMaLoaiDV.Name = "txtMaLoaiDV";
             this.txtMaLoaiDV.Size = new System.Drawing.Size(130, 24);
             this.txtMaLoaiDV.TabIndex = 2;
+            this.txtMaLoaiDV.TextChanged += new System.EventHandler(this.txtMaLoaiDV_TextChanged);
             // 
             // label12
             // 

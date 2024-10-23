@@ -25,12 +25,33 @@ namespace QuanLyKhachSan
             LoadDuLieuLenForm();
             LoadDuLieuLDV();
             LoadFormDV();
+            FormLoaiDichVuDataBinding();
+            FormDichVuDataBinding();
         }
 
         private void frmDichVu_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void FormLoaiDichVuDataBinding()
+        {
+            txtMaLoaiDV.MaxLength = 10;  // MaLoaiDichVu chỉ cho phép tối đa 10 ký tự
+            txtTenLDV.MaxLength = 50;    // TenLoaiDichVu chỉ cho phép tối đa 50 ký tự
+            txtMaLoaiPhong.MaxLength = 10; // MaLoaiPhong chỉ cho phép tối đa 10 ký tự
+
+            //txtGia.Validating += new CancelEventHandler(ValidateGia);
+            //txtMaSDDV.Validating += new CancelEventHandler(ValidateMaSDDV);
+            //txtSoLuong.Validating += new CancelEventHandler(ValidateSoLuong);
+        }
+
+        private void FormDichVuDataBinding()
+        {
+            txtMaDV.MaxLength = 10;
+            txtTenDV.MaxLength = 100;
+            txtGia.MaxLength = 9;
+        }
+
 
         public void LoadDuLieuLenForm()
         {
@@ -207,9 +228,19 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaLDV()
         {
+            string pattern = @"^DV[0-9]+$";
+
             if (string.IsNullOrEmpty(txtMaLoaiDV.Text))
             {
-                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ!");
+                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ! Mã phải bắt đầu bằng 'DV' và theo sau là số giới hạn 10 ký tự");
+            }
+            else if (BUS_LoaiDichVu.Instance.CheckMaLDVExists(txtMaLoaiDV.Text))
+            {
+                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ đã tồn tại!");
+            }
+            else if (!Regex.IsMatch(txtMaLoaiDV.Text, pattern))
+            {
+                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'DV' và theo sau là số");
             }
             else
             {
@@ -218,9 +249,15 @@ namespace QuanLyKhachSan
         }
         private void ValidateTenLDV()
         {
+            string pattern = @"^[^!@#\$%\^*_\-\+=]+$";
+
             if (string.IsNullOrEmpty(txtTenLDV.Text))
             {
                 errorProvider1.SetError(txtTenLDV, "Vui lòng nhập tên loại dịch vụ!");
+            }
+            else if (!Regex.IsMatch(txtTenLDV.Text, pattern))
+            {
+                errorProvider1.SetError(txtTenLDV, "Tên loại dịch vụ không được chứa các ký tự đặc biệt ! @ # $ % ^ * _ - + =");
             }
             else
             {
@@ -229,9 +266,15 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaLoaiPhong()
         {
+            string pattern = @"^LP[0-9]+$";
+
             if (string.IsNullOrEmpty(txtMaLoaiPhong.Text))
             {
-                errorProvider1.SetError(txtMaLoaiPhong, "Vui lòng nhập mã loại phòng!");
+                errorProvider1.SetError(txtMaLoaiPhong, "Vui lòng nhập mã loại phòng! Mã phải bắt đầu bằng 'LP' và theo sau là số giới hạn 10 ký tự");
+            } 
+            else if (!Regex.IsMatch(txtMaLoaiPhong.Text, pattern))
+            {
+                errorProvider1.SetError(txtMaLoaiPhong, "Mã loại phòng không hợp lệ! Mã phải bắt đầu bằng 'LP' và theo sau là số");
             }
             else
             {
@@ -257,9 +300,19 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaDV()
         {
+            string pattern = @"^DV[0-9]+$";
+
             if (string.IsNullOrEmpty(txtMaDV.Text))
             {
-                errorProvider1.SetError(txtMaDV, "Vui lòng nhập mã dịch vụ!");
+                errorProvider1.SetError(txtMaDV, "Vui lòng nhập mã dịch vụ! Mã phải bắt đầu bằng 'DV' theo sau là chữ số giới hạn 10 ký tự");
+            }
+            else if (BUS_DichVu.Instance.CheckMaDVExists(txtMaDV.Text))
+            {
+                errorProvider1.SetError(txtMaDV, "Mã dịch vụ đã tồn tại!");
+            }
+            else if (!Regex.IsMatch(txtMaDV.Text, pattern))
+            {
+                errorProvider1.SetError(txtMaDV, "Mã dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'DV' theo sau là chữ số");
             }
             else
             {
@@ -268,9 +321,15 @@ namespace QuanLyKhachSan
         }
         private void ValidateTenDV()
         {
+            string pattern = @"^[^!@#\$%\^*_\-\+=]+$";
+
             if (string.IsNullOrEmpty(txtTenDV.Text))
             {
-                errorProvider1.SetError(txtTenDV, "Vui lòng nhập tên dịch vụ!");
+                errorProvider1.SetError(txtTenDV, "Vui lòng nhập tên dịch vụ! Tên dịch vụ không được chứa các ký tự đặc biệt ! @ # $ % ^ * _ - + = giới hạn 100 ký tự");
+            }
+            else if (!Regex.IsMatch(txtTenDV.Text, pattern))
+            {
+                errorProvider1.SetError(txtTenDV, "Tên dịch vụ không hợp lệ! Tên dịch vụ không được chứa các ký tự đặc biệt ! @ # $ % ^ * _ - + =");
             }
             else
             {
@@ -282,6 +341,10 @@ namespace QuanLyKhachSan
             if (string.IsNullOrEmpty(txtGia.Text))
             {
                 errorProvider1.SetError(txtGia, "Vui lòng nhập giá!");
+            }
+            else if (!int.TryParse(txtGia.Text, out _))
+            {
+                errorProvider1.SetError(txtGia, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
             }
             else
             {
@@ -422,6 +485,36 @@ namespace QuanLyKhachSan
         private void dataGridViewDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             BUS_DichVu.Instance.LoadDGVLenForm(txtMaDV, cbLoaiDichVu, txtTenDV, txtGia, dataGridViewDichVu);
+        }
+
+        private void txtMaLoaiDV_TextChanged(object sender, EventArgs e)
+        {
+            ValidateMaLDV();
+        }
+
+        private void txtTenLDV_TextChanged(object sender, EventArgs e)
+        {
+            ValidateTenLDV();
+        }
+
+        private void txtMaLoaiPhong_TextChanged(object sender, EventArgs e)
+        {
+            ValidateMaLoaiPhong();
+        }
+
+        private void txtMaDV_TextChanged(object sender, EventArgs e)
+        {
+            ValidateMaDV();
+        }
+
+        private void txtTenDV_TextChanged(object sender, EventArgs e)
+        {
+            ValidateTenDV();
+        }
+
+        private void txtGia_TextChanged(object sender, EventArgs e)
+        {
+            ValidateGia();
         }
     }
 }
