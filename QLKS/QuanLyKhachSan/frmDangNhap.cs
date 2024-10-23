@@ -20,6 +20,10 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
             txtMatKhau.PasswordChar = '*';
+
+
+            // Gán sự kiện KeyDown cho các TextBox
+            txtMatKhau.KeyDown += new KeyEventHandler(txtMatKhau_KeyDown);
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -47,7 +51,10 @@ namespace QuanLyKhachSan
 
         private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap_Click(sender, e); // Gọi sự kiện tìm kiếm
+            }
         }
 
         private void cbxShowPW_CheckedChanged(object sender, EventArgs e)

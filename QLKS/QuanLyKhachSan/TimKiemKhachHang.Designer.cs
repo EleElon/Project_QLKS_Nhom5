@@ -47,6 +47,7 @@
             this.txtMaKH.Size = new System.Drawing.Size(165, 28);
             this.txtMaKH.TabIndex = 3;
             this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
+            this.txtMaKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaKH_KeyDown);
             // 
             // label1
             // 
@@ -66,6 +67,7 @@
             this.txtTenKH.Size = new System.Drawing.Size(165, 28);
             this.txtTenKH.TabIndex = 5;
             this.txtTenKH.TextChanged += new System.EventHandler(this.txtTenKH_TextChanged);
+            this.txtTenKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenKH_KeyDown);
             // 
             // label2
             // 
@@ -113,6 +115,7 @@
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.Location = new System.Drawing.Point(533, 77);
             this.btnTimKiem.Name = "btnTimKiem";
@@ -127,6 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.CancelButton = this.btnTimKiem;
             this.ClientSize = new System.Drawing.Size(829, 501);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnLamMoi);

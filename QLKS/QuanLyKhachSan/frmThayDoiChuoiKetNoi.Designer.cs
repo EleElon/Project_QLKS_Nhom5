@@ -85,6 +85,7 @@
             this.Controls.Add(this.btnThayDoi);
             this.Controls.Add(this.txtTenChuoi);
             this.Name = "frmThayDoiChuoiKetNoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThayDoiChuoiKetNoi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

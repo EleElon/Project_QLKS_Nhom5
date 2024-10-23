@@ -164,5 +164,11 @@ namespace QuanLyKhachSan
             frmDangNhap frmLogin = new frmDangNhap();
             frmLogin.Show();
         }
+
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            frmQuanLiPhong frm = new frmQuanLiPhong();
+            frm.Show();
+        }
     }
 }
