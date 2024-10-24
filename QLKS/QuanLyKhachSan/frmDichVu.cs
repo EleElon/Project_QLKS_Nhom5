@@ -104,8 +104,6 @@ namespace QuanLyKhachSan
         {
 
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
-            txtMaSDDV.Enabled = false;
-            errorProvider1.SetError(txtMaSDDV, "");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
