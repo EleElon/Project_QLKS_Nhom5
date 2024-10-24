@@ -149,6 +149,16 @@ namespace QuanLyKhachSan
             cbLoaiDichVu.SelectedIndex = 0;
             txtTenDV.Text = string.Empty;
             txtGia.Text = string.Empty;
+
+            // Set null Validate DichVu
+            errorProvider1.SetError(txtMaDV, "");
+            errorProvider1.SetError(txtTenDV, "");
+            errorProvider1.SetError(txtGia, "");
+
+            // Set null Validate LoaiDichVu
+            errorProvider1.SetError(txtMaLoaiDV, "");
+            errorProvider1.SetError(txtTenLDV, "");
+            errorProvider1.SetError(txtMaLoaiPhong, "");
         }
 
         private void btnCapNhap_Click(object sender, EventArgs e)
@@ -233,11 +243,11 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaLDV()
         {
-            string pattern = @"^DV[0-9]+$";
+            string pattern = @"^(dv|DV)[0-9]+$";
 
             if (string.IsNullOrEmpty(txtMaLoaiDV.Text))
             {
-                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ! Mã phải bắt đầu bằng 'DV' và theo sau là số giới hạn 10 ký tự");
+                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ! Mã phải bắt đầu bằng 'dv / DV' và theo sau là số giới hạn 10 ký tự");
             }
             else if (BUS_LoaiDichVu.Instance.CheckMaLDVExists(txtMaLoaiDV.Text))
             {
@@ -245,7 +255,7 @@ namespace QuanLyKhachSan
             }
             else if (!Regex.IsMatch(txtMaLoaiDV.Text, pattern))
             {
-                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'DV' và theo sau là số");
+                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'dv / DV' và theo sau là số");
             }
             else
             {
@@ -271,15 +281,15 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaLoaiPhong()
         {
-            string pattern = @"^LP[0-9]+$";
+            string pattern = @"^(lp|LP)[0-9]+$";
 
             if (string.IsNullOrEmpty(txtMaLoaiPhong.Text))
             {
-                errorProvider1.SetError(txtMaLoaiPhong, "Vui lòng nhập mã loại phòng! Mã phải bắt đầu bằng 'LP' và theo sau là số giới hạn 10 ký tự");
-            } 
+                errorProvider1.SetError(txtMaLoaiPhong, "Vui lòng nhập mã loại phòng! Mã phải bắt đầu bằng 'lp / LP' và theo sau là số giới hạn 10 ký tự");
+            }
             else if (!Regex.IsMatch(txtMaLoaiPhong.Text, pattern))
             {
-                errorProvider1.SetError(txtMaLoaiPhong, "Mã loại phòng không hợp lệ! Mã phải bắt đầu bằng 'LP' và theo sau là số");
+                errorProvider1.SetError(txtMaLoaiPhong, "Mã loại phòng không hợp lệ! Mã phải bắt đầu bằng 'lp / LP' và theo sau là số");
             }
             else
             {
@@ -308,11 +318,17 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaDV()
         {
-            string pattern = @"^DV[0-9]+$";
+            //if (!txtMaDV.Enabled)
+            //{
+            //    errorProvider1.SetError(txtMaDV, "");
+            //    return;
+            //}
+
+            string pattern = @"^(dv|DV)[0-9]+$";
 
             if (string.IsNullOrEmpty(txtMaDV.Text))
             {
-                errorProvider1.SetError(txtMaDV, "Vui lòng nhập mã dịch vụ! Mã phải bắt đầu bằng 'DV' theo sau là chữ số giới hạn 10 ký tự");
+                errorProvider1.SetError(txtMaDV, "Vui lòng nhập mã dịch vụ! Mã phải bắt đầu bằng 'dv / DV' theo sau là chữ số giới hạn 10 ký tự");
             }
             else if (BUS_DichVu.Instance.CheckMaDVExists(txtMaDV.Text))
             {
@@ -320,7 +336,7 @@ namespace QuanLyKhachSan
             }
             else if (!Regex.IsMatch(txtMaDV.Text, pattern))
             {
-                errorProvider1.SetError(txtMaDV, "Mã dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'DV' theo sau là chữ số");
+                errorProvider1.SetError(txtMaDV, "Mã dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'dv / DV' theo sau là chữ số");
             }
             else
             {
@@ -392,6 +408,33 @@ namespace QuanLyKhachSan
                 //{
                 //    MessageBox.Show("Thêm loại dịch không thành công. Loại dịch đã tồn tại.");
                 //}
+
+                // Chuẩn hóa txtMaDV trước khi gọi phương thức ThemDV
+                string maLDV = txtMaLoaiDV.Text;
+                string maLPhong = txtMaLoaiPhong.Text;
+
+                // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
+                if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(dv|DV)\d+$"))
+                {
+                    maLDV = "DV" + maLDV.Substring(2); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
+                    txtMaLoaiDV.Text = maLDV; // Gán lại giá trị đã chuẩn hóa cho txtMaDV
+                }
+                else
+                {
+                    MessageBox.Show("Mã loại dịch vụ phải bắt đầu bằng 'dv' hoặc 'DV' và theo sau là số.");
+                    return; // Thoát khỏi sự kiện nếu không hợp lệ
+                }
+
+                if (System.Text.RegularExpressions.Regex.IsMatch(maLPhong, @"^(lp|LP)\d+$"))
+                {
+                    maLPhong = "LP" + maLPhong.Substring(2);
+                    txtMaLoaiPhong.Text = maLPhong;
+                }
+                else
+                {
+                    return;
+                }
+
                 BUS_LoaiDichVu.Instance.ThemLDV(txtMaLoaiDV, txtTenLDV, txtMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
@@ -455,6 +498,7 @@ namespace QuanLyKhachSan
             txtMaLoaiPhong.Text = row.Cells[2].Value.ToString();
 
             txtMaLoaiDV.Enabled = false;
+            errorProvider1.SetError(txtMaLoaiDV, "");
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -464,6 +508,21 @@ namespace QuanLyKhachSan
 
         private void btnThemDV_Click(object sender, EventArgs e)
         {
+            // Chuẩn hóa txtMaDV trước khi gọi phương thức ThemDV
+            string maDV = txtMaDV.Text;
+
+            // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
+            if (System.Text.RegularExpressions.Regex.IsMatch(maDV, @"^(dv|DV)\d+$"))
+            {
+                maDV = "DV" + maDV.Substring(2); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
+                txtMaDV.Text = maDV; // Gán lại giá trị đã chuẩn hóa cho txtMaDV
+            }
+            else
+            {
+                MessageBox.Show("Mã dịch vụ phải bắt đầu bằng 'dv' hoặc 'DV' và theo sau là số.");
+                return; // Thoát khỏi sự kiện nếu không hợp lệ
+            }
+
             if (ValidateFormDV())
             {
                 BUS_DichVu.Instance.ThemDV(txtMaDV, cbLoaiDichVu, txtTenDV, txtGia);
@@ -497,6 +556,7 @@ namespace QuanLyKhachSan
             BUS_DichVu.Instance.LoadDGVLenForm(txtMaDV, cbLoaiDichVu, txtTenDV, txtGia, dataGridViewDichVu);
 
             txtMaDV.Enabled = false;
+            errorProvider1.SetError(txtMaDV, "");
         }
         private void CheckEmptyFields()
         {
