@@ -70,5 +70,9 @@ namespace BUS
         {
             DAO_DichVu.Instance.LoadDGVForm(maDV, maLDV, tenDV, gia, data);
         }
+        public bool CheckMaDVExists(string maDV)
+        {
+            return DAO_DichVu.Instance.CheckMaExists(maDV);
+        }
     }
 }
