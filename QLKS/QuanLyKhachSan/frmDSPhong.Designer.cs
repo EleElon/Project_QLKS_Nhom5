@@ -231,7 +231,7 @@
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(457, 534);
+            this.btnXoa.Location = new System.Drawing.Point(663, 547);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(148, 48);
@@ -244,7 +244,7 @@
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(866, 534);
+            this.btnSua.Location = new System.Drawing.Point(965, 547);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(148, 48);
@@ -257,7 +257,7 @@
             // 
             this.btnThoat.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(44, 547);
+            this.btnThoat.Location = new System.Drawing.Point(18, 547);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(148, 48);
@@ -270,7 +270,7 @@
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(258, 417);
+            this.btnThem.Location = new System.Drawing.Point(258, 547);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(148, 48);

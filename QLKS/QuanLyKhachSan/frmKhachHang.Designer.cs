@@ -54,6 +54,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhachHang)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -93,7 +94,7 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(937, 540);
+            this.btnCapNhat.Location = new System.Drawing.Point(747, 540);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(148, 48);
@@ -105,7 +106,7 @@
             // btnXoaDV
             // 
             this.btnXoaDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaDV.Location = new System.Drawing.Point(610, 540);
+            this.btnXoaDV.Location = new System.Drawing.Point(498, 540);
             this.btnXoaDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(148, 48);
@@ -204,6 +205,7 @@
             this.txtCCCD.Size = new System.Drawing.Size(203, 30);
             this.txtCCCD.TabIndex = 11;
             this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
+            this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
             // txtEmail
             // 
@@ -213,6 +215,7 @@
             this.txtEmail.Size = new System.Drawing.Size(203, 30);
             this.txtEmail.TabIndex = 10;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // cbMaDichVu
             // 
@@ -231,6 +234,7 @@
             this.txtDiaChi.Size = new System.Drawing.Size(203, 30);
             this.txtDiaChi.TabIndex = 8;
             this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
+            this.txtDiaChi.Leave += new System.EventHandler(this.txtDiaChi_Leave);
             // 
             // label8
             // 
@@ -316,12 +320,25 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.Location = new System.Drawing.Point(987, 540);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(148, 48);
+            this.btnLamMoi.TabIndex = 31;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1474, 616);
+            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnThemKH);
             this.Controls.Add(this.btnCapNhat);
@@ -371,5 +388,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }

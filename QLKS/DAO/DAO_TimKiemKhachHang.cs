@@ -60,9 +60,9 @@ namespace DAO
 
             List<KhachHang> list = new List<KhachHang>();
             DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString());
-            // Tìm khách hàng với mã được cung cấp
+       
             // Tìm tất cả khách hàng có tên chứa từ khóa
-            var khachHangs = db.KhachHangs.Where(kh => kh.TenKhachHang.Contains(TenKH)).ToList();
+            var khachHangs = db.KhachHangs.Where(kh => kh.TenKhachHang.Contains(TenKH.ToLower())).ToList();
 
             if (khachHangs.Any())
             {
@@ -85,7 +85,7 @@ namespace DAO
             {
                 MessageBox.Show("Không tìm thấy khách hàng có tên khớp.");
             }
-          
+
             return list;
         }
     }

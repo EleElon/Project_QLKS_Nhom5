@@ -40,8 +40,6 @@ namespace QuanLyKhachSan
         {
             txtMaKH.Text = "";
             txtTenKH.Text = "";
-          
-            dgvTimKiemKH.DataSource = null;
             txtMaKH.ReadOnly = false;
             txtTenKH.ReadOnly = false;
 
@@ -55,7 +53,7 @@ namespace QuanLyKhachSan
             }
             if (txtMaKH.ReadOnly == true)
             {
-                BUS_TimKiemKhachHang.Instance.TimKiemMaKH(txtTenKH, dgvTimKiemKH);
+                BUS_TimKiemKhachHang.Instance.TimKiemTenKH(txtTenKH, dgvTimKiemKH);
             }
         }
 

@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCSVC = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@
             this.btnKH = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDatPhong = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 1200);
             this.panel1.TabIndex = 2;
+            // 
+            // btnDatPhong
+            // 
+            this.btnDatPhong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatPhong.Location = new System.Drawing.Point(10, 493);
+            this.btnDatPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDatPhong.Name = "btnDatPhong";
+            this.btnDatPhong.Size = new System.Drawing.Size(217, 79);
+            this.btnDatPhong.TabIndex = 6;
+            this.btnDatPhong.Text = "Đặt Phòng";
+            this.btnDatPhong.UseVisualStyleBackColor = false;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // btnHoaDon
             // 
@@ -200,18 +214,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "QUẢN LÝ KHÁCH SẠN";
             // 
-            // btnDatPhong
+            // panel2
             // 
-            this.btnDatPhong.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatPhong.Location = new System.Drawing.Point(10, 493);
-            this.btnDatPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(217, 79);
-            this.btnDatPhong.TabIndex = 6;
-            this.btnDatPhong.Text = "Đặt Phòng";
-            this.btnDatPhong.UseVisualStyleBackColor = false;
-            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
+            this.panel2.Location = new System.Drawing.Point(237, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1036, 843);
+            this.panel2.TabIndex = 4;
             // 
             // FrmMain
             // 
@@ -219,6 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1272, 1055);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -250,5 +259,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnDatPhong;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -104,6 +104,8 @@ namespace QuanLyKhachSan
         {
 
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
+            txtMaSDDV.Enabled = false;
+            errorProvider1.SetError(txtMaSDDV, "");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -130,11 +132,17 @@ namespace QuanLyKhachSan
         private void ClearFormFields()
         {
             // Form DSLDV
-            txtMaSDDV.ReadOnly = false;
+            txtMaSDDV.Enabled = true;
             txtMaSDDV.Text = string.Empty;
             cbMaDichVu.SelectedIndex = 0;
             cbMaDatPhong.SelectedIndex = 0;
             txtSoLuong.Text = string.Empty;
+
+            // Clear the ErrorProvider for each field
+            errorProvider1.SetError(txtMaSDDV, "");
+            errorProvider1.SetError(cbMaDichVu, "");
+            errorProvider1.SetError(cbMaDatPhong, "");
+            errorProvider1.SetError(txtSoLuong, "");
 
             // Clear các trường khác nếu cần
             // Form LoaiDichVu
@@ -165,7 +173,6 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                txtMaSDDV.ReadOnly = true;
                 BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
                 LoadDuLieuLenForm();
                 ClearFormFields();
@@ -185,7 +192,7 @@ namespace QuanLyKhachSan
         private bool ValidateForm()
         {
             ValidateSoLuong(); // Kiểm tra số lượng
-            ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
+            //ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
 
             // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
             return string.IsNullOrEmpty(errorProvider1.GetError(txtSoLuong)) &&
@@ -610,6 +617,11 @@ namespace QuanLyKhachSan
         }
 
         private void btnLamMoiLDV_Click(object sender, EventArgs e)
+        {
+            ClearFormFields();
+        }
+
+        private void btnLamMoiDSSDDV_Click(object sender, EventArgs e)
         {
             ClearFormFields();
         }
