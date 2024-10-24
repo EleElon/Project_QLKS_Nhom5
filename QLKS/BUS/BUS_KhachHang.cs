@@ -55,7 +55,17 @@ namespace BUS
         //Thêm khách ahngf
         public void Them(TextBox ma, ComboBox maDV, TextBox tenKH, TextBox cccd, TextBox email, TextBox sdt, TextBox diaChi)
         {
-            DAO_KhachHang.Instance.Them(ma, maDV, tenKH, cccd,email,sdt,diaChi);
+            KhachHang kh = new KhachHang
+            {
+                MaKhachHang = ma.Text,
+                MaDichVu = maDV.SelectedValue.ToString(),
+                TenKhachHang = tenKH.Text,
+                CCCD = cccd.Text,
+                Email = email.Text,
+                SDT = sdt.Text,
+                DiaChi = diaChi.Text
+            };
+            DAO_KhachHang.Instance.Them(kh);
         }
         //xóa khách hàng
         public void Xoa(TextBox ma)
@@ -63,11 +73,11 @@ namespace BUS
             DAO_KhachHang.Instance.Xoa(ma.Text);
         }
         //Sửa khách hàng
-        public void Sua(TextBox maKH, ComboBox maDichVu, TextBox tenKH, TextBox cccd, TextBox email, TextBox sdt, TextBox diaChi)
+        public void Sua( ComboBox maDichVu, TextBox tenKH, TextBox cccd, TextBox email, TextBox sdt, TextBox diaChi)
         {
             KhachHang kh = new KhachHang
             {
-                MaKhachHang = maKH.Text,
+               
                 MaDichVu = maDichVu.Text,
                 TenKhachHang = tenKH.Text,
                 CCCD = cccd.Text,

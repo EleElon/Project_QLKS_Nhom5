@@ -83,6 +83,7 @@ namespace QuanLyKhachSan
         {
 
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
+            txtMaSDDV.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -115,6 +116,12 @@ namespace QuanLyKhachSan
             cbMaDatPhong.SelectedIndex = 0;
             txtSoLuong.Text = string.Empty;
 
+            // Clear the ErrorProvider for each field
+            errorProvider1.SetError(txtMaSDDV, "");
+            errorProvider1.SetError(cbMaDichVu, "");
+            errorProvider1.SetError(cbMaDatPhong, "");
+            errorProvider1.SetError(txtSoLuong, "");
+
             // Clear các trường khác nếu cần
             // Form LoaiDichVu
             txtMaLoaiDV.Text = string.Empty;
@@ -136,7 +143,9 @@ namespace QuanLyKhachSan
                 BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
                 LoadDuLieuLenForm();
                 ClearFormFields();
+                txtMaSDDV.Enabled = true;
             }
+            txtMaSDDV.Enabled = true;
         }
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
