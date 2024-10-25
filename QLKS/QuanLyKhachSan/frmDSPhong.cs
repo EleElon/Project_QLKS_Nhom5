@@ -77,14 +77,7 @@ namespace QuanLyKhachSan
                 !int.TryParse(txtSoPhong.Text, out soPhong) ||
                 string.IsNullOrWhiteSpace(tinhTrang))
             {
-                MessageBox.Show("Thông tin không hợp lệ");
-                return;
-            }
-
-            // Kiểm tra độ dài của mã phòng
-            if (maPhong.Length > 10)
-            {
-                MessageBox.Show("Mã phòng không hợp lệ");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
                 return;
             }
 
@@ -98,9 +91,8 @@ namespace QuanLyKhachSan
             }
             else
             {
-                MessageBox.Show("Mã phòng đã tồn tại .");
+                MessageBox.Show("Mã phòng đã tồn tại hoặc thêm phòng thất bại.");
             }
-
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)
@@ -125,7 +117,7 @@ namespace QuanLyKhachSan
             }
             else
             {
-                MessageBox.Show("Xóa thất bại");
+                MessageBox.Show("Không tìm thấy phòng cần xóa.");
             }
         }
 
@@ -164,41 +156,49 @@ namespace QuanLyKhachSan
         {
             if (e.RowIndex >= 0)
             {
-                if (e.RowIndex >= 0)
-                {
-                    
-                    DataGridViewRow row = dgvDanhSachPhong.Rows[e.RowIndex];
+                // Lấy dòng được chọn
+                DataGridViewRow row = dgvDanhSachPhong.Rows[e.RowIndex];
 
-                    
-                    txtMaPhong.Text = row.Cells["MaPhong"].Value.ToString();      
-                    txtSoPhong.Text = row.Cells["SoPhong"].Value.ToString();      
-                    cbtinhTrang.Text = row.Cells["TinhTrang"].Value.ToString();  
+                // Hiển thị thông tin của dòng được chọn lên các TextBox tương ứng
+                txtMaPhong.Text = row.Cells[0].Value.ToString();
+                txtSoPhong.Text = row.Cells[2].Value.ToString();
+                string maLoaiPhong = row.Cells[1].Value.ToString();
+
+                // Lặp qua các mục trong ComboBox để chọn đúng loại phòng dựa trên MaLoaiPhong
+                foreach (LoaiPhong loaiPhong in cbMaLoaiPhong.Items)
+                {
+                    if (loaiPhong.MaLoaiPhong == maLoaiPhong)
+                    {
+                        cbMaLoaiPhong.SelectedItem = loaiPhong;
+                        break;
+                    }
                 }
+
+                cbtinhTrang.Text = row.Cells[3].Value.ToString();
             }
         }
+
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
             string maLoaiPhong = txtMaLoaiPhong.Text.Trim();
             string tenLoaiPhong = txtTenLoaiPhong.Text.Trim();
             float gia;
-            if (string.IsNullOrWhiteSpace(maLoaiPhong)||
-                string.IsNullOrWhiteSpace(tenLoaiPhong)||
-                !float.TryParse(txtGia.Text.Trim(), out gia))
+            if (string.IsNullOrWhiteSpace(maLoaiPhong))
             {
+                MessageBox.Show("Mã loại phòng không được để trống.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tenLoaiPhong))
+            {
+                MessageBox.Show("Tên loại phòng không được để trống.");
+                return;
+            }
+            if (!float.TryParse(txtGia.Text.Trim(), out gia) || gia <= 0)
+            {
+                MessageBox.Show("Giá phòng phải là số hợp lệ =.");
+                return;
+            }
 
-                MessageBox.Show("Thông tin không hợp lệ");
-                return;
-            }
-            if (maLoaiPhong.Length > 10 )
-            {
-                MessageBox.Show("Thông tin không hợp lệ");
-                return;
-            }
-            if (tenLoaiPhong.Length > 50)
-            {
-                MessageBox.Show("Thông tin không hợp lệ ");
-                return;
-            }
             if (bus_LoaiPhong.ThemLoaiPhong(maLoaiPhong, tenLoaiPhong, gia))
             {
                 MessageBox.Show("Thêm loại phòng thành công!");
@@ -222,7 +222,7 @@ namespace QuanLyKhachSan
             }
             else
             {
-                MessageBox.Show("Xóa loại phòng thất bại. ");
+                MessageBox.Show("Xóa loại phòng thất bại. Không tìm thấy mã loại phòng.");
             }
         }
 

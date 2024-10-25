@@ -58,11 +58,11 @@ namespace BUS
         {
             DAO_DanhSachDichVu.Instance.Xoa(maSD.Text);
         }
-        public void Sua(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong)
+        public void Sua( ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong)
         {
             DanhSachSuDungDichVu dsdv = new DanhSachSuDungDichVu
             {
-                MaSuDungDichVu = maSDDichVu.Text,
+               
                 MaDichVu = maDichVu.Text,
                 MaDatPhong = maDatPhong.Text,
                 SoLuong = int.Parse(soLuong.Text),

@@ -37,9 +37,10 @@ namespace QuanLyKhachSan
             // Đặt vị trí form
             frm.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
 
-
+            
             frm.Show();
             //frm.MdiParent = this;
+
         }
 
         private void btnKH_Click(object sender, EventArgs e)
@@ -170,5 +171,16 @@ namespace QuanLyKhachSan
             frmQuanLiPhong frm = new frmQuanLiPhong();
             frm.Show();
         }
+        private void OpenFormInPanel(Form form)
+        {
+            // Đặt form không phải là form chính
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill; // Làm cho form chiếm toàn bộ panel
+            pnMain.Controls.Clear(); // Xóa form cũ nếu có
+            pnMain.Controls.Add(form); // Thêm form vào panel
+            form.Show(); // Hiển thị form
+        }
+
     }
 }

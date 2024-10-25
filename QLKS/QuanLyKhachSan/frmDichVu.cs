@@ -84,11 +84,8 @@ namespace QuanLyKhachSan
 
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
-<<<<<<< HEAD
             //ko bị lỗi ở mã
 
-=======
->>>>>>> origin/main
             errorProvider1.SetError(txtMaSDDV, "");
         }
 
@@ -98,25 +95,24 @@ namespace QuanLyKhachSan
             {
                 BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
                 LoadDuLieuLenForm();
-                ClearFormFields();
+        
             }
         }
 
         private void btnHuyPhieu_Click(object sender, EventArgs e)
         {
-            if (ValidateForm())
-            {
+            
                 BUS_DanhSachDichVu.Instance.Xoa(txtMaSDDV);
                 ClearFormFields();
                 LoadDuLieuLenForm();
-            }
+            
 
         }
         // Hàm để làm sạch các trường trong form
         private void ClearFormFields()
         {
             // Form DSLDV
-            txtMaSDDV.Enabled = true;
+            txtMaSDDV.ReadOnly = false;
             txtMaSDDV.Text = string.Empty;
             cbMaDichVu.SelectedIndex = 0;
             cbMaDatPhong.SelectedIndex = 0;
@@ -145,10 +141,16 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
+              
                 BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
                 LoadDuLieuLenForm();
-                ClearFormFields();
+                txtMaSDDV.Enabled = true;
             }
+            else
+            {
+                MessageBox.Show("Sửa ko thành công");
+            }
+          
         }
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
@@ -164,11 +166,10 @@ namespace QuanLyKhachSan
         private bool ValidateForm()
         {
             ValidateSoLuong(); // Kiểm tra số lượng
-            //ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
+       
 
             // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
-            return string.IsNullOrEmpty(errorProvider1.GetError(txtSoLuong)) &&
-                   string.IsNullOrEmpty(errorProvider1.GetError(txtMaSDDV));
+            return string.IsNullOrEmpty(errorProvider1.GetError(txtSoLuong));
         }
         // Hàm kiểm tra giá trị trong txtSoLuong
         private void ValidateSoLuong()
@@ -434,11 +435,6 @@ namespace QuanLyKhachSan
         private void dataGridViewDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             BUS_DichVu.Instance.LoadDGVLenForm(txtMaDV, cbLoaiDichVu, txtTenDV, txtGia, dataGridViewDichVu);
-        }
-
-        private void btnLamMoiDSSDDV_Click(object sender, EventArgs e)
-        {
-            ClearFormFields();
         }
     }
 }

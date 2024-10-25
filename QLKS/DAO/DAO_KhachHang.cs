@@ -64,11 +64,11 @@ namespace DAO
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var tenDV = from ma in db.DichVus
-                            join dv in db.DichVus on ma.MaDichVu equals dv.MaDichVu
+                            
                             select new
                             {
                                 ma.MaDichVu,
-                                dv.TenDichVu,
+                                ma.TenDichVu,
                             };
 
                 foreach (var item in tenDV)
@@ -156,26 +156,30 @@ namespace DAO
                 }
             }
         }
+
+        //em sửa ko đc cái combobox h ko sửa đc lun
         public bool Sua(KhachHang kh)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
+                // Fetch the customer by ID
                 var maKH = db.KhachHangs.SingleOrDefault(a => a.MaKhachHang == kh.MaKhachHang);
                 if (maKH != null)
                 {
-                
+                    // Update the customer's details
                     maKH.MaDichVu = kh.MaDichVu;
                     maKH.TenKhachHang = kh.TenKhachHang;
                     maKH.CCCD = kh.CCCD;
-                    maKH.Email= kh.Email;
+                    maKH.Email = kh.Email;
                     maKH.SDT = kh.SDT;
-                    maKH.DiaChi =kh.DiaChi;
+                    maKH.DiaChi = kh.DiaChi;
+
+                    // Commit changes to the database
                     db.SubmitChanges();
                     MessageBox.Show("Sửa thành công");
                     return true;
-
                 }
-                return false;
+                return false; // Customer not found
             }
         }
         //kiểm tra trùng mã

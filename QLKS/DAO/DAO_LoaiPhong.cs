@@ -98,25 +98,23 @@ namespace DAO
             {
                 try
                 {
-                    
+                    // Tìm loại phòng theo mã
                     LoaiPhong loaiPhong = db.LoaiPhongs.SingleOrDefault(lp => lp.MaLoaiPhong == maLoaiPhong);
 
                     if (loaiPhong != null)
                     {
-                    
+                        // Xóa và lưu thay đổi
                         db.LoaiPhongs.DeleteOnSubmit(loaiPhong);
                         db.SubmitChanges();
                         return true;
                     }
-                    return false;
+                    return false; // Trả về false nếu không tìm thấy mã loại phòng
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Lỗi khi xóa loại phòng: " + ex.Message); 
-                    return false;
+                    throw ex;
                 }
             }
-
         }
     }
 }

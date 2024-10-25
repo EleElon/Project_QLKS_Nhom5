@@ -41,7 +41,7 @@
             this.btnKH = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnMain = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -214,12 +214,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "QUẢN LÝ KHÁCH SẠN";
             // 
-            // panel2
+            // pnMain
             // 
-            this.panel2.Location = new System.Drawing.Point(237, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1036, 843);
-            this.panel2.TabIndex = 4;
+            this.pnMain.Location = new System.Drawing.Point(237, 65);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1523, 843);
+            this.pnMain.TabIndex = 4;
             // 
             // FrmMain
             // 
@@ -227,7 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1272, 1055);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnMain);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -259,6 +259,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnDatPhong;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnMain;
     }
 }

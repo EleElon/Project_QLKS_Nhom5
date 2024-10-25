@@ -136,8 +136,13 @@ namespace DAO
                     db.SubmitChanges();
                     MessageBox.Show("Xóa thành công");
                 }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công");
+                }
             }
         }
+
         public bool Sua(DanhSachSuDungDichVu daDV)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
@@ -145,7 +150,7 @@ namespace DAO
                 var maSDDV = db.DanhSachSuDungDichVus.SingleOrDefault(a => a.MaSuDungDichVu == daDV.MaSuDungDichVu);
                 if (maSDDV != null)
                 {
-                    maSDDV.MaSuDungDichVu = daDV.MaSuDungDichVu;
+                   
                     maSDDV.MaDichVu = daDV.MaDichVu;
                     maSDDV.MaDatPhong = daDV.MaDatPhong;
                     maSDDV.SoLuong = daDV.SoLuong;

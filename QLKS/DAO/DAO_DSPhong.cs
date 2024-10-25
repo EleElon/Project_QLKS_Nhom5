@@ -77,18 +77,20 @@ namespace DAO
                     {
                         return false;
                     }
+
+                    // Xóa phòng khỏi cơ sở dữ liệu
                     db.Phongs.DeleteOnSubmit(phong);
                     db.SubmitChanges();
 
+                    // Trả về true nếu xóa thành công
                     return true;
                 }
                 catch (Exception ex)
-                {               
-                    Console.WriteLine("Lỗi khi xóa phòng: " + ex.Message); 
-                    return false;
+                {
+                    // Xử lý ngoại lệ nếu có
+                    throw ex;
                 }
             }
-
         }
         public bool suaPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
         {

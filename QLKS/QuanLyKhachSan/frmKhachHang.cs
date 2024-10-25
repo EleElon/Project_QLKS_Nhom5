@@ -138,15 +138,15 @@ namespace QuanLyKhachSan
                 }
 
                 //txtMaKH.ReadOnly = true;
-                BUS_KhachHang.Instance.Sua(cbMaDichVu, txtTenKH, txtCCCD, txtEmail, txtSDT, txtDiaChi);
+                BUS_KhachHang.Instance.Sua(txtMaKH,cbMaDichVu, txtTenKH, txtCCCD, txtEmail, txtSDT, txtDiaChi);
                 LoadDuLieuLen();
                 txtMaKH.Enabled = true;
             }
             else
             {
-
+                txtMaKH.Enabled = true;
             }
-            txtMaKH.Enabled = true;
+            
         }
 
         //ràng buộc sdt
@@ -232,17 +232,15 @@ namespace QuanLyKhachSan
                 errorProvider1.SetError(txtEmail, "");
             }
 
-            if (string.IsNullOrEmpty(txtSDT.Text))
+            // Kiểm tra số điện thoại
+            if (string.IsNullOrEmpty(txtSDT.Text) || !Regex.IsMatch(txtSDT.Text, @"^[0-9]{10}$"))
             {
-                errorProvider1.SetError(txtSDT, "Vui lòng nhập số điện thoại!");
-            }
-            else if (txtSDT.Text.Length != 10 || !Regex.IsMatch(txtSDT.Text, @"^0[0-9]{9}$")) // Kiểm tra số điện thoại bắt đầu bằng 0 và có 10 chữ số
-            {
-                errorProvider1.SetError(txtSDT, "Số điện thoại không hợp lệ! (phải có 10 chữ số và bắt đầu bằng 0)");
+                errorProvider1.SetError(txtSDT, "Vui lòng nhập số điện thoại hợp lệ (10 chữ số)!");
+                isValid = false;
             }
             else
             {
-                errorProvider1.SetError(txtSDT, "");  // Xóa lỗi nếu hợp lệ
+                errorProvider1.SetError(txtSDT, "");
             }
 
             // Kiểm tra địa chỉ
