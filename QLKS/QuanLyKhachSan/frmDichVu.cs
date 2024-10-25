@@ -84,8 +84,11 @@ namespace QuanLyKhachSan
 
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
+<<<<<<< HEAD
             //ko bị lỗi ở mã
 
+=======
+>>>>>>> origin/main
             errorProvider1.SetError(txtMaSDDV, "");
         }
 
@@ -113,7 +116,7 @@ namespace QuanLyKhachSan
         private void ClearFormFields()
         {
             // Form DSLDV
-            txtMaSDDV.ReadOnly = false;
+            txtMaSDDV.Enabled = true;
             txtMaSDDV.Text = string.Empty;
             cbMaDichVu.SelectedIndex = 0;
             cbMaDatPhong.SelectedIndex = 0;
@@ -142,13 +145,10 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                txtMaSDDV.ReadOnly = true;
                 BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
                 LoadDuLieuLenForm();
                 ClearFormFields();
-                txtMaSDDV.Enabled = true;
             }
-            txtMaSDDV.Enabled = true;
         }
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
@@ -164,7 +164,7 @@ namespace QuanLyKhachSan
         private bool ValidateForm()
         {
             ValidateSoLuong(); // Kiểm tra số lượng
-            ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
+            //ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
 
             // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
             return string.IsNullOrEmpty(errorProvider1.GetError(txtSoLuong)) &&
@@ -434,6 +434,11 @@ namespace QuanLyKhachSan
         private void dataGridViewDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             BUS_DichVu.Instance.LoadDGVLenForm(txtMaDV, cbLoaiDichVu, txtTenDV, txtGia, dataGridViewDichVu);
+        }
+
+        private void btnLamMoiDSSDDV_Click(object sender, EventArgs e)
+        {
+            ClearFormFields();
         }
     }
 }

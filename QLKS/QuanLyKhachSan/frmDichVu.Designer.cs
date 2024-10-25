@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaDV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLamMoiDV = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoaDV = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.btnThoatt = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.tbLoaiDichVu = new System.Windows.Forms.TabPage();
+            this.btnLamMoiLDV = new System.Windows.Forms.Button();
             this.btnCapNhatLDV = new System.Windows.Forms.Button();
             this.btnXoaLDV = new System.Windows.Forms.Button();
             this.btnThoatLDV = new System.Windows.Forms.Button();
@@ -80,6 +82,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+<<<<<<< HEAD
+=======
+            this.btnLamMoiDSSDDV = new System.Windows.Forms.Button();
+>>>>>>> origin/main
             this.tbDichVu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -247,6 +253,18 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã dịch vụ:";
             // 
+            // btnLamMoiDV
+            // 
+            this.btnLamMoiDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiDV.Location = new System.Drawing.Point(837, 436);
+            this.btnLamMoiDV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoiDV.Name = "btnLamMoiDV";
+            this.btnLamMoiDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiDV.TabIndex = 25;
+            this.btnLamMoiDV.Text = "Làm Mới";
+            this.btnLamMoiDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiDV.Click += new System.EventHandler(this.btnLamMoiDV_Click);
+            // 
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,6 +329,7 @@
             // 
             this.tbSĐichVu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tbSĐichVu.Controls.Add(this.btnThem);
+            this.tbSĐichVu.Controls.Add(this.btnLamMoiDSSDDV);
             this.tbSĐichVu.Controls.Add(this.btnCapNhap);
             this.tbSĐichVu.Controls.Add(this.btnHuyPhieu);
             this.tbSĐichVu.Controls.Add(this.groupBox3);
@@ -341,7 +360,7 @@
             // btnCapNhap
             // 
             this.btnCapNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhap.Location = new System.Drawing.Point(747, 447);
+            this.btnCapNhap.Location = new System.Drawing.Point(652, 447);
             this.btnCapNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(111, 39);
@@ -353,7 +372,7 @@
             // btnHuyPhieu
             // 
             this.btnHuyPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyPhieu.Location = new System.Drawing.Point(497, 447);
+            this.btnHuyPhieu.Location = new System.Drawing.Point(436, 447);
             this.btnHuyPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyPhieu.Name = "btnHuyPhieu";
             this.btnHuyPhieu.Size = new System.Drawing.Size(111, 39);
@@ -528,6 +547,18 @@
             this.tbLoaiDichVu.TabIndex = 2;
             this.tbLoaiDichVu.Text = "Loại dịch vụ";
             // 
+            // btnLamMoiLDV
+            // 
+            this.btnLamMoiLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiLDV.Location = new System.Drawing.Point(879, 420);
+            this.btnLamMoiLDV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoiLDV.Name = "btnLamMoiLDV";
+            this.btnLamMoiLDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiLDV.TabIndex = 30;
+            this.btnLamMoiLDV.Text = "Làm Mới";
+            this.btnLamMoiLDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiLDV.Click += new System.EventHandler(this.btnLamMoiLDV_Click);
+            // 
             // btnCapNhatLDV
             // 
             this.btnCapNhatLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -687,6 +718,21 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "Loại Dịch Vụ";
             // 
+<<<<<<< HEAD
+=======
+            // btnLamMoiDSSDDV
+            // 
+            this.btnLamMoiDSSDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiDSSDDV.Location = new System.Drawing.Point(843, 447);
+            this.btnLamMoiDSSDDV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoiDSSDDV.Name = "btnLamMoiDSSDDV";
+            this.btnLamMoiDSSDDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiDSSDDV.TabIndex = 18;
+            this.btnLamMoiDSSDDV.Text = "Làm Mới";
+            this.btnLamMoiDSSDDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiDSSDDV.Click += new System.EventHandler(this.btnLamMoiDSSDDV_Click);
+            // 
+>>>>>>> origin/main
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -774,5 +820,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Button btnLamMoiDV;
+        private System.Windows.Forms.Button btnLamMoiLDV;
+        private System.Windows.Forms.Button btnLamMoiDSSDDV;
+>>>>>>> origin/main
     }
 }
