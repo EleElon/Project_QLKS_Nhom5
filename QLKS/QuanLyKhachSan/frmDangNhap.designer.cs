@@ -74,11 +74,7 @@
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(157, 49);
-<<<<<<< HEAD
             this.btnDangNhap.TabIndex = 14;
-=======
-            this.btnDangNhap.TabIndex = 3;
->>>>>>> origin/main
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
@@ -100,7 +96,7 @@
             this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(257, 30);
-            this.txtTenDangNhap.TabIndex = 1;
+            this.txtTenDangNhap.TabIndex = 12;
             this.txtTenDangNhap.TextChanged += new System.EventHandler(this.txtTenDangNhap_TextChanged);
             // 
             // label3
@@ -143,11 +139,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(257, 30);
-<<<<<<< HEAD
             this.txtMatKhau.TabIndex = 13;
-=======
-            this.txtMatKhau.TabIndex = 2;
->>>>>>> origin/main
             this.txtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
             // 
             // cbxShowPW

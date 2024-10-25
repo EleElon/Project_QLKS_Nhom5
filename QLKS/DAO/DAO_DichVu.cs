@@ -143,13 +143,5 @@ namespace DAO
                 gia.Text = row.Cells[3].Value.ToString().Trim();
             }
         }
-        public bool CheckMaExists(string maDV)
-        {
-            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
-            {
-                // Sử dụng LINQ để kiểm tra trùng mã
-                return context.DichVus.Any(dv => dv.MaDichVu == maDV);
-            }
-        }
     }
 }
