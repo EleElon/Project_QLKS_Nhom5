@@ -1,4 +1,7 @@
-﻿namespace QuanLyKhachSan
+﻿using System;
+using System.Windows.Forms;
+
+namespace QuanLyKhachSan
 {
     partial class frmDichVu
     {
@@ -41,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaDV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLamMoiDV = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoaDV = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,6 +68,7 @@
             this.btnThoatt = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.tbLoaiDichVu = new System.Windows.Forms.TabPage();
+            this.btnLamMoiLDV = new System.Windows.Forms.Button();
             this.btnCapNhatLDV = new System.Windows.Forms.Button();
             this.btnXoaLDV = new System.Windows.Forms.Button();
             this.btnThoatLDV = new System.Windows.Forms.Button();
@@ -71,17 +76,16 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridViewLoaiDichVu = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txtMaLoaiPhong = new System.Windows.Forms.TextBox();
+            this.cboMaLoaiPhong = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtTenLDV = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtMaLoaiDV = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnLamMoiDSSDDV = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.btnLamMoiDV = new System.Windows.Forms.Button();
-            this.btnLamMoiLDV = new System.Windows.Forms.Button();
             this.tbDichVu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -252,6 +256,13 @@
             this.label2.Size = new System.Drawing.Size(107, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã dịch vụ:";
+            // 
+            // btnLamMoiDV
+            // 
+            this.btnLamMoiDV.Location = new System.Drawing.Point(0, 0);
+            this.btnLamMoiDV.Name = "btnLamMoiDV";
+            this.btnLamMoiDV.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoiDV.TabIndex = 25;
             // 
             // btnCapNhat
             // 
@@ -535,6 +546,13 @@
             this.tbLoaiDichVu.TabIndex = 2;
             this.tbLoaiDichVu.Text = "Loại dịch vụ";
             // 
+            // btnLamMoiLDV
+            // 
+            this.btnLamMoiLDV.Location = new System.Drawing.Point(0, 0);
+            this.btnLamMoiLDV.Name = "btnLamMoiLDV";
+            this.btnLamMoiLDV.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoiLDV.TabIndex = 0;
+            // 
             // btnCapNhatLDV
             // 
             this.btnCapNhatLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -612,7 +630,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.txtMaLoaiPhong);
+            this.groupBox6.Controls.Add(this.cboMaLoaiPhong);
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.txtTenLDV);
             this.groupBox6.Controls.Add(this.label11);
@@ -628,14 +646,12 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Phiếu Loại Dịch Vụ";
             // 
-            // txtMaLoaiPhong
+            // cboMaLoaiPhong
             // 
-            this.txtMaLoaiPhong.Location = new System.Drawing.Point(141, 202);
-            this.txtMaLoaiPhong.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaLoaiPhong.Name = "txtMaLoaiPhong";
-            this.txtMaLoaiPhong.Size = new System.Drawing.Size(130, 24);
-            this.txtMaLoaiPhong.TabIndex = 4;
-            this.txtMaLoaiPhong.TextChanged += new System.EventHandler(this.txtMaLoaiPhong_TextChanged);
+            this.cboMaLoaiPhong.Location = new System.Drawing.Point(141, 201);
+            this.cboMaLoaiPhong.Name = "cboMaLoaiPhong";
+            this.cboMaLoaiPhong.Size = new System.Drawing.Size(130, 25);
+            this.cboMaLoaiPhong.TabIndex = 0;
             // 
             // label13
             // 
@@ -697,29 +713,17 @@
             this.label14.TabIndex = 27;
             this.label14.Text = "Loại Dịch Vụ";
             // 
-            // btnLamMoiDV
+            // btnLamMoiDSSDDV
             // 
-            this.btnLamMoiDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoiDV.Location = new System.Drawing.Point(837, 436);
-            this.btnLamMoiDV.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLamMoiDV.Name = "btnLamMoiDV";
-            this.btnLamMoiDV.Size = new System.Drawing.Size(111, 39);
-            this.btnLamMoiDV.TabIndex = 25;
-            this.btnLamMoiDV.Text = "Làm Mới";
-            this.btnLamMoiDV.UseVisualStyleBackColor = true;
-            this.btnLamMoiDV.Click += new System.EventHandler(this.btnLamMoiDV_Click);
-            // 
-            // btnLamMoiLDV
-            // 
-            this.btnLamMoiLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoiLDV.Location = new System.Drawing.Point(879, 420);
-            this.btnLamMoiLDV.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLamMoiLDV.Name = "btnLamMoiLDV";
-            this.btnLamMoiLDV.Size = new System.Drawing.Size(111, 39);
-            this.btnLamMoiLDV.TabIndex = 30;
-            this.btnLamMoiLDV.Text = "Làm Mới";
-            this.btnLamMoiLDV.UseVisualStyleBackColor = true;
-            this.btnLamMoiLDV.Click += new System.EventHandler(this.btnLamMoiLDV_Click);
+            this.btnLamMoiDSSDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiDSSDDV.Location = new System.Drawing.Point(843, 447);
+            this.btnLamMoiDSSDDV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoiDSSDDV.Name = "btnLamMoiDSSDDV";
+            this.btnLamMoiDSSDDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiDSSDDV.TabIndex = 18;
+            this.btnLamMoiDSSDDV.Text = "Làm Mới";
+            this.btnLamMoiDSSDDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiDSSDDV.Click += new System.EventHandler(this.btnLamMoiDSSDDV_Click);
             // 
             // frmDichVu
             // 
@@ -752,6 +756,11 @@
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        private void btnLamMoiDSSDDV_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -800,7 +809,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridViewLoaiDichVu;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox txtMaLoaiPhong;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtTenLDV;
         private System.Windows.Forms.Label label11;
@@ -808,7 +816,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private ComboBox cboMaLoaiPhong;
         private System.Windows.Forms.Button btnLamMoiDV;
         private System.Windows.Forms.Button btnLamMoiLDV;
+        private System.Windows.Forms.Button btnLamMoiDSSDDV;
     }
 }

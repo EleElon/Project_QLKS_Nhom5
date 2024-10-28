@@ -112,35 +112,65 @@ namespace DAO
         {
             return db.DichVus.ToList();
         }
+        //public void LoadComBoBoxLoaiDichVu(ComboBox cb)
+        //{
+        //    Dictionary<string, string> dp = new Dictionary<string, string>();
+        //    using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+        //    {
+        //        var tenLDV = from ma in db.LoaiDichVus
+        //                     select (
+        //                         ma.MaLoaiDichVu);
+
+        //        foreach (var item in tenLDV)
+        //        {
+        //            dp.Add(item, item);
+        //        }
+
+        //        cb.DataSource = new BindingSource(dp, null);
+        //        cb.DisplayMember = "Value";
+        //        cb.ValueMember = "Key";
+        //    }
+        //}
         public void LoadComBoBoxLoaiDichVu(ComboBox cb)
         {
-            Dictionary<string, string> dp = new Dictionary<string, string>();
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                var tenLDV = from ma in db.LoaiDichVus
-                             select (
-                                 ma.MaLoaiDichVu);
+                var loaiDichVus = db.LoaiDichVus
+                                    .Select(ldv => new { ldv.MaLoaiDichVu, ldv.TenLoaiDichVu })
+                                    .ToList();
 
-                foreach (var item in tenLDV)
-                {
-                    dp.Add(item, item);
-                }
-
-                cb.DataSource = new BindingSource(dp, null);
-                cb.DisplayMember = "Value";
-                cb.ValueMember = "Key";
+                cb.DataSource = loaiDichVus;
+                cb.DisplayMember = "TenLoaiDichVu"; // Hiển thị tên dịch vụ
+                cb.ValueMember = "MaLoaiDichVu"; // Giá trị là mã dịch vụ
             }
         }
+
         public void LoadDGVForm(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                var rowIndex = data.SelectedCells[0].RowIndex;
-                var row = data.Rows[rowIndex];
-                maDV.Text = row.Cells[0].Value.ToString().Trim();
-                maLDV.Text = row.Cells[1].Value.ToString().Trim();
-                tenDV.Text = row.Cells[2].Value.ToString().Trim();
-                gia.Text = row.Cells[3].Value.ToString().Trim();
+                if (data.SelectedCells.Count > 0)
+                {
+                    var rowIndex = data.SelectedCells[0].RowIndex;
+                    var row = data.Rows[rowIndex];
+
+                    // Gán giá trị vào các TextBox
+                    maDV.Text = row.Cells[0].Value.ToString().Trim();
+                    string selectedMaLDV = row.Cells[1].Value.ToString().Trim();
+                    tenDV.Text = row.Cells[2].Value.ToString().Trim();
+                    gia.Text = row.Cells[3].Value.ToString().Trim();
+
+                    // Tìm đối tượng trong ComboBox có mã trùng với mã được chọn từ DataGridView
+                    foreach (var item in maLDV.Items)
+                    {
+                        var loaiDichVu = item as dynamic; // Chuyển đối tượng sang kiểu động nếu cần
+                        if (loaiDichVu != null && loaiDichVu.MaLoaiDichVu == selectedMaLDV)
+                        {
+                            maLDV.SelectedItem = item;
+                            break;
+                        }
+                    }
+                }
             }
         }
         public bool CheckMaExists(string maDV)
