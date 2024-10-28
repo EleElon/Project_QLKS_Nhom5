@@ -52,7 +52,7 @@ namespace DAO
         //        throw ex;
         //    }
         //}
-        public void ThemLDV(TextBox maLDV, TextBox tenLDV, TextBox maLoaiPhong)
+        public void ThemLDV(TextBox maLDV, TextBox tenLDV, ComboBox maLoaiPhong)
         {
             try
             {
@@ -174,6 +174,46 @@ namespace DAO
             {
                 // Sử dụng LINQ để kiểm tra trùng mã
                 return context.LoaiDichVus.Any(a => a.MaLoaiDichVu == maLDV);
+            }
+        }
+        public void LoadComBoBoxLoaiPhong(ComboBox cb)
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                var loaiPhongs = db.LoaiPhongs
+                                    .Select(lp => new { lp.MaLoaiPhong, lp.TenLoaiPhong })
+                                    .ToList();
+
+                cb.DataSource = loaiPhongs;
+                cb.DisplayMember = "TenLoaiPhong"; // Hiển thị tên dịch vụ
+                cb.ValueMember = "MaLoaiPhong"; // Giá trị là mã dịch vụ
+            }
+        }
+        public void LoadDGVForm(TextBox maLDV, TextBox tenLDV, ComboBox maLP, DataGridView data)
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                if (data.SelectedCells.Count > 0)
+                {
+                    var rowIndex = data.SelectedCells[0].RowIndex;
+                    var row = data.Rows[rowIndex];
+
+                    // Gán giá trị vào các TextBox
+                    maLDV.Text = row.Cells[0].Value.ToString().Trim();
+                    string selectedMaLP = row.Cells[2].Value.ToString().Trim();
+                    tenLDV.Text = row.Cells[1].Value.ToString().Trim();
+
+                    // Tìm đối tượng trong ComboBox có mã trùng với mã được chọn từ DataGridView
+                    foreach (var item in maLP.Items)
+                    {
+                        var loaiDichVu = item as dynamic; // Chuyển đối tượng sang kiểu động nếu cần
+                        if (loaiDichVu != null && loaiDichVu.MaLoaiPhong == selectedMaLP)
+                        {
+                            maLP.SelectedItem = item;
+                            break;
+                        }
+                    }
+                }
             }
         }
     }

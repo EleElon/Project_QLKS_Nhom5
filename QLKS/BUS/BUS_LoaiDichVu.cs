@@ -30,7 +30,7 @@ namespace BUS
         //{
         //    return dao_ldv.ThemLDV(maLDV, tenLDV, maLoaiPhong);
         //}
-        public void ThemLDV(TextBox maLDV, TextBox tenLDV, TextBox maLoaiPhong)
+        public void ThemLDV(TextBox maLDV, TextBox tenLDV, ComboBox maLoaiPhong)
         {
             DAO_LoaiDichVu.Instance.ThemLDV(maLDV, tenLDV, maLoaiPhong);
         }
@@ -46,7 +46,7 @@ namespace BUS
         //{
         //    return dao_ldv.SuaLoaiDichVu(maLDV, tenLDV, maLoaiPhong);
         //}
-        public void Sua(TextBox maLDV, TextBox tenLDV, TextBox maLoaiPhong)
+        public void Sua(TextBox maLDV, TextBox tenLDV, ComboBox maLoaiPhong)
         {
             LoaiDichVu dsldv = new LoaiDichVu
             {
@@ -73,6 +73,14 @@ namespace BUS
                 };
             }).ToList();
             data.DataSource = dv;
+        }
+        public void LoadMaLoaiPhong(ComboBox cb)
+        {
+            DAO_LoaiDichVu.Instance.LoadComBoBoxLoaiPhong(cb);
+        }
+        public void LoadDGVLenForm(TextBox maLDV, TextBox tenLDV, ComboBox maLP, DataGridView data)
+        {
+            DAO_LoaiDichVu.Instance.LoadDGVForm(maLDV, tenLDV, maLP, data);
         }
         public bool CheckMaLDVExists(string maLDV)
         {

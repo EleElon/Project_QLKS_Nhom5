@@ -23,7 +23,7 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
             LoadDuLieuLenForm();
-            LoadDuLieuLDV();
+            LoadFormLDV();
             LoadFormDV();
             FormLoaiDichVuDataBinding();
             FormDichVuDataBinding();
@@ -38,7 +38,6 @@ namespace QuanLyKhachSan
         {
             txtMaLoaiDV.MaxLength = 10;  // MaLoaiDichVu chỉ cho phép tối đa 10 ký tự
             txtTenLDV.MaxLength = 50;    // TenLoaiDichVu chỉ cho phép tối đa 50 ký tự
-            txtMaLoaiPhong.MaxLength = 10; // MaLoaiPhong chỉ cho phép tối đa 10 ký tự
 
             //txtGia.Validating += new CancelEventHandler(ValidateGia);
             //txtMaSDDV.Validating += new CancelEventHandler(ValidateMaSDDV);
@@ -64,6 +63,11 @@ namespace QuanLyKhachSan
             LoadDuLieuDV();
             LoadMaLoaiDichVu();
         }
+        public void LoadFormLDV()
+        {
+            LoadDuLieuLDV();
+            LoadMaLoaiPhong();
+        }
         private void tbSĐichVu_Click(object sender, EventArgs e)
         {
 
@@ -87,6 +91,10 @@ namespace QuanLyKhachSan
         private void cbMaDatPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void LoadMaLoaiPhong()
+        {
+            BUS_LoaiDichVu.Instance.LoadMaLoaiPhong(cboMaLoaiPhong);
         }
         public void LoadMaDatPhong()
         {
@@ -149,7 +157,7 @@ namespace QuanLyKhachSan
             txtMaLoaiDV.Enabled = true;
             txtMaLoaiDV.Text = string.Empty;
             txtTenLDV.Text = string.Empty;
-            txtMaLoaiPhong.Text = string.Empty;
+            cboMaLoaiPhong.SelectedIndex = 0;
 
             // Form DichVu
             txtMaDV.Enabled = true;
@@ -166,7 +174,6 @@ namespace QuanLyKhachSan
             // Set null Validate LoaiDichVu
             errorProvider1.SetError(txtMaLoaiDV, "");
             errorProvider1.SetError(txtTenLDV, "");
-            errorProvider1.SetError(txtMaLoaiPhong, "");
         }
 
         private void btnCapNhap_Click(object sender, EventArgs e)
@@ -242,11 +249,9 @@ namespace QuanLyKhachSan
             //    ValidateMaLDV();
             //}
             ValidateTenLDV();
-            ValidateMaLoaiPhong();
 
             return string.IsNullOrEmpty(errorProvider1.GetError(txtMaLoaiDV)) &&
-                   string.IsNullOrEmpty(errorProvider1.GetError(txtTenLDV)) &&
-                   string.IsNullOrEmpty(errorProvider1.GetError(txtMaLoaiPhong));
+                   string.IsNullOrEmpty(errorProvider1.GetError(txtTenLDV));
         }
         private void ValidateMaLDV()
         {
@@ -284,23 +289,6 @@ namespace QuanLyKhachSan
             else
             {
                 errorProvider1.SetError(txtTenLDV, "");
-            }
-        }
-        private void ValidateMaLoaiPhong()
-        {
-            string pattern = @"^(lp|LP)[0-9]+$";
-
-            if (string.IsNullOrEmpty(txtMaLoaiPhong.Text))
-            {
-                errorProvider1.SetError(txtMaLoaiPhong, "Vui lòng nhập mã loại phòng! Mã phải bắt đầu bằng 'lp / LP' và theo sau là số giới hạn 10 ký tự");
-            }
-            else if (!Regex.IsMatch(txtMaLoaiPhong.Text, pattern))
-            {
-                errorProvider1.SetError(txtMaLoaiPhong, "Mã loại phòng không hợp lệ! Mã phải bắt đầu bằng 'lp / LP' và theo sau là số");
-            }
-            else
-            {
-                errorProvider1.SetError(txtMaLoaiPhong, "");
             }
         }
         //
@@ -418,7 +406,7 @@ namespace QuanLyKhachSan
 
                 // Chuẩn hóa txtMaDV trước khi gọi phương thức ThemDV
                 string maLDV = txtMaLoaiDV.Text;
-                string maLPhong = txtMaLoaiPhong.Text;
+                string tenLDV = txtTenLDV.Text;
 
                 // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
                 if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(dv|DV)\d+$"))
@@ -432,17 +420,17 @@ namespace QuanLyKhachSan
                     return; // Thoát khỏi sự kiện nếu không hợp lệ
                 }
 
-                if (System.Text.RegularExpressions.Regex.IsMatch(maLPhong, @"^(lp|LP)\d+$"))
-                {
-                    maLPhong = "LP" + maLPhong.Substring(2);
-                    txtMaLoaiPhong.Text = maLPhong;
-                }
-                else
-                {
-                    return;
-                }
+                //if (System.Text.RegularExpressions.Regex.IsMatch(tenLDV, @"^(lp|LP)\d+$"))
+                //{
+                //    tenLDV = "LP" + tenLDV.Substring(2);
+                //    txtTenLDV.Text = tenLDV;
+                //}
+                //else
+                //{
+                //    return;
+                //}
 
-                BUS_LoaiDichVu.Instance.ThemLDV(txtMaLoaiDV, txtTenLDV, txtMaLoaiPhong);
+                BUS_LoaiDichVu.Instance.ThemLDV(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
             }
@@ -489,7 +477,7 @@ namespace QuanLyKhachSan
                 //{
                 //    MessageBox.Show("Sửa thông tin loại dịch vụ không thành công. Không tìm thấy loại dịch vụ.");
                 //}
-                BUS_LoaiDichVu.Instance.Sua(txtMaLoaiDV, txtTenLDV, txtMaLoaiPhong);
+                BUS_LoaiDichVu.Instance.Sua(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
             }
@@ -497,12 +485,14 @@ namespace QuanLyKhachSan
 
         private void dataGridViewLoaiDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dataGridViewLoaiDichVu.Rows[e.RowIndex];
+            //DataGridViewRow row = dataGridViewLoaiDichVu.Rows[e.RowIndex];
 
-            // Hiển thị thông tin của dòng được chọn lên các TextBox tương ứng
-            txtMaLoaiDV.Text = row.Cells[0].Value.ToString();
-            txtTenLDV.Text = row.Cells[1].Value.ToString();
-            txtMaLoaiPhong.Text = row.Cells[2].Value.ToString();
+            //// Hiển thị thông tin của dòng được chọn lên các TextBox tương ứng
+            //txtMaLoaiDV.Text = row.Cells[0].Value.ToString();
+            //txtTenLDV.Text = row.Cells[1].Value.ToString();
+            //txtMaLoaiPhong.Text = row.Cells[2].Value.ToString();
+
+            BUS_LoaiDichVu.Instance.LoadDGVLenForm(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong, dataGridViewLoaiDichVu);
 
             txtMaLoaiDV.Enabled = false;
             errorProvider1.SetError(txtMaLoaiDV, "");
@@ -586,11 +576,6 @@ namespace QuanLyKhachSan
         private void txtTenLDV_TextChanged(object sender, EventArgs e)
         {
             ValidateTenLDV();
-        }
-
-        private void txtMaLoaiPhong_TextChanged(object sender, EventArgs e)
-        {
-            ValidateMaLoaiPhong();
         }
 
         private void txtMaDV_TextChanged(object sender, EventArgs e)
