@@ -399,7 +399,6 @@ namespace QuanLyKhachSan
 
                 // Chuẩn hóa txtMaDV trước khi gọi phương thức ThemDV
                 string maLDV = txtMaLoaiDV.Text;
-                string tenLDV = txtTenLDV.Text;
 
                 // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
                 if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(dv|DV)\d+$"))
@@ -412,16 +411,6 @@ namespace QuanLyKhachSan
                     MessageBox.Show("Mã loại dịch vụ phải bắt đầu bằng 'dv' hoặc 'DV' và theo sau là số.");
                     return; // Thoát khỏi sự kiện nếu không hợp lệ
                 }
-
-                //if (System.Text.RegularExpressions.Regex.IsMatch(tenLDV, @"^(lp|LP)\d+$"))
-                //{
-                //    tenLDV = "LP" + tenLDV.Substring(2);
-                //    txtTenLDV.Text = tenLDV;
-                //}
-                //else
-                //{
-                //    return;
-                //}
 
                 BUS_LoaiDichVu.Instance.ThemLDV(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();

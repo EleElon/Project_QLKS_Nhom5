@@ -30,9 +30,19 @@ namespace BUS
         //{
         //    return dao_ldv.ThemLDV(maLDV, tenLDV, maLoaiPhong);
         //}
+        //public void ThemLDV(TextBox maLDV, TextBox tenLDV, ComboBox maLoaiPhong)
+        //{
+        //    DAO_LoaiDichVu.Instance.ThemLDV(maLDV, tenLDV, maLoaiPhong);
+        //}
         public void ThemLDV(TextBox maLDV, TextBox tenLDV, ComboBox maLoaiPhong)
         {
-            DAO_LoaiDichVu.Instance.ThemLDV(maLDV, tenLDV, maLoaiPhong);
+            LoaiDichVu ldv = new LoaiDichVu
+            {
+                MaLoaiDichVu = maLDV.Text,
+                TenLoaiDichVu = tenLDV.Text,
+                MaLoaiPhong = maLoaiPhong.SelectedValue.ToString()
+            };
+            DAO_LoaiDichVu.Instance.ThemLDV(ldv);
         }
         //public bool XoaLDV(string maLDV)
         //{
@@ -52,11 +62,28 @@ namespace BUS
             {
                 MaLoaiDichVu = maLDV.Text,
                 TenLoaiDichVu = tenLDV.Text,
-                MaLoaiPhong = maLoaiPhong.Text
+                MaLoaiPhong = maLoaiPhong.SelectedValue.ToString().Trim()
             };
             DAO_LoaiDichVu.Instance.SuaLoaiDichVu(dsldv);
         }
-
+        //public void Sua(TextBox maLDV, TextBox tenLDV, ComboBox maLoaiPhong)
+        //{
+        //    LoaiDichVu ldv = new LoaiDichVu
+        //    {
+        //        MaLoaiDichVu = maLDV.Text,
+        //        TenLoaiDichVu = tenLDV.Text,
+        //        MaLoaiPhong = maLoaiPhong.SelectedValue.ToString().Trim()
+        //    };
+        //    bool result = DAO_LoaiDichVu.Instance.SuaLoaiDichVu(ldv); // Capture the result
+        //    if (result)
+        //    {
+        //        MessageBox.Show("Sửa khách hàng thành công!");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Khách hàng không tồn tại hoặc sửa thất bại!");
+        //    }
+        //}
         public List<LoaiDichVu> View()
         {
             return dao_ldv.HienThiDanhSachLoaiDichVu();

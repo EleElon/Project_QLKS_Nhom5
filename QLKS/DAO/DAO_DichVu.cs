@@ -47,17 +47,39 @@ namespace DAO
         }
 
 
-        public void Them(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia)
+        //public void Them(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia)
+        //{
+        //    try
+        //    {
+        //        using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+        //        {
+        //            DichVu dv = new DichVu();
+        //            dv.MaDichVu = maDV.Text;
+        //            dv.MaLoaiDichVu = maLDV.Text;
+        //            dv.TenDichVu = tenDV.Text;
+        //            dv.Gia = float.Parse(gia.Text);
+
+        //            db.DichVus.InsertOnSubmit(dv);
+        //            db.SubmitChanges();
+        //            MessageBox.Show("Thêm thành công");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Thêm không thành công " + ex);
+        //    }
+        //}
+        public void Them(DichVu dv)
         {
             try
             {
                 using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-                    DichVu dv = new DichVu();
-                    dv.MaDichVu = maDV.Text;
-                    dv.MaLoaiDichVu = maLDV.Text;
-                    dv.TenDichVu = tenDV.Text;
-                    dv.Gia = float.Parse(gia.Text);
+                    //DichVu dv = new DichVu();
+                    //dv.MaDichVu = maDV.Text;
+                    //dv.MaLoaiDichVu = maLDV.Text;
+                    //dv.TenDichVu = tenDV.Text;
+                    //dv.Gia = float.Parse(gia.Text);
 
                     db.DichVus.InsertOnSubmit(dv);
                     db.SubmitChanges();
