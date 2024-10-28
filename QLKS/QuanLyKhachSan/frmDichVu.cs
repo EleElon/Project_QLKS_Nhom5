@@ -112,6 +112,8 @@ namespace QuanLyKhachSan
         {
 
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
+            txtMaSDDV.Enabled = false;
+            errorProvider1.SetError(txtMaSDDV, "");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -138,7 +140,7 @@ namespace QuanLyKhachSan
         private void ClearFormFields()
         {
             // Form DSLDV
-            txtMaSDDV.ReadOnly = false;
+            txtMaSDDV.Enabled = true;
             txtMaSDDV.Text = string.Empty;
             cbMaDichVu.SelectedIndex = 0;
             cbMaDatPhong.SelectedIndex = 0;
@@ -172,8 +174,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                txtMaSDDV.ReadOnly = true;
-                BUS_DanhSachDichVu.Instance.Sua(cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
                 LoadDuLieuLenForm();
                 ClearFormFields();
             }
@@ -192,7 +193,7 @@ namespace QuanLyKhachSan
         private bool ValidateForm()
         {
             ValidateSoLuong(); // Kiểm tra số lượng
-            ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
+            //ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
 
             // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
             return string.IsNullOrEmpty(errorProvider1.GetError(txtSoLuong)) &&
@@ -399,6 +400,7 @@ namespace QuanLyKhachSan
 
                 // Chuẩn hóa txtMaDV trước khi gọi phương thức ThemDV
                 string maLDV = txtMaLoaiDV.Text;
+                string tenLDV = txtTenLDV.Text;
 
                 // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
                 if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(dv|DV)\d+$"))
@@ -412,9 +414,20 @@ namespace QuanLyKhachSan
                     return; // Thoát khỏi sự kiện nếu không hợp lệ
                 }
 
+                //if (System.Text.RegularExpressions.Regex.IsMatch(tenLDV, @"^(lp|LP)\d+$"))
+                //{
+                //    tenLDV = "LP" + tenLDV.Substring(2);
+                //    txtTenLDV.Text = tenLDV;
+                //}
+                //else
+                //{
+                //    return;
+                //}
+
                 BUS_LoaiDichVu.Instance.ThemLDV(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
+                LoadMaLoaiDichVu();
             }
         }
 
@@ -437,6 +450,7 @@ namespace QuanLyKhachSan
                 BUS_LoaiDichVu.Instance.XoaLDV(txtMaLoaiDV);
                 LoadDuLieuLDV();
                 ClearFormFields();
+                LoadMaLoaiDichVu();
             }
         }
 
@@ -462,6 +476,7 @@ namespace QuanLyKhachSan
                 BUS_LoaiDichVu.Instance.Sua(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
+                LoadMaLoaiDichVu();
             }
         }
 
@@ -584,6 +599,11 @@ namespace QuanLyKhachSan
         }
 
         private void btnLamMoiLDV_Click(object sender, EventArgs e)
+        {
+            ClearFormFields();
+        }
+
+        private void btnLamMoiDSSDDV_Click(object sender, EventArgs e)
         {
             ClearFormFields();
         }

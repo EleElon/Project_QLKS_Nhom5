@@ -146,7 +146,6 @@ namespace QuanLyKhachSan
             {
                 txtMaKH.Enabled = true;
             }
-            
         }
 
         //ràng buộc sdt

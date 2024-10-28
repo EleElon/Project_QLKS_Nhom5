@@ -142,7 +142,6 @@ namespace DAO
                 }
             }
         }
-
         public bool Sua(DanhSachSuDungDichVu daDV)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))

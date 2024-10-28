@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace QuanLyKhachSan
 {
@@ -51,6 +51,7 @@ namespace QuanLyKhachSan
             this.btnThemDV = new System.Windows.Forms.Button();
             this.tbSĐichVu = new System.Windows.Forms.TabPage();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnLamMoiDSSDDV = new System.Windows.Forms.Button();
             this.btnCapNhap = new System.Windows.Forms.Button();
             this.btnHuyPhieu = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -331,6 +332,7 @@ namespace QuanLyKhachSan
             // 
             this.tbSĐichVu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tbSĐichVu.Controls.Add(this.btnThem);
+            this.tbSĐichVu.Controls.Add(this.btnLamMoiDSSDDV);
             this.tbSĐichVu.Controls.Add(this.btnCapNhap);
             this.tbSĐichVu.Controls.Add(this.btnHuyPhieu);
             this.tbSĐichVu.Controls.Add(this.groupBox3);
@@ -358,10 +360,23 @@ namespace QuanLyKhachSan
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+
+            // btnLamMoiDSSDDV
+            // 
+            this.btnLamMoiDSSDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiDSSDDV.Location = new System.Drawing.Point(843, 447);
+            this.btnLamMoiDSSDDV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoiDSSDDV.Name = "btnLamMoiDSSDDV";
+            this.btnLamMoiDSSDDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiDSSDDV.TabIndex = 18;
+            this.btnLamMoiDSSDDV.Text = "Làm Mới";
+            this.btnLamMoiDSSDDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiDSSDDV.Click += new System.EventHandler(this.btnLamMoiDSSDDV_Click);
+            // 
             // btnCapNhap
             // 
             this.btnCapNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhap.Location = new System.Drawing.Point(747, 447);
+            this.btnCapNhap.Location = new System.Drawing.Point(652, 447);
             this.btnCapNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(111, 39);
@@ -373,7 +388,8 @@ namespace QuanLyKhachSan
             // btnHuyPhieu
             // 
             this.btnHuyPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyPhieu.Location = new System.Drawing.Point(497, 447);
+
+            this.btnHuyPhieu.Location = new System.Drawing.Point(436, 447);
             this.btnHuyPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyPhieu.Name = "btnHuyPhieu";
             this.btnHuyPhieu.Size = new System.Drawing.Size(111, 39);
@@ -718,6 +734,7 @@ namespace QuanLyKhachSan
             // 
             this.cboMaLoaiPhong.FormattingEnabled = true;
             this.cboMaLoaiPhong.Location = new System.Drawing.Point(141, 201);
+            this.cboMaLoaiPhong.Margin = new System.Windows.Forms.Padding(2);
             this.cboMaLoaiPhong.Name = "cboMaLoaiPhong";
             this.cboMaLoaiPhong.Size = new System.Drawing.Size(130, 25);
             this.cboMaLoaiPhong.TabIndex = 4;
@@ -755,10 +772,6 @@ namespace QuanLyKhachSan
 
         }
 
-        private void txtMaLoaiPhong_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
 
@@ -815,6 +828,7 @@ namespace QuanLyKhachSan
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button btnLamMoiDV;
         private System.Windows.Forms.Button btnLamMoiLDV;
+        private System.Windows.Forms.Button btnLamMoiDSSDDV;
         private System.Windows.Forms.ComboBox cboMaLoaiPhong;
     }
 }
