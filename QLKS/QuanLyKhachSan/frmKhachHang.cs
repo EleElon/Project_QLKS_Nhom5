@@ -103,7 +103,7 @@ namespace QuanLyKhachSan
             errorProvider1.SetError(txtSDT, "");
             errorProvider1.SetError(txtDiaChi, "");
 
-            txtMaKH.Enabled =true;
+            txtMaKH.Enabled = true;
 
         }
         //Xóa khách hàng
@@ -116,9 +116,9 @@ namespace QuanLyKhachSan
         //DatagridView khách hàng
         private void dgvDSKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
 
-            
+
+
             BUS_KhachHang.Instance.LoadDGVLenForm(txtMaKH, cbMaDichVu, txtTenKH, txtCCCD, txtEmail, txtSDT, txtDiaChi, dgvDSKhachHang);
             txtMaKH.Enabled = false;
 
@@ -389,7 +389,7 @@ namespace QuanLyKhachSan
                 errorProvider1.SetError(txtCCCD, "");  // Xóa lỗi nếu hợp lệ
             }
         }
-        
+
         private void txtCCCD_Leave(object sender, EventArgs e)
         {
             ValidateCCCD();

@@ -168,5 +168,13 @@ namespace DAO
             }
             return data;
         }
+        public bool CheckMaExists(string maLDV)
+        {
+            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
+            {
+                // Sử dụng LINQ để kiểm tra trùng mã
+                return context.LoaiDichVus.Any(a => a.MaLoaiDichVu == maLDV);
+            }
+        }
     }
 }

@@ -80,6 +80,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.btnLamMoiDV = new System.Windows.Forms.Button();
+            this.btnLamMoiLDV = new System.Windows.Forms.Button();
             this.tbDichVu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -113,6 +115,7 @@
             this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.btnLamMoiDV);
             this.tabPage1.Controls.Add(this.btnCapNhat);
             this.tabPage1.Controls.Add(this.btnXoaDV);
             this.tabPage1.Controls.Add(this.label1);
@@ -190,6 +193,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(163, 28);
             this.txtGia.TabIndex = 2;
+            this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             // 
             // label5
             // 
@@ -208,6 +212,7 @@
             this.txtTenDV.Name = "txtTenDV";
             this.txtTenDV.Size = new System.Drawing.Size(163, 28);
             this.txtTenDV.TabIndex = 2;
+            this.txtTenDV.TextChanged += new System.EventHandler(this.txtTenDV_TextChanged);
             // 
             // label4
             // 
@@ -236,6 +241,7 @@
             this.txtMaDV.Name = "txtMaDV";
             this.txtMaDV.Size = new System.Drawing.Size(163, 28);
             this.txtMaDV.TabIndex = 2;
+            this.txtMaDV.TextChanged += new System.EventHandler(this.txtMaDV_TextChanged);
             // 
             // label2
             // 
@@ -250,7 +256,7 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(735, 437);
+            this.btnCapNhat.Location = new System.Drawing.Point(646, 436);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(111, 39);
@@ -262,7 +268,7 @@
             // btnXoaDV
             // 
             this.btnXoaDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaDV.Location = new System.Drawing.Point(526, 437);
+            this.btnXoaDV.Location = new System.Drawing.Point(451, 436);
             this.btnXoaDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(111, 39);
@@ -286,7 +292,7 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(105, 437);
+            this.btnThoat.Location = new System.Drawing.Point(77, 436);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(111, 39);
@@ -298,7 +304,7 @@
             // btnThemDV
             // 
             this.btnThemDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemDV.Location = new System.Drawing.Point(316, 437);
+            this.btnThemDV.Location = new System.Drawing.Point(260, 436);
             this.btnThemDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemDV.Name = "btnThemDV";
             this.btnThemDV.Size = new System.Drawing.Size(111, 39);
@@ -513,6 +519,7 @@
             // tbLoaiDichVu
             // 
             this.tbLoaiDichVu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbLoaiDichVu.Controls.Add(this.btnLamMoiLDV);
             this.tbLoaiDichVu.Controls.Add(this.btnCapNhatLDV);
             this.tbLoaiDichVu.Controls.Add(this.btnXoaLDV);
             this.tbLoaiDichVu.Controls.Add(this.btnThoatLDV);
@@ -531,7 +538,7 @@
             // btnCapNhatLDV
             // 
             this.btnCapNhatLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhatLDV.Location = new System.Drawing.Point(758, 420);
+            this.btnCapNhatLDV.Location = new System.Drawing.Point(676, 420);
             this.btnCapNhatLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhatLDV.Name = "btnCapNhatLDV";
             this.btnCapNhatLDV.Size = new System.Drawing.Size(111, 39);
@@ -543,7 +550,7 @@
             // btnXoaLDV
             // 
             this.btnXoaLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaLDV.Location = new System.Drawing.Point(515, 420);
+            this.btnXoaLDV.Location = new System.Drawing.Point(455, 420);
             this.btnXoaLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaLDV.Name = "btnXoaLDV";
             this.btnXoaLDV.Size = new System.Drawing.Size(111, 39);
@@ -567,7 +574,7 @@
             // btnThemLDV
             // 
             this.btnThemLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemLDV.Location = new System.Drawing.Point(266, 404);
+            this.btnThemLDV.Location = new System.Drawing.Point(242, 420);
             this.btnThemLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemLDV.Name = "btnThemLDV";
             this.btnThemLDV.Size = new System.Drawing.Size(111, 39);
@@ -628,6 +635,7 @@
             this.txtMaLoaiPhong.Name = "txtMaLoaiPhong";
             this.txtMaLoaiPhong.Size = new System.Drawing.Size(130, 24);
             this.txtMaLoaiPhong.TabIndex = 4;
+            this.txtMaLoaiPhong.TextChanged += new System.EventHandler(this.txtMaLoaiPhong_TextChanged);
             // 
             // label13
             // 
@@ -646,6 +654,7 @@
             this.txtTenLDV.Name = "txtTenLDV";
             this.txtTenLDV.Size = new System.Drawing.Size(130, 24);
             this.txtTenLDV.TabIndex = 2;
+            this.txtTenLDV.TextChanged += new System.EventHandler(this.txtTenLDV_TextChanged);
             // 
             // label11
             // 
@@ -664,6 +673,7 @@
             this.txtMaLoaiDV.Name = "txtMaLoaiDV";
             this.txtMaLoaiDV.Size = new System.Drawing.Size(130, 24);
             this.txtMaLoaiDV.TabIndex = 2;
+            this.txtMaLoaiDV.TextChanged += new System.EventHandler(this.txtMaLoaiDV_TextChanged);
             // 
             // label12
             // 
@@ -686,6 +696,30 @@
             this.label14.Size = new System.Drawing.Size(198, 36);
             this.label14.TabIndex = 27;
             this.label14.Text = "Loại Dịch Vụ";
+            // 
+            // btnLamMoiDV
+            // 
+            this.btnLamMoiDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiDV.Location = new System.Drawing.Point(837, 436);
+            this.btnLamMoiDV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoiDV.Name = "btnLamMoiDV";
+            this.btnLamMoiDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiDV.TabIndex = 25;
+            this.btnLamMoiDV.Text = "Làm Mới";
+            this.btnLamMoiDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiDV.Click += new System.EventHandler(this.btnLamMoiDV_Click);
+            // 
+            // btnLamMoiLDV
+            // 
+            this.btnLamMoiLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiLDV.Location = new System.Drawing.Point(879, 420);
+            this.btnLamMoiLDV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoiLDV.Name = "btnLamMoiLDV";
+            this.btnLamMoiLDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiLDV.TabIndex = 30;
+            this.btnLamMoiLDV.Text = "Làm Mới";
+            this.btnLamMoiLDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiLDV.Click += new System.EventHandler(this.btnLamMoiLDV_Click);
             // 
             // frmDichVu
             // 
@@ -774,5 +808,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Button btnLamMoiDV;
+        private System.Windows.Forms.Button btnLamMoiLDV;
     }
 }

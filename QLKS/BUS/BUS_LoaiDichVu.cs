@@ -74,5 +74,9 @@ namespace BUS
             }).ToList();
             data.DataSource = dv;
         }
+        public bool CheckMaLDVExists(string maLDV)
+        {
+            return DAO_LoaiDichVu.Instance.CheckMaExists(maLDV);
+        }
     }
 }
