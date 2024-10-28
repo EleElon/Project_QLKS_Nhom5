@@ -37,20 +37,20 @@ namespace BUS
                     t.Email,
                     t.SDT,
                     t.DiaChi
-                 
+
                 };
             }).ToList();
             data.DataSource = dv;
         }
-      //load dịch vụ
+        //load dịch vụ
         public void LoadDichVu(ComboBox cb)
         {
             DAO_KhachHang.Instance.LoadComBoBoxDichVu(cb);
         }
         //hiển thị tất cả các khách hàng lên form
-        public void LoadDGVLenForm(TextBox ma, ComboBox maDV, TextBox tenKH,TextBox cccd,TextBox email, TextBox sdt,TextBox diaChi, DataGridView data)
+        public void LoadDGVLenForm(TextBox ma, ComboBox maDV, TextBox tenKH, TextBox cccd, TextBox email, TextBox sdt, TextBox diaChi, DataGridView data)
         {
-            DAO_KhachHang.Instance.LoadDGVForm(ma, maDV, tenKH,cccd,email,sdt,diaChi, data);
+            DAO_KhachHang.Instance.LoadDGVForm(ma, maDV, tenKH, cccd, email, sdt, diaChi, data);
         }
         //Thêm khách ahngf
         public void Them(TextBox ma, ComboBox maDV, TextBox tenKH, TextBox cccd, TextBox email, TextBox sdt, TextBox diaChi)
@@ -73,11 +73,11 @@ namespace BUS
             DAO_KhachHang.Instance.Xoa(ma.Text);
         }
         //Sửa khách hàng
-        public void Sua( ComboBox maDichVu, TextBox tenKH, TextBox cccd, TextBox email, TextBox sdt, TextBox diaChi)
+        public void Sua(TextBox maKH, ComboBox maDichVu, TextBox tenKH, TextBox cccd, TextBox email, TextBox sdt, TextBox diaChi)
         {
             KhachHang kh = new KhachHang
             {
-               
+                MaKhachHang = maKH.Text,
                 MaDichVu = maDichVu.Text,
                 TenKhachHang = tenKH.Text,
                 CCCD = cccd.Text,
