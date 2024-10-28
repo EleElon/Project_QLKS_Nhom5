@@ -433,6 +433,7 @@ namespace QuanLyKhachSan
                 BUS_LoaiDichVu.Instance.ThemLDV(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
+                LoadMaLoaiDichVu();
             }
         }
 
@@ -455,6 +456,7 @@ namespace QuanLyKhachSan
                 BUS_LoaiDichVu.Instance.XoaLDV(txtMaLoaiDV);
                 LoadDuLieuLDV();
                 ClearFormFields();
+                LoadMaLoaiDichVu();
             }
         }
 
@@ -480,6 +482,7 @@ namespace QuanLyKhachSan
                 BUS_LoaiDichVu.Instance.Sua(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
+                LoadMaLoaiDichVu();
             }
         }
 
@@ -609,7 +612,6 @@ namespace QuanLyKhachSan
         private void btnLamMoiDSSDDV_Click(object sender, EventArgs e)
         {
             ClearFormFields();
-            LoadFormDV();
         }
     }
 }
