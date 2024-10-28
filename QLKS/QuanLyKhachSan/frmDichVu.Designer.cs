@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace QuanLyKhachSan
 {
@@ -76,16 +75,15 @@ namespace QuanLyKhachSan
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridViewLoaiDichVu = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.cboMaLoaiPhong = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtTenLDV = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtMaLoaiDV = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnLamMoiDSSDDV = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.cboMaLoaiPhong = new System.Windows.Forms.ComboBox();
             this.tbDichVu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -259,10 +257,15 @@ namespace QuanLyKhachSan
             // 
             // btnLamMoiDV
             // 
-            this.btnLamMoiDV.Location = new System.Drawing.Point(0, 0);
+            this.btnLamMoiDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiDV.Location = new System.Drawing.Point(837, 436);
+            this.btnLamMoiDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoiDV.Name = "btnLamMoiDV";
-            this.btnLamMoiDV.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoiDV.Size = new System.Drawing.Size(111, 39);
             this.btnLamMoiDV.TabIndex = 25;
+            this.btnLamMoiDV.Text = "Làm Mới";
+            this.btnLamMoiDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiDV.Click += new System.EventHandler(this.btnLamMoiDV_Click);
             // 
             // btnCapNhat
             // 
@@ -548,10 +551,15 @@ namespace QuanLyKhachSan
             // 
             // btnLamMoiLDV
             // 
-            this.btnLamMoiLDV.Location = new System.Drawing.Point(0, 0);
+            this.btnLamMoiLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoiLDV.Location = new System.Drawing.Point(879, 420);
+            this.btnLamMoiLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoiLDV.Name = "btnLamMoiLDV";
-            this.btnLamMoiLDV.Size = new System.Drawing.Size(75, 23);
-            this.btnLamMoiLDV.TabIndex = 0;
+            this.btnLamMoiLDV.Size = new System.Drawing.Size(111, 39);
+            this.btnLamMoiLDV.TabIndex = 30;
+            this.btnLamMoiLDV.Text = "Làm Mới";
+            this.btnLamMoiLDV.UseVisualStyleBackColor = true;
+            this.btnLamMoiLDV.Click += new System.EventHandler(this.btnLamMoiLDV_Click);
             // 
             // btnCapNhatLDV
             // 
@@ -646,13 +654,6 @@ namespace QuanLyKhachSan
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Phiếu Loại Dịch Vụ";
             // 
-            // cboMaLoaiPhong
-            // 
-            this.cboMaLoaiPhong.Location = new System.Drawing.Point(141, 201);
-            this.cboMaLoaiPhong.Name = "cboMaLoaiPhong";
-            this.cboMaLoaiPhong.Size = new System.Drawing.Size(130, 25);
-            this.cboMaLoaiPhong.TabIndex = 0;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -713,17 +714,13 @@ namespace QuanLyKhachSan
             this.label14.TabIndex = 27;
             this.label14.Text = "Loại Dịch Vụ";
             // 
-            // btnLamMoiDSSDDV
+            // cboMaLoaiPhong
             // 
-            this.btnLamMoiDSSDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoiDSSDDV.Location = new System.Drawing.Point(843, 447);
-            this.btnLamMoiDSSDDV.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLamMoiDSSDDV.Name = "btnLamMoiDSSDDV";
-            this.btnLamMoiDSSDDV.Size = new System.Drawing.Size(111, 39);
-            this.btnLamMoiDSSDDV.TabIndex = 18;
-            this.btnLamMoiDSSDDV.Text = "Làm Mới";
-            this.btnLamMoiDSSDDV.UseVisualStyleBackColor = true;
-            this.btnLamMoiDSSDDV.Click += new System.EventHandler(this.btnLamMoiDSSDDV_Click);
+            this.cboMaLoaiPhong.FormattingEnabled = true;
+            this.cboMaLoaiPhong.Location = new System.Drawing.Point(141, 201);
+            this.cboMaLoaiPhong.Name = "cboMaLoaiPhong";
+            this.cboMaLoaiPhong.Size = new System.Drawing.Size(130, 25);
+            this.cboMaLoaiPhong.TabIndex = 4;
             // 
             // frmDichVu
             // 
@@ -758,7 +755,7 @@ namespace QuanLyKhachSan
 
         }
 
-        private void btnLamMoiDSSDDV_Click(object sender, EventArgs e)
+        private void txtMaLoaiPhong_TextChanged(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
@@ -816,9 +813,8 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private ComboBox cboMaLoaiPhong;
         private System.Windows.Forms.Button btnLamMoiDV;
         private System.Windows.Forms.Button btnLamMoiLDV;
-        private System.Windows.Forms.Button btnLamMoiDSSDDV;
+        private System.Windows.Forms.ComboBox cboMaLoaiPhong;
     }
 }
