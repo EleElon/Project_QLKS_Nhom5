@@ -41,7 +41,7 @@ namespace DAO
         }
 
 
-        public bool themPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
+        public bool themPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -92,7 +92,7 @@ namespace DAO
                 }
             }
         }
-        public bool suaPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
+        public bool suaPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {

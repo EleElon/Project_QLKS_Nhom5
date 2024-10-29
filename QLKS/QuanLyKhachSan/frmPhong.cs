@@ -42,7 +42,7 @@ namespace QuanLyKhachSan
             }
            
         }
-        public void ThemPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
+        public void ThemPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
             {
@@ -91,7 +91,7 @@ namespace QuanLyKhachSan
 
                 // Lấy mã phòng và số phòng từ TextBox
                 string maPhong = txtMaPhong.Text;
-                int soPhong = int.Parse(txtSoPhong.Text);
+                string soPhong = txtSoPhong.Text;
 
                 // Gọi phương thức ThemPhong để thêm phòng mới
                 ThemPhong(maPhong, maLoaiPhong, soPhong, tinhTrang);

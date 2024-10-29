@@ -18,7 +18,7 @@ namespace BUS
         {
             return phongDAO.Xem();
         }
-        public bool themPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
+        public bool themPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             return phongDAO.themPhong(maPhong, maLoaiPhong, soPhong, tinhTrang);
         }
@@ -28,7 +28,7 @@ namespace BUS
         }
 
         // Gọi hàm sửa phòng
-        public bool suaPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
+        public bool suaPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             return phongDAO.suaPhong(maPhong, maLoaiPhong, soPhong, tinhTrang);
         }

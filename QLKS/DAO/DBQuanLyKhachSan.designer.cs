@@ -3469,7 +3469,7 @@ namespace DAO
 		
 		private string _MaLoaiPhong;
 		
-		private int _SoPhong;
+		private string _SoPhong;
 		
 		private string _TinhTrang;
 		
@@ -3489,7 +3489,7 @@ namespace DAO
     partial void OnMaPhongChanged();
     partial void OnMaLoaiPhongChanging(string value);
     partial void OnMaLoaiPhongChanged();
-    partial void OnSoPhongChanging(int value);
+    partial void OnSoPhongChanging(string value);
     partial void OnSoPhongChanged();
     partial void OnTinhTrangChanging(string value);
     partial void OnTinhTrangChanged();
@@ -3548,8 +3548,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoPhong", DbType="Int NOT NULL")]
-		public int SoPhong
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoPhong", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string SoPhong
 		{
 			get
 			{
