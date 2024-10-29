@@ -145,7 +145,6 @@ namespace DAO
                     var rowIndex = data.SelectedCells[0].RowIndex;
                     var row = data.Rows[rowIndex];
 
-                    // Gán giá trị vào các TextBox
                     maNV.Text = row.Cells[0].Value.ToString().Trim();
                     string selectedMaPhong = row.Cells[1].Value.ToString().Trim();
                     tenNV.Text = row.Cells[2].Value.ToString().Trim();
@@ -166,7 +165,7 @@ namespace DAO
         }
         public bool CheckMaExists(string maNV)
         {
-            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
+            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 return context.NhanViens.Any(nv => nv.MaNhanVien == maNV);
             }

@@ -22,11 +22,8 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
         }
-
-
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-            //DSNhanVien(dgvNhanVien);
             LoadDataNV();
             LoadComboMaPhong();
             FormNhanVienDataBinding();
@@ -142,7 +139,6 @@ namespace QuanLyKhachSan
         {
             BUS_NhanVien.Instance.View(dgvNhanVien);
         }
-
         public void DSNhanVien(DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
