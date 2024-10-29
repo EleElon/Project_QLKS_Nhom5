@@ -69,7 +69,7 @@ namespace QuanLyKhachSan
             {
                 errorProvider.SetError(txtMaNV, "Vui lòng nhập mã nhân viên! bắt đầu từ NV / nv sau đó là ký tự số");
             }
-            else if (BUS_NhanVien.instance.CheckMaDVExists(txtMaNV.Text))
+            else if (BUS_NhanVien.instance.CheckMaNVExists(txtMaNV.Text))
             {
                 errorProvider.SetError(txtMaNV, "Mã nhân viên đã tồn tại");
             }
@@ -122,9 +122,13 @@ namespace QuanLyKhachSan
             {
                 errorProvider.SetError(txtLuong, "Vui lòng nhập lương");
             }
-            else if (!int.TryParse(txtLuong.Text, out _))
+            else if (!int.TryParse(txtLuong.Text, out int luong))
             {
                 errorProvider.SetError(txtLuong, "Vui lòng nhập số hợp lệ");
+            }
+            else if (luong < 0)
+            {
+                errorProvider.SetError(txtLuong, "Lương không thể là số âm");
             }
             else
             {
@@ -173,13 +177,13 @@ namespace QuanLyKhachSan
 
                 if (System.Text.RegularExpressions.Regex.IsMatch(maNV, @"^(nv|NV)\d+$"))
                 {
-                    maNV = "NV" + maNV.Substring(2); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
-                    txtMaNV.Text = maNV; // Gán lại giá trị đã chuẩn hóa cho txtMaDV
+                    maNV = "NV" + maNV.Substring(2);
+                    txtMaNV.Text = maNV;
                 }
                 else
                 {
                     MessageBox.Show("Mã dịch vụ phải bắt đầu bằng 'dv' hoặc 'DV' và theo sau là số.");
-                    return; // Thoát khỏi sự kiện nếu không hợp lệ
+                    return;
                 }
 
                 BUS_NhanVien.Instance.ThemNhanVien(txtMaNV, cboMaPhong, txtTenNV, txtChucVu, txtLuong);

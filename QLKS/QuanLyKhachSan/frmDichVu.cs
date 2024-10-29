@@ -355,9 +355,17 @@ namespace QuanLyKhachSan
             {
                 errorProvider1.SetError(txtGia, "Vui lòng nhập giá!");
             }
-            else if (!int.TryParse(txtGia.Text, out _))
+            //else if (!int.TryParse(txtGia.Text, out _))
+            //{
+            //    errorProvider1.SetError(txtGia, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
+            //}
+            else if (!int.TryParse(txtGia.Text, out int gia))
             {
                 errorProvider1.SetError(txtGia, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
+            }
+            else if (gia < 0)
+            {
+                errorProvider1.SetError(txtGia, "Giá không thể là số âm");
             }
             else
             {

@@ -77,7 +77,7 @@ namespace BUS
         {
             DAO_NhanVien.Instance.LoadDGVForm(maNV, maPhong, tenNV, chucVu, luong, data);
         }
-        public bool CheckMaDVExists(string maNV)
+        public bool CheckMaNVExists(string maNV)
         {
             return DAO_NhanVien.Instance.CheckMaExists(maNV);
         }

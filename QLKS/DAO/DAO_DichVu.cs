@@ -162,8 +162,8 @@ namespace DAO
                                     .ToList();
 
                 cb.DataSource = loaiDichVus;
-                cb.DisplayMember = "TenLoaiDichVu"; // Hiển thị tên dịch vụ
-                cb.ValueMember = "MaLoaiDichVu"; // Giá trị là mã dịch vụ
+                cb.DisplayMember = "TenLoaiDichVu";
+                cb.ValueMember = "MaLoaiDichVu";
             }
         }
 
@@ -176,16 +176,14 @@ namespace DAO
                     var rowIndex = data.SelectedCells[0].RowIndex;
                     var row = data.Rows[rowIndex];
 
-                    // Gán giá trị vào các TextBox
                     maDV.Text = row.Cells[0].Value.ToString().Trim();
                     string selectedMaLDV = row.Cells[1].Value.ToString().Trim();
                     tenDV.Text = row.Cells[2].Value.ToString().Trim();
                     gia.Text = row.Cells[3].Value.ToString().Trim();
 
-                    // Tìm đối tượng trong ComboBox có mã trùng với mã được chọn từ DataGridView
                     foreach (var item in maLDV.Items)
                     {
-                        var loaiDichVu = item as dynamic; // Chuyển đối tượng sang kiểu động nếu cần
+                        var loaiDichVu = item as dynamic;
                         if (loaiDichVu != null && loaiDichVu.MaLoaiDichVu == selectedMaLDV)
                         {
                             maLDV.SelectedItem = item;
@@ -197,9 +195,8 @@ namespace DAO
         }
         public bool CheckMaExists(string maDV)
         {
-            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
+            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                // Sử dụng LINQ để kiểm tra trùng mã
                 return context.DichVus.Any(dv => dv.MaDichVu == maDV);
             }
         }
