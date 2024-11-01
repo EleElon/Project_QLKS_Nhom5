@@ -270,5 +270,12 @@ namespace QuanLyKhachSan
         {
             ValidateLuong();
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            frmTimKiemNhanVien fr = new frmTimKiemNhanVien();
+            fr.Show();
+            this.Close();
+        }
     }
 }

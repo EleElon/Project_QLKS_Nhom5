@@ -47,6 +47,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -121,7 +122,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(679, 531);
+            this.btnSua.Location = new System.Drawing.Point(575, 531);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(111, 39);
             this.btnSua.TabIndex = 17;
@@ -210,7 +211,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(283, 531);
+            this.btnThem.Location = new System.Drawing.Point(234, 531);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(111, 39);
             this.btnThem.TabIndex = 16;
@@ -221,7 +222,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(477, 531);
+            this.btnXoa.Location = new System.Drawing.Point(397, 531);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(111, 39);
             this.btnXoa.TabIndex = 15;
@@ -232,7 +233,7 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(84, 531);
+            this.btnThoat.Location = new System.Drawing.Point(50, 531);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(111, 39);
             this.btnThoat.TabIndex = 14;
@@ -243,13 +244,24 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.Location = new System.Drawing.Point(872, 531);
+            this.btnLamMoi.Location = new System.Drawing.Point(739, 531);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(111, 39);
             this.btnLamMoi.TabIndex = 17;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Location = new System.Drawing.Point(925, 531);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(111, 39);
+            this.btnTimKiem.TabIndex = 17;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // frmNhanVien
             // 
@@ -258,6 +270,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1092, 597);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.groupBox1);
@@ -299,5 +312,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

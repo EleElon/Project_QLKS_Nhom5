@@ -44,7 +44,7 @@ namespace QuanLyKhachSan
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnThayDoi_Click(sender, e); // Gọi sự kiện tìm kiếm
+                //btnThayDoi_Click(sender, e); // Gọi sự kiện tìm kiếm
             }
         }
     }
