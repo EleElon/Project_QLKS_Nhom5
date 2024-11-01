@@ -84,26 +84,30 @@ namespace DAO
 
             return list;
         }
-        public List<NhanVien> Xem()
+        public List<NhanVien> TimKiemTheoLuong(bool tangDan)
         {
-            List<NhanVien> data = new List<NhanVien>();
+            List<NhanVien> list = new List<NhanVien>();
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                var nv = db.NhanViens.ToList();
+                // Sắp xếp danh sách nhân viên theo lương
+                var nhanViens = tangDan
+                    ? db.NhanViens.OrderBy(nv => nv.Luong).ToList()
+                    : db.NhanViens.OrderByDescending(nv => nv.Luong).ToList();
 
-                foreach (var item in nv)
+                foreach (var s in nhanViens)
                 {
-                    data.Add(new NhanVien
+                    NhanVien nv = new NhanVien
                     {
-                        MaNhanVien = item.MaNhanVien,
-                        MaPhong = item.MaPhong,
-                        TenNhanVien = item.TenNhanVien,
-                        ChucVu = item.ChucVu,
-                        Luong = item.Luong
-                    });
+                        MaNhanVien = s.MaNhanVien,
+                        MaPhong = s.MaPhong,
+                        TenNhanVien = s.TenNhanVien,
+                        ChucVu = s.ChucVu,
+                        Luong = s.Luong
+                    };
+                    list.Add(nv);
                 }
             }
-            return data;
+            return list;
         }
     }
 }
