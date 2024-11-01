@@ -10,7 +10,7 @@ namespace BUS
     public class BUS_DSPhong
     {
         public DAO_DSPhong phongDAO = new DAO_DSPhong();
-        public DAO_LoaiPhong loaiPhongDAO = new DAO_LoaiPhong();
+      
 
 
 

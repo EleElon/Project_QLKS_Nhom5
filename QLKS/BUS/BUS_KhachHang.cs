@@ -83,7 +83,7 @@ namespace BUS
                 CCCD = cccd.Text,
                 Email = email.Text,
                 SDT = sdt.Text,
-                DiaChi = diaChi.Text,
+                DiaChi = diaChi.Text,   
             };
             bool result = DAO_KhachHang.Instance.Sua(kh); // Capture the result
             if (result)

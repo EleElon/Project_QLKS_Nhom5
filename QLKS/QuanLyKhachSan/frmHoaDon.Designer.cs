@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ccbNhanVien = new System.Windows.Forms.ComboBox();
             this.dtpNgayXuat = new System.Windows.Forms.DateTimePicker();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ccbMaSDDV = new System.Windows.Forms.ComboBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.cboPTTT = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.txtPhuThu = new System.Windows.Forms.TextBox();
             this.txtGiamGia = new System.Windows.Forms.TextBox();
             this.txtSoNgayThue = new System.Windows.Forms.TextBox();
-            this.txtMaSuDungDichVu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -70,8 +70,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ccbNhanVien);
             this.groupBox1.Controls.Add(this.dtpNgayXuat);
-            this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.txtMaHoaDon);
             this.groupBox1.Controls.Add(this.txtMaKH);
             this.groupBox1.Controls.Add(this.label5);
@@ -88,6 +88,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chung";
             // 
+            // ccbNhanVien
+            // 
+            this.ccbNhanVien.FormattingEnabled = true;
+            this.ccbNhanVien.Location = new System.Drawing.Point(821, 89);
+            this.ccbNhanVien.Name = "ccbNhanVien";
+            this.ccbNhanVien.Size = new System.Drawing.Size(235, 30);
+            this.ccbNhanVien.TabIndex = 3;
+            // 
             // dtpNgayXuat
             // 
             this.dtpNgayXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,15 +105,6 @@
             this.dtpNgayXuat.Name = "dtpNgayXuat";
             this.dtpNgayXuat.Size = new System.Drawing.Size(235, 30);
             this.dtpNgayXuat.TabIndex = 2;
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(821, 85);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(235, 30);
-            this.txtMaNV.TabIndex = 1;
             // 
             // txtMaHoaDon
             // 
@@ -171,6 +170,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ccbMaSDDV);
             this.groupBox2.Controls.Add(this.dgvHoaDon);
             this.groupBox2.Controls.Add(this.cboPTTT);
             this.groupBox2.Controls.Add(this.label14);
@@ -182,7 +182,6 @@
             this.groupBox2.Controls.Add(this.txtPhuThu);
             this.groupBox2.Controls.Add(this.txtGiamGia);
             this.groupBox2.Controls.Add(this.txtSoNgayThue);
-            this.groupBox2.Controls.Add(this.txtMaSuDungDichVu);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
@@ -200,6 +199,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Hóa Đơn";
             // 
+            // ccbMaSDDV
+            // 
+            this.ccbMaSDDV.FormattingEnabled = true;
+            this.ccbMaSDDV.Location = new System.Drawing.Point(215, 94);
+            this.ccbMaSDDV.Name = "ccbMaSDDV";
+            this.ccbMaSDDV.Size = new System.Drawing.Size(160, 30);
+            this.ccbMaSDDV.TabIndex = 4;
+            // 
             // dgvHoaDon
             // 
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.White;
@@ -215,11 +222,15 @@
             // 
             this.cboPTTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPTTT.FormattingEnabled = true;
+            this.cboPTTT.Items.AddRange(new object[] {
+            "Tín Dụng Ngân Hàng",
+            "Tiền Mặt"});
             this.cboPTTT.Location = new System.Drawing.Point(215, 149);
             this.cboPTTT.Margin = new System.Windows.Forms.Padding(4);
             this.cboPTTT.Name = "cboPTTT";
             this.cboPTTT.Size = new System.Drawing.Size(160, 33);
             this.cboPTTT.TabIndex = 2;
+            this.cboPTTT.SelectedIndexChanged += new System.EventHandler(this.cboPTTT_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -305,15 +316,6 @@
             this.txtSoNgayThue.Name = "txtSoNgayThue";
             this.txtSoNgayThue.Size = new System.Drawing.Size(164, 30);
             this.txtSoNgayThue.TabIndex = 1;
-            // 
-            // txtMaSuDungDichVu
-            // 
-            this.txtMaSuDungDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSuDungDichVu.Location = new System.Drawing.Point(215, 94);
-            this.txtMaSuDungDichVu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaSuDungDichVu.Name = "txtMaSuDungDichVu";
-            this.txtMaSuDungDichVu.Size = new System.Drawing.Size(164, 30);
-            this.txtMaSuDungDichVu.TabIndex = 1;
             // 
             // label12
             // 
@@ -477,6 +479,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoaDon";
             this.Text = "frmHoaDon";
+            this.Load += new System.EventHandler(this.frmHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -492,7 +495,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpNgayXuat;
-        private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.TextBox txtMaHoaDon;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label5;
@@ -516,12 +518,13 @@
         private System.Windows.Forms.TextBox txtPhuThu;
         private System.Windows.Forms.TextBox txtGiamGia;
         private System.Windows.Forms.TextBox txtSoNgayThue;
-        private System.Windows.Forms.TextBox txtMaSuDungDichVu;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.ComboBox ccbNhanVien;
+        private System.Windows.Forms.ComboBox ccbMaSDDV;
     }
 }

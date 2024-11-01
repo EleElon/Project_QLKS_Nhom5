@@ -51,6 +51,7 @@
     <Compile Include="DAO_DanhSachDichVu.cs" />
     <Compile Include="DAO_DichVu.cs" />
     <Compile Include="DAO_DSPhong.cs" />
+    <Compile Include="DAO_HoaDon.cs" />
     <Compile Include="DAO_KhachHang.cs" />
     <Compile Include="DAO_LoaiDichVu.cs" />
     <Compile Include="DAO_LoaiPhong.cs" />
