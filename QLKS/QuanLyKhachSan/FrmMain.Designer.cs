@@ -40,7 +40,6 @@
             this.btnPhong = new System.Windows.Forms.Button();
             this.btnKH = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -203,22 +202,11 @@
             this.btnNhanVien.UseVisualStyleBackColor = false;
             this.btnNhanVien.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(733, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(512, 54);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "QUẢN LÝ KHÁCH SẠN";
-            // 
             // pnMain
             // 
-            this.pnMain.Location = new System.Drawing.Point(237, 65);
+            this.pnMain.Location = new System.Drawing.Point(237, 0);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1523, 843);
+            this.pnMain.Size = new System.Drawing.Size(1810, 1055);
             this.pnMain.TabIndex = 4;
             // 
             // FrmMain
@@ -228,14 +216,13 @@
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1272, 1055);
             this.Controls.Add(this.pnMain);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmMain";
-            this.Text = "FrmMain";
+            this.Text = "Quản lý khách sạn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.panel1.ResumeLayout(false);
@@ -248,7 +235,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnKH;
         private System.Windows.Forms.Button btnDichVu;

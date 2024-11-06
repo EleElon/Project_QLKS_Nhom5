@@ -22,104 +22,87 @@ namespace QuanLyKhachSan
         {
 
         }
+        private void OpenChildFormInPanel(Form childForm, Panel panel)
+        {
+            panel.Controls.Clear(); // Xóa tất cả các điều khiển con trong Panel
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(childForm);
+            pnMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmNhanVien frm = new frmNhanVien();
+            pnMain.Controls.Clear();
+            frmNhanVien dv = new frmNhanVien();
 
-            // Đặt form không phải là form chính
-            frm.StartPosition = FormStartPosition.Manual;
+            dv.TopLevel = false;
+            dv.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(dv);
+            dv.Show();
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
-
-            // Đặt vị trí form
-            frm.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
-            
-            frm.Show();
-            //frm.MdiParent = this;
         }
 
         private void btnKH_Click(object sender, EventArgs e)
         {
-            frmKhachHang fr = new frmKhachHang();
-            // Đặt form không phải là form chính
-            fr.StartPosition = FormStartPosition.Manual;
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
+            pnMain.Controls.Clear();
+            frmKhachHang khachHang = new frmKhachHang();
+    
+            khachHang.TopLevel = false;
+            khachHang.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(khachHang);
+            khachHang.Show();
 
-            // Đặt vị trí form
-            fr.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
 
-            fr.Show();
-            //fr.MdiParent = this;
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-            frmDSPhong fr = new frmDSPhong();
-            // Đặt form không phải là form chính
-            fr.StartPosition = FormStartPosition.Manual;
+            pnMain.Controls.Clear();
+            frmDSPhong khachHang = new frmDSPhong();
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
-
-            // Đặt vị trí form
-            fr.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
-            fr.Show();
-            //fr.MdiParent = this;
+            khachHang.TopLevel = false;
+            khachHang.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(khachHang);
+            khachHang.Show();
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            frmDichVu fr = new frmDichVu();
-            // Đặt form không phải là form chính
-            fr.StartPosition = FormStartPosition.Manual;
+            pnMain.Controls.Clear();
+            frmDichVu dv = new frmDichVu();
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
-
-            // Đặt vị trí form
-            fr.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
-            fr.Show();
-            //fr.MdiParent = this;
+            dv.TopLevel = false;
+            dv.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(dv);
+            dv.Show();
         }
 
         private void btnLuong_Click(object sender, EventArgs e)
         {
-            frmLuong fr = new frmLuong();
-            // Đặt form không phải là form chính
-            fr.StartPosition = FormStartPosition.Manual;
+            pnMain.Controls.Clear();
+            frmLuong khachHang = new frmLuong();
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
-
-            // Đặt vị trí form
-            fr.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
-            fr.Show();
-            //fr.MdiParent = this;
+            khachHang.TopLevel = false;
+            khachHang.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(khachHang);
+            khachHang.Show();
         }
 
         private void btnCSVC_Click(object sender, EventArgs e)
         {
-            frmCoSoVatChat fr = new frmCoSoVatChat();
-            // Đặt form không phải là form chính
-            fr.StartPosition = FormStartPosition.Manual;
+            
+            pnMain.Controls.Clear();
+          frmCoSoVatChat khachHang = new frmCoSoVatChat();
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
-
-            // Đặt vị trí form
-            fr.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
-            fr.Show();
-            //fr.MdiParent = this;
+            khachHang.TopLevel = false;
+            khachHang.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(khachHang);
+            khachHang.Show();
         }
 
 
@@ -127,35 +110,27 @@ namespace QuanLyKhachSan
 
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
-            frmThongKeDoanhThu fr = new frmThongKeDoanhThu();
+           
             // Đặt form không phải là form chính
-            fr.StartPosition = FormStartPosition.Manual;
+            pnMain.Controls.Clear();
+       frmThongKeDoanhThu fr = new frmThongKeDoanhThu();
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
-
-            // Đặt vị trí form
-            fr.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
+            fr.TopLevel = false;
+            fr.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(fr);
             fr.Show();
-            //fr.MdiParent = this;
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            frmHoaDon frm = new frmHoaDon();
             // Đặt form không phải là form chính
-            frm.StartPosition = FormStartPosition.Manual;
+            pnMain.Controls.Clear();
+            frmHoaDon fr = new frmHoaDon();
 
-            // Tính vị trí form con cách panel1 50px
-            int panelRightEdge = panel1.Location.X + panel1.Width;
-            int formXPosition = panelRightEdge + 50; // 50px cách panel
-
-            // Đặt vị trí form
-            frm.Location = new Point(formXPosition, this.Location.Y + 80); // Đặt form theo trục X và Y
-
-            frm.Show();
-            //frm.MdiParent = this;
+            fr.TopLevel = false;
+            fr.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(fr);
+            fr.Show();
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -166,18 +141,16 @@ namespace QuanLyKhachSan
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-            frmQuanLiPhong frm = new frmQuanLiPhong();
-            frm.Show();
-        }
-        private void OpenFormInPanel(Form form)
-        {
+          
             // Đặt form không phải là form chính
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill; // Làm cho form chiếm toàn bộ panel
-            pnMain.Controls.Clear(); // Xóa form cũ nếu có
-            pnMain.Controls.Add(form); // Thêm form vào panel
-            form.Show(); // Hiển thị form
+            pnMain.Controls.Clear();
+           
+            frmQuanLiPhong fr = new frmQuanLiPhong();
+            fr.TopLevel = false;
+            fr.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(fr);
+            fr.Show();
         }
+        
     }
 }

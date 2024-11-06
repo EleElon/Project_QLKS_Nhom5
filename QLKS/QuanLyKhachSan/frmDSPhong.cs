@@ -68,14 +68,13 @@ namespace QuanLyKhachSan
         {
             string maPhong = txtMaPhong.Text;
             string maLoaiPhong = cbMaLoaiPhong.SelectedValue.ToString();
-            //int soPhong;
-            string soPhong = txtSoPhong.Text;
+            int soPhong;
             string tinhTrang = cbtinhTrang.Text;
 
+            // Kiểm tra dữ liệu đầu vào có hợp lệ không
             if (string.IsNullOrWhiteSpace(maPhong) ||
                 string.IsNullOrWhiteSpace(maLoaiPhong) ||
-                //!int.TryParse(txtSoPhong.Text, out soPhong) ||
-                string.IsNullOrEmpty(soPhong) ||
+                !int.TryParse(txtSoPhong.Text, out soPhong) ||
                 string.IsNullOrWhiteSpace(tinhTrang))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
@@ -126,14 +125,12 @@ namespace QuanLyKhachSan
         {
             string maPhong = txtMaPhong.Text;
             string maLoaiPhong = cbMaLoaiPhong.SelectedValue.ToString();
-            //int soPhong;
-            string soPhong = txtSoPhong.Text;
+            int soPhong;
             string tinhTrang = cbtinhTrang.Text;
 
             if (string.IsNullOrWhiteSpace(maPhong) ||
                 string.IsNullOrWhiteSpace(maLoaiPhong) ||
-                //!int.TryParse(txtSoPhong.Text, out soPhong) ||
-                string.IsNullOrEmpty(soPhong) ||
+                !int.TryParse(txtSoPhong.Text, out soPhong) ||
                 string.IsNullOrWhiteSpace(tinhTrang))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
@@ -248,12 +245,12 @@ namespace QuanLyKhachSan
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+           this.Close();
         }
 
         private void btnThoat_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+           this.Close();
         }
 
         private void dgvLoaiPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)

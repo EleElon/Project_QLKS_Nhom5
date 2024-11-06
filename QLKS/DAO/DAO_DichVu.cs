@@ -47,39 +47,17 @@ namespace DAO
         }
 
 
-        //public void Them(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia)
-        //{
-        //    try
-        //    {
-        //        using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-        //        {
-        //            DichVu dv = new DichVu();
-        //            dv.MaDichVu = maDV.Text;
-        //            dv.MaLoaiDichVu = maLDV.Text;
-        //            dv.TenDichVu = tenDV.Text;
-        //            dv.Gia = float.Parse(gia.Text);
-
-        //            db.DichVus.InsertOnSubmit(dv);
-        //            db.SubmitChanges();
-        //            MessageBox.Show("Thêm thành công");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Thêm không thành công " + ex);
-        //    }
-        //}
-        public void Them(DichVu dv)
+        public void Them(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia)
         {
             try
             {
                 using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-                    //DichVu dv = new DichVu();
-                    //dv.MaDichVu = maDV.Text;
-                    //dv.MaLoaiDichVu = maLDV.Text;
-                    //dv.TenDichVu = tenDV.Text;
-                    //dv.Gia = float.Parse(gia.Text);
+                    DichVu dv = new DichVu();
+                    dv.MaDichVu = maDV.Text;
+                    dv.MaLoaiDichVu = maLDV.Text;
+                    dv.TenDichVu = tenDV.Text;
+                    dv.Gia = float.Parse(gia.Text);
 
                     db.DichVus.InsertOnSubmit(dv);
                     db.SubmitChanges();
@@ -134,70 +112,35 @@ namespace DAO
         {
             return db.DichVus.ToList();
         }
-        //public void LoadComBoBoxLoaiDichVu(ComboBox cb)
-        //{
-        //    Dictionary<string, string> dp = new Dictionary<string, string>();
-        //    using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-        //    {
-        //        var tenLDV = from ma in db.LoaiDichVus
-        //                     select (
-        //                         ma.MaLoaiDichVu);
-
-        //        foreach (var item in tenLDV)
-        //        {
-        //            dp.Add(item, item);
-        //        }
-
-        //        cb.DataSource = new BindingSource(dp, null);
-        //        cb.DisplayMember = "Value";
-        //        cb.ValueMember = "Key";
-        //    }
-        //}
         public void LoadComBoBoxLoaiDichVu(ComboBox cb)
         {
+            Dictionary<string, string> dp = new Dictionary<string, string>();
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                var loaiDichVus = db.LoaiDichVus
-                                    .Select(ldv => new { ldv.MaLoaiDichVu, ldv.TenLoaiDichVu })
-                                    .ToList();
+                var tenLDV = from ma in db.LoaiDichVus
+                             select (
+                                 ma.MaLoaiDichVu);
 
-                cb.DataSource = loaiDichVus;
-                cb.DisplayMember = "TenLoaiDichVu";
-                cb.ValueMember = "MaLoaiDichVu";
+                foreach (var item in tenLDV)
+                {
+                    dp.Add(item, item);
+                }
+
+                cb.DataSource = new BindingSource(dp, null);
+                cb.DisplayMember = "Value";
+                cb.ValueMember = "Key";
             }
         }
-
         public void LoadDGVForm(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                if (data.SelectedCells.Count > 0)
-                {
-                    var rowIndex = data.SelectedCells[0].RowIndex;
-                    var row = data.Rows[rowIndex];
-
-                    maDV.Text = row.Cells[0].Value.ToString().Trim();
-                    string selectedMaLDV = row.Cells[1].Value.ToString().Trim();
-                    tenDV.Text = row.Cells[2].Value.ToString().Trim();
-                    gia.Text = row.Cells[3].Value.ToString().Trim();
-
-                    foreach (var item in maLDV.Items)
-                    {
-                        var loaiDichVu = item as dynamic;
-                        if (loaiDichVu != null && loaiDichVu.MaLoaiDichVu == selectedMaLDV)
-                        {
-                            maLDV.SelectedItem = item;
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        public bool CheckMaExists(string maDV)
-        {
-            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-            {
-                return context.DichVus.Any(dv => dv.MaDichVu == maDV);
+                var rowIndex = data.SelectedCells[0].RowIndex;
+                var row = data.Rows[rowIndex];
+                maDV.Text = row.Cells[0].Value.ToString().Trim();
+                maLDV.Text = row.Cells[1].Value.ToString().Trim();
+                tenDV.Text = row.Cells[2].Value.ToString().Trim();
+                gia.Text = row.Cells[3].Value.ToString().Trim();
             }
         }
     }

@@ -158,7 +158,7 @@
     <Type Name="Phong">
       <Column Name="MaPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaLoaiPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="SoPhong" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TinhTrang" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="Phong_ChiTietDatPhong" Member="ChiTietDatPhongs" ThisKey="MaPhong" OtherKey="MaPhong" Type="ChiTietDatPhong" />
       <Association Name="Phong_CoSoVatChat" Member="CoSoVatChats" ThisKey="MaPhong" OtherKey="MaPhong" Type="CoSoVatChat" />

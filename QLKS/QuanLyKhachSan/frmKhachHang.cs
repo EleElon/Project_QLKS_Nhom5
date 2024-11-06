@@ -34,7 +34,12 @@ namespace QuanLyKhachSan
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); // Thoát ứng dụng
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,7 +108,7 @@ namespace QuanLyKhachSan
             errorProvider1.SetError(txtSDT, "");
             errorProvider1.SetError(txtDiaChi, "");
 
-            txtMaKH.Enabled = true;
+            txtMaKH.Enabled =true;
 
         }
         //Xóa khách hàng
@@ -116,9 +121,9 @@ namespace QuanLyKhachSan
         //DatagridView khách hàng
         private void dgvDSKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
 
-
-
+            
             BUS_KhachHang.Instance.LoadDGVLenForm(txtMaKH, cbMaDichVu, txtTenKH, txtCCCD, txtEmail, txtSDT, txtDiaChi, dgvDSKhachHang);
             txtMaKH.Enabled = false;
 
@@ -146,6 +151,7 @@ namespace QuanLyKhachSan
             {
                 txtMaKH.Enabled = true;
             }
+            
         }
 
         //ràng buộc sdt
@@ -388,7 +394,7 @@ namespace QuanLyKhachSan
                 errorProvider1.SetError(txtCCCD, "");  // Xóa lỗi nếu hợp lệ
             }
         }
-
+        
         private void txtCCCD_Leave(object sender, EventArgs e)
         {
             ValidateCCCD();
