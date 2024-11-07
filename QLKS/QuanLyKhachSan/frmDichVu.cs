@@ -101,9 +101,14 @@ namespace QuanLyKhachSan
 
         private void btnHuyPhieu_Click(object sender, EventArgs e)
         {
-            
+
+            if (ValidateForm())
+            {
+                BUS_DanhSachDichVu.Instance.Xoa(txtMaSDDV);
                 
-            
+
+            }
+
 
         }
         // Hàm để làm sạch các trường trong form

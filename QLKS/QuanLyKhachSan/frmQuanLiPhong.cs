@@ -25,11 +25,13 @@ namespace QuanLyKhachSan
             cbMaPhong.SelectedIndex = 0;
             //cbMaPhong.SelectedIndexChanged += cbMaPhong_SelectedIndexChanged;
 
-            // Gán sự kiện cho TextChanged
-            txtGia.TextChanged += (s, e) => CalculateTotalPrice();
-            txtSoLuong.TextChanged += (s, e) => CalculateTotalPrice();
-            dtpNgayNhan.ValueChanged += (s, e) => CalculateTotalPrice();
-            dtpNgayTra.ValueChanged += (s, e) => CalculateTotalPrice();
+            //txtGia.TextChanged += (s, e) => CalculateTotalPrice();
+            //txtSoLuong.TextChanged += (s, e) => CalculateTotalPrice();
+            //dtpNgayNhan.ValueChanged += (s, e) => CalculateTotalPrice();
+            //dtpNgayTra.ValueChanged += (s, e) => CalculateTotalPrice();
+
+            //CalculateTotalPrice(); // Call once on form load to initialize the price calculation
+
 
         }
 
@@ -124,7 +126,7 @@ namespace QuanLyKhachSan
                 string customerName = BUS_DatPhong.Instance.GetCustomerNameByBookingId(selectedBookingId);
                 cbMaKhachHang.Text = customerName; // Display customer name in TextBox
                 BUS_DatPhong.Instance.LoadComBoBoxMaKHachHang(cbMaKH);
-                makh = BUS_DatPhong.Instance.LayMaKHachHang(cbMaKH);
+               
             }
             
         }
@@ -150,11 +152,13 @@ namespace QuanLyKhachSan
             //    }
 
             //}
-            BUS_DatPhong.Instance.LoadComBoBoxLoaiPhong(cbMaLoaiPhong, cbMaPhong.Text, txtTinhTrangPhong);
+            BUS_DatPhong.Instance.LoadComBoBoxLoaiPhong(cbMaLoaiPhong, cbMaPhong.Text, txtTinhTrangPhong,txtGia);
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            makh = BUS_DatPhong.Instance.LayMaKHachHang(cbMaKhachHang);
             // Validate inputs
             if (string.IsNullOrWhiteSpace(txtMaChiTiet.Text) ||
                 cbMaDatPhong.SelectedItem == null ||
@@ -191,49 +195,28 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Thêm không thành công");
             }
         }
+        // Phương thức tính tổng giá và hiển thị
         private void CalculateTotalPrice()
         {
-            // Biến tạm để lưu giá trị
-            float giaMoiDem;
-            int soLuongPhong;
-            int soNgay;
+            // Lấy mã phòng và số lượng từ giao diện
+            string roomCode = txtGia.Text;
+            int quantity = int.TryParse(txtSoLuong.Text, out int qty) ? qty : 0;
 
-            // Lấy giá mỗi đêm
-            if (float.TryParse(txtGia.Text.Trim(), out giaMoiDem) &&
-                int.TryParse(txtSoLuong.Text.Trim(), out soLuongPhong))
-            {
-                // Tính số ngày
-                DateTime ngayNhan = dtpNgayNhan.Value;
-                DateTime ngayTra = dtpNgayTra.Value;
-                soNgay = (ngayTra - ngayNhan).Days; // Số ngày lưu trú
+            // Gọi BUS để tính tổng giá
+            decimal totalPrice = BUS_DatPhong.Instance.CalculateTotalPrice(roomCode, quantity);
 
-                // Kiểm tra nếu số ngày hợp lệ
-                if (soNgay >= 0) // Không tính số ngày âm
-                {
-                    // Tính tổng giá
-                    float tongGia = giaMoiDem * soLuongPhong * soNgay;
-                    txtTongGia.Text = tongGia.ToString("N0"); // Định dạng thành chuỗi
-                }
-                else
-                {
-                    txtTongGia.Text = "0"; // Nếu ngày trả trước ngày nhận
-                }
-            }
-            else
-            {
-                txtTongGia.Text = "0"; // Đặt lại tổng giá nếu nhập không hợp lệ
-            }
+            // Hiển thị tổng giá trong TextBox
+            txtTongGia.Text = totalPrice.ToString(); // Định dạng tiền tệ
         }
-
-
+        
         private void txtGia_TextChanged(object sender, EventArgs e)
         {
-        
+            //CalculateTotalPrice();
         }
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
         {
-          
+          //CalculateTotalPrice() ;
         }
 
         private void frmQuanLiPhong_Load(object sender, EventArgs e)
@@ -248,12 +231,44 @@ namespace QuanLyKhachSan
 
         private void dgvDatPhong_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            BUS_DatPhong.Instance.LoadDuLieuLenChiTiet(txtMaChiTiet,cbMaDatPhong,cbMaKhachHang,cbMaPhong,cbMaLoaiPhong,txtTinhTrangPhong,txtGia,txtSoLuong,txtTongGia,dtpNgayNhan,dtpNgayTra,dgvDatPhongg);
+            BUS_DatPhong.Instance.LoadDuLieuLenChiTiet(txtMaChiTiet,cbMaDatPhong,cbMaKhachHang,cbMaPhong,cbMaLoaiPhong,txtTinhTrangPhong,txtGia,txtSoLuong,txtTongGia,cboPTTT,dtpNgayNhan,dtpNgayTra, dgvDatPhong);
 
             txtMaChiTiet.Enabled = false;
 
             // Clear any existing errors first
             errorProvider1.SetError(txtMaChiTiet, "");
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            BUS_DatPhong.Instance.XoaCT(txtMaChiTiet);
+            LoadDuLieuLen();
+        }
+
+        private void dtpNgayTra_ValueChanged(object sender, EventArgs e)
+        {
+            //CalculateTotalPrice() ;
+        }
+
+        private void dtpNgayNhan_ValueChanged(object sender, EventArgs e)
+        {
+            //CalculateTotalPrice();
+        }
+
+        private void txtTongGia_TextChanged(object sender, EventArgs e)
+        {
+            //CalculateTotalPrice();
+        }
+
+        private void txtSoLuong_Leave(object sender, EventArgs e)
+        {
+            CalculateTotalPrice();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            BUS_DatPhong.Instance.SuaCT(txtMaChiTiet, cbMaDatPhong, makh, cbMaPhong, cbMaLoaiPhong, txtTinhTrangPhong, txtGia, txtSoLuong, txtTongGia, cboPTTT, dtpNgayNhan.Value, dtpNgayTra.Value);
+        LoadDuLieuLen() ;
         }
     }
 
