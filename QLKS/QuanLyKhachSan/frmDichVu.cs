@@ -615,5 +615,15 @@ namespace QuanLyKhachSan
         {
             ClearFormFields();
         }
+
+        private void frmDichVu_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbMaDichVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
