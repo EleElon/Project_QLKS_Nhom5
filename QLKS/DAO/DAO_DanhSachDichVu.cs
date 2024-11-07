@@ -22,7 +22,7 @@ namespace DAO
                 return instance;
             }
         }
-        private DAO_DanhSachDichVu() { }
+        public DAO_DanhSachDichVu() { }
 
         public List<DanhSachSuDungDichVu> Xem()
         {

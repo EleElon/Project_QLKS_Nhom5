@@ -78,17 +78,13 @@ namespace DAO
                         return false;
                     }
 
-                    // Xóa phòng khỏi cơ sở dữ liệu
                     db.Phongs.DeleteOnSubmit(phong);
                     db.SubmitChanges();
-
-                    // Trả về true nếu xóa thành công
                     return true;
                 }
                 catch (Exception ex)
                 {
-                    // Xử lý ngoại lệ nếu có
-                    throw ex;
+                    return false;
                 }
             }
         }

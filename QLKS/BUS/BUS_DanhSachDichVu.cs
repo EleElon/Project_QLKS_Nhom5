@@ -10,7 +10,8 @@ namespace BUS
 {
     public class BUS_DanhSachDichVu
     {
-        private static BUS_DanhSachDichVu instance;
+        private static BUS_DanhSachDichVu instance;    
+        DAO_DanhSachDichVu daoDSDV = new DAO_DanhSachDichVu();
         public static BUS_DanhSachDichVu Instance
         {
             get
@@ -22,7 +23,7 @@ namespace BUS
                 return instance;
             }
         }
-        private BUS_DanhSachDichVu() { }
+        public BUS_DanhSachDichVu() { }
 
         public void Xem(DataGridView data)
         {
@@ -74,6 +75,9 @@ namespace BUS
         {
             return DAO_DanhSachDichVu.Instance.CheckMaSDDVExists(maSDDV);
         }
-
+        public List<DanhSachSuDungDichVu> HienThi()
+        {
+            return daoDSDV.Xem();
+        }
     }
 }
