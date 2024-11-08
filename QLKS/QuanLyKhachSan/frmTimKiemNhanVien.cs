@@ -14,12 +14,14 @@ namespace QuanLyKhachSan
 {
     public partial class frmTimKiemNhanVien : Form
     {
+        private FrmMain mainFrm;
         private ErrorProvider errorProvider = new ErrorProvider();
 
-        public frmTimKiemNhanVien()
+        public frmTimKiemNhanVien(FrmMain mainForm)
         {
             InitializeComponent();
             LoadDataNhanVien();
+            this.mainFrm = mainForm;
         }
         public void LoadDataNhanVien()
         {
@@ -184,9 +186,12 @@ namespace QuanLyKhachSan
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            frmNhanVien fr = new frmNhanVien();
-            fr.Show();
-            this.Close();
+            mainFrm.pnMain.Controls.Clear();
+            frmNhanVien frmNV = new frmNhanVien(mainFrm);
+            frmNV.TopLevel = false;
+            frmNV.Dock = DockStyle.Fill;
+            mainFrm.pnMain.Controls.Add(frmNV);
+            frmNV.Show();
         }
     }
 }
