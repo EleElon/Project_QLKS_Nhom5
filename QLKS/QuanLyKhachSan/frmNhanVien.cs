@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DAO;
+using QuanLiKhachSan_Nhom5;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,16 @@ namespace QuanLyKhachSan
 {
     public partial class frmNhanVien : Form
     {
+        private FrmMain mainForm;
+
         private ErrorProvider errorProvider = new ErrorProvider();
         BUS_NhanVien bus_nv = new BUS_NhanVien();
-        public frmNhanVien()
+        private FrmMain frmMain;
+
+        public frmNhanVien(FrmMain frmMain)
         {
             InitializeComponent();
+            this.frmMain = frmMain;
         }
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
@@ -271,11 +277,16 @@ namespace QuanLyKhachSan
             ValidateLuong();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        public void btnTimKiem_Click(object sender, EventArgs e)
         {
-            frmTimKiemNhanVien fr = new frmTimKiemNhanVien();
-            fr.Show();
-            this.Close();
+            //mainForm.pnMain.Controls.Clear();
+            frmTimKiemNhanVien frTimKiem = new frmTimKiemNhanVien(mainForm);
+            //frTimKiem.TopLevel = false;
+            //frTimKiem.Dock = DockStyle.Fill;
+            //mainForm.pnMain.Controls.Add(frTimKiem);
+            frTimKiem.Show();
+            //this.Close();
+            this.Hide();
         }
     }
 }
