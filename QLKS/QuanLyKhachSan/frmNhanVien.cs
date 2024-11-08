@@ -21,12 +21,11 @@ namespace QuanLyKhachSan
 
         private ErrorProvider errorProvider = new ErrorProvider();
         BUS_NhanVien bus_nv = new BUS_NhanVien();
-        private FrmMain frmMain;
 
         public frmNhanVien(FrmMain frmMain)
         {
             InitializeComponent();
-            this.frmMain = frmMain;
+            this.mainForm = frmMain;
         }
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
@@ -281,9 +280,9 @@ namespace QuanLyKhachSan
         {
             //mainForm.pnMain.Controls.Clear();
             frmTimKiemNhanVien frTimKiem = new frmTimKiemNhanVien(mainForm);
-            //frTimKiem.TopLevel = false;
-            //frTimKiem.Dock = DockStyle.Fill;
-            //mainForm.pnMain.Controls.Add(frTimKiem);
+            frTimKiem.TopLevel = false;
+            frTimKiem.Dock = DockStyle.Fill;
+            mainForm.pnMain.Controls.Add(frTimKiem);
             frTimKiem.Show();
             //this.Close();
             this.Hide();

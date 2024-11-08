@@ -187,7 +187,7 @@ namespace QuanLyKhachSan
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             mainFrm.pnMain.Controls.Clear();
-            frmNhanVien frmNV = new frmNhanVien(this);
+            frmNhanVien frmNV = new frmNhanVien(mainFrm);
             frmNV.TopLevel = false;
             frmNV.Dock = DockStyle.Fill;
             mainFrm.pnMain.Controls.Add(frmNV);
