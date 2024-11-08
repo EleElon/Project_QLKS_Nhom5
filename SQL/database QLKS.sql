@@ -228,12 +228,6 @@ ADD CONSTRAINT FK_DanhSachSuDungDichVu_DatPhong
 FOREIGN KEY (MaDatPhong) REFERENCES DatPhong(MaDatPhong)
 go
 
-ALTER TABLE ChiTietHoaDon
-DROP CONSTRAINT FK_ChiTietHoaDon_DatPhong;
-
-
-
-
 
 ALTER TABLE ChiTietHoaDon
 ADD CONSTRAINT FK_ChiTietHoaDon_DanhSachSuDungDichVu 
