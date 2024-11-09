@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoPhong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ccbMaPhong = new System.Windows.Forms.ComboBox();
             this.cbMaLoaiPhong = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbLPhong = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ccbMaLoaiPhong = new System.Windows.Forms.ComboBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenLoaiPhong = new System.Windows.Forms.TextBox();
@@ -61,10 +63,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnThemPhong = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.ccbMaPhong = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ccbMaLoaiPhong = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tbPhong.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -214,6 +215,31 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Mã loại phòng";
             // 
+            // ccbMaPhong
+            // 
+            this.ccbMaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ccbMaPhong.FormattingEnabled = true;
+            this.ccbMaPhong.Items.AddRange(new object[] {
+            "P001",
+            "P002",
+            "P003",
+            "P004",
+            "P005",
+            "P006",
+            "P007",
+            "P008",
+            "P009",
+            "P010",
+            "P011",
+            "P012",
+            "P0013"});
+            this.ccbMaPhong.Location = new System.Drawing.Point(203, 79);
+            this.ccbMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ccbMaPhong.Name = "ccbMaPhong";
+            this.ccbMaPhong.Size = new System.Drawing.Size(164, 30);
+            this.ccbMaPhong.TabIndex = 22;
+            this.ccbMaPhong.SelectedIndexChanged += new System.EventHandler(this.cbMaLoaiPhong_SelectedIndexChanged);
+            // 
             // cbMaLoaiPhong
             // 
             this.cbMaLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,7 +255,7 @@
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(663, 547);
+            this.btnXoa.Location = new System.Drawing.Point(498, 538);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(148, 48);
@@ -242,7 +268,7 @@
             // 
             this.btnSua.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(965, 547);
+            this.btnSua.Location = new System.Drawing.Point(735, 538);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(148, 48);
@@ -291,6 +317,7 @@
             // tbLPhong
             // 
             this.tbLPhong.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbLPhong.Controls.Add(this.button2);
             this.tbLPhong.Controls.Add(this.groupBox3);
             this.tbLPhong.Controls.Add(this.label9);
             this.tbLPhong.Controls.Add(this.groupBox4);
@@ -322,6 +349,27 @@
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Loại phòng";
+            // 
+            // ccbMaLoaiPhong
+            // 
+            this.ccbMaLoaiPhong.FormattingEnabled = true;
+            this.ccbMaLoaiPhong.Items.AddRange(new object[] {
+            "LP001",
+            "LP002",
+            "LP003",
+            "LP004",
+            "LP005",
+            "LP006",
+            "LP007",
+            "LP008",
+            "LP009",
+            "LP010",
+            "LP011",
+            "LP012"});
+            this.ccbMaLoaiPhong.Location = new System.Drawing.Point(214, 55);
+            this.ccbMaLoaiPhong.Name = "ccbMaLoaiPhong";
+            this.ccbMaLoaiPhong.Size = new System.Drawing.Size(172, 37);
+            this.ccbMaLoaiPhong.TabIndex = 3;
             // 
             // txtGia
             // 
@@ -407,7 +455,7 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(910, 540);
+            this.btnCapNhat.Location = new System.Drawing.Point(789, 540);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(148, 48);
@@ -452,31 +500,6 @@
             this.btnThemPhong.UseVisualStyleBackColor = true;
             this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
             // 
-            // ccbMaPhong
-            // 
-            this.ccbMaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ccbMaPhong.FormattingEnabled = true;
-            this.ccbMaPhong.Items.AddRange(new object[] {
-            "P001",
-            "P002",
-            "P003",
-            "P004",
-            "P005",
-            "P006",
-            "P007",
-            "P008",
-            "P009",
-            "P010",
-            "P011",
-            "P012",
-            "P0013"});
-            this.ccbMaPhong.Location = new System.Drawing.Point(203, 79);
-            this.ccbMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ccbMaPhong.Name = "ccbMaPhong";
-            this.ccbMaPhong.Size = new System.Drawing.Size(164, 30);
-            this.ccbMaPhong.TabIndex = 22;
-            this.ccbMaPhong.SelectedIndexChanged += new System.EventHandler(this.cbMaLoaiPhong_SelectedIndexChanged);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -485,26 +508,17 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // ccbMaLoaiPhong
+            // button2
             // 
-            this.ccbMaLoaiPhong.FormattingEnabled = true;
-            this.ccbMaLoaiPhong.Items.AddRange(new object[] {
-            "LP001",
-            "LP002",
-            "LP003",
-            "LP004",
-            "LP005",
-            "LP006",
-            "LP007",
-            "LP008",
-            "LP009",
-            "LP010",
-            "LP011",
-            "LP012"});
-            this.ccbMaLoaiPhong.Location = new System.Drawing.Point(214, 55);
-            this.ccbMaLoaiPhong.Name = "ccbMaLoaiPhong";
-            this.ccbMaLoaiPhong.Size = new System.Drawing.Size(172, 37);
-            this.ccbMaLoaiPhong.TabIndex = 3;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1007, 540);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 48);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Tìm Kiếm";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // frmDSPhong
             // 
@@ -515,6 +529,7 @@
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDSPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPhong";
             this.Load += new System.EventHandler(this.frmPhong_Load);
             this.tabControl1.ResumeLayout(false);
@@ -574,5 +589,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ComboBox ccbMaLoaiPhong;
+        private System.Windows.Forms.Button button2;
     }
 }

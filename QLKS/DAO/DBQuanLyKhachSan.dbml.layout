@@ -147,14 +147,14 @@
         <classShapeMoniker Id="1ae05ac0-8371-4264-ba81-65412e2b2fc5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.31814697265625); (3.5 : 5.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 5.31814697265625); (3.22916916666667 : 5.31814697265625 : JumpStart); (3.39583583333333 : 5.31814697265625 : JumpEnd); (3.5 : 5.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBQuanLyKhachSanDataContext/LoaiDichVu/LoaiDichVu_DichVu" />
       <nodes>
         <classShapeMoniker Id="9208d17c-3182-4f4a-bbcf-723bdc8db7ea" />
         <classShapeMoniker Id="8d481895-baad-40c3-8c32-8284ad2e422c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 9.40549967447917); (1.75 : 12.8089440332031); (3.04166666666667 : 12.8089440332031 : JumpStart); (3.20833333333333 : 12.8089440332031 : JumpEnd); (9.25 : 12.8089440332031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.75 : 9.40549967447917); (1.75 : 12.8089440332031); (3.04166666666667 : 12.8089440332031 : JumpStart); (3.20833333333333 : 12.8089440332031 : JumpEnd); (3.22916916666667 : 12.8089440332031 : JumpStart); (3.39583583333333 : 12.8089440332031 : JumpEnd); (4.41666666666667 : 12.8089440332031 : JumpStart); (4.58333333333333 : 12.8089440332031 : JumpEnd); (9.25 : 12.8089440332031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBQuanLyKhachSanDataContext/KhachHang/KhachHang_ChiTietDatPhong" />
       <nodes>
         <classShapeMoniker Id="862f3ab8-33b3-4ae2-9b35-7f3317cd74cf" />
@@ -168,7 +168,7 @@
         <classShapeMoniker Id="517656cb-1099-4e79-b289-b322ff8f776f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.125 : 3.0112939453125); (3.125 : 13.269651344401); (9.25 : 13.269651344401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.125 : 3.0112939453125); (3.125 : 13.269651344401); (3.22916916666667 : 13.269651344401 : JumpStart); (3.39583583333333 : 13.269651344401 : JumpEnd); (9.25 : 13.269651344401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBQuanLyKhachSanDataContext/LoaiPhong/LoaiPhong_ChiTietDatPhong" />
       <nodes>
         <classShapeMoniker Id="177b42f5-33aa-423b-b937-b9dc57e861e0" />
@@ -196,7 +196,7 @@
         <classShapeMoniker Id="6dbd9462-1644-4bf3-bb4d-c7cebc48e96a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.5 : 15.0785953776042); (7.5 : 16.0392976888021); (9.25 : 16.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(7.5 : 15.0785953776042); (7.5 : 16.0392976888021); (7.94791916666667 : 16.0392976888021 : JumpStart); (8.11458583333333 : 16.0392976888021 : JumpEnd); (9.25 : 16.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DBQuanLyKhachSanDataContext/Phong/Phong_CoSoVatChat" />
       <nodes>
         <classShapeMoniker Id="91b4345b-0252-4f89-ac8f-3c13ec9d6bfa" />

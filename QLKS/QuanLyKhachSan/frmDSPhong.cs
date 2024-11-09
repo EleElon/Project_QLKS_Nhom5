@@ -340,5 +340,13 @@ namespace QuanLyKhachSan
 
             return isValid;
         }
+
+       
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmTimKiemPhong frmTimKiemPhong = new frmTimKiemPhong();
+            frmTimKiemPhong.ShowDialog();
+        }
     }
 }
