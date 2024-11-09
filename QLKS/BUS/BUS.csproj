@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_CoSoVatChat.cs" />
+    <Compile Include="BUS_DatPhong.cs" />
     <Compile Include="BUS_DichVu.cs" />
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_LoaiDichVu.cs" />
