@@ -41,6 +41,8 @@ namespace QuanLyKhachSan
             else
             {
                 MessageBox.Show("Đăng nhập không thành công. Vui lòng kiểm tra lại tài khoản và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMatKhau.Text = "";
+                txtMatKhau.Focus();
             }
         }
 

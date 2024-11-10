@@ -70,10 +70,11 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(277, 37);
+            this.label1.Location = new System.Drawing.Point(429, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 26);
             this.label1.TabIndex = 12;
@@ -93,6 +94,7 @@
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(161, 26);
             this.txtTenNV.TabIndex = 1;
+            this.txtTenNV.Click += new System.EventHandler(this.txtTenNV_Click_1);
             this.txtTenNV.TextChanged += new System.EventHandler(this.txtTenNV_TextChanged);
             // 
             // txtLuong
@@ -101,6 +103,7 @@
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(161, 26);
             this.txtLuong.TabIndex = 1;
+            this.txtLuong.Click += new System.EventHandler(this.txtLuong_Click);
             this.txtLuong.TextChanged += new System.EventHandler(this.txtLuong_TextChanged);
             // 
             // txtChucVu
@@ -109,6 +112,7 @@
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(161, 26);
             this.txtChucVu.TabIndex = 1;
+            this.txtChucVu.Click += new System.EventHandler(this.txtChucVu_Click);
             this.txtChucVu.TextChanged += new System.EventHandler(this.txtChucVu_TextChanged);
             // 
             // txtMaNV
@@ -132,6 +136,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.cboMaPhong);
             this.groupBox1.Controls.Add(this.txtTenNV);
             this.groupBox1.Controls.Add(this.txtLuong);
@@ -197,6 +202,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.dgvNhanVien);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(339, 74);
@@ -282,6 +288,7 @@
             this.Name = "frmNhanVien";
             this.Text = "frmNhanVien";
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
+            this.Resize += new System.EventHandler(this.frmNhanVien_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
