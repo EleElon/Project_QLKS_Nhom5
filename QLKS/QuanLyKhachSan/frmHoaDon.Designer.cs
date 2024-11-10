@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ccbGiamGia = new System.Windows.Forms.ComboBox();
+            this.ccbMaDP = new System.Windows.Forms.ComboBox();
             this.ccbMaSDDV = new System.Windows.Forms.ComboBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.cboPTTT = new System.Windows.Forms.ComboBox();
@@ -57,7 +58,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ccbMaHD = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ccbMaDP = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -109,6 +109,26 @@
             this.ccbGiamGia.Size = new System.Drawing.Size(160, 30);
             this.ccbGiamGia.TabIndex = 4;
             this.ccbGiamGia.SelectedIndexChanged += new System.EventHandler(this.ccbMaSDDV_SelectedIndexChanged);
+            // 
+            // ccbMaDP
+            // 
+            this.ccbMaDP.FormattingEnabled = true;
+            this.ccbMaDP.Items.AddRange(new object[] {
+            "PH01",
+            "PH02",
+            "PH03",
+            "PH04",
+            "PH05",
+            "PH06",
+            "PH07",
+            "PH08",
+            "PH09",
+            "PH10"});
+            this.ccbMaDP.Location = new System.Drawing.Point(215, 39);
+            this.ccbMaDP.Name = "ccbMaDP";
+            this.ccbMaDP.Size = new System.Drawing.Size(160, 30);
+            this.ccbMaDP.TabIndex = 4;
+            this.ccbMaDP.SelectedIndexChanged += new System.EventHandler(this.ccbMaSDDV_SelectedIndexChanged);
             // 
             // ccbMaSDDV
             // 
@@ -413,26 +433,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // ccbMaDP
-            // 
-            this.ccbMaDP.FormattingEnabled = true;
-            this.ccbMaDP.Items.AddRange(new object[] {
-            "PH01",
-            "PH02",
-            "PH03",
-            "PH04",
-            "PH05",
-            "PH06",
-            "PH07",
-            "PH08",
-            "PH09",
-            "PH10"});
-            this.ccbMaDP.Location = new System.Drawing.Point(215, 39);
-            this.ccbMaDP.Name = "ccbMaDP";
-            this.ccbMaDP.Size = new System.Drawing.Size(160, 30);
-            this.ccbMaDP.TabIndex = 4;
-            this.ccbMaDP.SelectedIndexChanged += new System.EventHandler(this.ccbMaSDDV_SelectedIndexChanged);
-            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -450,6 +450,7 @@
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHoaDon";
             this.Load += new System.EventHandler(this.frmHoaDon_Load);
             this.groupBox2.ResumeLayout(false);

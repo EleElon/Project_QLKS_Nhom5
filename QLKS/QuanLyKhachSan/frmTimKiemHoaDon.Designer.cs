@@ -99,6 +99,7 @@
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.label1);
             this.Name = "frmTimKiemHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTimKiemHoaDon";
             this.Load += new System.EventHandler(this.frmTimKiemHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemHoaDon)).EndInit();

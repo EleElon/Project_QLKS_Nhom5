@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ccbMaCSVC = new System.Windows.Forms.ComboBox();
+            this.ccbMaPhong = new System.Windows.Forms.ComboBox();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.txtTenCSVC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.ccbMaPhong = new System.Windows.Forms.ComboBox();
-            this.ccbMaCSVC = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,6 +81,34 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi Tiết";
+            // 
+            // ccbMaCSVC
+            // 
+            this.ccbMaCSVC.FormattingEnabled = true;
+            this.ccbMaCSVC.Items.AddRange(new object[] {
+            "CSVC01",
+            "CSVC02",
+            "CSVC03",
+            "CSVC04",
+            "CSVC05",
+            "CSVC06",
+            "CSVC07",
+            "CSVC08",
+            "CSVC09",
+            "CSVC010",
+            ""});
+            this.ccbMaCSVC.Location = new System.Drawing.Point(176, 61);
+            this.ccbMaCSVC.Name = "ccbMaCSVC";
+            this.ccbMaCSVC.Size = new System.Drawing.Size(195, 24);
+            this.ccbMaCSVC.TabIndex = 2;
+            // 
+            // ccbMaPhong
+            // 
+            this.ccbMaPhong.FormattingEnabled = true;
+            this.ccbMaPhong.Location = new System.Drawing.Point(176, 122);
+            this.ccbMaPhong.Name = "ccbMaPhong";
+            this.ccbMaPhong.Size = new System.Drawing.Size(195, 24);
+            this.ccbMaPhong.TabIndex = 2;
             // 
             // txtMoTa
             // 
@@ -216,34 +244,6 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // ccbMaPhong
-            // 
-            this.ccbMaPhong.FormattingEnabled = true;
-            this.ccbMaPhong.Location = new System.Drawing.Point(176, 122);
-            this.ccbMaPhong.Name = "ccbMaPhong";
-            this.ccbMaPhong.Size = new System.Drawing.Size(195, 24);
-            this.ccbMaPhong.TabIndex = 2;
-            // 
-            // ccbMaCSVC
-            // 
-            this.ccbMaCSVC.FormattingEnabled = true;
-            this.ccbMaCSVC.Items.AddRange(new object[] {
-            "CSVC01",
-            "CSVC02",
-            "CSVC03",
-            "CSVC04",
-            "CSVC05",
-            "CSVC06",
-            "CSVC07",
-            "CSVC08",
-            "CSVC09",
-            "CSVC010",
-            ""});
-            this.ccbMaCSVC.Location = new System.Drawing.Point(176, 61);
-            this.ccbMaCSVC.Name = "ccbMaCSVC";
-            this.ccbMaCSVC.Size = new System.Drawing.Size(195, 24);
-            this.ccbMaCSVC.TabIndex = 2;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -263,6 +263,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCoSoVatChat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCoSoVatChat";
             this.Load += new System.EventHandler(this.frmCoSoVatChat_Load);
             this.groupBox1.ResumeLayout(false);
