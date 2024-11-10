@@ -255,10 +255,7 @@ namespace QuanLyKhachSan
 
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
-            if (txtMaNV.Enabled)
-            {
-                ValidateMaNV();
-            }
+
         }
 
         private void txtTenNV_TextChanged(object sender, EventArgs e)
@@ -286,6 +283,57 @@ namespace QuanLyKhachSan
             frTimKiem.Show();
             //this.Close();
             this.Hide();
+        }
+
+        private void frmNhanVien_Resize(object sender, EventArgs e)
+        {
+            // Tổng chiều rộng của form (trừ đi khoảng cách từ cạnh trái và phải)
+            int formWidth = this.ClientSize.Width;
+            int leftRightMargin = 20; // Khoảng cách từ cạnh trái và phải của form
+            int buttonWidth = btnThoat.Width; // Giả sử tất cả các nút có cùng kích thước
+            int groupBoxWidth = groupBox1.Width;
+            int buttonSpacing = (formWidth - 2 * leftRightMargin - 6 * buttonWidth) / 5; // Khoảng cách giữa các nút
+            int groupBoxSpacing = (formWidth - 2 * leftRightMargin - 2 * groupBoxWidth) / 1;
+
+            // Điều chỉnh vị trí dọc của các nút
+            int baseTop = 700; // Vị trí top cơ bản của các nút
+            int additionalOffset = 10; // Khoảng cách hạ thấp thêm (có thể điều chỉnh)
+
+            // Đặt vị trí của các nút dựa trên khoảng cách tính được và độ hạ thấp
+            btnThoat.Left = leftRightMargin;
+            btnThoat.Top = baseTop + additionalOffset;
+
+            btnThem.Left = btnThoat.Right + buttonSpacing;
+            btnThem.Top = baseTop + additionalOffset;
+
+            btnXoa.Left = btnThem.Right + buttonSpacing;
+            btnXoa.Top = baseTop + additionalOffset;
+
+            btnSua.Left = btnXoa.Right + buttonSpacing;
+            btnSua.Top = baseTop + additionalOffset;
+
+            btnLamMoi.Left = btnSua.Right + buttonSpacing;
+            btnLamMoi.Top = baseTop + additionalOffset;
+
+            btnTimKiem.Left = btnLamMoi.Right + buttonSpacing;
+            btnTimKiem.Top = baseTop + additionalOffset;
+
+            //groupBox1.Left = leftRightMargin;
+            //groupBox2.Left = groupBox1.Right + groupBoxSpacing;
+        }
+        private void txtTenNV_Click_1(object sender, EventArgs e)
+        {
+            txtTenNV.SelectionStart = txtTenNV.Text.Length;
+        }
+
+        private void txtChucVu_Click(object sender, EventArgs e)
+        {
+            txtChucVu.SelectionStart = txtChucVu.Text.Length;
+        }
+
+        private void txtLuong_Click(object sender, EventArgs e)
+        {
+            txtLuong.SelectionStart = txtChucVu.Text.Length;
         }
     }
 }

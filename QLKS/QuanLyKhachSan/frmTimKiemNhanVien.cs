@@ -193,5 +193,38 @@ namespace QuanLyKhachSan
             mainFrm.pnMain.Controls.Add(frmNV);
             frmNV.Show();
         }
+
+        private void frmTimKiemNhanVien_Resize(object sender, EventArgs e)
+        {
+            int formWidth = this.ClientSize.Width;
+            int leftRightMargin = 1000;
+            int buttonWidth = btnTimKiem.Width;
+            int buttonSpacing = (formWidth + buttonWidth) / 25;
+            int baseTop = 300;
+
+            btnTimKiem.Left = leftRightMargin;
+            btnTimKiem.Top = baseTop;
+
+            btnLamMoi.Left = btnTimKiem.Right + buttonSpacing;
+            btnLamMoi.Top = baseTop;
+
+            btnFilter.Left = btnLamMoi.Right + buttonSpacing;
+            btnFilter.Top = baseTop;
+
+            btnQuayLai.Left = btnFilter.Right + buttonSpacing;
+            btnQuayLai.Top = baseTop;
+
+            txtMaNV.Top = baseTop;
+            txtTenNV.Top = baseTop + 50;
+
+            txtMaNV.Left = 670;
+            txtTenNV.Left = 670;
+
+            label1.Top = baseTop + 3;
+            label2.Top = baseTop + 53;
+
+            label1.Left = 560;
+            label2.Left = 560;
+        }
     }
 }

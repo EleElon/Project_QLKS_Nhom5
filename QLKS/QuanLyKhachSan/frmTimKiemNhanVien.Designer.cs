@@ -39,8 +39,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.panelFilterOptions = new System.Windows.Forms.Panel();
-            this.chkLuongTangDan = new System.Windows.Forms.CheckBox();
             this.chkLuongGiamDan = new System.Windows.Forms.CheckBox();
+            this.chkLuongTangDan = new System.Windows.Forms.CheckBox();
             this.btnQuayLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemNV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,16 +64,18 @@
             this.dgvTimKiemNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTimKiemNV.BackgroundColor = System.Drawing.Color.White;
             this.dgvTimKiemNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTimKiemNV.Location = new System.Drawing.Point(5, 18);
+            this.dgvTimKiemNV.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTimKiemNV.Location = new System.Drawing.Point(3, 18);
             this.dgvTimKiemNV.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTimKiemNV.Name = "dgvTimKiemNV";
             this.dgvTimKiemNV.RowHeadersWidth = 51;
             this.dgvTimKiemNV.RowTemplate.Height = 24;
-            this.dgvTimKiemNV.Size = new System.Drawing.Size(620, 257);
+            this.dgvTimKiemNV.Size = new System.Drawing.Size(847, 329);
             this.dgvTimKiemNV.TabIndex = 16;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
@@ -141,9 +143,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvTimKiemNV);
-            this.groupBox1.Location = new System.Drawing.Point(111, 176);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 132);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(628, 281);
+            this.groupBox1.Size = new System.Drawing.Size(853, 350);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Kết Quả";
@@ -162,24 +165,14 @@
             // 
             // panelFilterOptions
             // 
+            this.panelFilterOptions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFilterOptions.Controls.Add(this.chkLuongGiamDan);
             this.panelFilterOptions.Controls.Add(this.chkLuongTangDan);
-            this.panelFilterOptions.Location = new System.Drawing.Point(12, 27);
+            this.panelFilterOptions.Location = new System.Drawing.Point(12, 166);
             this.panelFilterOptions.Name = "panelFilterOptions";
             this.panelFilterOptions.Size = new System.Drawing.Size(200, 100);
             this.panelFilterOptions.TabIndex = 19;
             this.panelFilterOptions.Visible = false;
-            // 
-            // chkLuongTangDan
-            // 
-            this.chkLuongTangDan.AutoSize = true;
-            this.chkLuongTangDan.Location = new System.Drawing.Point(3, 12);
-            this.chkLuongTangDan.Name = "chkLuongTangDan";
-            this.chkLuongTangDan.Size = new System.Drawing.Size(143, 17);
-            this.chkLuongTangDan.TabIndex = 0;
-            this.chkLuongTangDan.Text = "Xếp theo lương tăng dần";
-            this.chkLuongTangDan.UseVisualStyleBackColor = true;
-            this.chkLuongTangDan.CheckedChanged += new System.EventHandler(this.chkLuongTangDan_CheckedChanged);
             // 
             // chkLuongGiamDan
             // 
@@ -191,6 +184,17 @@
             this.chkLuongGiamDan.Text = "xếp theo lương giảm dần";
             this.chkLuongGiamDan.UseVisualStyleBackColor = true;
             this.chkLuongGiamDan.CheckedChanged += new System.EventHandler(this.chkLuongGiamDan_CheckedChanged);
+            // 
+            // chkLuongTangDan
+            // 
+            this.chkLuongTangDan.AutoSize = true;
+            this.chkLuongTangDan.Location = new System.Drawing.Point(3, 12);
+            this.chkLuongTangDan.Name = "chkLuongTangDan";
+            this.chkLuongTangDan.Size = new System.Drawing.Size(143, 17);
+            this.chkLuongTangDan.TabIndex = 0;
+            this.chkLuongTangDan.Text = "Xếp theo lương tăng dần";
+            this.chkLuongTangDan.UseVisualStyleBackColor = true;
+            this.chkLuongTangDan.CheckedChanged += new System.EventHandler(this.chkLuongTangDan_CheckedChanged);
             // 
             // btnQuayLai
             // 
@@ -223,6 +227,7 @@
             this.Controls.Add(this.label2);
             this.Name = "frmTimKiemNhanVien";
             this.Text = "frmTimKiemNhanVien";
+            this.Resize += new System.EventHandler(this.frmTimKiemNhanVien_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemNV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panelFilterOptions.ResumeLayout(false);
