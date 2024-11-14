@@ -181,69 +181,7 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void btnThemPhong_Click_1(object sender, EventArgs e)
-        {
-            // Xóa tất cả thông báo lỗi trước khi kiểm tra
-            errorProvider2.Clear();
-
-            // Lấy dữ liệu từ các điều khiển
-            string maLoaiPhong = cbMaLoaiPhong.Text;
-            string tenPhong = txtTenLoaiPhong.Text;
-            string gia = txtGia.Text;
-
-            // Kiểm tra tính hợp lệ của các trường nhập
-            if (!ValidateInput(maLoaiPhong, tenPhong, gia, out float giaValue))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
-                return;
-            }
-
-            // Gọi phương thức thêm loại phòng từ lớp BUS
-            bool ketQua = bus_LoaiPhong.ThemLoaiPhong(maLoaiPhong, tenPhong, giaValue);
-
-            if (ketQua)
-            {
-                MessageBox.Show("Thêm loại phòng thành công!");
-               LoadViewLoaiPhong (); // Tải lại dữ liệu để cập nhật
-            }
-            else
-            {
-                MessageBox.Show("Mã loại phòng đã tồn tại hoặc thêm loại phòng thất bại.");
-            }
-        }
-
-        private void btnXoaPhong_Click_1(object sender, EventArgs e)
-        {
-            string maLoaiPhong = cbMaLoaiPhong.Text;
-
-            if (bus_LoaiPhong.XoaLoaiPhong(maLoaiPhong))
-            {
-                MessageBox.Show("Xóa loại phòng thành công!");
-                LoadViewLoaiPhong();
-
-            }
-            else
-            {
-                MessageBox.Show("Xóa loại phòng thất bại. Không tìm thấy mã loại phòng.");
-            }
-        }
-
-        private void btnCapNhat_Click_1(object sender, EventArgs e)
-        {
-            string maLoaiPhong = cbMaLoaiPhong.Text;
-            string tenLoaiPhong = txtTenLoaiPhong.Text;
-            float gia = float.Parse(txtGia.Text);
-
-            if (bus_LoaiPhong.SuaLoaiPhong(maLoaiPhong, tenLoaiPhong, gia))
-            {
-                MessageBox.Show("Sửa loại phòng thành công!");
-                LoadViewLoaiPhong();
-            }
-            else
-            {
-                MessageBox.Show("Sửa loại phòng thất bại. Không tìm thấy mã loại phòng.");
-            }
-        }
+       
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -257,16 +195,7 @@ namespace QuanLyKhachSan
 
         private void dgvLoaiPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                // Lấy dòng được chọn
-                DataGridViewRow row = dgvLoaiPhong.Rows[e.RowIndex];
-
-                // Hiển thị thông tin của dòng được chọn lên các TextBox tương ứng
-                cbMaLoaiPhong.Text = row.Cells["MaLoaiPhong"].Value.ToString();
-                txtTenLoaiPhong.Text = row.Cells["TenLoaiPhong"].Value.ToString();
-                txtGia.Text = row.Cells["Gia"].Value.ToString();
-            }
+           
         }
 
         private void cbMaLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
@@ -344,6 +273,95 @@ namespace QuanLyKhachSan
        
 
         private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmTimKiemPhong frmTimKiemPhong = new frmTimKiemPhong();
+            frmTimKiemPhong.ShowDialog();
+        }
+
+        private void tbPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemPhong_Click(object sender, EventArgs e)
+        {
+            // Xóa tất cả thông báo lỗi trước khi kiểm tra
+            errorProvider2.Clear();
+
+            // Lấy dữ liệu từ các điều khiển
+            string maLoaiPhong = cbMaLoaiPhong.Text;
+            string tenPhong = txtTenLoaiPhong.Text;
+            string gia = txtGia.Text;
+
+            // Kiểm tra tính hợp lệ của các trường nhập
+            if (!ValidateInput(maLoaiPhong, tenPhong, gia, out float giaValue))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                return;
+            }
+
+            // Gọi phương thức thêm loại phòng từ lớp BUS
+            bool ketQua = bus_LoaiPhong.ThemLoaiPhong(maLoaiPhong, tenPhong, giaValue);
+
+            if (ketQua)
+            {
+                MessageBox.Show("Thêm loại phòng thành công!");
+                LoadViewLoaiPhong(); // Tải lại dữ liệu để cập nhật
+            }
+            else
+            {
+                MessageBox.Show("Mã loại phòng đã tồn tại hoặc thêm loại phòng thất bại.");
+            }
+        }
+
+        private void btnXoaPhong_Click(object sender, EventArgs e)
+        {
+            string maLoaiPhong = cbMaLoaiPhong.Text;
+
+            if (bus_LoaiPhong.XoaLoaiPhong(maLoaiPhong))
+            {
+                MessageBox.Show("Xóa loại phòng thành công!");
+                LoadViewLoaiPhong();
+
+            }
+            else
+            {
+                MessageBox.Show("Xóa loại phòng thất bại. Không tìm thấy mã loại phòng.");
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            string maLoaiPhong = cbMaLoaiPhong.Text;
+            string tenLoaiPhong = txtTenLoaiPhong.Text;
+            float gia = float.Parse(txtGia.Text);
+
+            if (bus_LoaiPhong.SuaLoaiPhong(maLoaiPhong, tenLoaiPhong, gia))
+            {
+                MessageBox.Show("Sửa loại phòng thành công!");
+                LoadViewLoaiPhong();
+            }
+            else
+            {
+                MessageBox.Show("Sửa loại phòng thất bại. Không tìm thấy mã loại phòng.");
+            }
+        }
+
+        private void dgvLoaiPhong_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Lấy dòng được chọn
+                DataGridViewRow row = dgvLoaiPhong.Rows[e.RowIndex];
+
+                // Hiển thị thông tin của dòng được chọn lên các TextBox tương ứng
+                cbMaLoaiPhong.Text = row.Cells["MaLoaiPhong"].Value.ToString();
+                txtTenLoaiPhong.Text = row.Cells["TenLoaiPhong"].Value.ToString();
+                txtGia.Text = row.Cells["Gia"].Value.ToString();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             frmTimKiemPhong frmTimKiemPhong = new frmTimKiemPhong();
             frmTimKiemPhong.ShowDialog();

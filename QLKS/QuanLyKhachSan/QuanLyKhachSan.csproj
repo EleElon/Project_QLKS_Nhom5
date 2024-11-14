@@ -229,6 +229,7 @@
     <None Include="Resources\hotel-overview-1685329656.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\plus.png" />
     <None Include="Resources\hotel-overview-16853296561.jpg" />
     <Content Include="Resources\mat_tien_.jpg" />
   </ItemGroup>
