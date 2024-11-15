@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -118,11 +136,11 @@
     <Compile Include="frmThayDoiChuoiKetNoi.Designer.cs">
       <DependentUpon>frmThayDoiChuoiKetNoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKeDoanhThu.cs">
+    <Compile Include="frmThongKeKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKeDoanhThu.designer.cs">
-      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    <Compile Include="frmThongKeKhachHang.designer.cs">
+      <DependentUpon>frmThongKeKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTimKiemHoaDon.cs">
       <SubType>Form</SubType>
@@ -144,6 +162,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThayDoichuoiKetNoi.cs" />
     <Compile Include="TimKiemKhachHang.cs">
       <SubType>Form</SubType>
@@ -184,8 +203,8 @@
     <EmbeddedResource Include="frmThayDoiChuoiKetNoi.resx">
       <DependentUpon>frmThayDoiChuoiKetNoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKeDoanhThu.resx">
-      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="frmThongKeKhachHang.resx">
+      <DependentUpon>frmThongKeKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimKiemHoaDon.resx">
       <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
@@ -209,6 +228,7 @@
     <EmbeddedResource Include="TimKiemKhachHang.resx">
       <DependentUpon>TimKiemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -229,7 +249,19 @@
     <None Include="Resources\hotel-overview-1685329656.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\plus.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\hotel-overview-16853296561.jpg" />
     <Content Include="Resources\mat_tien_.jpg" />
   </ItemGroup>

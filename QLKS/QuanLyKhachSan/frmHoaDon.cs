@@ -16,7 +16,7 @@ namespace QuanLiKhachSan_Nhom5
     public partial class frmHoaDon : Form
     {
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
-        BUS_DanhSachDichVu busDSDichVu = new BUS_DanhSachDichVu();
+       
         public frmHoaDon()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace QuanLiKhachSan_Nhom5
             dgvHoaDon.Columns["DanhSachSuDungDichVu"].Visible = false;
             dgvHoaDon.Columns["DatPhong"].Visible = false;
             dgvHoaDon.Columns["HoaDon"].Visible = false;
-            List<DanhSachSuDungDichVu> DSDV = busDSDichVu.HienThi();
+            List<DanhSachSuDungDichVu> DSDV = BUS_DanhSachDichVu.Instance.LayDanhSachSuDungDichVu();
             ccbMaSDDV.DataSource = DSDV;
             ccbMaSDDV.DisplayMember = "MaSuDungDichVu"; // Hiển thị tên loại phòng trong ComboBox
             

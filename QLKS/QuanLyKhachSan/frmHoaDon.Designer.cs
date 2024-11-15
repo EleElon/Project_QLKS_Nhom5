@@ -65,6 +65,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.ccbGiamGia);
             this.groupBox2.Controls.Add(this.ccbMaDP);
             this.groupBox2.Controls.Add(this.ccbMaSDDV);
@@ -141,6 +142,7 @@
             // 
             // dgvHoaDon
             // 
+            this.dgvHoaDon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.White;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Location = new System.Drawing.Point(8, 259);
@@ -326,6 +328,7 @@
             // 
             // btnThem
             // 
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(99, 666);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
@@ -338,6 +341,7 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(392, 666);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
@@ -350,6 +354,7 @@
             // 
             // btnSua
             // 
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(660, 666);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
@@ -362,6 +367,7 @@
             // 
             // btnThoat
             // 
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Location = new System.Drawing.Point(905, 666);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
@@ -374,19 +380,21 @@
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Blue;
             this.label15.Location = new System.Drawing.Point(504, 11);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(132, 32);
+            this.label15.Size = new System.Drawing.Size(359, 91);
             this.label15.TabIndex = 14;
             this.label15.Text = "Hóa Đơn";
             this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // btnTim
             // 
+            this.btnTim.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.Location = new System.Drawing.Point(831, 66);
             this.btnTim.Margin = new System.Windows.Forms.Padding(4);
@@ -399,6 +407,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(32, 82);
@@ -409,6 +418,7 @@
             this.label1.Text = "Mã hóa đơn";
             this.label1.Click += new System.EventHandler(this.label2_Click);
             // 
+
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;

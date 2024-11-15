@@ -113,7 +113,7 @@ namespace QuanLyKhachSan
            
             // Đặt form không phải là form chính
             pnMain.Controls.Clear();
-       frmThongKeDoanhThu fr = new frmThongKeDoanhThu();
+       frmThongKeKhachHang fr = new frmThongKeKhachHang();
 
             fr.TopLevel = false;
             fr.Dock = DockStyle.Fill;

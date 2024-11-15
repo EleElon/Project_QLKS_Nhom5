@@ -158,7 +158,7 @@
             this.dgvLoaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoaiPhong.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoaiPhong.Location = new System.Drawing.Point(6, 31);
+            this.dgvLoaiPhong.Location = new System.Drawing.Point(7, 35);
             this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.RowHeadersWidth = 51;
@@ -302,7 +302,7 @@
             this.cbtinhTrang.Items.AddRange(new object[] {
             "Trống",
             "Đang Sử Dụng"});
-            this.cbtinhTrang.Location = new System.Drawing.Point(246, 184);
+            this.cbtinhTrang.Location = new System.Drawing.Point(203, 255);
             this.cbtinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbtinhTrang.Name = "cbtinhTrang";
             this.cbtinhTrang.Size = new System.Drawing.Size(164, 30);
@@ -311,11 +311,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(26, 184);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 32);
+            this.label3.Size = new System.Drawing.Size(121, 29);
             this.label3.TabIndex = 32;
             this.label3.Text = "Tình trạng";
             // 
@@ -331,29 +330,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(22, 50);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 32);
+            this.label1.Size = new System.Drawing.Size(120, 29);
             this.label1.TabIndex = 15;
             this.label1.Text = "Mã phòng";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(26, 143);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 32);
+            this.label2.Size = new System.Drawing.Size(117, 29);
             this.label2.TabIndex = 17;
             this.label2.Text = "Số phòng";
             // 
             // txtSoPhong
             // 
             this.txtSoPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoPhong.Location = new System.Drawing.Point(246, 143);
+            this.txtSoPhong.Location = new System.Drawing.Point(203, 195);
             this.txtSoPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoPhong.Name = "txtSoPhong";
             this.txtSoPhong.Size = new System.Drawing.Size(164, 28);
@@ -363,11 +360,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(22, 99);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 32);
+            this.label4.Size = new System.Drawing.Size(165, 29);
             this.label4.TabIndex = 21;
             this.label4.Text = "Mã loại phòng";
             // 
@@ -376,7 +372,7 @@
             this.cbMaLoaiPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaLoaiPhong.FormattingEnabled = true;
-            this.cbMaLoaiPhong.Location = new System.Drawing.Point(246, 99);
+            this.cbMaLoaiPhong.Location = new System.Drawing.Point(203, 132);
             this.cbMaLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMaLoaiPhong.Name = "cbMaLoaiPhong";
             this.cbMaLoaiPhong.Size = new System.Drawing.Size(164, 30);
@@ -507,7 +503,9 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label5;
+
         private System.Windows.Forms.TextBox ccbMaLoaiPhong;
         private System.Windows.Forms.TextBox txtMaPhong;
+
     }
 }
