@@ -7,19 +7,19 @@
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -56,8 +56,7 @@
               "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmLuong.cs [Design]",
               "RelativeToolTip": "frmLuong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T10:55:14.671Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-14T10:55:14.671Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\FrmMain.cs [Design]",
               "RelativeToolTip": "FrmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T10:55:13.936Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-14T10:55:13.936Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs [Design]",
               "RelativeToolTip": "frmHoaDon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:34:31.18Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-14T09:34:31.18Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "..\\DAO\\DAO_DSPhong.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:14:05.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T09:14:05.696Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "..\\DAO\\DAO_HoaDon.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:14:05.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T09:14:05.159Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "..\\DAO\\DAO_DatPhong.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:14:03.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T09:14:03.907Z"
             },
             {
               "$type": "Document",
@@ -156,8 +150,7 @@
               "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\Form1.cs [Design]",
               "RelativeToolTip": "..\\DAO\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T00:59:20.727Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-11T00:59:20.727Z"
             },
             {
               "$type": "Document",
@@ -169,8 +162,7 @@
               "RelativeToolTip": "..\\DAO\\DAO_LoaiPhong.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T00:59:17.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T00:59:17.572Z"
             }
           ]
         }

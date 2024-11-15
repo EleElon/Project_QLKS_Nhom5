@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -45,11 +49,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "frmDichVu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs",
+              "RelativeDocumentMoniker": "frmDichVu.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs [Design]",
+              "RelativeToolTip": "frmDichVu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T02:20:42.962Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmLuong.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmLuong.cs",
               "RelativeDocumentMoniker": "frmLuong.cs",
@@ -60,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FrmMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\FrmMain.cs",
               "RelativeDocumentMoniker": "FrmMain.cs",
@@ -71,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "frmHoaDon.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs",
               "RelativeDocumentMoniker": "frmHoaDon.cs",
@@ -82,12 +98,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "frmDSPhong.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs",
               "RelativeDocumentMoniker": "frmDSPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs*",
-              "RelativeToolTip": "frmDSPhong.cs*",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs",
+              "RelativeToolTip": "frmDSPhong.cs",
               "ViewState": "AgIAAEsBAAAAAAAAAIAwwGoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T09:27:21.998Z",
@@ -99,15 +115,15 @@
               "Title": "frmDSPhong.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs",
               "RelativeDocumentMoniker": "frmDSPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs [Design]*",
-              "RelativeToolTip": "frmDSPhong.cs [Design]*",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs [Design]",
+              "RelativeToolTip": "frmDSPhong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T09:14:10.108Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DAO_DSPhong.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DSPhong.cs",
               "RelativeDocumentMoniker": "..\\DAO\\DAO_DSPhong.cs",
@@ -119,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DAO_HoaDon.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_HoaDon.cs",
               "RelativeDocumentMoniker": "..\\DAO\\DAO_HoaDon.cs",
@@ -131,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "DAO_DatPhong.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DatPhong.cs",
               "RelativeDocumentMoniker": "..\\DAO\\DAO_DatPhong.cs",
@@ -143,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\Form1.cs",
               "RelativeDocumentMoniker": "..\\DAO\\Form1.cs",
@@ -154,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "DAO_LoaiPhong.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_LoaiPhong.cs",
               "RelativeDocumentMoniker": "..\\DAO\\DAO_LoaiPhong.cs",
