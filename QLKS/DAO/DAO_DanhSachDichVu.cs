@@ -22,7 +22,7 @@ namespace DAO
                 return instance;
             }
         }
-        public DAO_DanhSachDichVu() { }
+        private DAO_DanhSachDichVu() { }
 
         public List<DanhSachSuDungDichVu> Xem()
         {
@@ -77,12 +77,16 @@ namespace DAO
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var tenDV = from ma in db.DichVus
-                            select (
-                                ma.MaDichVu);
+                            select new
+                            {
+                                ma.MaDichVu,
+                                ma.TenDichVu
+                            };
+
 
                 foreach (var item in tenDV)
                 {
-                    dp.Add(item, item);
+                    dp.Add(item.MaDichVu, item.TenDichVu);
                 }
 
                 cb.DataSource = new BindingSource(dp, null);
@@ -96,33 +100,36 @@ namespace DAO
             {
                 var rowIndex = data.SelectedCells[0].RowIndex;
                 var row = data.Rows[rowIndex];
+
                 maSDDichVu.Text = row.Cells[0].Value.ToString().Trim();
-                maDichVu.Text = row.Cells[1].Value.ToString().Trim();
-                maDatPhong.Text = row.Cells[2].Value.ToString().Trim();
+                maDichVu.SelectedValue = row.Cells[1].Value != null ? row.Cells[1].Value.ToString().Trim() : null;
+                maDatPhong.SelectedValue = row.Cells[2].Value != null ? row.Cells[2].Value.ToString().Trim() : null;
                 soLuong.Text = row.Cells[3].Value.ToString().Trim();
             }
         }
-        public void Them(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong)
+        public void Them(DanhSachSuDungDichVu dv)
         {
             try
             {
+                // Kiểm tra mã khách hàng đã tồn tại hay chưa
+                if (CheckMaSDDVExists(dv.MaSuDungDichVu))
+                {
+                    MessageBox.Show("Mã su dung vu đã tồn tại. Vui lòng nhập mã khác.");
+                    return; // Không thực hiện thêm nếu mã đã tồn tại
+                }
+
                 using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
 
-                    DanhSachSuDungDichVu dp = new DanhSachSuDungDichVu();
-                    dp.MaSuDungDichVu = maSDDichVu.Text;
-                    dp.MaDichVu = maDichVu.Text;
-                    dp.MaDatPhong = maDatPhong.Text;
-                    dp.SoLuong = int.Parse(soLuong.Text);
-
-                    db.DanhSachSuDungDichVus.InsertOnSubmit(dp);
+                    db.DanhSachSuDungDichVus.InsertOnSubmit(dv);
                     db.SubmitChanges();
                     MessageBox.Show("Thêm thành công");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Thêm vào bị lỗi " + ex);
+
+                MessageBox.Show("Thêm vào bị lỗi ");
             }
         }
         public void Xoa(string maSDDichVu)
@@ -142,6 +149,7 @@ namespace DAO
                 }
             }
         }
+
         public bool Sua(DanhSachSuDungDichVu daDV)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
@@ -149,12 +157,13 @@ namespace DAO
                 var maSDDV = db.DanhSachSuDungDichVus.SingleOrDefault(a => a.MaSuDungDichVu == daDV.MaSuDungDichVu);
                 if (maSDDV != null)
                 {
-                   
+
                     maSDDV.MaDichVu = daDV.MaDichVu;
                     maSDDV.MaDatPhong = daDV.MaDatPhong;
                     maSDDV.SoLuong = daDV.SoLuong;
+
                     db.SubmitChanges();
-                    MessageBox.Show("Sửa thành công");
+
                     return true;
                 }
                 return false;
@@ -168,7 +177,13 @@ namespace DAO
                 return context.DanhSachSuDungDichVus.Any(dv => dv.MaSuDungDichVu == maSDDV);
             }
         }
-
-
+        public List<DanhSachSuDungDichVu> HienThi()
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                // Return all records from the DanhSachSuDungDichVus table
+                return db.DanhSachSuDungDichVus.ToList();
+            }
+        }
     }
 }

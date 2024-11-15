@@ -197,9 +197,9 @@ namespace QuanLyKhachSan
         private void frmTimKiemNhanVien_Resize(object sender, EventArgs e)
         {
             int formWidth = this.ClientSize.Width;
-            int leftRightMargin = 1000;
+            int leftRightMargin = 800;
             int buttonWidth = btnTimKiem.Width;
-            int buttonSpacing = (formWidth + buttonWidth) / 25;
+            int buttonSpacing = (formWidth + buttonWidth) / 50;
             int baseTop = 300;
 
             btnTimKiem.Left = leftRightMargin;

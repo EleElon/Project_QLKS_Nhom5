@@ -183,7 +183,7 @@ namespace DAO
 
                     db.DatPhongs.InsertOnSubmit(dv);
                     db.SubmitChanges();
-                    MessageBox.Show("Thêm thành công");
+                  
                 }
             }
             catch (Exception)
@@ -299,14 +299,15 @@ namespace DAO
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var maDPhong = from ma in db.Phongs
-                               join ct in db.ChiTietDatPhongs on ma.MaPhong equals ct.MaPhong
-                               where (ma.TinhTrang == "Trống" || ct.NgayTraPhong >= DateTime.Now)  // Phòng trống hoặc ngày trả đã hết
-                                  && (ma.TinhTrang == "Đang bao tri" || ct.NgayTraPhong >= DateTime.Now)
-                                   && (ma.TinhTrang == "Đa tra phong" || ct.NgayTraPhong >= DateTime.Now)// Nếu phòng bảo trì, nhưng ngày trả đã hết, vẫn coi là phòng trống
-                               select ma.MaPhong;
+                                select ma.MaPhong;
                 // Loại bỏ các phần tử trùng lặp
                 dp = maDPhong.Distinct().ToList();
                 cb.DataSource = dp;  // Gán trực tiếp List<string> vào DataSource
+                                     // Set SelectedIndex to 0 only if there are items in the list
+                if (dp.Count > 0)
+                {
+                    cb.SelectedIndex = 0;
+                }
             }
         }
 
@@ -360,7 +361,7 @@ namespace DAO
                     // Thêm chi tiết đặt phòng vào cơ sở dữ liệu
                     db.ChiTietDatPhongs.InsertOnSubmit(chiTiet);
                     db.SubmitChanges();
-                    MessageBox.Show("Thêm chi tiết đặt phòng thành công");
+                  
                 }
             }
             catch (Exception )
@@ -428,6 +429,7 @@ namespace DAO
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
+                
                 var ctdp = db.ChiTietDatPhongs.SingleOrDefault(a => a.MaChiTietDatPhong == ct.MaChiTietDatPhong);
                 if (ctdp != null)
                 {
@@ -444,11 +446,23 @@ namespace DAO
                     ctdp.NgayNhanPhong = ct.NgayNhanPhong;
                     ctdp.NgayTraPhong = ct.NgayTraPhong;
 
+                   
                     db.SubmitChanges();
-
+                     MessageBox.Show("Sửa thành công");
                     return true;
                 }
-                return false;
+                else
+                {
+                    MessageBox.Show("Sửa ko thành công");
+                    return false;
+                }
+            }
+        }
+        public bool KiemTraMaChiTietTonTai(string maChiTiet)
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                return db.ChiTietDatPhongs.Any(ct => ct.MaChiTietDatPhong == maChiTiet);
             }
         }
     }

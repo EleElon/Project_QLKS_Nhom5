@@ -47,5 +47,6 @@ namespace QuanLyKhachSan
                 //btnThayDoi_Click(sender, e); // Gọi sự kiện tìm kiếm
             }
         }
+
     }
 }

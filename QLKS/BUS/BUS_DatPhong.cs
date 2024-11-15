@@ -198,13 +198,13 @@ namespace BUS
         {
             return DAO_DatPhong.Instance.CalculateTotalPrice(roomCode, quantity); // Gọi phương thức DAO để tính tổng giá
         }
-        public void SuaCT(TextBox maCT, ComboBox maDatP, string maKH, ComboBox maPhong, ComboBox tenPhong, TextBox tinhTrang, TextBox gia, TextBox soLuong, TextBox TongGia, ComboBox pTTT, DateTime ngayNhan, DateTime ngayTra)
+        public void SuaCT(TextBox maCT, ComboBox maDatP, ComboBox maKH, ComboBox maPhong, ComboBox tenPhong, TextBox tinhTrang, TextBox gia, TextBox soLuong, TextBox TongGia, ComboBox pTTT, DateTime ngayNhan, DateTime ngayTra)
         {
             ChiTietDatPhong dp = new ChiTietDatPhong
             {
                 MaChiTietDatPhong = maCT.Text,
                 MaDatPhong = maDatP.Text,
-                MaKhachHang = maKH,
+                MaKhachHang = maKH.Text,
                 MaPhong = maPhong.Text,
                 MaLoaiPhong = tenPhong.Text,
                 TinhTrang = tinhTrang.Text,
@@ -222,6 +222,10 @@ namespace BUS
             DAO_DatPhong.Instance.Sua(dp);
         }
 
+        public bool KiemTraMaChiTietTonTai(string maChiTiet)
+        {
+            return DAO_DatPhong.Instance.KiemTraMaChiTietTonTai(maChiTiet);
+        }
     }
 
 }
