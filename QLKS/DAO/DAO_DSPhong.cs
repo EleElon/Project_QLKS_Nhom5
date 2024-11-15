@@ -41,7 +41,7 @@ namespace DAO
         }
 
 
-        public bool themPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
+        public bool themPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -78,21 +78,17 @@ namespace DAO
                         return false;
                     }
 
-                    // Xóa phòng khỏi cơ sở dữ liệu
                     db.Phongs.DeleteOnSubmit(phong);
                     db.SubmitChanges();
-
-                    // Trả về true nếu xóa thành công
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
-                    // Xử lý ngoại lệ nếu có
-                    throw ex;
+                    return false;
                 }
             }
         }
-        public bool suaPhong(string maPhong, string maLoaiPhong, int soPhong, string tinhTrang)
+        public bool suaPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {

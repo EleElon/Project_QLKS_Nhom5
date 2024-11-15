@@ -37,12 +37,12 @@ namespace QuanLyKhachSan
         private void button1_Click(object sender, EventArgs e)
         {
             pnMain.Controls.Clear();
-            frmNhanVien dv = new frmNhanVien();
+            frmNhanVien frmNV = new frmNhanVien(this);
 
-            dv.TopLevel = false;
-            dv.Dock = DockStyle.Fill;
-            pnMain.Controls.Add(dv);
-            dv.Show();
+            frmNV.TopLevel = false;
+            frmNV.Dock = DockStyle.Fill;
+            pnMain.Controls.Add(frmNV);
+            frmNV.Show();
 
         }
 
@@ -51,7 +51,7 @@ namespace QuanLyKhachSan
 
             pnMain.Controls.Clear();
             frmKhachHang khachHang = new frmKhachHang();
-    
+
             khachHang.TopLevel = false;
             khachHang.Dock = DockStyle.Fill;
             pnMain.Controls.Add(khachHang);
@@ -113,7 +113,7 @@ namespace QuanLyKhachSan
            
             // Đặt form không phải là form chính
             pnMain.Controls.Clear();
-       frmThongKeDoanhThu fr = new frmThongKeDoanhThu();
+       frmThongKeKhachHang fr = new frmThongKeKhachHang();
 
             fr.TopLevel = false;
             fr.Dock = DockStyle.Fill;

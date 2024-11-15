@@ -1,23 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\QuanLyKhachSan\\QLKS\\QuanLyKhachSan\\",
+  "WorkspaceRootPath": "D:\\Tuan4\\QLKS\\QuanLyKhachSan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{02B8F3CD-561F-486C-9D30-23E691B99345}|..\\BUS\\BUS.csproj|c:\\quanlykhachsan\\qlks\\bus\\bus_datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|c:\\quanlykhachsan\\qlks\\dao\\dao_datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\QuanLyKhachSan\\QLKS\\QuanLyKhachSan\\frmquanliphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|D:\\Tuan4\\QLKS\\QuanLyKhachSan\\frmquanliphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmquanliphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\QuanLyKhachSan\\QLKS\\QuanLyKhachSan\\frmquanliphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmquanliphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|d:\\tuan4\\qlks\\dao\\dao_datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|c:\\quanlykhachsan\\qlks\\dao\\dao_danhsachdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02B8F3CD-561F-486C-9D30-23E691B99345}|..\\BUS\\BUS.csproj|d:\\tuan4\\qlks\\bus\\bus_datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,63 +24,42 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DAO_DanhSachDichVu.cs",
-              "DocumentMoniker": "C:\\QuanLyKhachSan\\QLKS\\DAO\\DAO_DanhSachDichVu.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_DanhSachDichVu.cs",
-              "ToolTip": "C:\\QuanLyKhachSan\\QLKS\\DAO\\DAO_DanhSachDichVu.cs",
-              "RelativeToolTip": "..\\DAO\\DAO_DanhSachDichVu.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAwwJcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T17:09:20.348Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmQuanLiPhong.cs",
-              "DocumentMoniker": "C:\\QuanLyKhachSan\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs",
-              "RelativeDocumentMoniker": "frmQuanLiPhong.cs",
-              "ToolTip": "C:\\QuanLyKhachSan\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs",
-              "RelativeToolTip": "frmQuanLiPhong.cs",
-              "ViewState": "AgIAAPgAAAAAAAAAAAAQwA4BAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T16:45:05.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "BUS_DatPhong.cs",
-              "DocumentMoniker": "C:\\QuanLyKhachSan\\QLKS\\BUS\\BUS_DatPhong.cs",
+              "DocumentMoniker": "D:\\Tuan4\\QLKS\\BUS\\BUS_DatPhong.cs",
               "RelativeDocumentMoniker": "..\\BUS\\BUS_DatPhong.cs",
-              "ToolTip": "C:\\QuanLyKhachSan\\QLKS\\BUS\\BUS_DatPhong.cs",
+              "ToolTip": "D:\\Tuan4\\QLKS\\BUS\\BUS_DatPhong.cs",
               "RelativeToolTip": "..\\BUS\\BUS_DatPhong.cs",
-              "ViewState": "AgIAAMUAAAAAAAAAAAAqwNAAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAMAAAAAAAAAAAAApwM4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:33:57.737Z",
+              "WhenOpened": "2024-11-11T02:21:00.821Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "DAO_DatPhong.cs",
-              "DocumentMoniker": "C:\\QuanLyKhachSan\\QLKS\\DAO\\DAO_DatPhong.cs",
+              "DocumentMoniker": "D:\\Tuan4\\QLKS\\DAO\\DAO_DatPhong.cs",
               "RelativeDocumentMoniker": "..\\DAO\\DAO_DatPhong.cs",
-              "ToolTip": "C:\\QuanLyKhachSan\\QLKS\\DAO\\DAO_DatPhong.cs",
+              "ToolTip": "D:\\Tuan4\\QLKS\\DAO\\DAO_DatPhong.cs",
               "RelativeToolTip": "..\\DAO\\DAO_DatPhong.cs",
-              "ViewState": "AgIAAJoBAAAAAAAAAAAgwL4BAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAewNwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T15:22:36.778Z"
+              "WhenOpened": "2024-11-10T18:10:40.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmQuanLiPhong.cs [Design]",
-              "DocumentMoniker": "C:\\QuanLyKhachSan\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs",
+              "DocumentIndex": 0,
+              "Title": "frmQuanLiPhong.cs",
+              "DocumentMoniker": "D:\\Tuan4\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs",
               "RelativeDocumentMoniker": "frmQuanLiPhong.cs",
-              "ToolTip": "C:\\QuanLyKhachSan\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs [Design]",
-              "RelativeToolTip": "frmQuanLiPhong.cs [Design]",
+              "ToolTip": "D:\\Tuan4\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs",
+              "RelativeToolTip": "frmQuanLiPhong.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T02:55:41.857Z"
+              "WhenOpened": "2024-11-10T14:01:09.514Z",
+              "EditorCaption": ""
             }
           ]
         }

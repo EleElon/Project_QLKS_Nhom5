@@ -27,7 +27,7 @@ namespace BUS
 
         public void Xem(DataGridView data)
         {
-            var dv= DAO_DanhSachDichVu.Instance.Xem().Select(t =>
+            var dv = DAO_DanhSachDichVu.Instance.Xem().Select(t =>
             {
                 return new
                 {
@@ -43,8 +43,8 @@ namespace BUS
         {
             DAO_DanhSachDichVu.Instance.LoadComBoBoxDatPhong(cb);
         }
-        public void LoadDichVu(ComboBox cb) 
-        { 
+        public void LoadDichVu(ComboBox cb)
+        {
             DAO_DanhSachDichVu.Instance.LoadComBoBoxDichVu(cb);
         }
         public void LoadDGVLenForm(TextBox ma, ComboBox maDV, ComboBox maDP, TextBox soLuong, DataGridView data)
@@ -59,7 +59,7 @@ namespace BUS
                 MaDichVu = maDichVu.SelectedValue.ToString(),
                 MaDatPhong = maDatPhong.Text,
                 SoLuong = int.Parse(soLuong.Text)
-               
+
             };
             DAO_DanhSachDichVu.Instance.Them(sd);
         }
@@ -76,8 +76,8 @@ namespace BUS
                 MaDatPhong = maDatPhong.Text,
                 SoLuong = int.Parse(soLuong.Text),
             };
-           
-            bool result =  DAO_DanhSachDichVu.Instance.Sua(dsdv); // Capture the result
+
+            bool result = DAO_DanhSachDichVu.Instance.Sua(dsdv); // Capture the result
             if (result)
             {
                 MessageBox.Show("Sửa thành công!");
@@ -92,6 +92,11 @@ namespace BUS
         {
             return DAO_DanhSachDichVu.Instance.CheckMaSDDVExists(maSDDV);
         }
-
+        // Method to call DAL and retrieve the data
+        public List<DanhSachSuDungDichVu> LayDanhSachSuDungDichVu()
+        {
+            // Here, you could add additional business logic if necessary
+            return DAO_DanhSachDichVu.Instance.HienThi();
+        }
     }
 }

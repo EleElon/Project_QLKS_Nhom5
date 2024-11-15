@@ -79,9 +79,10 @@ namespace DAO
                 var tenDV = from ma in db.DichVus
                             select new
                             {
-                                ma.MaDichVu,ma.TenDichVu
+                                ma.MaDichVu,
+                                ma.TenDichVu
                             };
-                               
+
 
                 foreach (var item in tenDV)
                 {
@@ -156,13 +157,13 @@ namespace DAO
                 var maSDDV = db.DanhSachSuDungDichVus.SingleOrDefault(a => a.MaSuDungDichVu == daDV.MaSuDungDichVu);
                 if (maSDDV != null)
                 {
-                    
+
                     maSDDV.MaDichVu = daDV.MaDichVu;
                     maSDDV.MaDatPhong = daDV.MaDatPhong;
                     maSDDV.SoLuong = daDV.SoLuong;
 
                     db.SubmitChanges();
-                  
+
                     return true;
                 }
                 return false;
@@ -176,6 +177,13 @@ namespace DAO
                 return context.DanhSachSuDungDichVus.Any(dv => dv.MaSuDungDichVu == maSDDV);
             }
         }
-
+        public List<DanhSachSuDungDichVu> HienThi()
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                // Return all records from the DanhSachSuDungDichVus table
+                return db.DanhSachSuDungDichVus.ToList();
+            }
+        }
     }
 }

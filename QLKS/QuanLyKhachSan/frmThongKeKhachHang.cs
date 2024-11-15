@@ -25,7 +25,7 @@ namespace QuanLiKhachSan_Nhom5
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            BUS_ThoongKeKhachHang.Instance.HienThi(dgvThongKe, dtpDen.Value.ToString("yyyy-MM-dd"), dtpTu.Value.ToString("yyyy-MM-dd"));
+            BUS_ThoongKeKhachHang.Instance.HienThi(dgvThongKe, dtpTu.Text.ToString(), dtpDen.Text.ToString());
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)

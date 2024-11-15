@@ -89,5 +89,15 @@ namespace QuanLyKhachSan.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap N5_9842_SENIOR_6_700x450 {
+            get {
+                object obj = ResourceManager.GetObject("N5_9842_SENIOR_6-700x450", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

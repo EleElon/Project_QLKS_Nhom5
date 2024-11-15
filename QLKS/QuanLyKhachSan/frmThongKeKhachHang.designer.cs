@@ -51,7 +51,7 @@
             this.label1.Location = new System.Drawing.Point(735, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 39);
+            this.label1.Size = new System.Drawing.Size(366, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Thống Kê Khách Hàng";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -148,7 +148,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1398, 553);
+            this.groupBox2.Size = new System.Drawing.Size(1800, 553);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Thống Kê";
@@ -158,11 +158,11 @@
             this.dgvThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThongKe.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongKe.Location = new System.Drawing.Point(16, 29);
+            this.dgvThongKe.Location = new System.Drawing.Point(10, 29);
             this.dgvThongKe.Margin = new System.Windows.Forms.Padding(4);
             this.dgvThongKe.Name = "dgvThongKe";
             this.dgvThongKe.RowHeadersWidth = 51;
-            this.dgvThongKe.Size = new System.Drawing.Size(1374, 501);
+            this.dgvThongKe.Size = new System.Drawing.Size(1750, 501);
             this.dgvThongKe.TabIndex = 0;
             // 
             // frmThongKeKhachHang
