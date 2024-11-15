@@ -39,7 +39,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvLoaiPhong = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ccbMaLoaiPhong = new System.Windows.Forms.ComboBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenLoaiPhong = new System.Windows.Forms.TextBox();
@@ -54,13 +53,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoPhong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.ccbMaPhong = new System.Windows.Forms.ComboBox();
             this.cbMaLoaiPhong = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.ccbMaLoaiPhong = new System.Windows.Forms.TextBox();
+            this.txtMaPhong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -92,6 +91,7 @@
             this.button2.TabIndex = 57;
             this.button2.Text = "Tìm Kiếm";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
             // 
             // btnCapNhat
             // 
@@ -106,6 +106,7 @@
             this.btnCapNhat.TabIndex = 54;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
             // 
             // btnXoaPhong
             // 
@@ -120,6 +121,7 @@
             this.btnXoaPhong.TabIndex = 55;
             this.btnXoaPhong.Text = "Xóa Phòng";
             this.btnXoaPhong.UseVisualStyleBackColor = false;
+            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaPhong_Click_1);
             // 
             // btnThemPhong
             // 
@@ -134,6 +136,7 @@
             this.btnThemPhong.TabIndex = 56;
             this.btnThemPhong.Text = "Thêm Phòng";
             this.btnThemPhong.UseVisualStyleBackColor = false;
+            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
             // 
             // groupBox4
             // 
@@ -145,7 +148,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(875, 323);
+            this.groupBox4.Size = new System.Drawing.Size(757, 323);
             this.groupBox4.TabIndex = 53;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Loại Phòng";
@@ -160,15 +163,16 @@
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.RowHeadersWidth = 51;
             this.dgvLoaiPhong.RowTemplate.Height = 24;
-            this.dgvLoaiPhong.Size = new System.Drawing.Size(859, 288);
+            this.dgvLoaiPhong.Size = new System.Drawing.Size(731, 288);
             this.dgvLoaiPhong.TabIndex = 0;
+            this.dgvLoaiPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiPhong_CellContentClick_2);
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.groupBox3.Controls.Add(this.ccbMaLoaiPhong);
             this.groupBox3.Controls.Add(this.txtGia);
             this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.ccbMaLoaiPhong);
             this.groupBox3.Controls.Add(this.txtTenLoaiPhong);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
@@ -182,27 +186,6 @@
             this.groupBox3.TabIndex = 52;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Loại phòng";
-            // 
-            // ccbMaLoaiPhong
-            // 
-            this.ccbMaLoaiPhong.FormattingEnabled = true;
-            this.ccbMaLoaiPhong.Items.AddRange(new object[] {
-            "LP001",
-            "LP002",
-            "LP003",
-            "LP004",
-            "LP005",
-            "LP006",
-            "LP007",
-            "LP008",
-            "LP009",
-            "LP010",
-            "LP011",
-            "LP012"});
-            this.ccbMaLoaiPhong.Location = new System.Drawing.Point(246, 50);
-            this.ccbMaLoaiPhong.Name = "ccbMaLoaiPhong";
-            this.ccbMaLoaiPhong.Size = new System.Drawing.Size(172, 37);
-            this.ccbMaLoaiPhong.TabIndex = 3;
             // 
             // txtGia
             // 
@@ -263,7 +246,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(875, 340);
+            this.groupBox2.Size = new System.Drawing.Size(757, 340);
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Các Phòng";
@@ -278,18 +261,19 @@
             this.dgvDanhSachPhong.Name = "dgvDanhSachPhong";
             this.dgvDanhSachPhong.RowHeadersWidth = 51;
             this.dgvDanhSachPhong.RowTemplate.Height = 24;
-            this.dgvDanhSachPhong.Size = new System.Drawing.Size(861, 301);
+            this.dgvDanhSachPhong.Size = new System.Drawing.Size(730, 301);
             this.dgvDanhSachPhong.TabIndex = 23;
+            this.dgvDanhSachPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachPhong_CellContentClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbtinhTrang);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtMaPhong);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSoPhong);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.ccbMaPhong);
             this.groupBox1.Controls.Add(this.cbMaLoaiPhong);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
@@ -368,30 +352,6 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Mã loại phòng";
             // 
-            // ccbMaPhong
-            // 
-            this.ccbMaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ccbMaPhong.FormattingEnabled = true;
-            this.ccbMaPhong.Items.AddRange(new object[] {
-            "P001",
-            "P002",
-            "P003",
-            "P004",
-            "P005",
-            "P006",
-            "P007",
-            "P008",
-            "P009",
-            "P010",
-            "P011",
-            "P012",
-            "P0013"});
-            this.ccbMaPhong.Location = new System.Drawing.Point(246, 50);
-            this.ccbMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ccbMaPhong.Name = "ccbMaPhong";
-            this.ccbMaPhong.Size = new System.Drawing.Size(164, 30);
-            this.ccbMaPhong.TabIndex = 22;
-            // 
             // cbMaLoaiPhong
             // 
             this.cbMaLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -415,6 +375,7 @@
             this.btnXoa.TabIndex = 48;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -429,19 +390,7 @@
             this.btnSua.TabIndex = 49;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnThoat.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(24, 657);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(112, 46);
-            this.btnThoat.TabIndex = 47;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -456,6 +405,7 @@
             this.btnThem.TabIndex = 46;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label5
             // 
@@ -468,6 +418,22 @@
             this.label5.Size = new System.Drawing.Size(292, 42);
             this.label5.TabIndex = 45;
             this.label5.Text = "Quản Lý Phòng";
+            // 
+            // ccbMaLoaiPhong
+            // 
+            this.ccbMaLoaiPhong.Location = new System.Drawing.Point(246, 55);
+            this.ccbMaLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ccbMaLoaiPhong.Name = "ccbMaLoaiPhong";
+            this.ccbMaLoaiPhong.Size = new System.Drawing.Size(172, 34);
+            this.ccbMaLoaiPhong.TabIndex = 2;
+            // 
+            // txtMaPhong
+            // 
+            this.txtMaPhong.Location = new System.Drawing.Point(246, 50);
+            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.Size = new System.Drawing.Size(172, 32);
+            this.txtMaPhong.TabIndex = 2;
             // 
             // frmDSPhong
             // 
@@ -485,7 +451,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label5);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -519,7 +484,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvLoaiPhong;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox ccbMaLoaiPhong;
         private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTenLoaiPhong;
@@ -534,12 +498,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSoPhong;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox ccbMaPhong;
         private System.Windows.Forms.ComboBox cbMaLoaiPhong;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox ccbMaLoaiPhong;
+        private System.Windows.Forms.TextBox txtMaPhong;
     }
 }
