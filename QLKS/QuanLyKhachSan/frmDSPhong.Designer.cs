@@ -41,6 +41,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.ccbMaLoaiPhong = new System.Windows.Forms.TextBox();
             this.txtTenLoaiPhong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbtinhTrang = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoPhong = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.ccbMaLoaiPhong = new System.Windows.Forms.TextBox();
-            this.txtMaPhong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -132,7 +132,7 @@
             this.btnThemPhong.Location = new System.Drawing.Point(716, 653);
             this.btnThemPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemPhong.Name = "btnThemPhong";
-            this.btnThemPhong.Size = new System.Drawing.Size(133, 48);
+            this.btnThemPhong.Size = new System.Drawing.Size(154, 48);
             this.btnThemPhong.TabIndex = 56;
             this.btnThemPhong.Text = "Thêm Phòng";
             this.btnThemPhong.UseVisualStyleBackColor = false;
@@ -205,6 +205,15 @@
             this.label6.Size = new System.Drawing.Size(67, 32);
             this.label6.TabIndex = 1;
             this.label6.Text = "Giá:";
+            // 
+            // ccbMaLoaiPhong
+            // 
+            this.ccbMaLoaiPhong.Location = new System.Drawing.Point(246, 55);
+            this.ccbMaLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ccbMaLoaiPhong.Name = "ccbMaLoaiPhong";
+            this.ccbMaLoaiPhong.Size = new System.Drawing.Size(172, 34);
+            this.ccbMaLoaiPhong.TabIndex = 2;
+            this.ccbMaLoaiPhong.TextChanged += new System.EventHandler(this.ccbMaLoaiPhong_TextChanged);
             // 
             // txtTenLoaiPhong
             // 
@@ -310,6 +319,15 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Tình trạng";
             // 
+            // txtMaPhong
+            // 
+            this.txtMaPhong.Location = new System.Drawing.Point(246, 50);
+            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.Size = new System.Drawing.Size(172, 32);
+            this.txtMaPhong.TabIndex = 2;
+            this.txtMaPhong.TextChanged += new System.EventHandler(this.txtMaPhong_TextChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -340,6 +358,7 @@
             this.txtSoPhong.Name = "txtSoPhong";
             this.txtSoPhong.Size = new System.Drawing.Size(164, 28);
             this.txtSoPhong.TabIndex = 18;
+            this.txtSoPhong.TextChanged += new System.EventHandler(this.txtSoPhong_TextChanged);
             // 
             // label4
             // 
@@ -354,6 +373,7 @@
             // 
             // cbMaLoaiPhong
             // 
+            this.cbMaLoaiPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaLoaiPhong.FormattingEnabled = true;
             this.cbMaLoaiPhong.Location = new System.Drawing.Point(246, 99);
@@ -418,22 +438,6 @@
             this.label5.Size = new System.Drawing.Size(292, 42);
             this.label5.TabIndex = 45;
             this.label5.Text = "Quản Lý Phòng";
-            // 
-            // ccbMaLoaiPhong
-            // 
-            this.ccbMaLoaiPhong.Location = new System.Drawing.Point(246, 55);
-            this.ccbMaLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ccbMaLoaiPhong.Name = "ccbMaLoaiPhong";
-            this.ccbMaLoaiPhong.Size = new System.Drawing.Size(172, 34);
-            this.ccbMaLoaiPhong.TabIndex = 2;
-            // 
-            // txtMaPhong
-            // 
-            this.txtMaPhong.Location = new System.Drawing.Point(246, 50);
-            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(172, 32);
-            this.txtMaPhong.TabIndex = 2;
             // 
             // frmDSPhong
             // 

@@ -56,8 +56,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnTim = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ccbMaHD = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtMaHD = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -409,29 +409,19 @@
             this.label1.Text = "Mã hóa đơn";
             this.label1.Click += new System.EventHandler(this.label2_Click);
             // 
-            // ccbMaHD
-            // 
-            this.ccbMaHD.FormattingEnabled = true;
-            this.ccbMaHD.Items.AddRange(new object[] {
-            "HD01",
-            "HD02",
-            "HD03",
-            "HD04",
-            "HD05",
-            "HD06",
-            "HD07",
-            "HD08",
-            "HD09",
-            "HD010"});
-            this.ccbMaHD.Location = new System.Drawing.Point(231, 82);
-            this.ccbMaHD.Name = "ccbMaHD";
-            this.ccbMaHD.Size = new System.Drawing.Size(160, 24);
-            this.ccbMaHD.TabIndex = 4;
-            this.ccbMaHD.SelectedIndexChanged += new System.EventHandler(this.ccbMaSDDV_SelectedIndexChanged);
-            // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
+            // 
+            // txtMaHD
+            // 
+            this.txtMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHD.Location = new System.Drawing.Point(227, 79);
+            this.txtMaHD.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaHD.Name = "txtMaHD";
+            this.txtMaHD.Size = new System.Drawing.Size(164, 30);
+            this.txtMaHD.TabIndex = 1;
+            this.txtMaHD.TextChanged += new System.EventHandler(this.txtSoNgayThue_TextChanged);
             // 
             // frmHoaDon
             // 
@@ -440,7 +430,6 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1143, 743);
             this.Controls.Add(this.btnTim);
-            this.Controls.Add(this.ccbMaHD);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnSua);
@@ -448,6 +437,7 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.txtMaHD);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -489,8 +479,8 @@
         private System.Windows.Forms.ComboBox ccbMaSDDV;
         private System.Windows.Forms.ComboBox ccbGiamGia;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ccbMaHD;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ComboBox ccbMaDP;
+        private System.Windows.Forms.TextBox txtMaHD;
     }
 }

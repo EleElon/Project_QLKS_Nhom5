@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,6 +28,7 @@ namespace QuanLyKhachSan
             
             LoadViewPhong();
             LoadViewLoaiPhong();
+            GioiHanKiTu();
             List<LoaiPhong> danhSachLoaiPhong = bus_LoaiPhong.Xem();
             dgvLoaiPhong.DataSource = danhSachLoaiPhong;
             cbMaLoaiPhong.DataSource = danhSachLoaiPhong;        
@@ -67,10 +69,6 @@ namespace QuanLyKhachSan
             }
         }
       
-
-        
-
-       
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -159,7 +157,12 @@ namespace QuanLyKhachSan
             return isValid;
         }
 
-       
+       public void GioiHanKiTu()
+        {
+            txtMaPhong.MaxLength = 10;
+            txtSoPhong.MaxLength = 3;
+            ccbMaLoaiPhong.MaxLength = 10;
+        }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -223,7 +226,7 @@ namespace QuanLyKhachSan
             string maPhong = txtMaPhong.Text;
             string maLoaiPhong = cbMaLoaiPhong.SelectedValue?.ToString();
             string soPhong = txtSoPhong.Text;
-            string tinhTrang = cbtinhTrang.Text;
+            string tinhTrang = "Trống";
 
             // Kiểm tra tính hợp lệ của các trường nhập
             if (!ValidateInput(maPhong, maLoaiPhong, soPhong, tinhTrang))
@@ -381,6 +384,60 @@ namespace QuanLyKhachSan
                 ccbMaLoaiPhong.Text = row.Cells["MaLoaiPhong"].Value.ToString();
                 txtTenLoaiPhong.Text = row.Cells["TenLoaiPhong"].Value.ToString();
                 txtGia.Text = row.Cells["Gia"].Value.ToString();
+            }
+        }
+
+        private void txtMaPhong_TextChanged(object sender, EventArgs e)
+        {
+            // Lấy giá trị trong TextBox
+            string maPhong = txtMaPhong.Text;
+
+            // Kiểm tra ký tự đầu tiên có phải là 'P' không
+            if (!string.IsNullOrEmpty(maPhong) && maPhong[0] != 'P')
+            {
+                // Hiển thị lỗi
+                errorProvider1.SetError(txtMaPhong, "Mã phòng phải bắt đầu bằng chữ 'P'.");
+            }
+            else
+            {
+                // Xóa lỗi nếu đúng
+                errorProvider1.SetError(txtMaPhong, string.Empty);
+            }
+        }
+
+        private void ccbMaLoaiPhong_TextChanged(object sender, EventArgs e)
+        {
+            string maPhong = ccbMaLoaiPhong.Text;
+
+            // Kiểm tra nếu mã phòng không bắt đầu bằng "LP"
+            if (!maPhong.StartsWith("LP"))
+            {
+                // Hiển thị lỗi
+                errorProvider2.SetError(ccbMaLoaiPhong, "Mã phòng phải bắt đầu bằng 'LP'.");
+            }
+            else
+            {
+                // Xóa lỗi nếu đúng
+                errorProvider2.SetError(ccbMaLoaiPhong, string.Empty);
+            }
+
+        }
+
+        private void txtSoPhong_TextChanged(object sender, EventArgs e)
+        {
+            string input = txtSoPhong.Text;
+
+            // Kiểm tra xem có phải là số không
+            if (string.IsNullOrEmpty(input) || !Regex.IsMatch(input, @"^\d+$"))
+            {
+                // Hiển thị thông báo lỗi qua ErrorProvider
+                errorProvider1.SetError(txtSoPhong, "Số phòng chỉ được chứa ký tự số.");
+              
+            }
+            else
+            {
+                // Nếu nhập hợp lệ, xóa thông báo lỗi
+                errorProvider1.SetError(txtSoPhong, string.Empty);
             }
         }
     }
