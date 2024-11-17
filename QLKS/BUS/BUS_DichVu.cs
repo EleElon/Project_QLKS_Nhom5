@@ -10,7 +10,9 @@ namespace BUS
 {
     public class BUS_DichVu
     {
+
         public static BUS_DichVu instance;
+        DAO_DichVu DAO_DichVu = new DAO_DichVu();
         public static BUS_DichVu Instance
         {
             get
@@ -84,6 +86,10 @@ namespace BUS
         public bool CheckMaDVExists(string maDV)
         {
             return DAO_DichVu.Instance.CheckMaExists(maDV);
+        }
+        public double LayGiaDichVu(string maSDDV)
+        {
+            return DAO_DichVu.LayGiaDichVu(maSDDV);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace DAO
 {
     public class DAO_DatPhong
     {
-        private static DAO_DatPhong instance;
+        public static DAO_DatPhong instance;
         public static DAO_DatPhong Instance
         {
             get
@@ -21,7 +21,7 @@ namespace DAO
                 return instance;
             }
         }
-        private DAO_DatPhong() { }
+        public DAO_DatPhong() { }
 
         public List<ChiTietDatPhong> Xem()
         {
@@ -465,5 +465,30 @@ namespace DAO
                 return db.ChiTietDatPhongs.Any(ct => ct.MaChiTietDatPhong == maChiTiet);
             }
         }
+        public int LaySoNgayThue(string maPhong)
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                var chiTiet = db.ChiTietDatPhongs
+                                .Where(ct => ct.MaPhong == maPhong)
+                                .Select(ct => new
+                                {
+                                    NgayBatDau = ct.NgayNhanPhong,
+                                    NgayTra = ct.NgayTraPhong
+                                })
+                                .FirstOrDefault();
+
+                if (chiTiet != null)
+                {
+                    // Tính số ngày thuê (Ngày trả - Ngày bắt đầu)
+                    TimeSpan soNgayThue = (TimeSpan)(chiTiet.NgayTra - chiTiet.NgayBatDau); // Không dùng .Date
+                    return soNgayThue.Days > 0 ? soNgayThue.Days : 0; // Trả về số ngày (nếu âm, trả về 0)
+                }
+                return 0; // Nếu không tìm thấy dữ liệu, trả về 0
+            }
+        }
+
+
+
     }
 }

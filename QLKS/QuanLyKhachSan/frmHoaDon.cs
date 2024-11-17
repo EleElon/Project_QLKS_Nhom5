@@ -16,6 +16,9 @@ namespace QuanLiKhachSan_Nhom5
     public partial class frmHoaDon : Form
     {
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
+        BUS_DSPhong busPhong = new BUS_DSPhong();
+        BUS_DatPhong busDatPhong = new BUS_DatPhong();
+        BUS_DichVu busDichVu = new BUS_DichVu();
        
         public frmHoaDon()
         {
@@ -30,6 +33,12 @@ namespace QuanLiKhachSan_Nhom5
         public void LoadView()
         {
             dgvHoaDon.DataSource = busHoaDon.HienThi();
+            var danhSachPhong = busPhong.Xem();
+
+            // Gán dữ liệu vào Combobox
+            ccbMaDP.DataSource = danhSachPhong;
+            ccbMaDP.DisplayMember = "MaPhong"; // Cột hiển thị
+            ccbMaDP.ValueMember = "MaPhong";   // Giá trị cần lấy
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
@@ -61,7 +70,6 @@ namespace QuanLiKhachSan_Nhom5
         { txtTienPhong, "Tiền phòng không được để trống" },
         { txtSoNgayThue, "Số ngày thuê không được để trống" },
         { txtMaHD, "Mã hóa đơn không được để trống" },
-        { ccbMaDP, "Mã đặt phòng không được để trống" },
         { ccbMaSDDV, "Mã sử dụng dịch vụ không được để trống" },
         { cboPTTT, "Hình thức thanh toán không được để trống" }
     };
@@ -135,7 +143,33 @@ namespace QuanLiKhachSan_Nhom5
 
         private void ccbMaSDDV_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                // Lấy mã phòng từ combobox
+                string maPhong = ccbMaDP.SelectedValue?.ToString();
+                
 
+                // Gọi BUS để lấy giá tiền
+                double giaTien = busPhong.LayGiaTienTheoMaPhong(maPhong);
+
+                // Hiển thị giá tiền lên TextBox
+                txtTienPhong.Text = giaTien.ToString();
+               
+                if (!string.IsNullOrEmpty(maPhong))
+                {
+                    int soNgayThue = busDatPhong.LaySoNgayThue(maPhong);
+                    txtSoNgayThue.Text = soNgayThue.ToString();
+                }
+                else
+                {
+                    txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

@@ -114,17 +114,6 @@
             // ccbMaDP
             // 
             this.ccbMaDP.FormattingEnabled = true;
-            this.ccbMaDP.Items.AddRange(new object[] {
-            "PH01",
-            "PH02",
-            "PH03",
-            "PH04",
-            "PH05",
-            "PH06",
-            "PH07",
-            "PH08",
-            "PH09",
-            "PH10"});
             this.ccbMaDP.Location = new System.Drawing.Point(215, 39);
             this.ccbMaDP.Name = "ccbMaDP";
             this.ccbMaDP.Size = new System.Drawing.Size(160, 30);
@@ -418,15 +407,15 @@
             this.label1.Text = "Mã hóa đơn";
             this.label1.Click += new System.EventHandler(this.label2_Click);
             // 
-
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
             // 
             // txtMaHD
             // 
+            this.txtMaHD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHD.Location = new System.Drawing.Point(227, 79);
+            this.txtMaHD.Location = new System.Drawing.Point(227, 84);
             this.txtMaHD.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(164, 30);

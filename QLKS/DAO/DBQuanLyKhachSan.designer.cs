@@ -1324,9 +1324,10 @@ namespace DAO
 		private EntityRef<DatPhong> _DatPhong;
 		
 		private EntityRef<DichVu> _DichVu;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
+        internal string MaSDDV;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void OnMaSuDungDichVuChanging(string value);

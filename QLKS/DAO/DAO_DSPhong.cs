@@ -82,7 +82,7 @@ namespace DAO
                     db.SubmitChanges();
                     return true;
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     return false;
                 }
@@ -112,8 +112,19 @@ namespace DAO
                 }
             }
         }
+        public double LayGiaTienTheoMaPhong(string maPhong)
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                // Truy vấn MaPhong từ bảng Phong và lấy giá từ bảng LoaiPhong
+                var giaTien = (from p in db.Phongs
+                               join lp in db.LoaiPhongs on p.MaLoaiPhong equals lp.MaLoaiPhong
+                               where p.MaPhong == maPhong
+                               select lp.Gia) // Gia là kiểu float
+                              .FirstOrDefault();
 
-
-
+                return giaTien; // Giá trị mặc định của float là 0.0 nếu không có giá trị phù hợp
+            }
+        }
     }
 }

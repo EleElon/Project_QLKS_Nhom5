@@ -191,7 +191,7 @@ namespace QuanLyKhachSan
             errorProvider2.Clear();
 
             // Lấy dữ liệu từ các điều khiển
-            string maLoaiPhong = cbMaLoaiPhong.Text;
+            string maLoaiPhong = txtMaLoaiPhong2.Text;
             string tenPhong = txtTenLoaiPhong.Text;
             string gia = txtGia.Text;
 
@@ -317,7 +317,7 @@ namespace QuanLyKhachSan
             // Kiểm tra và thiết lập thông báo lỗi cho từng điều khiển
             if (string.IsNullOrWhiteSpace(maLoaiPhong))
             {
-                errorProvider2.SetError(cbMaLoaiPhong, "Mã loại phòng không được để trống.");
+                errorProvider2.SetError(txtMaLoaiPhong2, "Mã loại phòng không được để trống.");
                 isValid = false;
             }
 
@@ -350,7 +350,7 @@ namespace QuanLyKhachSan
         {
             txtMaPhong.MaxLength = 10;
             txtSoPhong.MaxLength = 3;
-            ccbMaLoaiPhong.MaxLength = 10;
+            txtMaLoaiPhong2.MaxLength = 10;
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -513,7 +513,7 @@ namespace QuanLyKhachSan
                 DataGridViewRow row = dgvLoaiPhong.Rows[e.RowIndex];
 
                 // Hiển thị thông tin của dòng được chọn lên các TextBox tương ứng
-                ccbMaLoaiPhong.Text = row.Cells["MaLoaiPhong"].Value.ToString();
+                txtMaLoaiPhong2.Text = row.Cells["MaLoaiPhong"].Value.ToString();
                 txtTenLoaiPhong.Text = row.Cells["TenLoaiPhong"].Value.ToString();
                 txtGia.Text = row.Cells["Gia"].Value.ToString();
             }
@@ -539,18 +539,18 @@ namespace QuanLyKhachSan
 
         private void ccbMaLoaiPhong_TextChanged(object sender, EventArgs e)
         {
-            string maPhong = ccbMaLoaiPhong.Text;
+            string maPhong = txtMaLoaiPhong2.Text;
 
             // Kiểm tra nếu mã phòng không bắt đầu bằng "LP"
             if (!maPhong.StartsWith("LP"))
             {
                 // Hiển thị lỗi
-                errorProvider2.SetError(ccbMaLoaiPhong, "Mã phòng phải bắt đầu bằng 'LP'.");
+                errorProvider2.SetError(txtMaLoaiPhong2, "Mã phòng phải bắt đầu bằng 'LP'.");
             }
             else
             {
                 // Xóa lỗi nếu đúng
-                errorProvider2.SetError(ccbMaLoaiPhong, string.Empty);
+                errorProvider2.SetError(txtMaLoaiPhong2, string.Empty);
             }
 
         }

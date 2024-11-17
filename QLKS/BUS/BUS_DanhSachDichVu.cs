@@ -12,6 +12,7 @@ namespace BUS
     public class BUS_DanhSachDichVu
     {
         private static BUS_DanhSachDichVu instance;
+        
         public static BUS_DanhSachDichVu Instance
         {
             get
@@ -98,5 +99,6 @@ namespace BUS
             // Here, you could add additional business logic if necessary
             return DAO_DanhSachDichVu.Instance.HienThi();
         }
+       
     }
 }
