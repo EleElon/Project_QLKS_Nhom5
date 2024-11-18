@@ -1,4 +1,5 @@
 ﻿using BUS;
+using CrystalDecisions.ReportSource;
 using DAO;
 using QuanLiKhachSan_Nhom5;
 using System;
@@ -39,32 +40,48 @@ namespace QuanLyKhachSan
             txtMaNV.Text = string.Empty;
             cboMaPhong.SelectedIndex = 0;
             txtTenNV.Text = string.Empty;
+            radNam.Checked = false;
+            radNu.Checked = false;
+            dtpNgaySinh.Text = string.Empty;
+            txtSDT.Text = string.Empty;
             txtChucVu.Text = string.Empty;
-            txtLuong.Text = string.Empty;
+            txtDiaChi.Text = string.Empty;
 
             //Set error == null
             errorProvider.SetError(txtMaNV, "");
             errorProvider.SetError(txtTenNV, "");
             errorProvider.SetError(txtChucVu, "");
-            errorProvider.SetError(txtLuong, "");
+            errorProvider.SetError(radNam, "");
+            errorProvider.SetError(radNu, "");
+            errorProvider.SetError(dtpNgaySinh, "");
+            errorProvider.SetError(txtSDT, "");
+            errorProvider.SetError(txtChucVu, "");
+            errorProvider.SetError(txtDiaChi, "");
         }
         public void FormNhanVienDataBinding()
         {
             txtMaNV.MaxLength = 10;
             txtTenNV.MaxLength = 100;
+            txtSDT.MaxLength = 10;
             txtChucVu.MaxLength = 50;
-            txtLuong.MaxLength = 9;
+            txtDiaChi.MaxLength = 200;
         }
         private bool ValidateForm()
         {
             ValidateTenNV();
+            ValidateGioiTinh();
+            ValidateNgaySinh();
+            ValidateSDT();
             ValidateChucVu();
-            ValidateLuong();
+            ValidateDiaChi();
 
             return string.IsNullOrEmpty(errorProvider.GetError(txtMaNV)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(txtTenNV)) &&
+                string.IsNullOrEmpty(errorProvider.GetError(radNu)) &&
+                string.IsNullOrEmpty(errorProvider.GetError(dtpNgaySinh)) &&
+                string.IsNullOrEmpty(errorProvider.GetError(txtSDT)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(txtChucVu)) &&
-                string.IsNullOrEmpty(errorProvider.GetError(txtLuong));
+                string.IsNullOrEmpty(errorProvider.GetError(txtDiaChi));
         }
         private void ValidateMaNV()
         {
@@ -104,6 +121,52 @@ namespace QuanLyKhachSan
                 errorProvider.SetError(txtTenNV, "");
             }
         }
+        private void ValidateGioiTinh()
+        {
+            if (!radNam.Checked && !radNu.Checked)
+            {
+                errorProvider.SetError(radNu, "Vui lòng chọn giới tính");
+            }
+            else
+            {
+                errorProvider.SetError(radNu, "");
+            }
+        }
+        private void ValidateNgaySinh()
+        {
+            DateTime minDate = new DateTime(DateTime.Now.Year - 80, 1, 1);
+            DateTime maxDate = DateTime.Now;
+
+            if (dtpNgaySinh.Value < minDate)
+            {
+                errorProvider.SetError(dtpNgaySinh, $"Ngày sinh không được nhỏ hơn {minDate.ToShortDateString()}");
+            }
+            else if (dtpNgaySinh.Value > maxDate)
+            {
+                errorProvider.SetError(dtpNgaySinh, "Ngày sinh không được lớn hơn ngày hiện tại");
+            }
+            else
+            {
+                errorProvider.SetError(dtpNgaySinh, "");
+            }
+        }
+        private void ValidateSDT()
+        {
+            string pattern = @"^0[0-9]+$";
+
+            if (string.IsNullOrEmpty(txtSDT.Text))
+            {
+                errorProvider.SetError(txtSDT, "Vui lòng nhập số điện thoại");
+            }
+            else if (!Regex.IsMatch(txtSDT.Text, pattern))
+            {
+                errorProvider.SetError(txtSDT, "Số điện thoại phải bắt đầu bằng số 0");
+            }
+            else
+            {
+                errorProvider.SetError(txtSDT, "");
+            }
+        }
         private void ValidateChucVu()
         {
             string pattern = @"^[^!@#\$%\^*_\-\+=]+$";
@@ -121,23 +184,21 @@ namespace QuanLyKhachSan
                 errorProvider.SetError(txtChucVu, "");
             }
         }
-        private void ValidateLuong()
+        private void ValidateDiaChi()
         {
-            if (string.IsNullOrEmpty(txtLuong.Text))
+            string pattern = @"^[^!@#\$%\^*_\-\+=]+$";
+
+            if (string.IsNullOrEmpty(txtDiaChi.Text))
             {
-                errorProvider.SetError(txtLuong, "Vui lòng nhập lương");
+                errorProvider.SetError(txtDiaChi, "Vui lòng nhập địa chỉ");
             }
-            else if (!int.TryParse(txtLuong.Text, out int luong))
+            else if (!Regex.IsMatch(txtDiaChi.Text, pattern))
             {
-                errorProvider.SetError(txtLuong, "Vui lòng nhập số hợp lệ");
-            }
-            else if (luong < 0)
-            {
-                errorProvider.SetError(txtLuong, "Lương không thể là số âm");
+                errorProvider.SetError(txtDiaChi, "Vui lòng nhập địa chỉ hợp lệ, địa chỉ không bao gồm ký tự đặt biệt ! @ # $ % ^ * _ - + = ");
             }
             else
             {
-                errorProvider.SetError(txtLuong, "");
+                errorProvider.SetError(txtDiaChi, "");
             }
         }
         public void LoadComboMaPhong()
@@ -157,8 +218,11 @@ namespace QuanLyKhachSan
                     a.MaNhanVien,
                     a.MaPhong,
                     a.TenNhanVien,
+                    a.gioiTinh,
+                    a.ngaySinh,
+                    a.SDT,
                     a.ChucVu,
-                    a.Luong
+                    a.diaChi
                 }).ToList();
                 data.DataSource = nhanVien;
             }
@@ -191,7 +255,7 @@ namespace QuanLyKhachSan
                     return;
                 }
 
-                BUS_NhanVien.Instance.ThemNhanVien(txtMaNV, cboMaPhong, txtTenNV, txtChucVu, txtLuong);
+                BUS_NhanVien.Instance.ThemNhanVien(txtMaNV, cboMaPhong, txtTenNV, radNam, radNu, dtpNgaySinh, txtSDT, txtChucVu, txtDiaChi);
                 LoadDataNV();
                 ClearFormField();
             }
@@ -223,10 +287,13 @@ namespace QuanLyKhachSan
                 string maNV = txtMaNV.Text;
                 string maPhong = cboMaPhong.SelectedValue.ToString();
                 string tenNV = txtTenNV.Text;
+                string gioiTinh = radNam.Checked ? "Nam" : "Nu";
+                string SDT = txtSDT.Text;
+                DateTime ngaySinh = dtpNgaySinh.Value;
                 string chucVu = txtChucVu.Text;
-                float luong = float.Parse(txtLuong.Text);
+                string diachi = txtDiaChi.Text;
 
-                bool result = bus_nv.SuaNhanVien(maNV, maPhong, tenNV, chucVu, luong);
+                bool result = bus_nv.SuaNhanVien(maNV, maPhong, tenNV, gioiTinh, ngaySinh, SDT, chucVu, diachi);
                 if (result)
                 {
                     MessageBox.Show("Sửa thông tin nhân viên thành công.");
@@ -242,7 +309,7 @@ namespace QuanLyKhachSan
 
         private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            BUS_NhanVien.Instance.LoadDGVLenForm(txtMaNV, cboMaPhong, txtTenNV, txtChucVu, txtLuong, dgvNhanVien);
+            BUS_NhanVien.Instance.LoadDGVLenForm(txtMaNV, cboMaPhong, txtTenNV, radNam, radNu, dtpNgaySinh, txtSDT, txtChucVu, txtDiaChi, dgvNhanVien);
 
             txtMaNV.Enabled = false;
             errorProvider.SetError(txtMaNV, "");
@@ -255,7 +322,7 @@ namespace QuanLyKhachSan
 
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateMaNV();
         }
 
         private void txtTenNV_TextChanged(object sender, EventArgs e)
@@ -270,7 +337,7 @@ namespace QuanLyKhachSan
 
         private void txtLuong_TextChanged(object sender, EventArgs e)
         {
-            ValidateLuong();
+            ValidateDiaChi();
         }
 
         public void btnTimKiem_Click(object sender, EventArgs e)
@@ -323,17 +390,48 @@ namespace QuanLyKhachSan
         }
         private void txtTenNV_Click_1(object sender, EventArgs e)
         {
-            txtTenNV.SelectionStart = txtTenNV.Text.Length;
+            //txtTenNV.SelectionStart = txtTenNV.Text.Length;
+            MoveCursorToEnd(txtTenNV);
         }
 
         private void txtChucVu_Click(object sender, EventArgs e)
         {
-            txtChucVu.SelectionStart = txtChucVu.Text.Length;
+            MoveCursorToEnd(txtChucVu);
         }
 
         private void txtLuong_Click(object sender, EventArgs e)
         {
-            txtLuong.SelectionStart = txtChucVu.Text.Length;
+            MoveCursorToEnd(txtDiaChi);
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            ValidateSDT();
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            ValidateNgaySinh();
+        }
+
+        private void radNu_CheckedChanged(object sender, EventArgs e)
+        {
+            ValidateGioiTinh();
+        }
+
+        private void radNam_CheckedChanged(object sender, EventArgs e)
+        {
+            ValidateGioiTinh();
+        }
+
+        private void txtSDT_Click(object sender, EventArgs e)
+        {
+            MoveCursorToEnd(txtSDT);
+        }
+
+        private void MoveCursorToEnd(TextBox textBox)
+        {
+            textBox.SelectionStart = textBox.Text.Length;
         }
     }
 }

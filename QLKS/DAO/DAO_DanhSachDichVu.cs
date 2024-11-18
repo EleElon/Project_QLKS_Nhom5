@@ -185,5 +185,18 @@ namespace DAO
                 return db.DanhSachSuDungDichVus.ToList();
             }
         }
+        public float LayGiaDichVu(string maSDDV)
+    {
+        using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
+        {
+            var gia = (from ds in db.DanhSachSuDungDichVus
+                       join dv in db.DichVus
+                       on ds.MaDichVu equals dv.MaDichVu
+                       where ds.MaSuDungDichVu == maSDDV
+                       select dv.Gia).FirstOrDefault();
+
+                return 0; // Trả về 0 nếu không có giá trị
+        }
+    }
     }
 }

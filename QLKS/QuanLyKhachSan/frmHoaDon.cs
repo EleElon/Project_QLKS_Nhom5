@@ -16,6 +16,9 @@ namespace QuanLiKhachSan_Nhom5
     public partial class frmHoaDon : Form
     {
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
+        BUS_DSPhong busPhong = new BUS_DSPhong();
+        BUS_DatPhong busDatPhong = new BUS_DatPhong();
+        BUS_DichVu busDichVu = new BUS_DichVu();
        
         public frmHoaDon()
         {
@@ -30,6 +33,12 @@ namespace QuanLiKhachSan_Nhom5
         public void LoadView()
         {
             dgvHoaDon.DataSource = busHoaDon.HienThi();
+            var danhSachPhong = busPhong.Xem();
+
+            // Gán dữ liệu vào Combobox
+            ccbMaDP.DataSource = danhSachPhong;
+            ccbMaDP.DisplayMember = "MaPhong"; // Cột hiển thị
+            ccbMaDP.ValueMember = "MaPhong";   // Giá trị cần lấy
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
@@ -60,8 +69,7 @@ namespace QuanLiKhachSan_Nhom5
         { ccbGiamGia, "Giảm giá không được để trống" },
         { txtTienPhong, "Tiền phòng không được để trống" },
         { txtSoNgayThue, "Số ngày thuê không được để trống" },
-        { ccbMaHD, "Mã hóa đơn không được để trống" },
-        { ccbMaDP, "Mã đặt phòng không được để trống" },
+        { txtMaHD, "Mã hóa đơn không được để trống" },
         { ccbMaSDDV, "Mã sử dụng dịch vụ không được để trống" },
         { cboPTTT, "Hình thức thanh toán không được để trống" }
     };
@@ -103,7 +111,7 @@ namespace QuanLiKhachSan_Nhom5
 
                 ChiTietHoaDon chiTietHoaDonMoi = new ChiTietHoaDon
                 {
-                    MaHoaDon = ccbMaHD.Text,
+                    MaHoaDon = txtMaHD.Text,
                     MaDatPhong = ccbMaDP.Text,
                     MaSuDungDichVu = ccbMaSDDV.Text,
                     PhuThu = float.Parse(txtPhuThu.Text),
@@ -135,7 +143,33 @@ namespace QuanLiKhachSan_Nhom5
 
         private void ccbMaSDDV_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                // Lấy mã phòng từ combobox
+                string maPhong = ccbMaDP.SelectedValue?.ToString();
+                
 
+                // Gọi BUS để lấy giá tiền
+                double giaTien = busPhong.LayGiaTienTheoMaPhong(maPhong);
+
+                // Hiển thị giá tiền lên TextBox
+                txtTienPhong.Text = giaTien.ToString();
+               
+                if (!string.IsNullOrEmpty(maPhong))
+                {
+                    int soNgayThue = busDatPhong.LaySoNgayThue(maPhong);
+                    txtSoNgayThue.Text = soNgayThue.ToString();
+                }
+                else
+                {
+                    txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -193,7 +227,7 @@ namespace QuanLiKhachSan_Nhom5
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = dgvHoaDon.Rows[e.RowIndex];
-                    ccbMaHD.Text = row.Cells["MaHoaDon"].Value.ToString();
+                    txtMaHD.Text = row.Cells["MaHoaDon"].Value.ToString();
                     ccbMaDP.Text = row.Cells["MaDatPhong"].Value.ToString();
                     txtPhuThu.Text = row.Cells["PhuThu"].Value.ToString();
                     txtTienPhong.Text = row.Cells["TienPhong"].Value.ToString();
@@ -284,7 +318,7 @@ namespace QuanLiKhachSan_Nhom5
         {
             try
             {
-                string maHoaDon = ccbMaHD.Text;
+                string maHoaDon = txtMaHD.Text;
                 bool ketQua =  busHoaDon.XoaChiTietHoaDon(maHoaDon);
 
                 if (ketQua)
@@ -308,7 +342,7 @@ namespace QuanLiKhachSan_Nhom5
             try
             {
                 // Lấy dữ liệu từ các TextBox và ComboBox
-                string maHoaDon = ccbMaHD.Text;
+                string maHoaDon = txtMaHD.Text;
                 string maDatPhong = ccbMaDP.Text;
                 string maSuDungDichVu = ccbMaSDDV.Text;
                 float phuThu = float.Parse(txtPhuThu.Text);

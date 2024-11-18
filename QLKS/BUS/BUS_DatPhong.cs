@@ -11,7 +11,7 @@ namespace BUS
 {
     public class BUS_DatPhong
     {
-        private static BUS_DatPhong instance;
+        public static BUS_DatPhong instance;
         public static BUS_DatPhong Instance
         {
             get
@@ -23,7 +23,7 @@ namespace BUS
                 return instance;
             }
         }
-        private BUS_DatPhong() { }
+        public BUS_DatPhong() { }
 
         public void Xem(DataGridView data)
         {
@@ -225,6 +225,12 @@ namespace BUS
         public bool KiemTraMaChiTietTonTai(string maChiTiet)
         {
             return DAO_DatPhong.Instance.KiemTraMaChiTietTonTai(maChiTiet);
+        }
+        DAO_DatPhong daoChiTietDatPhong = new DAO_DatPhong();
+
+        public int LaySoNgayThue(string maPhong)
+        {
+            return daoChiTietDatPhong.LaySoNgayThue(maPhong);
         }
     }
 
