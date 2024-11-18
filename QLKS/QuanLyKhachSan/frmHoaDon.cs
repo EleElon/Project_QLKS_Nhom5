@@ -147,7 +147,7 @@ namespace QuanLiKhachSan_Nhom5
             {
                 // Lấy mã phòng từ combobox
                 string maPhong = ccbMaDP.SelectedValue?.ToString();
-                
+                string maSDDV = ccbMaSDDV.SelectedItem?.ToString();
 
                 // Gọi BUS để lấy giá tiền
                 double giaTien = busPhong.LayGiaTienTheoMaPhong(maPhong);
@@ -164,7 +164,19 @@ namespace QuanLiKhachSan_Nhom5
                 {
                     txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
                 }
-               
+                if (!string.IsNullOrEmpty(maSDDV))
+                {
+                    // Gọi BUS để lấy giá
+                    double giaDichVu = busDichVu.LayGiaTheoMaSDDV(maSDDV);
+
+                    // Hiển thị giá lên TextBox
+                    txtTienDichVu.Text = giaDichVu.ToString("F2"); // Định dạng 2 chữ số thập phân
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn Mã Sử Dụng Dịch Vụ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             catch (Exception ex)
             {

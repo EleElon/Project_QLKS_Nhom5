@@ -87,9 +87,10 @@ namespace BUS
         {
             return DAO_DichVu.Instance.CheckMaExists(maDV);
         }
-        public double LayGiaDichVu(string maSDDV)
+        public double LayGiaTheoMaSDDV(string maSDDV)
         {
-            return DAO_DichVu.LayGiaDichVu(maSDDV);
+            return DAO_DichVu.LayGiaTheoMaSDDV(maSDDV);
         }
+
     }
 }
