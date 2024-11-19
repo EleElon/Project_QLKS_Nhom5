@@ -130,11 +130,34 @@ CREATE TABLE TraPhong (
 );
 GO
 
+
 CREATE TABLE Luong (
     MaLuong NVARCHAR(100) PRIMARY KEY NOT NULL,
     MaNhanVien NVARCHAR(100) NOT NULL,
     Thang INT NOT NULL,
-    SoTien FLOAT NOT NULL
+    Nam INT NOT NULL,
+    SoNgayLamViec INT,
+    SoGioTangCa FLOAT,
+    LuongCoBan FLOAT,
+    PhuCap FLOAT,
+    Thuong FLOAT,
+    KhauTru FLOAT,
+    TongLuong FLOAT,
+    NgayTinhLuong DATE,
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+);
+GO
+
+
+CREATE TABLE ChamCong (
+    MaChamCong NVARCHAR(100) PRIMARY KEY NOT NULL,
+    MaNhanVien NVARCHAR(100) NOT NULL,
+    Thang NVARCHAR(10) NOT NULL,
+    Nam INT NOT NULL,
+    SoNgayLamViec INT,
+    NgayChamCong DATE,
+    GhiChu NVARCHAR(200),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
 );
 GO
 
@@ -422,13 +445,28 @@ VALUES
 GO
 
 
-INSERT INTO Luong (MaLuong, MaNhanVien, Thang, SoTien)
+INSERT INTO Luong (MaLuong, MaNhanVien, Thang, Nam, SoNgayLamViec, SoGioTangCa, LuongCoBan, PhuCap, Thuong, KhauTru, TongLuong, NgayTinhLuong)
 VALUES 
-('L001', 'NV001', 9, 5000),
-('L002', 'NV002', 9, 3500),
-('L003', 'NV003', 9, 2500),
-('L004', 'NV004', 9, 3000),
-('L005', 'NV005', 9, 2000);
+('L001', 'NV001', 9, 2024, 31, 1, 7000000, 0, 200000, 0, 7950000, '2024-09-18'),
+('L002', 'NV002', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
+('L003', 'NV003', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
+('L004', 'NV004', 9, 2024, 30, 1, 7000000, 0, 0, 0, 7850000, '2024-09-18'),
+('L005', 'NV005', 9, 2024, 28, 1, 7000000, 0, 0, 400000, 7760000, '2024-09-18');
+GO
+
+
+INSERT INTO ChamCong (MaChamCong, MaNhanVien, Thang, Nam, SoNgayLamViec, NgayChamCong, GhiChu)
+VALUES 
+('CC001', 'NV001', N'9', 2024, 22, '2024-09-30', 'Lam du cong, khong co tang ca'),
+('CC002', 'NV002', N'9', 2024, 20, '2024-09-30', 'Nghi phep 2 ngay'),
+('CC003', 'NV003', N'9', 2024, 25, '2024-09-30', 'Tang ca 2 gio moi ngay trong 5 ngay'),
+('CC004', 'NV004', N'9', 2024, 18, '2024-09-30', 'Nghi om nhieu, khong co tang ca'),
+('CC005', 'NV005', N'9', 2024, 26, '2024-09-30', 'Lam them ca cuoi tuan, hieu suat cao'),
+('CC006', 'NV001', N'10', 2024, 23, '2024-10-31', 'Lam viec cham chi, nghi 1 ngay le'),
+('CC007', 'NV002', N'10', 2024, 21, '2024-10-31', 'Co tang ca 1 ngay, nghi phep 2 ngay'),
+('CC008', 'NV003', N'10', 2024, 24, '2024-10-31', 'Tang ca lien tuc trong tuan cuoi thang'),
+('CC009', 'NV004', N'10', 2024, 22, '2024-10-31', 'Hoan thanh du cong viec, khong nghi'),
+('CC010', 'NV005', N'10', 2024, 27, '2024-10-31', 'Hieu suat cao, khong nghi phep');
 GO
 
 
@@ -455,6 +493,7 @@ SELECT * FROM CoSoVatChat
 SELECT * FROM DanhSachSuDungDichVu
 SELECT * FROM ChiTietHoaDon
 SELECT * FROM Luong
+SELECT * FROM ChamCong
 
 Select kh.TenKhachHang, ctdp.NgayNhanPhong, ctdp.NgayTraPhong, ctdp.GiaMoiDem, ctdp.SoLuongPhong, ctdp.TongGia, ctdp.PhuongThucThanhToan, lp.TenLoaiPhong from KhachHang as kh
 join ChiTietDatPhong as ctdp on kh.MaKhachHang = ctdp.MaKhachHang
