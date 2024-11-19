@@ -23,6 +23,14 @@ namespace QuanLyKhachSan
             FormDataBiding();
             loadData();
             LoadComboNhanVien();
+            DataComboBox();
+        }
+        private void DataComboBox()
+        {
+            for (int i = 1; i <= 12; i++)
+            {
+                cboThang.Items.Add($"{i}");
+            }
         }
         public void FormDataBiding()
         {
@@ -36,7 +44,7 @@ namespace QuanLyKhachSan
             nudNam.Increment = 1; // Tăng/giảm từng năm
 
             nudSoNgayLam.Minimum = 0;
-            nudSoNgayLam.Maximum = DateTime.Now.Date.Month;
+            nudSoNgayLam.Maximum = 31;
             nudSoNgayLam.Value = 0;
             nudSoNgayLam.Increment = 1;
         }
@@ -88,7 +96,7 @@ namespace QuanLyKhachSan
             {
                 errorProvider.SetError(txtMaChamCong, "Vui lòng nhập mã chấm công! Bắt đầu từ cc / CC sau đó là ký tự số");
             }
-            else if (BUS_Luong.Instance.CheckMaLuongExists(txtMaChamCong.Text))
+            else if (BUS_ChamCong.Instance.CheckMaLuongExists(txtMaChamCong.Text))
             {
                 errorProvider.SetError(txtMaChamCong, "Mã lương đã tồn tại");
             }
@@ -171,6 +179,18 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
+                string maCC = txtMaChamCong.Text;
+
+                if (System.Text.RegularExpressions.Regex.IsMatch(maCC, @"^(cc|CC)\d+$"))
+                {
+                    maCC = "NV" + maCC.Substring(2);
+                    txtMaChamCong.Text = maCC;
+                }
+                else
+                {
+                    MessageBox.Show("Mã chấm công phải bắt đầu bằng 'cc' hoặc 'CC' và theo sau là số.");
+                    return;
+                }
                 BUS_ChamCong.Instance.ThemChamCong(txtMaChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, txtSoGioTangCa, dtpNgayCham, txtGhiChu);
                 loadData();
                 ClearFormFields();
@@ -202,7 +222,7 @@ namespace QuanLyKhachSan
             {
                 string maCham = txtMaChamCong.Text;
                 string maNV = cboMaNhanVien.SelectedValue.ToString();
-                string thang = cboThang.SelectedValue.ToString();
+                string thang = cboThang.SelectedItem.ToString();
                 int nam = (int)nudNam.Value;
                 int soNgayLam = (int)nudSoNgayLam.Value;
                 float soGioTangCa = float.Parse(txtSoGioTangCa.Text);

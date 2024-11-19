@@ -42,6 +42,7 @@ namespace DAO
                         Thang = item.Thang,
                         Nam = item.Nam,
                         SoNgayLamViec = item.SoNgayLamViec,
+                        SoGioTangCa = item.SoGioTangCa,
                         NgayChamCong = item.NgayChamCong,
                         GhiChu = item.GhiChu
                     });
@@ -123,7 +124,7 @@ namespace DAO
         {
             try
             {
-                ChamCong cham= db.ChamCongs.FirstOrDefault(a => a.MaChamCong == maCham);
+                ChamCong cham = db.ChamCongs.FirstOrDefault(a => a.MaChamCong == maCham);
                 if (cham != null)
                 {
                     cham.MaChamCong = maCham;
@@ -199,20 +200,35 @@ namespace DAO
                     var rowIndex = data.SelectedCells[0].RowIndex;
                     var row = data.Rows[rowIndex];
 
-                    maCham.Text = row.Cells[0].Value.ToString().Trim();
-                    string selectedMaNV = row.Cells[1].Value.ToString().Trim();
-                    thang.Text = row.Cells[2].Value.ToString().Trim();
-                    nam.Text = row.Cells[3].Value.ToString().Trim();
-                    soNgayLam.Text = row.Cells[4].Value.ToString().Trim();
-                    soGioTangCa.Text = row.Cells[5].Value.ToString().Trim();
+                    // Kiểm tra giá trị null trước khi gán
+                    maCham.Text = row.Cells[0].Value?.ToString().Trim() ?? string.Empty;
 
-                    if (DateTime.TryParse(row.Cells[6].Value.ToString().Trim(), out DateTime parsedNgayCham))
+                    // Xử lý MaNV
+                    string selectedMaNV = row.Cells[1].Value?.ToString().Trim() ?? string.Empty;
+                    thang.Text = row.Cells[2].Value?.ToString().Trim() ?? string.Empty;
+
+                    // Chuyển đổi giá trị cho NumericUpDown
+                    if (int.TryParse(row.Cells[3].Value?.ToString().Trim(), out int namValue))
+                    {
+                        nam.Value = namValue;
+                    }
+
+                    if (int.TryParse(row.Cells[4].Value?.ToString().Trim(), out int soNgayLamValue))
+                    {
+                        soNgayLam.Value = soNgayLamValue;
+                    }
+
+                    soGioTangCa.Text = row.Cells[5].Value?.ToString().Trim() ?? string.Empty;
+
+                    // Xử lý DateTimePicker
+                    if (DateTime.TryParse(row.Cells[6].Value?.ToString().Trim(), out DateTime parsedNgayCham))
                     {
                         ngayCham.Value = parsedNgayCham;
                     }
 
-                    ghiChu.Text = row.Cells[7].Value.ToString().Trim();
+                    ghiChu.Text = row.Cells[7].Value?.ToString().Trim() ?? string.Empty;
 
+                    // Gán giá trị cho ComboBox maNV
                     foreach (var item in maNV.Items)
                     {
                         var nhanVien = item as dynamic;
@@ -225,6 +241,7 @@ namespace DAO
                 }
             }
         }
+
         public bool CheckMaExists(string maCham)
         {
             using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
