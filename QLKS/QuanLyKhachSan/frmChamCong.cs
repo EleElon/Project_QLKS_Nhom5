@@ -20,11 +20,15 @@ namespace QuanLyKhachSan
         public frmChamCong()
         {
             InitializeComponent();
+            FormDataBiding();
+            loadData();
+            LoadComboNhanVien();
         }
         public void FormDataBiding()
         {
             txtMaChamCong.MaxLength = 100;
             txtGhiChu.MaxLength = 200;
+            txtSoGioTangCa.MaxLength = 4;
 
             nudNam.Minimum = 1900; // Năm nhỏ nhất
             nudNam.Maximum = DateTime.Now.Year; // Năm lớn nhất là năm hiện tại
@@ -52,23 +56,27 @@ namespace QuanLyKhachSan
             cboThang.SelectedIndex = 0;
             nudNam.Value = DateTime.Now.Year;
             nudSoNgayLam.Value = 0;
+            txtSoGioTangCa.Text = string.Empty;
             dtpNgayCham.Text = string.Empty;
             txtGhiChu.Text = string.Empty;
 
             //set validate == null
             errorProvider.SetError(txtMaChamCong, "");
             errorProvider.SetError(nudSoNgayLam, "");
+            errorProvider.SetError(txtSoGioTangCa, "");
             errorProvider.SetError(dtpNgayCham, "");
             errorProvider.SetError(txtGhiChu, "");
         }
         private bool ValidateForm()
         {
             ValidateSoNgayLam();
+            ValidateSoGioTangCa();
             ValidateNgayCham();
             ValidateGhiChu();
 
             return string.IsNullOrEmpty(errorProvider.GetError(txtMaChamCong)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(nudSoNgayLam)) &&
+                string.IsNullOrEmpty(errorProvider.GetError(txtSoGioTangCa)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(dtpNgayCham)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(txtGhiChu));
         }
@@ -102,6 +110,25 @@ namespace QuanLyKhachSan
             else
             {
                 errorProvider.SetError(nudSoNgayLam, "");
+            }
+        }
+        private void ValidateSoGioTangCa()
+        {
+            if (string.IsNullOrEmpty(txtSoGioTangCa.Text))
+            {
+                errorProvider.SetError(txtSoGioTangCa, "Vui lòng nhập số giờ tăng ca");
+            }
+            else if (!int.TryParse(txtSoGioTangCa.Text, out int soH))
+            {
+                errorProvider.SetError(txtSoGioTangCa, "Số giờ tăng ca chỉ có thể nhập bằng ký tự số");
+            }
+            else if (soH < 0)
+            {
+                errorProvider.SetError(txtSoGioTangCa, "Số giờ không được phép âm");
+            }
+            else
+            {
+                errorProvider.SetError(txtSoGioTangCa, "");
             }
         }
         private void ValidateNgayCham()
@@ -144,7 +171,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_ChamCong.Instance.ThemChamCong(txtMaChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, dtpNgayCham, txtGhiChu);
+                BUS_ChamCong.Instance.ThemChamCong(txtMaChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, txtSoGioTangCa, dtpNgayCham, txtGhiChu);
                 loadData();
                 ClearFormFields();
             }
@@ -178,10 +205,11 @@ namespace QuanLyKhachSan
                 string thang = cboThang.SelectedValue.ToString();
                 int nam = (int)nudNam.Value;
                 int soNgayLam = (int)nudSoNgayLam.Value;
+                float soGioTangCa = float.Parse(txtSoGioTangCa.Text);
                 DateTime ngayCham = dtpNgayCham.Value;
                 string ghiChu = txtGhiChu.Text;
 
-                bool result = bus_cc.SuaChamCong(maCham, maNV, thang, nam, soNgayLam, ngayCham, ghiChu);
+                bool result = bus_cc.SuaChamCong(maCham, maNV, thang, nam, soNgayLam, soGioTangCa, ngayCham, ghiChu);
                 if (result)
                 {
                     MessageBox.Show("Sửa thông tin chấm công thành công.");
@@ -201,8 +229,9 @@ namespace QuanLyKhachSan
             {
                 string maCham = txtMaChamCong.Text;
                 int soNgayLam = (int)nudSoNgayLam.Value;
+                float soGioTangCa = float.Parse(txtSoGioTangCa.Text);
 
-                bool result = bus_cc.ChamCong(maCham, soNgayLam);
+                bool result = bus_cc.ChamCong(maCham, soNgayLam, soGioTangCa);
                 if (result)
                 {
                     MessageBox.Show("Chấm công thành công.");
@@ -218,7 +247,7 @@ namespace QuanLyKhachSan
 
         private void dgvDSChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            BUS_ChamCong.Instance.LoadDGVLenForm(txtMaChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, dtpNgayCham, txtGhiChu, dgvDSChamCong);
+            BUS_ChamCong.Instance.LoadDGVLenForm(txtMaChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, txtSoGioTangCa, dtpNgayCham, txtGhiChu, dgvDSChamCong);
 
             txtMaChamCong.Enabled = false;
             errorProvider.SetError(txtMaChamCong, "");
@@ -242,6 +271,25 @@ namespace QuanLyKhachSan
         private void txtGhiChu_TextChanged(object sender, EventArgs e)
         {
             ValidateGhiChu();
+        }
+
+        private void txtSoGioTangCa_TextChanged(object sender, EventArgs e)
+        {
+            ValidateSoGioTangCa();
+        }
+        private void MoveCursorToEnd(TextBox txt)
+        {
+            txt.SelectionStart = txt.Text.Length;
+        }
+
+        private void txtSoGioTangCa_Click(object sender, EventArgs e)
+        {
+            MoveCursorToEnd(txtSoGioTangCa);
+        }
+
+        private void txtGhiChu_Click(object sender, EventArgs e)
+        {
+            MoveCursorToEnd(txtGhiChu);
         }
     }
 }
