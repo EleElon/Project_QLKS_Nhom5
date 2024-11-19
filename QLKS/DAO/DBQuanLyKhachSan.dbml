@@ -3,6 +3,7 @@
   <Table Name="dbo.ChamCong" Member="ChamCongs">
     <Type Name="ChamCong">
       <Column Name="MaChamCong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenBangChamCong" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="MaNhanVien" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Thang" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -10,6 +11,7 @@
       <Column Name="SoGioTangCa" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="NgayChamCong" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="ChamCong_Luong" Member="Luongs" ThisKey="MaChamCong" OtherKey="MaChamCong" Type="Luong" />
       <Association Name="NhanVien_ChamCong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
@@ -151,6 +153,7 @@
   <Table Name="dbo.Luong" Member="Luongs">
     <Type Name="Luong">
       <Column Name="MaLuong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaChamCong" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="MaNhanVien" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -162,6 +165,7 @@
       <Column Name="KhauTru" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="TongLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="NgayTinhLuong" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="ChamCong_Luong" Member="ChamCong" ThisKey="MaChamCong" OtherKey="MaChamCong" Type="ChamCong" IsForeignKey="true" />
       <Association Name="NhanVien_Luong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
       <Association Name="NhanVien_Luong1" Member="NhanVien1" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>

@@ -30,11 +30,12 @@ namespace BUS
         //{
         //    return dao_luong.ThemLuong(maLuong, maNV, thang, soTien);
         //}
-        public void ThemChamCong(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu)
+        public void ThemChamCong(TextBox maCham, TextBox tenBangChamCong, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu)
         {
             ChamCong c = new ChamCong
             {
                 MaChamCong = maCham.Text,
+                TenBangChamCong = tenBangChamCong.Text,
                 MaNhanVien = maNV.SelectedValue.ToString().Trim(),
                 Thang = thang.Text,
                 Nam = int.Parse(nam.Text),
@@ -51,9 +52,9 @@ namespace BUS
             return dao_cc.XoaChamCong(maCham);
         }
 
-        public bool SuaChamCong(string maCham, string maNV, string thang, int nam, int soNgayLam, float soGioTangCa, DateTime ngayChamCong, string ghiChu)
+        public bool SuaChamCong(string maCham, string tenBangChamCong, string maNV, string thang, int nam, int soNgayLam, float soGioTangCa, DateTime ngayChamCong, string ghiChu)
         {
-            return dao_cc.SuaChamCong(maCham, maNV, thang, nam, soNgayLam, soGioTangCa, ngayChamCong, ghiChu);
+            return dao_cc.SuaChamCong(maCham, tenBangChamCong, maNV, thang, nam, soNgayLam, soGioTangCa, ngayChamCong, ghiChu);
         }
         public bool ChamCong(string maCham, int soNgayLam, float soGioTangCa)
         {
@@ -71,6 +72,7 @@ namespace BUS
                 return new
                 {
                     t.MaChamCong,
+                    t.TenBangChamCong,
                     t.MaNhanVien,
                     t.Thang,
                     t.Nam,
@@ -86,9 +88,9 @@ namespace BUS
         {
             DAO_ChamCong.Instance.LoadComBoBoxMaNhanVien(cb);
         }
-        public void LoadDGVLenForm(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
+        public void LoadDGVLenForm(TextBox maCham, TextBox tenBangChamCong, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
         {
-            DAO_ChamCong.Instance.LoadDGVForm(maCham, maNV, thang, nam, soNgayLam, soGioTangCa, ngayCham, ghiChu, data);
+            DAO_ChamCong.Instance.LoadDGVForm(maCham, tenBangChamCong, maNV, thang, nam, soNgayLam, soGioTangCa, ngayCham, ghiChu, data);
         }
         public bool CheckMaLuongExists(string maLuong)
         {

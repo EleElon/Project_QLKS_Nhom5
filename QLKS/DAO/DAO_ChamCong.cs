@@ -38,6 +38,7 @@ namespace DAO
                     data.Add(new ChamCong
                     {
                         MaChamCong = item.MaChamCong,
+                        TenBangChamCong = item.TenBangChamCong,
                         MaNhanVien = item.MaNhanVien,
                         Thang = item.Thang,
                         Nam = item.Nam,
@@ -120,7 +121,7 @@ namespace DAO
             }
         }
 
-        public bool SuaChamCong(string maCham, string maNV, string thang, int nam, int soNgayLam, float soGioTangCa, DateTime ngayChamCong, string ghiChu)
+        public bool SuaChamCong(string maCham, string tenBangChamCong, string maNV, string thang, int nam, int soNgayLam, float soGioTangCa, DateTime ngayChamCong, string ghiChu)
         {
             try
             {
@@ -128,6 +129,7 @@ namespace DAO
                 if (cham != null)
                 {
                     cham.MaChamCong = maCham;
+                    cham.TenBangChamCong = tenBangChamCong;
                     cham.MaNhanVien = maNV;
                     cham.Thang = thang;
                     cham.Nam = nam;
@@ -191,7 +193,7 @@ namespace DAO
             }
         }
 
-        public void LoadDGVForm(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
+        public void LoadDGVForm(TextBox maCham, TextBox tenBangChamCong, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -202,31 +204,32 @@ namespace DAO
 
                     // Kiểm tra giá trị null trước khi gán
                     maCham.Text = row.Cells[0].Value?.ToString().Trim() ?? string.Empty;
+                    tenBangChamCong.Text = row.Cells[1].Value?.ToString().Trim() ?? string.Empty;
 
                     // Xử lý MaNV
-                    string selectedMaNV = row.Cells[1].Value?.ToString().Trim() ?? string.Empty;
-                    thang.Text = row.Cells[2].Value?.ToString().Trim() ?? string.Empty;
+                    string selectedMaNV = row.Cells[2].Value?.ToString().Trim() ?? string.Empty;
+                    thang.Text = row.Cells[3].Value?.ToString().Trim() ?? string.Empty;
 
                     // Chuyển đổi giá trị cho NumericUpDown
-                    if (int.TryParse(row.Cells[3].Value?.ToString().Trim(), out int namValue))
+                    if (int.TryParse(row.Cells[4].Value?.ToString().Trim(), out int namValue))
                     {
                         nam.Value = namValue;
                     }
 
-                    if (int.TryParse(row.Cells[4].Value?.ToString().Trim(), out int soNgayLamValue))
+                    if (int.TryParse(row.Cells[5].Value?.ToString().Trim(), out int soNgayLamValue))
                     {
                         soNgayLam.Value = soNgayLamValue;
                     }
 
-                    soGioTangCa.Text = row.Cells[5].Value?.ToString().Trim() ?? string.Empty;
+                    soGioTangCa.Text = row.Cells[6].Value?.ToString().Trim() ?? string.Empty;
 
                     // Xử lý DateTimePicker
-                    if (DateTime.TryParse(row.Cells[6].Value?.ToString().Trim(), out DateTime parsedNgayCham))
+                    if (DateTime.TryParse(row.Cells[7].Value?.ToString().Trim(), out DateTime parsedNgayCham))
                     {
                         ngayCham.Value = parsedNgayCham;
                     }
 
-                    ghiChu.Text = row.Cells[7].Value?.ToString().Trim() ?? string.Empty;
+                    ghiChu.Text = row.Cells[8].Value?.ToString().Trim() ?? string.Empty;
 
                     // Gán giá trị cho ComboBox maNV
                     foreach (var item in maNV.Items)

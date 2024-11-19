@@ -258,6 +258,8 @@ namespace DAO
 		
 		private string _MaChamCong;
 		
+		private string _TenBangChamCong;
+		
 		private string _MaNhanVien;
 		
 		private string _Thang;
@@ -272,6 +274,8 @@ namespace DAO
 		
 		private string _GhiChu;
 		
+		private EntitySet<Luong> _Luongs;
+		
 		private EntityRef<NhanVien> _NhanVien;
 		
     #region Extensibility Method Definitions
@@ -280,6 +284,8 @@ namespace DAO
     partial void OnCreated();
     partial void OnMaChamCongChanging(string value);
     partial void OnMaChamCongChanged();
+    partial void OnTenBangChamCongChanging(string value);
+    partial void OnTenBangChamCongChanged();
     partial void OnMaNhanVienChanging(string value);
     partial void OnMaNhanVienChanged();
     partial void OnThangChanging(string value);
@@ -298,6 +304,7 @@ namespace DAO
 		
 		public ChamCong()
 		{
+			this._Luongs = new EntitySet<Luong>(new Action<Luong>(this.attach_Luongs), new Action<Luong>(this.detach_Luongs));
 			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
@@ -318,6 +325,26 @@ namespace DAO
 					this._MaChamCong = value;
 					this.SendPropertyChanged("MaChamCong");
 					this.OnMaChamCongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenBangChamCong", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenBangChamCong
+		{
+			get
+			{
+				return this._TenBangChamCong;
+			}
+			set
+			{
+				if ((this._TenBangChamCong != value))
+				{
+					this.OnTenBangChamCongChanging(value);
+					this.SendPropertyChanging();
+					this._TenBangChamCong = value;
+					this.SendPropertyChanged("TenBangChamCong");
+					this.OnTenBangChamCongChanged();
 				}
 			}
 		}
@@ -466,6 +493,19 @@ namespace DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChamCong_Luong", Storage="_Luongs", ThisKey="MaChamCong", OtherKey="MaChamCong")]
+		public EntitySet<Luong> Luongs
+		{
+			get
+			{
+				return this._Luongs;
+			}
+			set
+			{
+				this._Luongs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_ChamCong", Storage="_NhanVien", ThisKey="MaNhanVien", OtherKey="MaNhanVien", IsForeignKey=true)]
 		public NhanVien NhanVien
 		{
@@ -518,6 +558,18 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Luongs(Luong entity)
+		{
+			this.SendPropertyChanging();
+			entity.ChamCong = this;
+		}
+		
+		private void detach_Luongs(Luong entity)
+		{
+			this.SendPropertyChanging();
+			entity.ChamCong = null;
 		}
 	}
 	
@@ -3371,6 +3423,8 @@ namespace DAO
 		
 		private string _MaLuong;
 		
+		private string _MaChamCong;
+		
 		private string _MaNhanVien;
 		
 		private int _Thang;
@@ -3393,6 +3447,8 @@ namespace DAO
 		
 		private System.Nullable<System.DateTime> _NgayTinhLuong;
 		
+		private EntityRef<ChamCong> _ChamCong;
+		
 		private EntityRef<NhanVien> _NhanVien;
 		
 		private EntityRef<NhanVien> _NhanVien1;
@@ -3403,6 +3459,8 @@ namespace DAO
     partial void OnCreated();
     partial void OnMaLuongChanging(string value);
     partial void OnMaLuongChanged();
+    partial void OnMaChamCongChanging(string value);
+    partial void OnMaChamCongChanged();
     partial void OnMaNhanVienChanging(string value);
     partial void OnMaNhanVienChanged();
     partial void OnThangChanging(int value);
@@ -3429,6 +3487,7 @@ namespace DAO
 		
 		public Luong()
 		{
+			this._ChamCong = default(EntityRef<ChamCong>);
 			this._NhanVien = default(EntityRef<NhanVien>);
 			this._NhanVien1 = default(EntityRef<NhanVien>);
 			OnCreated();
@@ -3450,6 +3509,30 @@ namespace DAO
 					this._MaLuong = value;
 					this.SendPropertyChanged("MaLuong");
 					this.OnMaLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaChamCong", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string MaChamCong
+		{
+			get
+			{
+				return this._MaChamCong;
+			}
+			set
+			{
+				if ((this._MaChamCong != value))
+				{
+					if (this._ChamCong.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaChamCongChanging(value);
+					this.SendPropertyChanging();
+					this._MaChamCong = value;
+					this.SendPropertyChanged("MaChamCong");
+					this.OnMaChamCongChanged();
 				}
 			}
 		}
@@ -3674,6 +3757,40 @@ namespace DAO
 					this._NgayTinhLuong = value;
 					this.SendPropertyChanged("NgayTinhLuong");
 					this.OnNgayTinhLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ChamCong_Luong", Storage="_ChamCong", ThisKey="MaChamCong", OtherKey="MaChamCong", IsForeignKey=true)]
+		public ChamCong ChamCong
+		{
+			get
+			{
+				return this._ChamCong.Entity;
+			}
+			set
+			{
+				ChamCong previousValue = this._ChamCong.Entity;
+				if (((previousValue != value) 
+							|| (this._ChamCong.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ChamCong.Entity = null;
+						previousValue.Luongs.Remove(this);
+					}
+					this._ChamCong.Entity = value;
+					if ((value != null))
+					{
+						value.Luongs.Add(this);
+						this._MaChamCong = value.MaChamCong;
+					}
+					else
+					{
+						this._MaChamCong = default(string);
+					}
+					this.SendPropertyChanged("ChamCong");
 				}
 			}
 		}

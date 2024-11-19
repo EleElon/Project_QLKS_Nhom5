@@ -35,6 +35,7 @@ namespace QuanLyKhachSan
         public void FormDataBiding()
         {
             txtMaChamCong.MaxLength = 100;
+            txtTenBangChamCong.MaxLength = 100;
             txtGhiChu.MaxLength = 200;
             txtSoGioTangCa.MaxLength = 4;
 
@@ -60,6 +61,7 @@ namespace QuanLyKhachSan
         {
             txtMaChamCong.Enabled = true;
             txtMaChamCong.Text = string.Empty;
+            txtTenBangChamCong.Text = string.Empty;
             cboMaNhanVien.SelectedIndex = 0;
             cboThang.SelectedIndex = 0;
             nudNam.Value = DateTime.Now.Year;
@@ -70,6 +72,7 @@ namespace QuanLyKhachSan
 
             //set validate == null
             errorProvider.SetError(txtMaChamCong, "");
+            errorProvider.SetError(txtTenBangChamCong, "");
             errorProvider.SetError(nudSoNgayLam, "");
             errorProvider.SetError(txtSoGioTangCa, "");
             errorProvider.SetError(dtpNgayCham, "");
@@ -77,12 +80,14 @@ namespace QuanLyKhachSan
         }
         private bool ValidateForm()
         {
+            ValidateTenBang();
             ValidateSoNgayLam();
             ValidateSoGioTangCa();
             ValidateNgayCham();
             ValidateGhiChu();
 
             return string.IsNullOrEmpty(errorProvider.GetError(txtMaChamCong)) &&
+             string.IsNullOrEmpty(errorProvider.GetError(txtTenBangChamCong)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(nudSoNgayLam)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(txtSoGioTangCa)) &&
                 string.IsNullOrEmpty(errorProvider.GetError(dtpNgayCham)) &&
@@ -107,6 +112,23 @@ namespace QuanLyKhachSan
             else
             {
                 errorProvider.SetError(txtMaChamCong, "");
+            }
+        }
+        private void ValidateTenBang()
+        {
+            string pattern = @"^[^!@#\$%\^*_\-\+=]+$";
+
+            if (string.IsNullOrEmpty(txtTenBangChamCong.Text))
+            {
+                errorProvider.SetError(txtTenBangChamCong, "Vui lòng nhập tên");
+            }
+            else if (!Regex.IsMatch(txtTenBangChamCong.Text, pattern))
+            {
+                errorProvider.SetError(txtTenBangChamCong, "Vui lòng nhập tên hợp lệ, tên không bao gồm ký tự đặt biệt ! @ # $ % ^ * _ - + = ");
+            }
+            else
+            {
+                errorProvider.SetError(txtTenBangChamCong, "");
             }
         }
         private void ValidateSoNgayLam()
@@ -167,7 +189,7 @@ namespace QuanLyKhachSan
             }
             else if (!Regex.IsMatch(txtGhiChu.Text, pattern))
             {
-                errorProvider.SetError(txtGhiChu, "Vui lòng nhập chi chú hợp lệ, ghi chú không bao gồm ký tự đặt biệt ! @ # $ % ^ * _ - + = ");
+                errorProvider.SetError(txtGhiChu, "Vui lòng nhập ghi chú hợp lệ, ghi chú không bao gồm ký tự đặt biệt ! @ # $ % ^ * _ - + = ");
             }
             else
             {
@@ -191,7 +213,7 @@ namespace QuanLyKhachSan
                     MessageBox.Show("Mã chấm công phải bắt đầu bằng 'cc' hoặc 'CC' và theo sau là số.");
                     return;
                 }
-                BUS_ChamCong.Instance.ThemChamCong(txtMaChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, txtSoGioTangCa, dtpNgayCham, txtGhiChu);
+                BUS_ChamCong.Instance.ThemChamCong(txtMaChamCong, txtTenBangChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, txtSoGioTangCa, dtpNgayCham, txtGhiChu);
                 loadData();
                 ClearFormFields();
             }
@@ -221,6 +243,7 @@ namespace QuanLyKhachSan
             if (ValidateForm())
             {
                 string maCham = txtMaChamCong.Text;
+                string tenBang = txtTenBangChamCong.Text;
                 string maNV = cboMaNhanVien.SelectedValue.ToString();
                 string thang = cboThang.SelectedItem.ToString();
                 int nam = (int)nudNam.Value;
@@ -229,7 +252,7 @@ namespace QuanLyKhachSan
                 DateTime ngayCham = dtpNgayCham.Value;
                 string ghiChu = txtGhiChu.Text;
 
-                bool result = bus_cc.SuaChamCong(maCham, maNV, thang, nam, soNgayLam, soGioTangCa, ngayCham, ghiChu);
+                bool result = bus_cc.SuaChamCong(maCham, tenBang, maNV, thang, nam, soNgayLam, soGioTangCa, ngayCham, ghiChu);
                 if (result)
                 {
                     MessageBox.Show("Sửa thông tin chấm công thành công.");
@@ -267,7 +290,7 @@ namespace QuanLyKhachSan
 
         private void dgvDSChamCong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            BUS_ChamCong.Instance.LoadDGVLenForm(txtMaChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, txtSoGioTangCa, dtpNgayCham, txtGhiChu, dgvDSChamCong);
+            BUS_ChamCong.Instance.LoadDGVLenForm(txtMaChamCong, txtTenBangChamCong, cboMaNhanVien, cboThang, nudNam, nudSoNgayLam, txtSoGioTangCa, dtpNgayCham, txtGhiChu, dgvDSChamCong);
 
             txtMaChamCong.Enabled = false;
             errorProvider.SetError(txtMaChamCong, "");
@@ -310,6 +333,16 @@ namespace QuanLyKhachSan
         private void txtGhiChu_Click(object sender, EventArgs e)
         {
             MoveCursorToEnd(txtGhiChu);
+        }
+
+        private void txtTenBangChamCong_TextChanged(object sender, EventArgs e)
+        {
+            ValidateTenBang();
+        }
+
+        private void txtTenBangChamCong_Click(object sender, EventArgs e)
+        {
+            MoveCursorToEnd(txtTenBangChamCong);
         }
     }
 }
