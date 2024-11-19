@@ -49,7 +49,7 @@ namespace DAO
             }
             return data;
         }
-        public bool ThemLuong(string maCham, string maNV, string thang, int nam, int soNgayLam, DateTime ngayChamCong, string ghiChu)
+        public bool ThemLuong(string maCham, string maNV, string thang, int nam, int soNgayLam, float soGioTangCa, DateTime ngayChamCong, string ghiChu)
         {
             try
             {
@@ -65,6 +65,7 @@ namespace DAO
                     Thang = thang,
                     Nam = nam,
                     SoNgayLamViec = soNgayLam,
+                    SoGioTangCa = soGioTangCa,
                     NgayChamCong = ngayChamCong,
                     GhiChu = ghiChu
                 };
@@ -118,7 +119,7 @@ namespace DAO
             }
         }
 
-        public bool SuaChamCong(string maCham, string maNV, string thang, int nam, int soNgayLam, DateTime ngayChamCong, string ghiChu)
+        public bool SuaChamCong(string maCham, string maNV, string thang, int nam, int soNgayLam, float soGioTangCa, DateTime ngayChamCong, string ghiChu)
         {
             try
             {
@@ -130,6 +131,7 @@ namespace DAO
                     cham.Thang = thang;
                     cham.Nam = nam;
                     cham.SoNgayLamViec = soNgayLam;
+                    cham.SoGioTangCa = soGioTangCa;
                     cham.NgayChamCong = ngayChamCong;
                     cham.GhiChu = ghiChu;
 
@@ -146,7 +148,7 @@ namespace DAO
                 throw ex;
             }
         }
-        public bool ChamCong(string maCham, int soNgayLam)
+        public bool ChamCong(string maCham, int soNgayLam, float soGioTangCa)
         {
             try
             {
@@ -155,6 +157,7 @@ namespace DAO
                 {
                     cham.MaChamCong = maCham;
                     cham.SoNgayLamViec = soNgayLam;
+                    cham.SoGioTangCa = soGioTangCa;
 
                     db.SubmitChanges();
                     return true;
@@ -187,7 +190,7 @@ namespace DAO
             }
         }
 
-        public void LoadDGVForm(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
+        public void LoadDGVForm(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -201,13 +204,14 @@ namespace DAO
                     thang.Text = row.Cells[2].Value.ToString().Trim();
                     nam.Text = row.Cells[3].Value.ToString().Trim();
                     soNgayLam.Text = row.Cells[4].Value.ToString().Trim();
+                    soGioTangCa.Text = row.Cells[5].Value.ToString().Trim();
 
-                    if (DateTime.TryParse(row.Cells[5].Value.ToString().Trim(), out DateTime parsedNgayCham))
+                    if (DateTime.TryParse(row.Cells[6].Value.ToString().Trim(), out DateTime parsedNgayCham))
                     {
                         ngayCham.Value = parsedNgayCham;
                     }
 
-                    ghiChu.Text = row.Cells[6].Value.ToString().Trim();
+                    ghiChu.Text = row.Cells[7].Value.ToString().Trim();
 
                     foreach (var item in maNV.Items)
                     {

@@ -25,9 +25,16 @@ namespace QuanLyKhachSan
         }
         public void FormDataBiding()
         {
-            txtMaLuong.MaxLength = 10;
-            txtThang.MaxLength = 2;
-            txtSoTien.MaxLength = 9;
+            txtMaLuong.MaxLength = 100;
+            txtThang.Enabled = false;
+            txtNam.Enabled = false;
+            txtSoNgayLam.Enabled = false;
+            txtSoGioTangCa.Enabled = false;
+            txtLuongCoBan.Enabled = false;
+            //txtPhuCap.Enabled = false;
+            txtThuong.Enabled = false;
+            txtKhauTru.Enabled = false;
+            txtTongLuong.Enabled = false;
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -56,21 +63,29 @@ namespace QuanLyKhachSan
             txtMaLuong.Text = string.Empty;
             cboMaNhanVien.SelectedIndex = 0;
             txtThang.Text = string.Empty;
-            txtSoTien.Text = string.Empty;
+            txtNam.Text = string.Empty;
+            txtSoNgayLam.Text = string.Empty;
+            txtSoGioTangCa.Text = string.Empty;
+            txtLuongCoBan.Text = "7000000";
+            txtPhuCap.Text = "0";
+            txtThuong.Text = string.Empty;
+            txtKhauTru.Text = string.Empty;
+            txtTongLuong.Text = string.Empty;
+            dtpNgayTinh.Text = string.Empty;
 
             //set validate == null
             errorProvider.SetError(txtMaLuong, "");
-            errorProvider.SetError(txtThang, "");
-            errorProvider.SetError(txtSoTien, "");
+            //errorProvider.SetError(txtThang, "");
+            //errorProvider.SetError(txtNam, "");
         }
         private bool ValidateForm()
         {
-            ValidateThang();
-            ValidateSoTien();
+            //ValidateThang();
+            //ValidateSoTien();
 
-            return string.IsNullOrEmpty(errorProvider.GetError(txtMaLuong)) &&
-                string.IsNullOrEmpty(errorProvider.GetError(txtThang)) &&
-                string.IsNullOrEmpty(errorProvider.GetError(txtSoTien));
+            return string.IsNullOrEmpty(errorProvider.GetError(txtMaLuong));/*&&*/
+            //    string.IsNullOrEmpty(errorProvider.GetError(txtThang)) &&
+            //    string.IsNullOrEmpty(errorProvider.GetError(txtNam));
         }
         private void ValidateMaLuong()
         {
@@ -114,37 +129,37 @@ namespace QuanLyKhachSan
         }
         private void ValidateSoTien()
         {
-            if (string.IsNullOrEmpty(txtSoTien.Text))
+            if (string.IsNullOrEmpty(txtNam.Text))
             {
-                errorProvider.SetError(txtSoTien, "Vui lòng nhập số tiền");
+                errorProvider.SetError(txtNam, "Vui lòng nhập số tiền");
             }
-            else if (!int.TryParse(txtSoTien.Text, out int soTien))
+            else if (!int.TryParse(txtNam.Text, out int soTien))
             {
-                errorProvider.SetError(txtSoTien, "Số tiền chỉ có thể nhập bằng ký tự số");
+                errorProvider.SetError(txtNam, "Số tiền chỉ có thể nhập bằng ký tự số");
             }
             else if (soTien < 0)
             {
-                errorProvider.SetError(txtSoTien, "Số tiền không được phép âm");
+                errorProvider.SetError(txtNam, "Số tiền không được phép âm");
             }
             else
             {
-                errorProvider.SetError(txtSoTien, "");
+                errorProvider.SetError(txtNam, "");
             }
         }
-        public void DSLuong(DataGridView data)
-        {
-            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
-            {
-                var luong = db.Luongs.Select(a => new
-                {
-                    a.MaLuong,
-                    a.MaNhanVien,
-                    a.Thang,
-                    a.SoTien
-                }).ToList();
-                data.DataSource = luong;
-            }
-        }
+        //public void DSLuong(DataGridView data)
+        //{
+        //    using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
+        //    {
+        //        var luong = db.Luongs.Select(a => new
+        //        {
+        //            a.MaLuong,
+        //            a.MaNhanVien,
+        //            a.Thang,
+        //            a.SoTien
+        //        }).ToList();
+        //        data.DataSource = luong;
+        //    }
+        //}
 
         public void LoadView()
         {
@@ -155,7 +170,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_Luong.Instance.ThemLuong(txtMaLuong, cboMaNhanVien, txtThang, txtSoTien);
+                BUS_Luong.Instance.ThemLuong(txtMaLuong, cboMaNhanVien, txtThang, txtNam, txtSoNgayLam, txtSoGioTangCa, txtLuongCoBan, txtPhuCap, txtThuong, txtKhauTru, txtTongLuong, dtpNgayTinh);
                 LoadDataLuong();
                 ClearFormFields();
             }
@@ -187,9 +202,17 @@ namespace QuanLyKhachSan
                 string maLuong = txtMaLuong.Text;
                 string maNV = cboMaNhanVien.SelectedValue.ToString();
                 int thang = int.Parse(txtThang.Text);
-                float soTien = float.Parse(txtSoTien.Text);
+                int nam = int.Parse(txtNam.Text);
+                int soNgayLam = int.Parse(txtSoNgayLam.Text);
+                float soGioTangCa = float.Parse(txtSoGioTangCa.Text);
+                float luongCoBan = float.Parse(txtLuongCoBan.Text);
+                float phuCap = float.Parse(txtPhuCap.Text);
+                float thuong = float.Parse(txtThuong.Text);
+                float khauTru = float.Parse(txtKhauTru.Text);
+                float tongLuong = float.Parse(txtTongLuong.Text);
+                DateTime ngayTinh = dtpNgayTinh.Value;
 
-                bool result = bus_luong.SuaLuong(maLuong, maNV, thang, soTien);
+                bool result = bus_luong.SuaLuong(maLuong, maNV, thang, nam, soNgayLam, soGioTangCa, luongCoBan, phuCap, thuong, khauTru, tongLuong, ngayTinh);
                 if (result)
                 {
                     MessageBox.Show("Sửa thông tin lương thành công.");
@@ -205,7 +228,7 @@ namespace QuanLyKhachSan
 
         private void dgvDSLuong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            BUS_Luong.Instance.LoadDGVLenForm(txtMaLuong, cboMaNhanVien, txtThang, txtSoTien, dgvDSLuong);
+            BUS_Luong.Instance.LoadDGVLenForm(txtMaLuong, cboMaNhanVien, txtThang, txtNam, txtSoNgayLam, txtSoGioTangCa, txtLuongCoBan, txtPhuCap, txtThuong, txtKhauTru, txtTongLuong, dtpNgayTinh, dgvDSLuong);
 
             txtMaLuong.Enabled = false;
             errorProvider.SetError(txtMaLuong, "");
@@ -219,16 +242,6 @@ namespace QuanLyKhachSan
         private void txtMaLuong_TextChanged(object sender, EventArgs e)
         {
             ValidateMaLuong();
-        }
-
-        private void txtThang_TextChanged(object sender, EventArgs e)
-        {
-            ValidateThang();
-        }
-
-        private void txtSoTien_TextChanged(object sender, EventArgs e)
-        {
-            ValidateSoTien();
         }
     }
 }

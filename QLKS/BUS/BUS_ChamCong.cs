@@ -30,7 +30,7 @@ namespace BUS
         //{
         //    return dao_luong.ThemLuong(maLuong, maNV, thang, soTien);
         //}
-        public void ThemChamCong(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, DateTimePicker ngayCham, TextBox ghiChu)
+        public void ThemChamCong(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu)
         {
             ChamCong c = new ChamCong
             {
@@ -39,6 +39,7 @@ namespace BUS
                 Thang = thang.Text,
                 Nam = int.Parse(nam.Text),
                 SoNgayLamViec = int.Parse(soNgayLam.Text),
+                SoGioTangCa = float.Parse(soGioTangCa.Text),
                 NgayChamCong = DateTime.Parse(ngayCham.Text),
                 GhiChu = ghiChu.Text
             };
@@ -50,13 +51,13 @@ namespace BUS
             return dao_cc.XoaChamCong(maCham);
         }
 
-        public bool SuaChamCong(string maCham, string maNV, string thang, int nam, int soNgayLam, DateTime ngayChamCong, string ghiChu)
+        public bool SuaChamCong(string maCham, string maNV, string thang, int nam, int soNgayLam, float soGioTangCa, DateTime ngayChamCong, string ghiChu)
         {
-            return dao_cc.SuaChamCong(maCham, maNV, thang, nam, soNgayLam, ngayChamCong, ghiChu);
+            return dao_cc.SuaChamCong(maCham, maNV, thang, nam, soNgayLam, soGioTangCa, ngayChamCong, ghiChu);
         }
-        public bool ChamCong(string maCham, int soNgayLam)
+        public bool ChamCong(string maCham, int soNgayLam, float soGioTangCa)
         {
-            return dao_cc.ChamCong(maCham, soNgayLam);
+            return dao_cc.ChamCong(maCham, soNgayLam, soGioTangCa);
         }
 
         public List<ChamCong> View()
@@ -74,6 +75,7 @@ namespace BUS
                     t.Thang,
                     t.Nam,
                     t.SoNgayLamViec,
+                    t.SoGioTangCa,
                     t.NgayChamCong,
                     t.GhiChu
                 };
@@ -84,9 +86,9 @@ namespace BUS
         {
             DAO_ChamCong.Instance.LoadComBoBoxMaNhanVien(cb);
         }
-        public void LoadDGVLenForm(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
+        public void LoadDGVLenForm(TextBox maCham, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu, DataGridView data)
         {
-            DAO_ChamCong.Instance.LoadDGVForm(maCham, maNV, thang, nam, soNgayLam, ngayCham, ghiChu, data);
+            DAO_ChamCong.Instance.LoadDGVForm(maCham, maNV, thang, nam, soNgayLam, soGioTangCa, ngayCham, ghiChu, data);
         }
         public bool CheckMaLuongExists(string maLuong)
         {
