@@ -111,7 +111,7 @@ namespace QuanLyKhachSan
         private void dgvSuDungDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
+            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
             errorProvider1.SetError(txtMaSDDV, "");
         }
@@ -120,7 +120,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD);
                 LoadDuLieuLenForm();
                 ClearFormFields();
             }
@@ -174,7 +174,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
                 ClearFormFields();
             }

@@ -48,27 +48,31 @@ namespace BUS
         {
             DAO_DanhSachDichVu.Instance.LoadComBoBoxDichVu(cb);
         }
-        public void LoadDGVLenForm(TextBox ma, ComboBox maDV, ComboBox maDP, TextBox soLuong, DataGridView data)
+        public void LoadDGVLenForm(TextBox ma, ComboBox maDV, ComboBox maDP, TextBox soLuong,TextBox gia, DataGridView data)
         {
-            DAO_DanhSachDichVu.Instance.LoadDGVForm(ma, maDV, maDP, soLuong, data);
+            DAO_DanhSachDichVu.Instance.LoadDGVForm(ma, maDV, maDP, soLuong,gia, data);
         }
-        public void Them(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong)
+        public void Them(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong,TextBox gia)
         {
+
             DanhSachSuDungDichVu sd = new DanhSachSuDungDichVu
             {
                 MaSuDungDichVu = maSDDichVu.Text,
                 MaDichVu = maDichVu.SelectedValue.ToString(),
                 MaDatPhong = maDatPhong.Text,
-                SoLuong = int.Parse(soLuong.Text)
+                SoLuong = int.Parse(soLuong.Text),
+                Gia = float.Parse(gia.Text)
+
 
             };
+
             DAO_DanhSachDichVu.Instance.Them(sd);
         }
         public void Xoa(TextBox maSD)
         {
             DAO_DanhSachDichVu.Instance.Xoa(maSD.Text);
         }
-        public void Sua(TextBox ma, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong)
+        public void Sua(TextBox ma, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong, TextBox gia)
         {
             DanhSachSuDungDichVu dsdv = new DanhSachSuDungDichVu
             {
@@ -76,6 +80,7 @@ namespace BUS
                 MaDichVu = maDichVu.SelectedValue.ToString(),
                 MaDatPhong = maDatPhong.Text,
                 SoLuong = int.Parse(soLuong.Text),
+                Gia=float.Parse(gia.Text)
             };
 
             bool result = DAO_DanhSachDichVu.Instance.Sua(dsdv); // Capture the result
