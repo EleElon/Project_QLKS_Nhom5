@@ -155,6 +155,7 @@ CREATE TABLE ChamCong (
     Thang NVARCHAR(10) NOT NULL,
     Nam INT NOT NULL,
     SoNgayLamViec INT,
+	SoGioTangCa FLOAT,
     NgayChamCong DATE,
     GhiChu NVARCHAR(200),
     FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
@@ -455,18 +456,18 @@ VALUES
 GO
 
 
-INSERT INTO ChamCong (MaChamCong, MaNhanVien, Thang, Nam, SoNgayLamViec, NgayChamCong, GhiChu)
+INSERT INTO ChamCong (MaChamCong, MaNhanVien, Thang, Nam, SoNgayLamViec, SoGioTangCa, NgayChamCong, GhiChu)
 VALUES 
-('CC001', 'NV001', N'9', 2024, 22, '2024-09-30', 'Lam du cong, khong co tang ca'),
-('CC002', 'NV002', N'9', 2024, 20, '2024-09-30', 'Nghi phep 2 ngay'),
-('CC003', 'NV003', N'9', 2024, 25, '2024-09-30', 'Tang ca 2 gio moi ngay trong 5 ngay'),
-('CC004', 'NV004', N'9', 2024, 18, '2024-09-30', 'Nghi om nhieu, khong co tang ca'),
-('CC005', 'NV005', N'9', 2024, 26, '2024-09-30', 'Lam them ca cuoi tuan, hieu suat cao'),
-('CC006', 'NV001', N'10', 2024, 23, '2024-10-31', 'Lam viec cham chi, nghi 1 ngay le'),
-('CC007', 'NV002', N'10', 2024, 21, '2024-10-31', 'Co tang ca 1 ngay, nghi phep 2 ngay'),
-('CC008', 'NV003', N'10', 2024, 24, '2024-10-31', 'Tang ca lien tuc trong tuan cuoi thang'),
-('CC009', 'NV004', N'10', 2024, 22, '2024-10-31', 'Hoan thanh du cong viec, khong nghi'),
-('CC010', 'NV005', N'10', 2024, 27, '2024-10-31', 'Hieu suat cao, khong nghi phep');
+('CC001', 'NV001', N'9', 2024, 22, 1, '2024-09-30', 'Lam du cong, khong co tang ca'),
+('CC002', 'NV002', N'9', 2024, 20, 2, '2024-09-30', 'Nghi phep 2 ngay'),
+('CC003', 'NV003', N'9', 2024, 25, 1, '2024-09-30', 'Tang ca 2 gio moi ngay trong 5 ngay'),
+('CC004', 'NV004', N'9', 2024, 18, 0, '2024-09-30', 'Nghi om nhieu, khong co tang ca'),
+('CC005', 'NV005', N'9', 2024, 26, 0, '2024-09-30', 'Lam them ca cuoi tuan, hieu suat cao'),
+('CC006', 'NV001', N'10', 2024, 23, 0, '2024-10-31', 'Lam viec cham chi, nghi 1 ngay le'),
+('CC007', 'NV002', N'10', 2024, 21, 2, '2024-10-31', 'Co tang ca 1 ngay, nghi phep 2 ngay'),
+('CC008', 'NV003', N'10', 2024, 24, 1, '2024-10-31', 'Tang ca lien tuc trong tuan cuoi thang'),
+('CC009', 'NV004', N'10', 2024, 22, 0, '2024-10-31', 'Hoan thanh du cong viec, khong nghi'),
+('CC010', 'NV005', N'10', 2024, 27, 0, '2024-10-31', 'Hieu suat cao, khong nghi phep');
 GO
 
 
