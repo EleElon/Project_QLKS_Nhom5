@@ -16,8 +16,11 @@ CREATE TABLE NhanVien (
     MaNhanVien NVARCHAR(100) PRIMARY KEY NOT NULL,
 	MaPhong NVARCHAR(100),	
     TenNhanVien NVARCHAR(100) NOT NULL,
+	gioiTinh NVARCHAR(10) NOT NULL,
+	ngaySinh DATE NOT NULL, 
+	SDT NVARCHAR(20) NOT NULL,
     ChucVu NVARCHAR(50) NOT NULL,
-    Luong FLOAT NOT NULL
+    diaChi NVARCHAR(200) NOT NULL
 );
 GO
 
@@ -341,18 +344,18 @@ VALUES
 GO
 
 
-INSERT INTO NhanVien (MaNhanVien, MaPhong, TenNhanVien, ChucVu, Luong)
+INSERT INTO NhanVien (MaNhanVien, MaPhong, TenNhanVien, gioiTinh, ngaySinh, SDT, ChucVu, diaChi)
 VALUES
-('NV001', 'P001', 'Nguyen Van AB', 'Giam Doc', 5000.00),
-('NV002', 'P002', 'Tran Thi BC', 'Truong Phong', 3500.00),
-('NV003', 'P003', 'Le Van CD', 'Nhan Vien', 2500.00),
-('NV004', 'P004', 'Pham Thi Dung', 'Ke Toan', 3000.00),
-('NV005', 'P005', 'Bui Van Em', 'Bao Ve', 2000.00),
-('NV006', 'P001', 'Nguyen Van Fyy', 'Phuc Vu', 2200.00),
-('NV007', 'P002', 'Tran Thi Giang', 'Tiep Tan', 1800.00),
-('NV008', 'P003', 'Le Van Hoa', 'Giam Sat', 3000.00),
-('NV009', 'P004', 'Pham Thi hien', 'Ke Toan', 2900.00),
-('NV010', 'P005', 'Bui Van nhi', 'Bao Ve', 2100.00);
+('NV001', 'P001', N'Nguyen Van AB', N'Nam', '1996-04-01', '0123456789', N'Giam Doc', N'Ha Noi'),
+('NV002', 'P002', 'Tran Thi BC', N'Nu', '1997-04-02', '0123456789', 'Truong Phong', N'Ho Chi Minh'),
+('NV003', 'P003', 'Le Van CD', N'Nam', '1998-04-03', '0123456789', 'Nhan Vien', N'Hai Phong'),
+('NV004', 'P004', 'Pham Thi Dung', N'Nu', '1998-04-03', '0123456789', 'Ke Toan', N'Hai Phong'),
+('NV005', 'P005', 'Bui Van Em', N'Nam','1998-04-03', '0123456789', 'Bao Ve', N'Da Nang'),
+('NV006', 'P001', 'Nguyen Van Fyy', N'Nam', '1999-04-04', '0123456789', 'Phuc Vu', N'Da Nang'),
+('NV007', 'P002', 'Tran Thi Giang', N'Nu', '2000-04-05', '0123456789', 'Tiep Tan', N'Can Tho'),
+('NV008', 'P003', 'Le Van Hoa', N'Nu', '2000-04-05', '0123456789', 'Giam Sat', N'Nam Dinh'),
+('NV009', 'P004', 'Pham Thi hien', N'Nu', '2000-04-05', '0123456789', 'Ke Toan', N'Quang Ngai'),
+('NV010', 'P005', 'Bui Van nhi', N'Nu', '2000-04-05', '0123456789','Bao Ve', N'Ca Mau');
 GO
 
 
