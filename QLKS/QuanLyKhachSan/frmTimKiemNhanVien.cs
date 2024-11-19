@@ -138,51 +138,51 @@ namespace QuanLyKhachSan
 
         private void chkLuongTangDan_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkLuongTangDan.Checked)
-            {
-                chkLuongGiamDan.Checked = false;
-                BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, true);
-            }
-            else
-            {
-                LoadDataNhanVien();
-            }
+            //if (chkLuongTangDan.Checked)
+            //{
+            //    chkLuongGiamDan.Checked = false;
+            //    BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, true);
+            //}
+            //else
+            //{
+            //    LoadDataNhanVien();
+            //}
         }
 
         private void chkLuongGiamDan_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkLuongGiamDan.Checked)
-            {
-                chkLuongTangDan.Checked = false;
-                BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, false);
-            }
-            else
-            {
-                LoadDataNhanVien();
-            }
-        }
-        private void ApplyFilter(List<NhanVien> danhSachNhanVien)
-        {
-            //if (danhSachNhanVien == null || !danhSachNhanVien.Any())
+            //if (chkLuongGiamDan.Checked)
             //{
-            //    MessageBox.Show("Không tìm thấy nhân viên khớp.");
-            //    dgvTimKiemNV.DataSource = null;
-            //    return;
+            //    chkLuongTangDan.Checked = false;
+            //    BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, false);
             //}
-
-            if (chkLuongTangDan.Checked)
-            {
-                dgvTimKiemNV.DataSource = danhSachNhanVien.OrderBy(nv => nv.Luong).ToList();
-            }
-            else if (chkLuongGiamDan.Checked)
-            {
-                dgvTimKiemNV.DataSource = danhSachNhanVien.OrderByDescending(nv => nv.Luong).ToList();
-            }
-            else
-            {
-                dgvTimKiemNV.DataSource = danhSachNhanVien;
-            }
+            //else
+            //{
+            //    LoadDataNhanVien();
+            //}
         }
+        //private void ApplyFilter(List<NhanVien> danhSachNhanVien)
+        //{
+        //    //if (danhSachNhanVien == null || !danhSachNhanVien.Any())
+        //    //{
+        //    //    MessageBox.Show("Không tìm thấy nhân viên khớp.");
+        //    //    dgvTimKiemNV.DataSource = null;
+        //    //    return;
+        //    //}
+
+        //    if (chkLuongTangDan.Checked)
+        //    {
+        //        dgvTimKiemNV.DataSource = danhSachNhanVien.OrderBy(nv => nv.Luong).ToList();
+        //    }
+        //    else if (chkLuongGiamDan.Checked)
+        //    {
+        //        dgvTimKiemNV.DataSource = danhSachNhanVien.OrderByDescending(nv => nv.Luong).ToList();
+        //    }
+        //    else
+        //    {
+        //        dgvTimKiemNV.DataSource = danhSachNhanVien;
+        //    }
+        //}
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
