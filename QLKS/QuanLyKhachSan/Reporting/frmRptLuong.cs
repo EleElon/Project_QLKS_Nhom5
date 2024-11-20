@@ -23,6 +23,30 @@ namespace QuanLyKhachSan.Reporting
 
         private void frmRptLuong_Load(object sender, EventArgs e)
         {
+            // Lấy kích thước màn hình hiện tại
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            // Tính kích thước form (70% màn hình)
+            int formWidth = (int)(screenWidth * 0.7);
+            int formHeight = (int)(screenHeight * 0.7);
+
+            // Thiết lập kích thước form
+            this.Size = new Size(formWidth, formHeight);
+
+            // Tính toán vị trí trung tâm
+            int positionX = (screenWidth - formWidth) / 2;
+            int positionY = (screenHeight - formHeight) / 2;
+
+            // Đặt vị trí form
+            this.StartPosition = FormStartPosition.Manual; // Phải đặt thủ công vị trí
+            this.Location = new Point(positionX, positionY);
+
+            // Tùy chọn thêm: Đặt chế độ không thể thay đổi kích thước nếu cần
+            this.FormBorderStyle = FormBorderStyle.FixedDialog; // Không thể thay đổi kích thước
+            this.MaximizeBox = false; // Tắt nút maximize
+            this.MinimizeBox = true; // Cho phép minimize
+
             //QLKSContext context = new QLKSContext();
             //List<Luong> list = context.Luongs.ToList();
             //List<luongReport> listrpt = new List<luongReport>();

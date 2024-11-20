@@ -289,7 +289,9 @@
     <EmbeddedResource Include="Reporting\frmRptLuong.resx">
       <DependentUpon>frmRptLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporting\rptDichVu.rdlc" />
+    <EmbeddedResource Include="Reporting\rptDichVu.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\rptLuong.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

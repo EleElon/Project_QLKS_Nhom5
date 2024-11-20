@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DAO;
+using QuanLyKhachSan.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,7 +112,7 @@ namespace QuanLyKhachSan
         private void dgvSuDungDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD, dgvSuDungDichVu);
+            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
             errorProvider1.SetError(txtMaSDDV, "");
         }
@@ -120,7 +121,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD);
+                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
                 ClearFormFields();
             }
@@ -624,6 +625,12 @@ namespace QuanLyKhachSan
         private void cbMaDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmRptDichVu fr = new frmRptDichVu();
+            fr.Show();
         }
     }
 }
