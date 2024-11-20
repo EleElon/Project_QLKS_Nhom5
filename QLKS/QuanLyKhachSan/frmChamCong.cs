@@ -39,13 +39,18 @@ namespace QuanLyKhachSan
             txtGhiChu.MaxLength = 200;
             txtSoGioTangCa.MaxLength = 4;
 
+            cboThang.SelectedItem = 0;
+
             nudNam.Minimum = 1900; // Năm nhỏ nhất
             nudNam.Maximum = DateTime.Now.Year; // Năm lớn nhất là năm hiện tại
             nudNam.Value = DateTime.Now.Year; // Mặc định là năm hiện tại
             nudNam.Increment = 1; // Tăng/giảm từng năm
 
+            dtpNgayCham.MaxDate = DateTime.Now;
+            dtpNgayCham.MinDate = new DateTime(2000, 1, 1);
+
             nudSoNgayLam.Minimum = 0;
-            nudSoNgayLam.Maximum = 31;
+            //nudSoNgayLam.Maximum = 31;
             nudSoNgayLam.Value = 0;
             nudSoNgayLam.Increment = 1;
         }
@@ -66,6 +71,7 @@ namespace QuanLyKhachSan
             cboThang.SelectedIndex = 0;
             nudNam.Value = DateTime.Now.Year;
             nudSoNgayLam.Value = 0;
+            dtpNgayCham.Value = DateTime.UtcNow;
             txtSoGioTangCa.Text = string.Empty;
             dtpNgayCham.Text = string.Empty;
             txtGhiChu.Text = string.Empty;
@@ -205,7 +211,7 @@ namespace QuanLyKhachSan
 
                 if (System.Text.RegularExpressions.Regex.IsMatch(maCC, @"^(cc|CC)\d+$"))
                 {
-                    maCC = "NV" + maCC.Substring(2);
+                    maCC = "CC" + maCC.Substring(2);
                     txtMaChamCong.Text = maCC;
                 }
                 else
@@ -343,6 +349,41 @@ namespace QuanLyKhachSan
         private void txtTenBangChamCong_Click(object sender, EventArgs e)
         {
             MoveCursorToEnd(txtTenBangChamCong);
+        }
+
+        private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lấy giá trị tháng được chọn trong ComboBox
+            int selectedMonth = Convert.ToInt32(cboThang.SelectedItem);
+
+            // Thiết lập Maximum cho NumericUpDown theo tháng được chọn
+            switch (selectedMonth)
+            {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    nudSoNgayLam.Maximum = 31;
+                    break;
+
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    nudSoNgayLam.Maximum = 30;
+                    break;
+
+                case 2:
+                    nudSoNgayLam.Maximum = 28;
+                    break;
+
+                default:
+                    nudSoNgayLam.Maximum = 30; // Giá trị mặc định nếu tháng không hợp lệ
+                    break;
+            }
         }
     }
 }

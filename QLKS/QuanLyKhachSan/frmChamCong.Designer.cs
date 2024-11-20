@@ -48,14 +48,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoGioTangCa = new System.Windows.Forms.TextBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.txtTenBangChamCong = new System.Windows.Forms.TextBox();
             this.txtMaChamCong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnChamCong = new System.Windows.Forms.Button();
-            this.txtTenBangChamCong = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSChamCong)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -200,6 +200,7 @@
             // 
             // cboThang
             // 
+            this.cboThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboThang.FormattingEnabled = true;
             this.cboThang.Location = new System.Drawing.Point(255, 166);
@@ -207,9 +208,11 @@
             this.cboThang.Name = "cboThang";
             this.cboThang.Size = new System.Drawing.Size(155, 25);
             this.cboThang.TabIndex = 2;
+            this.cboThang.SelectedIndexChanged += new System.EventHandler(this.cboThang_SelectedIndexChanged);
             // 
             // cboMaNhanVien
             // 
+            this.cboMaNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaNhanVien.FormattingEnabled = true;
             this.cboMaNhanVien.Location = new System.Drawing.Point(255, 123);
@@ -288,6 +291,16 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Ghi Chú";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(21, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(166, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Tên Bảng Chấm Công";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -317,6 +330,16 @@
             this.txtGhiChu.TabIndex = 1;
             this.txtGhiChu.Click += new System.EventHandler(this.txtGhiChu_Click);
             this.txtGhiChu.TextChanged += new System.EventHandler(this.txtGhiChu_TextChanged);
+            // 
+            // txtTenBangChamCong
+            // 
+            this.txtTenBangChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBangChamCong.Location = new System.Drawing.Point(255, 73);
+            this.txtTenBangChamCong.Name = "txtTenBangChamCong";
+            this.txtTenBangChamCong.Size = new System.Drawing.Size(155, 26);
+            this.txtTenBangChamCong.TabIndex = 1;
+            this.txtTenBangChamCong.Click += new System.EventHandler(this.txtTenBangChamCong_Click);
+            this.txtTenBangChamCong.TextChanged += new System.EventHandler(this.txtTenBangChamCong_TextChanged);
             // 
             // txtMaChamCong
             // 
@@ -351,26 +374,6 @@
             this.btnChamCong.Text = "Chấm Công";
             this.btnChamCong.UseVisualStyleBackColor = true;
             this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
-            // 
-            // txtTenBangChamCong
-            // 
-            this.txtTenBangChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenBangChamCong.Location = new System.Drawing.Point(255, 73);
-            this.txtTenBangChamCong.Name = "txtTenBangChamCong";
-            this.txtTenBangChamCong.Size = new System.Drawing.Size(155, 26);
-            this.txtTenBangChamCong.TabIndex = 1;
-            this.txtTenBangChamCong.Click += new System.EventHandler(this.txtTenBangChamCong_Click);
-            this.txtTenBangChamCong.TextChanged += new System.EventHandler(this.txtTenBangChamCong_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(21, 73);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(166, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Tên Bảng Chấm Công";
             // 
             // frmChamCong
             // 

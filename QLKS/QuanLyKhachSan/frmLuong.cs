@@ -25,6 +25,10 @@ namespace QuanLyKhachSan
         }
         public void FormDataBiding()
         {
+            dtpNgayTinh.MaxDate = DateTime.Now;
+            dtpNgayTinh.MinDate = new DateTime(2000, 1, 1);
+
+            cboMaNV.Enabled = false;
             txtLuongCoBan.Text = "7000000";
             txtPhuCap.Text = "0";
             txtMaLuong.MaxLength = 100;
@@ -79,7 +83,7 @@ namespace QuanLyKhachSan
             txtThuong.Text = string.Empty;
             txtKhauTru.Text = string.Empty;
             txtTongLuong.Text = string.Empty;
-            dtpNgayTinh.Text = string.Empty;
+            dtpNgayTinh.Value = DateTime.UtcNow;
 
             //set validate == null
             errorProvider.SetError(txtMaLuong, "");
@@ -178,6 +182,19 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
+                string maNV = txtMaLuong.Text;
+
+                if (System.Text.RegularExpressions.Regex.IsMatch(maNV, @"^(l|L)\d+$"))
+                {
+                    maNV = "L" + maNV.Substring(1);
+                    txtMaLuong.Text = maNV;
+                }
+                else
+                {
+                    MessageBox.Show("Mã lương phải bắt đầu bằng 'l' hoặc 'L' và theo sau là số.");
+                    return;
+                }
+
                 BUS_Luong.Instance.ThemLuong(txtMaLuong, cboMaBangChamCong, cboMaNV, txtThang, txtNam, txtSoNgayLam, txtSoGioTangCa, txtLuongCoBan, txtPhuCap, txtThuong, txtKhauTru, txtTongLuong, dtpNgayTinh);
                 LoadDataLuong();
                 ClearFormFields();
@@ -310,6 +327,7 @@ namespace QuanLyKhachSan
                     txtNam.Text = chamCong.Nam.ToString();
                     txtSoNgayLam.Text = chamCong.SoNgayLamViec.ToString();
                     txtSoGioTangCa.Text = chamCong.SoGioTangCa.ToString();
+                    txtPhuCap.Text = "0";
 
                     int soNgayLam;
                     if (int.TryParse(txtSoNgayLam.Text, out soNgayLam))
@@ -356,7 +374,14 @@ namespace QuanLyKhachSan
 
         private void txtPhuCap_Click(object sender, EventArgs e)
         {
-            MoveCursorToEnd(txtPhuCap);
+            if (txtPhuCap.Text == "0")
+            {
+                txtPhuCap.Text = string.Empty;
+            }
+            else
+            {
+                MoveCursorToEnd(txtPhuCap);
+            }
         }
     }
 }
