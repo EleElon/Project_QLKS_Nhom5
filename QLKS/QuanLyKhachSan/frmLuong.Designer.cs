@@ -32,6 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpNgayTinh = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.cboMaBangChamCong = new System.Windows.Forms.ComboBox();
             this.txtTongLuong = new System.Windows.Forms.TextBox();
             this.txtLuongCoBan = new System.Windows.Forms.TextBox();
@@ -44,6 +45,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtNam = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,8 +63,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cboMaNV = new System.Windows.Forms.ComboBox();
+            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLuong)).BeginInit();
@@ -135,6 +136,18 @@
             this.label5.Size = new System.Drawing.Size(42, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Năm";
+            // 
+            // cboMaNV
+            // 
+            this.cboMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cboMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMaNV.FormattingEnabled = true;
+            this.cboMaNV.Location = new System.Drawing.Point(173, 138);
+            this.cboMaNV.Margin = new System.Windows.Forms.Padding(2);
+            this.cboMaNV.Name = "cboMaNV";
+            this.cboMaNV.Size = new System.Drawing.Size(155, 25);
+            this.cboMaNV.TabIndex = 2;
+            this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaBangChamCong_SelectedIndexChanged);
             // 
             // cboMaBangChamCong
             // 
@@ -249,6 +262,16 @@
             this.label7.Size = new System.Drawing.Size(122, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Số Giờ Tăng Ca";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(42, 140);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(114, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Tên Nhân Viên";
             // 
             // label9
             // 
@@ -367,7 +390,7 @@
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(719, 635);
+            this.btnThoat.Location = new System.Drawing.Point(631, 635);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(111, 39);
             this.btnThoat.TabIndex = 26;
@@ -379,7 +402,7 @@
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(524, 635);
+            this.btnSua.Location = new System.Drawing.Point(436, 635);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(111, 39);
             this.btnSua.TabIndex = 27;
@@ -391,7 +414,7 @@
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(328, 635);
+            this.btnXoa.Location = new System.Drawing.Point(240, 635);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(111, 39);
             this.btnXoa.TabIndex = 28;
@@ -403,7 +426,7 @@
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(146, 635);
+            this.btnThem.Location = new System.Drawing.Point(58, 635);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(111, 39);
             this.btnThem.TabIndex = 29;
@@ -415,7 +438,7 @@
             // 
             this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.Location = new System.Drawing.Point(907, 635);
+            this.btnLamMoi.Location = new System.Drawing.Point(819, 635);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(111, 39);
             this.btnLamMoi.TabIndex = 26;
@@ -423,27 +446,17 @@
             this.btnLamMoi.UseVisualStyleBackColor = true;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // label14
+            // btnReport
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(42, 140);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(114, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Tên Nhân Viên";
-            // 
-            // cboMaNV
-            // 
-            this.cboMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cboMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMaNV.FormattingEnabled = true;
-            this.cboMaNV.Location = new System.Drawing.Point(173, 138);
-            this.cboMaNV.Margin = new System.Windows.Forms.Padding(2);
-            this.cboMaNV.Name = "cboMaNV";
-            this.cboMaNV.Size = new System.Drawing.Size(155, 25);
-            this.cboMaNV.TabIndex = 2;
-            this.cboMaNV.SelectedIndexChanged += new System.EventHandler(this.cboMaBangChamCong_SelectedIndexChanged);
+            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(988, 635);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(111, 39);
+            this.btnReport.TabIndex = 26;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // frmLuong
             // 
@@ -451,6 +464,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1155, 686);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnSua);
@@ -508,5 +522,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgayTinh;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cboMaNV;
+        private System.Windows.Forms.Button btnReport;
     }
 }

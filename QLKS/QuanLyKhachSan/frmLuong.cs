@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DAO;
+using QuanLyKhachSan.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -382,6 +383,12 @@ namespace QuanLyKhachSan
             {
                 MoveCursorToEnd(txtPhuCap);
             }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmRptLuong fr = new frmRptLuong();
+            fr.Show();
         }
     }
 }
