@@ -3,357 +3,675 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\dao\\dao_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\frmrpthoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\frmrpthoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\frmrpthoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\frmrpthoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\frmrptluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\frmrptluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\hoadonreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\hoadonreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\hoadonct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\hoadonct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\dsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\dsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\dichvureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\dichvureport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\frmrptdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\frmrptdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\frmrptdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\frmrptdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\rpthoadon.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\rpthoadon.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\phongreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\phongreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\phongcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\phongcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\luongreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\luongreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\hoadoncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\hoadoncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\dao\\dao_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\frmrptluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\frmrptluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\dao\\dao_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\quanlykhachsan\\reporting\\frmrptdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\frmrptdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\dao\\dao_dichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\rptphong.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\rptphong.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\dao\\dao_dsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\rptluong.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\rptluong.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B8F3CD-561F-486C-9D30-23E691B99345}|..\\BUS\\BUS.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\bus\\bus_dichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\rptdichvu.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\rptdichvu.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmtimkiemnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmtimkiemnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmtimkiemnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmtimkiemnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\timkiemkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:timkiemkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmchamcong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmchamcong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmchamcong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmchamcong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B8F3CD-561F-486C-9D30-23E691B99345}|..\\BUS\\BUS.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\bus\\bus_datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\reporting\\context\\qlkscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:reporting\\context\\qlkscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\dao\\dao_loaiphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02B8F3CD-561F-486C-9D30-23E691B99345}|..\\BUS\\BUS.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\bus\\bus_danhsachdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\dao\\dao_danhsachdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\dao\\dao_datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{02B8F3CD-561F-486C-9D30-23E691B99345}|..\\BUS\\BUS.csproj|c:\\users\\dell\\downloads\\project_qlks_nhom5\\qlks\\bus\\bus_phong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdsphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmhoadon.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmhoadon.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmdsphong.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmdsphong.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmquanliphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmquanliphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmthaydoichuoiketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmthaydoichuoiketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmtimkiemhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:frmtimkiemhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C148F5EB-E279-4EA4-B01C-71C20D38E001}|..\\DAO\\DAO.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\dao\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F06C593-08A7-438F-ACD3-FB9CB01EE5B6}|QuanLyKhachSan.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedHeight": 200,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DAO_KhachHang.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_KhachHang.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_KhachHang.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_KhachHang.cs",
-              "RelativeToolTip": "..\\DAO\\DAO_KhachHang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "frmRptLuong.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptLuong.cs",
+              "RelativeDocumentMoniker": "Reporting\\frmRptLuong.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptLuong.cs [Design]",
+              "RelativeToolTip": "Reporting\\frmRptLuong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T12:07:49.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmHoaDon.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs",
-              "RelativeDocumentMoniker": "frmHoaDon.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs [Design]*",
-              "RelativeToolTip": "frmHoaDon.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:34:31.18Z",
+              "WhenOpened": "2024-11-21T09:40:30.459Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmRptHoaDon.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptHoaDon.cs",
+              "RelativeDocumentMoniker": "Reporting\\frmRptHoaDon.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptHoaDon.cs [Design]",
+              "RelativeToolTip": "Reporting\\frmRptHoaDon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T09:48:44.351Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmRptHoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptHoaDon.cs",
+              "RelativeDocumentMoniker": "Reporting\\frmRptHoaDon.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptHoaDon.cs",
+              "RelativeToolTip": "Reporting\\frmRptHoaDon.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAmwCkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T10:51:34.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmHoaDon.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs",
-              "RelativeDocumentMoniker": "frmHoaDon.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs*",
-              "RelativeToolTip": "frmHoaDon.cs*",
-              "ViewState": "AgIAABcAAAAAAAAAAAAMwDMAAAA1AAAAAAAAAA==",
+              "Title": "DAO_HoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_HoaDon.cs",
+              "RelativeDocumentMoniker": "..\\DAO\\DAO_HoaDon.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_HoaDon.cs",
+              "RelativeToolTip": "..\\DAO\\DAO_HoaDon.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwEIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T17:23:13.798Z",
+              "WhenOpened": "2024-11-21T11:18:21.535Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BUS_DichVu.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_DichVu.cs",
-              "RelativeDocumentMoniker": "..\\BUS\\BUS_DichVu.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_DichVu.cs",
-              "RelativeToolTip": "..\\BUS\\BUS_DichVu.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAgwFkAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "HoaDonReport.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDonReport.cs",
+              "RelativeDocumentMoniker": "Reporting\\HoaDonReport.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDonReport.cs",
+              "RelativeToolTip": "Reporting\\HoaDonReport.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T07:25:27.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DAO_LoaiPhong.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_LoaiPhong.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_LoaiPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_LoaiPhong.cs",
-              "RelativeToolTip": "..\\DAO\\DAO_LoaiPhong.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHYAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T00:59:17.572Z",
+              "WhenOpened": "2024-11-21T09:51:08.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "DAO_DSPhong.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DSPhong.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_DSPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DSPhong.cs",
-              "RelativeToolTip": "..\\DAO\\DAO_DSPhong.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAuwHQAAABgAAAAAAAAAA==",
+              "Title": "HoaDonCT.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDonCT.cs",
+              "RelativeDocumentMoniker": "Reporting\\HoaDonCT.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDonCT.cs",
+              "RelativeToolTip": "Reporting\\HoaDonCT.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:14:05.696Z",
+              "WhenOpened": "2024-11-21T11:26:01.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DAO_HoaDon.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_HoaDon.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_HoaDon.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_HoaDon.cs*",
-              "RelativeToolTip": "..\\DAO\\DAO_HoaDon.cs*",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwEIAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "DSPhong.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\DSPhong.cs",
+              "RelativeDocumentMoniker": "Reporting\\DSPhong.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\DSPhong.cs",
+              "RelativeToolTip": "Reporting\\DSPhong.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:14:05.159Z",
+              "WhenOpened": "2024-11-21T09:48:17.376Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "frmDichVu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs",
-              "RelativeDocumentMoniker": "frmDichVu.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs [Design]",
-              "RelativeToolTip": "frmDichVu.cs [Design]",
+              "Title": "dichVuReport.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\dichVuReport.cs",
+              "RelativeDocumentMoniker": "Reporting\\dichVuReport.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\dichVuReport.cs",
+              "RelativeToolTip": "Reporting\\dichVuReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T02:20:42.962Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DAO_DichVu.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DichVu.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_DichVu.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DichVu.cs",
-              "RelativeToolTip": "..\\DAO\\DAO_DichVu.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAWwMoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T07:19:37.987Z",
+              "WhenOpened": "2024-11-21T09:40:30.618Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BUS_DatPhong.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_DatPhong.cs",
-              "RelativeDocumentMoniker": "..\\BUS\\BUS_DatPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_DatPhong.cs",
-              "RelativeToolTip": "..\\BUS\\BUS_DatPhong.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "frmRptDSPhong.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptDSPhong.cs",
+              "RelativeDocumentMoniker": "Reporting\\frmRptDSPhong.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptDSPhong.cs [Design]",
+              "RelativeToolTip": "Reporting\\frmRptDSPhong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T07:04:12.993Z",
+              "WhenOpened": "2024-11-21T09:48:05.286Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmRptDSPhong.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptDSPhong.cs",
+              "RelativeDocumentMoniker": "Reporting\\frmRptDSPhong.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptDSPhong.cs",
+              "RelativeToolTip": "Reporting\\frmRptDSPhong.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA6wBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T10:51:41.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmHoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs",
+              "RelativeDocumentMoniker": "frmHoaDon.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs",
+              "RelativeToolTip": "frmHoaDon.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAASwHkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T09:40:30.459Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "DAO_DanhSachDichVu.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DanhSachDichVu.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_DanhSachDichVu.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DanhSachDichVu.cs",
-              "RelativeToolTip": "..\\DAO\\DAO_DanhSachDichVu.cs",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAIwL8AAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T07:20:06.82Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BUS_DanhSachDichVu.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_DanhSachDichVu.cs",
-              "RelativeDocumentMoniker": "..\\BUS\\BUS_DanhSachDichVu.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_DanhSachDichVu.cs",
-              "RelativeToolTip": "..\\BUS\\BUS_DanhSachDichVu.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAmwGUAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T07:23:58.125Z"
+              "Title": "rptHoaDon.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptHoaDon.rdlc",
+              "RelativeDocumentMoniker": "Reporting\\rptHoaDon.rdlc",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptHoaDon.rdlc [Design]",
+              "RelativeToolTip": "Reporting\\rptHoaDon.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-11-21T09:49:39.671Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "frmDSPhong.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs",
-              "RelativeDocumentMoniker": "frmDSPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs [Design]",
-              "RelativeToolTip": "frmDSPhong.cs [Design]",
+              "Title": "PhongReport.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\PhongReport.cs",
+              "RelativeDocumentMoniker": "Reporting\\PhongReport.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\PhongReport.cs",
+              "RelativeToolTip": "Reporting\\PhongReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:14:10.108Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BUS_Phong.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_Phong.cs",
-              "RelativeDocumentMoniker": "..\\BUS\\BUS_Phong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\BUS\\BUS_Phong.cs",
-              "RelativeToolTip": "..\\BUS\\BUS_Phong.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T06:22:24.903Z"
+              "WhenOpened": "2024-11-21T09:50:52.514Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "DAO_DatPhong.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DatPhong.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\DAO_DatPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\DAO_DatPhong.cs",
-              "RelativeToolTip": "..\\DAO\\DAO_DatPhong.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
+              "Title": "PhongConText.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\PhongConText.cs",
+              "RelativeDocumentMoniker": "Reporting\\PhongConText.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\PhongConText.cs",
+              "RelativeToolTip": "Reporting\\PhongConText.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T09:14:03.907Z"
+              "WhenOpened": "2024-11-21T09:50:36.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "luongReport.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\luongReport.cs",
+              "RelativeDocumentMoniker": "Reporting\\luongReport.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\luongReport.cs",
+              "RelativeToolTip": "Reporting\\luongReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T09:40:30.644Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "frmDSPhong.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs",
-              "RelativeDocumentMoniker": "frmDSPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.cs",
-              "RelativeToolTip": "frmDSPhong.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8BAAAMAAAAAAAAAA==",
+              "Title": "HoaDonContext.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDonContext.cs",
+              "RelativeDocumentMoniker": "Reporting\\HoaDonContext.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDonContext.cs",
+              "RelativeToolTip": "Reporting\\HoaDonContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T02:52:37.837Z"
+              "WhenOpened": "2024-11-21T11:04:40.209Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "frmHoaDon.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.Designer.cs",
-              "RelativeDocumentMoniker": "frmHoaDon.Designer.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.Designer.cs",
-              "RelativeToolTip": "frmHoaDon.Designer.cs",
-              "ViewState": "AgIAAMcBAAAAAAAAAAAqwOQBAAABAAAAAAAAAA==",
+              "Title": "HoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDon.cs",
+              "RelativeDocumentMoniker": "Reporting\\HoaDon.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\HoaDon.cs",
+              "RelativeToolTip": "Reporting\\HoaDon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T17:58:45.93Z"
+              "WhenOpened": "2024-11-21T10:07:55.394Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "frmDSPhong.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.Designer.cs",
-              "RelativeDocumentMoniker": "frmDSPhong.Designer.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDSPhong.Designer.cs",
-              "RelativeToolTip": "frmDSPhong.Designer.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAwPkBAAAAAAAAAAAAAA==",
+              "Title": "frmHoaDon.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs",
+              "RelativeDocumentMoniker": "frmHoaDon.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmHoaDon.cs [Design]",
+              "RelativeToolTip": "frmHoaDon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T02:27:59.378Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "frmTimKiemHoaDon.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmTimKiemHoaDon.cs",
-              "RelativeDocumentMoniker": "frmTimKiemHoaDon.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmTimKiemHoaDon.cs [Design]",
-              "RelativeToolTip": "frmTimKiemHoaDon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T17:43:00.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "frmThayDoiChuoiKetNoi.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmThayDoiChuoiKetNoi.cs",
-              "RelativeDocumentMoniker": "frmThayDoiChuoiKetNoi.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmThayDoiChuoiKetNoi.cs [Design]",
-              "RelativeToolTip": "frmThayDoiChuoiKetNoi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T17:43:01.032Z"
+              "WhenOpened": "2024-11-21T09:44:01.244Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "frmQuanLiPhong.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs",
-              "RelativeDocumentMoniker": "frmQuanLiPhong.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmQuanLiPhong.cs [Design]",
-              "RelativeToolTip": "frmQuanLiPhong.cs [Design]",
+              "Title": "frmRptLuong.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptLuong.cs",
+              "RelativeDocumentMoniker": "Reporting\\frmRptLuong.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptLuong.cs",
+              "RelativeToolTip": "Reporting\\frmRptLuong.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAgwFgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T17:43:01.792Z"
+              "WhenOpened": "2024-11-21T10:06:50.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "frmRptDichVu.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptDichVu.cs",
+              "RelativeDocumentMoniker": "Reporting\\frmRptDichVu.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\frmRptDichVu.cs",
+              "RelativeToolTip": "Reporting\\frmRptDichVu.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAIwBgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T11:10:53.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "rptPhong.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptPhong.rdlc",
+              "RelativeDocumentMoniker": "Reporting\\rptPhong.rdlc",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptPhong.rdlc [Design]",
+              "RelativeToolTip": "Reporting\\rptPhong.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-11-21T09:46:47.238Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\Form1.cs",
-              "RelativeDocumentMoniker": "..\\DAO\\Form1.cs",
-              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\DAO\\Form1.cs [Design]",
-              "RelativeToolTip": "..\\DAO\\Form1.cs [Design]",
+              "Title": "rptLuong.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptLuong.rdlc",
+              "RelativeDocumentMoniker": "Reporting\\rptLuong.rdlc",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptLuong.rdlc [Design]",
+              "RelativeToolTip": "Reporting\\rptLuong.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-11-21T09:40:30.459Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "rptDichVu.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptDichVu.rdlc",
+              "RelativeDocumentMoniker": "Reporting\\rptDichVu.rdlc",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\rptDichVu.rdlc [Design]",
+              "RelativeToolTip": "Reporting\\rptDichVu.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-11-21T09:40:30.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "frmDangNhap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "frmDangNhap.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDangNhap.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TimKiemKhachHang.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\TimKiemKhachHang.cs",
+              "RelativeDocumentMoniker": "TimKiemKhachHang.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\TimKiemKhachHang.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\TimKiemKhachHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "frmLuong.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmLuong.cs",
+              "RelativeDocumentMoniker": "frmLuong.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmLuong.cs",
+              "RelativeToolTip": "frmLuong.cs",
+              "ViewState": "AQIAADEBAAAAAAAAAAAkwIYBAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "frmNhanVien.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "frmNhanVien.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmNhanVien.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmNhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "frmTimKiemNhanVien.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmTimKiemNhanVien.cs",
+              "RelativeDocumentMoniker": "frmTimKiemNhanVien.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmTimKiemNhanVien.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmTimKiemNhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "frmTimKiemNhanVien.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmTimKiemNhanVien.cs",
+              "RelativeDocumentMoniker": "frmTimKiemNhanVien.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmTimKiemNhanVien.cs",
+              "RelativeToolTip": "frmTimKiemNhanVien.cs",
+              "ViewState": "AQIAAMEAAAAAAAAAAAApwLMAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "frmChamCong.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmChamCong.cs",
+              "RelativeDocumentMoniker": "frmChamCong.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmChamCong.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmChamCong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "frmLuong.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmLuong.cs",
+              "RelativeDocumentMoniker": "frmLuong.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmLuong.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmLuong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "frmNhanVien.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "frmNhanVien.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmNhanVien.cs",
+              "RelativeToolTip": "frmNhanVien.cs",
+              "ViewState": "AQIAAH8BAAAAAAAAAAAuwFgBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "frmChamCong.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmChamCong.cs",
+              "RelativeDocumentMoniker": "frmChamCong.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmChamCong.cs",
+              "RelativeToolTip": "frmChamCong.cs",
+              "ViewState": "AQIAAG8BAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "frmDangNhap.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "frmDangNhap.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDangNhap.cs",
+              "RelativeToolTip": "frmDangNhap.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "frmDichVu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs",
+              "RelativeDocumentMoniker": "frmDichVu.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "frmDichVu.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs",
+              "RelativeDocumentMoniker": "frmDichVu.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmDichVu.cs",
+              "RelativeToolTip": "frmDichVu.cs",
+              "ViewState": "AQIAAGYCAAAAAAAAAIAxwHcCAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "QLKSContext.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\Context\\QLKSContext.cs",
+              "RelativeDocumentMoniker": "Reporting\\Context\\QLKSContext.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Reporting\\Context\\QLKSContext.cs",
+              "RelativeToolTip": "Reporting\\Context\\QLKSContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T00:59:20.727Z"
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "frmKhachHang.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmKhachHang.cs",
+              "RelativeDocumentMoniker": "frmKhachHang.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmKhachHang.cs",
+              "RelativeToolTip": "frmKhachHang.cs",
+              "ViewState": "AQIAAMIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "frmKhachHang.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmKhachHang.cs",
+              "RelativeDocumentMoniker": "frmKhachHang.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmKhachHang.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ASUS\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\frmKhachHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "FrmMain.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\FrmMain.cs",
+              "RelativeDocumentMoniker": "FrmMain.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\FrmMain.cs",
+              "RelativeToolTip": "FrmMain.cs",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAWwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\Downloads\\Project_QLKS_Nhom5\\QLKS\\QuanLyKhachSan\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T09:40:30.634Z"
             }
           ]
         }
