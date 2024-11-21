@@ -366,7 +366,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(148, 48);
             this.btnThoat.TabIndex = 4;
-            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Text = "Report";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
