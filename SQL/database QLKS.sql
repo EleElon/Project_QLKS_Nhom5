@@ -168,7 +168,7 @@ GO
 
 CREATE TABLE ChiTietHoaDon (
     MaHoaDon NVARCHAR(100) PRIMARY KEY NOT NULL,
-    MaDatPhong NVARCHAR(100) NOT NULL,
+    MaDatPhong	NVARCHAR(100) NOT NULL,
 	 MaSuDungDichVu NVARCHAR(100),
 	 PhuThu float,
 	 TienPhong float,
@@ -268,16 +268,9 @@ ADD CONSTRAINT FK_DanhSachSuDungDichVu_DatPhong
 FOREIGN KEY (MaDatPhong) REFERENCES DatPhong(MaDatPhong)
 go
    
-ALTER TABLE ChiTietHoaDon
-ADD CONSTRAINT FK_ChiTietHoaDon_HoaDon 
-FOREIGN KEY (MaHoaDon) REFERENCES HoaDon(MaHoaDon)
-go
 
 
-ALTER TABLE ChiTietHoaDon
-ADD CONSTRAINT FK_ChiTietHoaDon_DatPhong 
-FOREIGN KEY (MaDatPhong) REFERENCES DatPhong(MaDatPhong)
-GO
+
 
 
 ALTER TABLE ChiTietHoaDon
@@ -337,6 +330,7 @@ VALUES
 ('LDV009', 'Dich vu doc bao', 'LP002'),
 ('LDV010', 'Dich vu tap gym', 'LP005');
 GO
+
 
 
 INSERT INTO DichVu (MaDichVu, MaLoaiDichVu, TenDichVu, Gia)
@@ -480,7 +474,6 @@ VALUES
 ('TP002', 'DP002', '2024-09-25', 150000),
 ('TP003', 'DP002', '2024-09-12', 200000);
 GO
-
 
 
 

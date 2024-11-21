@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhachSan.Reporting
 {
-    partial class frmRptDSPhong
+    partial class frmRptHoaDon
     {
         /// <summary>
         /// Required designer variable.
@@ -33,23 +33,21 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(2, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1083, 682);
+            this.reportViewer1.Size = new System.Drawing.Size(913, 534);
             this.reportViewer1.TabIndex = 0;
             // 
-            // frmRptDSPhong
+            // frmRptHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 683);
+            this.ClientSize = new System.Drawing.Size(917, 543);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmRptDSPhong";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDSPhong";
-            this.Load += new System.EventHandler(this.frmDSPhong_Load);
+            this.Name = "frmRptHoaDon";
+            this.Text = "frmRptHoaDon";
+            this.Load += new System.EventHandler(this.frmRptHoaDon_Load);
             this.ResumeLayout(false);
 
         }

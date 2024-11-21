@@ -132,7 +132,7 @@
             this.groupBox2.Size = new System.Drawing.Size(554, 443);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh Chấm Công";
+            this.groupBox2.Text = "Danh Sách Chấm Công";
             // 
             // dgvDSChamCong
             // 
@@ -201,24 +201,24 @@
             // cboThang
             // 
             this.cboThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboThang.FormattingEnabled = true;
             this.cboThang.Location = new System.Drawing.Point(255, 166);
             this.cboThang.Margin = new System.Windows.Forms.Padding(2);
             this.cboThang.Name = "cboThang";
-            this.cboThang.Size = new System.Drawing.Size(155, 25);
+            this.cboThang.Size = new System.Drawing.Size(155, 28);
             this.cboThang.TabIndex = 2;
             this.cboThang.SelectedIndexChanged += new System.EventHandler(this.cboThang_SelectedIndexChanged);
             // 
             // cboMaNhanVien
             // 
             this.cboMaNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaNhanVien.FormattingEnabled = true;
             this.cboMaNhanVien.Location = new System.Drawing.Point(255, 123);
             this.cboMaNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.cboMaNhanVien.Name = "cboMaNhanVien";
-            this.cboMaNhanVien.Size = new System.Drawing.Size(155, 25);
+            this.cboMaNhanVien.Size = new System.Drawing.Size(155, 28);
             this.cboMaNhanVien.TabIndex = 2;
             // 
             // label7

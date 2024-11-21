@@ -187,6 +187,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\HoaDonCT.cs" />
     <Compile Include="Reporting\Context\ChamCong.cs" />
     <Compile Include="Reporting\Context\ChiTietDatPhong.cs" />
     <Compile Include="Reporting\Context\ChiTietHoaDon.cs" />
@@ -217,12 +218,21 @@
     <Compile Include="Reporting\frmRptDichVu.Designer.cs">
       <DependentUpon>frmRptDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\frmRptHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\frmRptHoaDon.Designer.cs">
+      <DependentUpon>frmRptHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\frmRptLuong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reporting\frmRptLuong.Designer.cs">
       <DependentUpon>frmRptLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\HoaDon.cs" />
+    <Compile Include="Reporting\HoaDonContext.cs" />
+    <Compile Include="Reporting\HoaDonReport.cs" />
     <Compile Include="Reporting\luongReport.cs" />
     <Compile Include="Reporting\DSPhong.cs" />
     <Compile Include="Reporting\PhongConText.cs" />
@@ -298,9 +308,13 @@
     <EmbeddedResource Include="Reporting\frmRptDichVu.resx">
       <DependentUpon>frmRptDichVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\frmRptHoaDon.resx">
+      <DependentUpon>frmRptHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\frmRptLuong.resx">
       <DependentUpon>frmRptLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\rptHoaDon.rdlc" />
     <EmbeddedResource Include="Reporting\rptPhong.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -316,6 +330,7 @@
     <None Include=".editorconfig" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.dichVuReport.datasource" />
+    <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.HoaDonReport.datasource" />
     <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.luongReport.datasource" />
     <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.PhongReport.datasource" />
     <None Include="Properties\Settings.settings">
