@@ -143,7 +143,7 @@ namespace QuanLyKhachSan.Reporting
         }
         private void LoadReport(string loaiDichVu, float? giaMin, float? giaMax)
         {
-            using (QLKSContext context = new QLKSContext())
+            using (QLKSDataset context = new QLKSDataset())
             {
                 // Truy vấn dữ liệu có điều kiện lọc
                 var query = from dv in context.DichVus

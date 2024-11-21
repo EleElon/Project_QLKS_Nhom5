@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace QuanLyKhachSan.Reporting.Context
 {
-    public partial class QLKSContext : DbContext
+    public partial class QLKSDataset : DbContext
     {
-        public QLKSContext()
-            : base("name=QLKSContext")
+        public QLKSDataset()
+            : base("name=QLKSDataset")
         {
         }
 
@@ -26,7 +26,7 @@ namespace QuanLyKhachSan.Reporting.Context
         public virtual DbSet<LoaiPhong> LoaiPhongs { get; set; }
         public virtual DbSet<Luong> Luongs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
-        public virtual DbSet<DSPhong> Phongs { get; set; }
+        public virtual DbSet<Phong> Phongs { get; set; }
         public virtual DbSet<TraPhong> TraPhongs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -34,11 +34,6 @@ namespace QuanLyKhachSan.Reporting.Context
             modelBuilder.Entity<ChamCong>()
                 .HasMany(e => e.Luongs)
                 .WithRequired(e => e.ChamCong)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<DatPhong>()
-                .HasMany(e => e.ChiTietHoaDons)
-                .WithRequired(e => e.DatPhong)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<DatPhong>()
@@ -50,10 +45,6 @@ namespace QuanLyKhachSan.Reporting.Context
                 .HasMany(e => e.TraPhongs)
                 .WithRequired(e => e.DatPhong)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<HoaDon>()
-                .HasOptional(e => e.ChiTietHoaDon)
-                .WithRequired(e => e.HoaDon);
 
             modelBuilder.Entity<LoaiDichVu>()
                 .HasMany(e => e.DichVus)
@@ -87,7 +78,7 @@ namespace QuanLyKhachSan.Reporting.Context
                 .HasForeignKey(e => e.MaNhanVien)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<DSPhong>()
+            modelBuilder.Entity<Phong>()
                 .HasMany(e => e.CoSoVatChats)
                 .WithRequired(e => e.Phong)
                 .WillCascadeOnDelete(false);

@@ -25,7 +25,7 @@ namespace DAO
             }
         }
         public DAO_NhanVien() { }
-        public bool ThemNhanVien(string maNV, string maPhong, string tenNV, string chucVu, float luong)
+        public bool ThemNhanVien(string maNV, string maPhong, string tenNV, string gioiTinh, DateTime ngaySinh, string SDT, string chucVu, string diaChi)
         {
             try
             {
@@ -39,8 +39,11 @@ namespace DAO
                     MaNhanVien = maNV,
                     MaPhong = maPhong,
                     TenNhanVien = tenNV,
+                    gioiTinh = gioiTinh,
+                    ngaySinh = ngaySinh,
+                    SDT = SDT,
                     ChucVu = chucVu,
-                    Luong = luong
+                    diaChi = diaChi
                 };
 
                 db.NhanViens.InsertOnSubmit(nhanVien);
@@ -92,7 +95,7 @@ namespace DAO
             }
         }
 
-        public bool SuaNhanVien(string maNV, string maPhong, string tenNV, string chucVu, float luong)
+        public bool SuaNhanVien(string maNV, string maPhong, string tenNV, string gioiTinh, DateTime ngaySinh, string SDT, string chucVu, string diaChi)
         {
             try
             {
@@ -102,8 +105,11 @@ namespace DAO
                     nhanVien.MaNhanVien = maNV;
                     nhanVien.MaPhong = maPhong;
                     nhanVien.TenNhanVien = tenNV;
+                    nhanVien.gioiTinh = gioiTinh;
+                    nhanVien.ngaySinh = ngaySinh;
+                    nhanVien.SDT = SDT;
                     nhanVien.ChucVu = chucVu;
-                    nhanVien.Luong = luong;
+                    nhanVien.diaChi = diaChi;
 
                     db.SubmitChanges();
                     return true;
@@ -136,7 +142,7 @@ namespace DAO
                 cb.ValueMember = "MaPhong"; // Giá trị là mã dịch vụ
             }
         }
-        public void LoadDGVForm(TextBox maNV, ComboBox maPhong, TextBox tenNV, TextBox chucVu, TextBox luong, DataGridView data)
+        public void LoadDGVForm(TextBox maNV, ComboBox maPhong, TextBox tenNV, RadioButton nam, RadioButton nu, DateTimePicker ngaySinh, TextBox SDT, TextBox chucVu, TextBox diaChi, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -148,8 +154,29 @@ namespace DAO
                     maNV.Text = row.Cells[0].Value.ToString().Trim();
                     string selectedMaPhong = row.Cells[1].Value.ToString().Trim();
                     tenNV.Text = row.Cells[2].Value.ToString().Trim();
-                    chucVu.Text = row.Cells[3].Value.ToString().Trim();
-                    luong.Text = row.Cells[4].Value.ToString().Trim();
+                    string gioiTinh = row.Cells[3].Value.ToString().Trim();
+
+                    if (gioiTinh == "Nam")
+                    {
+                        nam.Checked = true;
+                    }
+                    else if (gioiTinh == "Nu")
+                    {
+                        nu.Checked = true;
+                    }
+
+                    if (DateTime.TryParse(row.Cells[4].Value.ToString().Trim(), out DateTime parsedNgaySinh))
+                    {
+                        ngaySinh.Value = parsedNgaySinh;
+                    }
+                    //else
+                    //{
+                    //    ngaySinh.Value = DateTime.Now; // Hoặc giá trị mặc định nếu không hợp lệ
+                    //}
+
+                    SDT.Text = row.Cells[5].Value.ToString().Trim();
+                    chucVu.Text = row.Cells[6].Value.ToString().Trim();
+                    diaChi.Text = row.Cells[7].Value.ToString().Trim();
 
                     foreach (var item in maPhong.Items)
                     {
@@ -184,9 +211,12 @@ namespace DAO
                         MaNhanVien = item.MaNhanVien,
                         MaPhong = item.MaPhong,
                         TenNhanVien = item.TenNhanVien,
+                        gioiTinh = item.gioiTinh,
+                        ngaySinh = item.ngaySinh,
+                        SDT = item.SDT,
                         ChucVu = item.ChucVu,
-                        Luong = item.Luong
-                    });
+                        diaChi = item.diaChi
+                    }); ;
                 }
             }
             return data;

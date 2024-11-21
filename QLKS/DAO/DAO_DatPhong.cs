@@ -291,42 +291,25 @@ namespace DAO
                 }
             }
         }
+
         public void LoadComBoBoxPhong(ComboBox cb)
         {
-            List<string> availableRooms = new List<string>();
+            List<string> dp = new List<string>();
 
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                // Lấy tất cả mã phòng
-                var allRooms = from room in db.Phongs
-                               select room.MaPhong;
-
-                // Lấy các phòng đang được đặt mà ngày trả chưa hết hạn
-                var bookedRooms = from booking in db.ChiTietDatPhongs
-                                  where booking.NgayTraPhong > DateTime.Now // Lọc các phòng có ngày trả lớn hơn hiện tại
-                                  select booking.MaPhong;
-                // Lấy các phòng đang sử dụng (TinhTrang = "Trống")
-                var inUseRooms = from room in db.Phongs
-                                 where room.TinhTrang == "Trống" // Điều kiện kiểm tra trạng thái
-                                 select room.MaPhong;
-
-                // Danh sách phòng trống = Tất cả phòng - Các phòng đã đặt còn hiệu lực - Phòng đang sử dụng
-                availableRooms = allRooms
-                    .Except(bookedRooms) // Loại bỏ phòng đã đặt
-                    .Except(inUseRooms)  // Loại bỏ phòng đang sử dụng
-                    .ToList();
-
-                // Gán danh sách phòng trống vào ComboBox
-                cb.DataSource = availableRooms;
-
-                // Set SelectedIndex về 0 nếu có phòng trống
-                if (availableRooms.Count > 0)
+                var maDPhong = from ma in db.Phongs
+                                select ma.MaPhong;
+                // Loại bỏ các phần tử trùng lặp
+                dp = maDPhong.Distinct().ToList();
+                cb.DataSource = dp;  // Gán trực tiếp List<string> vào DataSource
+                                     // Set SelectedIndex to 0 only if there are items in the list
+                if (dp.Count > 0)
                 {
                     cb.SelectedIndex = 0;
                 }
             }
         }
-
 
         public void LoadDGVFormCTDatPhong(TextBox ma, ComboBox maDP, ComboBox maKH, ComboBox maP, ComboBox maL, TextBox tinhTrang,TextBox gia,TextBox soLuong,TextBox tong,ComboBox pttt,DateTimePicker ngayNhan,DateTimePicker ngayTra, DataGridView data)
         {
