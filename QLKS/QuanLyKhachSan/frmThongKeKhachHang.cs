@@ -1,4 +1,5 @@
 ﻿using BUS;
+using QuanLyKhachSan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,12 @@ namespace QuanLiKhachSan_Nhom5
          
             dtpDen.Value = DateTime.Now;
             dtpTu.Value = DateTime.Now;
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            FrmReportKhachHang frm = new FrmReportKhachHang();
+            frm.Show();
         }
     }
 }

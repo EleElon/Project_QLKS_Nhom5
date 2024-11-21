@@ -55,6 +55,8 @@ namespace QuanLyKhachSan
             this.btnCapNhap = new System.Windows.Forms.Button();
             this.btnHuyPhieu = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtGiaSD = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.cbMaDatPhong = new System.Windows.Forms.ComboBox();
             this.cbMaDichVu = new System.Windows.Forms.ComboBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -129,7 +131,7 @@ namespace QuanLyKhachSan
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1368, 603);
+            this.tabPage1.Size = new System.Drawing.Size(1672, 835);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dịch vụ";
             // 
@@ -393,6 +395,8 @@ namespace QuanLyKhachSan
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtGiaSD);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.cbMaDatPhong);
             this.groupBox3.Controls.Add(this.cbMaDichVu);
             this.groupBox3.Controls.Add(this.txtSoLuong);
@@ -410,6 +414,24 @@ namespace QuanLyKhachSan
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Phiếu Sử dụng dịch vụ";
+            // 
+            // txtGiaSD
+            // 
+            this.txtGiaSD.Location = new System.Drawing.Point(212, 325);
+            this.txtGiaSD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGiaSD.Name = "txtGiaSD";
+            this.txtGiaSD.Size = new System.Drawing.Size(196, 28);
+            this.txtGiaSD.TabIndex = 6;
+            this.txtGiaSD.TextChanged += new System.EventHandler(this.txtGiaSD_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(21, 328);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 22);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Giá";
             // 
             // cbMaDatPhong
             // 
@@ -493,7 +515,7 @@ namespace QuanLyKhachSan
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(1144, 582);
+            this.groupBox4.Size = new System.Drawing.Size(1204, 582);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh Sách Phiếu Sử Dụng Dịch Vụ";
@@ -508,7 +530,7 @@ namespace QuanLyKhachSan
             this.dgvSuDungDichVu.Name = "dgvSuDungDichVu";
             this.dgvSuDungDichVu.RowHeadersWidth = 51;
             this.dgvSuDungDichVu.RowTemplate.Height = 24;
-            this.dgvSuDungDichVu.Size = new System.Drawing.Size(899, 542);
+            this.dgvSuDungDichVu.Size = new System.Drawing.Size(1200, 542);
             this.dgvSuDungDichVu.TabIndex = 0;
             this.dgvSuDungDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuDungDichVu_CellContentClick);
             // 
@@ -550,7 +572,7 @@ namespace QuanLyKhachSan
             this.tbLoaiDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbLoaiDichVu.Name = "tbLoaiDichVu";
             this.tbLoaiDichVu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbLoaiDichVu.Size = new System.Drawing.Size(1368, 603);
+            this.tbLoaiDichVu.Size = new System.Drawing.Size(1672, 835);
             this.tbLoaiDichVu.TabIndex = 2;
             this.tbLoaiDichVu.Text = "Loại dịch vụ";
             // 
@@ -816,5 +838,7 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Button btnLamMoiLDV;
         private System.Windows.Forms.Button btnLamMoiDSSDDV;
         private System.Windows.Forms.ComboBox cboMaLoaiPhong;
+        private System.Windows.Forms.TextBox txtGiaSD;
+        private System.Windows.Forms.Label label15;
     }
 }

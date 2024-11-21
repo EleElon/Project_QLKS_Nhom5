@@ -32,6 +32,14 @@ namespace BUS
         {
             return phongDAO.suaPhong(maPhong, maLoaiPhong, soPhong, tinhTrang);
         }
+        public double LayGiaTienTheoMaPhong(string maPhong)
+        {
+            if (string.IsNullOrWhiteSpace(maPhong))
+            {
+                throw new ArgumentException("Mã phòng không được để trống.");
+            }
 
+            return phongDAO.LayGiaTienTheoMaPhong(maPhong);
+        }
     }
 }

@@ -35,7 +35,8 @@ namespace DAO
                                   dv.MaSuDungDichVu,
                                   dv.MaDichVu,
                                   dv.MaDatPhong,
-                                  dv.SoLuong
+                                  dv.SoLuong,
+                                  dv.Gia
                               }).ToList();
 
                 foreach (var item in dichvu)
@@ -45,7 +46,7 @@ namespace DAO
                     dvu.MaDichVu = item.MaDichVu;
                     dvu.MaDatPhong = item.MaDatPhong;
                     dvu.SoLuong = item.SoLuong;
-
+                    dvu.Gia = item.Gia;
                     data.Add(dvu);
                 }
             }
@@ -94,7 +95,7 @@ namespace DAO
                 cb.ValueMember = "Key";
             }
         }
-        public void LoadDGVForm(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong, DataGridView data)
+        public void LoadDGVForm(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong,TextBox gia, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -105,6 +106,7 @@ namespace DAO
                 maDichVu.SelectedValue = row.Cells[1].Value != null ? row.Cells[1].Value.ToString().Trim() : null;
                 maDatPhong.SelectedValue = row.Cells[2].Value != null ? row.Cells[2].Value.ToString().Trim() : null;
                 soLuong.Text = row.Cells[3].Value.ToString().Trim();
+                gia.Text = row.Cells[4].Value.ToString().Trim();
             }
         }
         public void Them(DanhSachSuDungDichVu dv)
@@ -161,7 +163,7 @@ namespace DAO
                     maSDDV.MaDichVu = daDV.MaDichVu;
                     maSDDV.MaDatPhong = daDV.MaDatPhong;
                     maSDDV.SoLuong = daDV.SoLuong;
-
+                    maSDDV.Gia = daDV.Gia;
                     db.SubmitChanges();
 
                     return true;
@@ -185,5 +187,18 @@ namespace DAO
                 return db.DanhSachSuDungDichVus.ToList();
             }
         }
+        public float LayGiaDichVu(string maSDDV)
+    {
+        using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
+        {
+            var gia = (from ds in db.DanhSachSuDungDichVus
+                       join dv in db.DichVus
+                       on ds.MaDichVu equals dv.MaDichVu
+                       where ds.MaSuDungDichVu == maSDDV
+                       select dv.Gia).FirstOrDefault();
+
+                return 0; // Trả về 0 nếu không có giá trị
+        }
+    }
     }
 }

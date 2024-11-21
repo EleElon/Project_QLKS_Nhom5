@@ -130,6 +130,12 @@
     <Compile Include="frmDSPhong.Designer.cs">
       <DependentUpon>frmDSPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportKhachHang.Designer.cs">
+      <DependentUpon>FrmReportKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThayDoiChuoiKetNoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyKhachSanDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThayDoichuoiKetNoi.cs" />
     <Compile Include="TimKiemKhachHang.cs">
@@ -200,6 +211,9 @@
     <EmbeddedResource Include="frmQuanLiPhong.resx">
       <DependentUpon>frmQuanLiPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportKhachHang.resx">
+      <DependentUpon>FrmReportKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThayDoiChuoiKetNoi.resx">
       <DependentUpon>frmThayDoiChuoiKetNoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +229,7 @@
     <EmbeddedResource Include="frmTimKiemPhong.resx">
       <DependentUpon>frmTimKiemPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InThongKeKhachHang.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -246,6 +261,17 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyKhachSanDataSet.xsc">
+      <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyKhachSanDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyKhachSanDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="QuanLyKhachSanDataSet.xss">
+      <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\hotel-overview-1685329656.jpg" />
   </ItemGroup>
   <ItemGroup>

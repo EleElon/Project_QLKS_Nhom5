@@ -111,7 +111,7 @@ namespace QuanLyKhachSan
         private void dgvSuDungDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
+            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
             errorProvider1.SetError(txtMaSDDV, "");
         }
@@ -120,9 +120,9 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD);
                 LoadDuLieuLenForm();
-                ClearFormFields();
+             
             }
         }
 
@@ -132,7 +132,7 @@ namespace QuanLyKhachSan
             {
                 BUS_DanhSachDichVu.Instance.Xoa(txtMaSDDV);
                 ClearFormFields();
-                LoadDuLieuLenForm();
+                LoadDuLieuLenForm() ;
             }
 
         }
@@ -174,9 +174,9 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
-                ClearFormFields();
+           
             }
         }
 
@@ -624,6 +624,30 @@ namespace QuanLyKhachSan
         private void cbMaDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtGiaSD_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtGiaSD.Text))
+            {
+                errorProvider1.SetError(txtGiaSD, "Vui lòng nhập giá!");
+            }
+            //else if (!int.TryParse(txtGia.Text, out _))
+            //{
+            //    errorProvider1.SetError(txtGia, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
+            //}
+            else if (!int.TryParse(txtGiaSD.Text, out int gia))
+            {
+                errorProvider1.SetError(txtGiaSD, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
+            }
+            else if (gia < 0)
+            {
+                errorProvider1.SetError(txtGiaSD, "Giá không thể là số âm");
+            }
+            else
+            {
+                errorProvider1.SetError(txtGiaSD, "");
+            }
         }
     }
 }
