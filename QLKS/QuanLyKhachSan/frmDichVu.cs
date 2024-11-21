@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DAO;
+using QuanLyKhachSan.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,7 +112,7 @@ namespace QuanLyKhachSan
         private void dgvSuDungDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, dgvSuDungDichVu);
+            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
             errorProvider1.SetError(txtMaSDDV, "");
         }
@@ -120,7 +121,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
                 ClearFormFields();
             }
@@ -174,7 +175,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong);
+                BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
                 ClearFormFields();
             }
@@ -249,11 +250,11 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaLDV()
         {
-            string pattern = @"^(dv|DV)[0-9]+$";
+            string pattern = @"^(ldv|LDV)[0-9]+$";
 
             if (string.IsNullOrEmpty(txtMaLoaiDV.Text))
             {
-                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ! Mã phải bắt đầu bằng 'dv / DV' và theo sau là số giới hạn 10 ký tự");
+                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ! Mã phải bắt đầu bằng 'ldv / LDV' và theo sau là số giới hạn 10 ký tự");
             }
             else if (BUS_LoaiDichVu.Instance.CheckMaLDVExists(txtMaLoaiDV.Text))
             {
@@ -261,7 +262,7 @@ namespace QuanLyKhachSan
             }
             else if (!Regex.IsMatch(txtMaLoaiDV.Text, pattern))
             {
-                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'dv / DV' và theo sau là số");
+                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'ldv / LDV' và theo sau là số");
             }
             else
             {
@@ -411,9 +412,9 @@ namespace QuanLyKhachSan
                 string tenLDV = txtTenLDV.Text;
 
                 // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
-                if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(dv|DV)\d+$"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(ldv|LDV)\d+$"))
                 {
-                    maLDV = "DV" + maLDV.Substring(2); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
+                    maLDV = "LDV" + maLDV.Substring(3); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
                     txtMaLoaiDV.Text = maLDV; // Gán lại giá trị đã chuẩn hóa cho txtMaDV
                 }
                 else
@@ -624,6 +625,32 @@ namespace QuanLyKhachSan
         private void cbMaDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmRptDichVu fr = new frmRptDichVu();
+            fr.Show();
+        }
+
+        private void txtTenDV_Click(object sender, EventArgs e)
+        {
+            MoveCursorToEnd(txtTenDV);
+        }
+
+        private void MoveCursorToEnd(TextBox textBox)
+        {
+            textBox.SelectionStart = textBox.Text.Length;
+        }
+
+        private void txtGia_Click(object sender, EventArgs e)
+        {
+            MoveCursorToEnd(txtGia);
+        }
+
+        private void txtTenLDV_Click(object sender, EventArgs e)
+        {
+            MoveCursorToEnd(txtTenLDV);
         }
     }
 }

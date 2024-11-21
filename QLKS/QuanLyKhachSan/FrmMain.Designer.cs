@@ -41,6 +41,7 @@
             this.btnKH = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.btnChamCong = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.btnDatPhong);
+            this.panel1.Controls.Add(this.btnChamCong);
             this.panel1.Controls.Add(this.btnHoaDon);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnCSVC);
@@ -216,6 +218,19 @@
             this.pnMain.Size = new System.Drawing.Size(775, 857);
             this.pnMain.TabIndex = 4;
             // 
+            // btnChamCong
+            // 
+            this.btnChamCong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChamCong.Location = new System.Drawing.Point(5, 806);
+            this.btnChamCong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChamCong.Name = "btnChamCong";
+            this.btnChamCong.Size = new System.Drawing.Size(165, 64);
+            this.btnChamCong.TabIndex = 11;
+            this.btnChamCong.Text = "Chấm Công";
+            this.btnChamCong.UseVisualStyleBackColor = false;
+            this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,5 +268,6 @@
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnDatPhong;
         public System.Windows.Forms.Panel pnMain;
+        private System.Windows.Forms.Button btnChamCong;
     }
 }

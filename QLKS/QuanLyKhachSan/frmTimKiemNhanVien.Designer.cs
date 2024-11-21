@@ -37,14 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.panelFilterOptions = new System.Windows.Forms.Panel();
-            this.chkLuongGiamDan = new System.Windows.Forms.CheckBox();
-            this.chkLuongTangDan = new System.Windows.Forms.CheckBox();
             this.btnQuayLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemNV)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panelFilterOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLamMoi
@@ -151,55 +146,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Kết Quả";
             // 
-            // btnFilter
-            // 
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Location = new System.Drawing.Point(623, 67);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(74, 39);
-            this.btnFilter.TabIndex = 17;
-            this.btnFilter.Text = "Lọc";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // panelFilterOptions
-            // 
-            this.panelFilterOptions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFilterOptions.Controls.Add(this.chkLuongGiamDan);
-            this.panelFilterOptions.Controls.Add(this.chkLuongTangDan);
-            this.panelFilterOptions.Location = new System.Drawing.Point(12, 166);
-            this.panelFilterOptions.Name = "panelFilterOptions";
-            this.panelFilterOptions.Size = new System.Drawing.Size(200, 100);
-            this.panelFilterOptions.TabIndex = 19;
-            this.panelFilterOptions.Visible = false;
-            // 
-            // chkLuongGiamDan
-            // 
-            this.chkLuongGiamDan.AutoSize = true;
-            this.chkLuongGiamDan.Location = new System.Drawing.Point(3, 34);
-            this.chkLuongGiamDan.Name = "chkLuongGiamDan";
-            this.chkLuongGiamDan.Size = new System.Drawing.Size(142, 17);
-            this.chkLuongGiamDan.TabIndex = 0;
-            this.chkLuongGiamDan.Text = "xếp theo lương giảm dần";
-            this.chkLuongGiamDan.UseVisualStyleBackColor = true;
-            this.chkLuongGiamDan.CheckedChanged += new System.EventHandler(this.chkLuongGiamDan_CheckedChanged);
-            // 
-            // chkLuongTangDan
-            // 
-            this.chkLuongTangDan.AutoSize = true;
-            this.chkLuongTangDan.Location = new System.Drawing.Point(3, 12);
-            this.chkLuongTangDan.Name = "chkLuongTangDan";
-            this.chkLuongTangDan.Size = new System.Drawing.Size(143, 17);
-            this.chkLuongTangDan.TabIndex = 0;
-            this.chkLuongTangDan.Text = "Xếp theo lương tăng dần";
-            this.chkLuongTangDan.UseVisualStyleBackColor = true;
-            this.chkLuongTangDan.CheckedChanged += new System.EventHandler(this.chkLuongTangDan_CheckedChanged);
-            // 
             // btnQuayLai
             // 
             this.btnQuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuayLai.Location = new System.Drawing.Point(719, 67);
+            this.btnQuayLai.Location = new System.Drawing.Point(624, 67);
             this.btnQuayLai.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(74, 39);
@@ -214,12 +164,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 482);
-            this.Controls.Add(this.panelFilterOptions);
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnQuayLai);
-            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -230,8 +178,6 @@
             this.Resize += new System.EventHandler(this.frmTimKiemNhanVien_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimKiemNV)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.panelFilterOptions.ResumeLayout(false);
-            this.panelFilterOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,10 +193,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.Panel panelFilterOptions;
-        private System.Windows.Forms.CheckBox chkLuongGiamDan;
-        private System.Windows.Forms.CheckBox chkLuongTangDan;
         private System.Windows.Forms.Button btnQuayLai;
     }
 }
