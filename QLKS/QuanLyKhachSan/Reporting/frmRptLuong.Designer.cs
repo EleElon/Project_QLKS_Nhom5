@@ -35,7 +35,7 @@
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnTuyChon = new System.Windows.Forms.Button();
             this.panelFilterOptions = new System.Windows.Forms.Panel();
-            this.chkTheoLuong = new System.Windows.Forms.CheckBox();
+            this.chkTheoGia = new System.Windows.Forms.CheckBox();
             this.chkTheoSoNgayLam = new System.Windows.Forms.CheckBox();
             this.lbLuongMin = new System.Windows.Forms.Label();
             this.txtLuongMin = new System.Windows.Forms.TextBox();
@@ -112,7 +112,7 @@
             // panelFilterOptions
             // 
             this.panelFilterOptions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFilterOptions.Controls.Add(this.chkTheoLuong);
+            this.panelFilterOptions.Controls.Add(this.chkTheoGia);
             this.panelFilterOptions.Controls.Add(this.chkTheoSoNgayLam);
             this.panelFilterOptions.Location = new System.Drawing.Point(252, 298);
             this.panelFilterOptions.Name = "panelFilterOptions";
@@ -120,16 +120,16 @@
             this.panelFilterOptions.TabIndex = 20;
             this.panelFilterOptions.Visible = false;
             // 
-            // chkTheoLuong
+            // chkTheoGia
             // 
-            this.chkTheoLuong.AutoSize = true;
-            this.chkTheoLuong.Location = new System.Drawing.Point(3, 34);
-            this.chkTheoLuong.Name = "chkTheoLuong";
-            this.chkTheoLuong.Size = new System.Drawing.Size(130, 17);
-            this.chkTheoLuong.TabIndex = 0;
-            this.chkTheoLuong.Text = "Tìm Kiếm Theo Lương";
-            this.chkTheoLuong.UseVisualStyleBackColor = true;
-            this.chkTheoLuong.CheckedChanged += new System.EventHandler(this.chkTheoLuong_CheckedChanged);
+            this.chkTheoGia.AutoSize = true;
+            this.chkTheoGia.Location = new System.Drawing.Point(3, 34);
+            this.chkTheoGia.Name = "chkTheoGia";
+            this.chkTheoGia.Size = new System.Drawing.Size(130, 17);
+            this.chkTheoGia.TabIndex = 0;
+            this.chkTheoGia.Text = "Tìm Kiếm Theo Lương";
+            this.chkTheoGia.UseVisualStyleBackColor = true;
+            this.chkTheoGia.CheckedChanged += new System.EventHandler(this.chkTheoLuong_CheckedChanged);
             // 
             // chkTheoSoNgayLam
             // 
@@ -184,6 +184,7 @@
             // 
             // frmRptLuong
             // 
+            this.AcceptButton = this.btnTim;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -217,7 +218,7 @@
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnTuyChon;
         private System.Windows.Forms.Panel panelFilterOptions;
-        private System.Windows.Forms.CheckBox chkTheoLuong;
+        private System.Windows.Forms.CheckBox chkTheoGia;
         private System.Windows.Forms.CheckBox chkTheoSoNgayLam;
         private System.Windows.Forms.Label lbLuongMin;
         private System.Windows.Forms.TextBox txtLuongMin;

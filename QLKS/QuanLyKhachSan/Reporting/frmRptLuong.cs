@@ -161,7 +161,7 @@ namespace QuanLyKhachSan.Reporting
             txtLuongMax.Visible = false;
 
             chkTheoSoNgayLam.CheckedChanged += (s, ev) => ChonTuyChon();
-            chkTheoLuong.CheckedChanged += (s, ev) => ChonTuyChon();
+            chkTheoGia.CheckedChanged += (s, ev) => ChonTuyChon();
 
             TheoLuongFieldsLocation();
         }
@@ -254,7 +254,7 @@ namespace QuanLyKhachSan.Reporting
                     MessageBox.Show("Vui lòng nhập số ngày làm việc hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else if (chkTheoLuong.Checked)
+            else if (chkTheoGia.Checked)
             {
                 // Lấy giá trị từ TextBox
                 if (float.TryParse(txtLuongMin.Text, out float luongMin) &&
@@ -300,7 +300,7 @@ namespace QuanLyKhachSan.Reporting
                 lbLuongMax.Visible = false;
                 txtLuongMax.Visible = false;
             }
-            else if (chkTheoLuong.Checked)
+            else if (chkTheoGia.Checked)
             {
                 lbSoNgayLam.Visible = false;
                 txtSoNgayLam.Visible = false;
@@ -317,13 +317,13 @@ namespace QuanLyKhachSan.Reporting
         {
             if (chkTheoSoNgayLam.Checked)
             {
-                chkTheoLuong.Checked = false;
+                chkTheoGia.Checked = false;
             }
         }
 
         private void chkTheoLuong_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkTheoLuong.Checked)
+            if (chkTheoGia.Checked)
             {
                 chkTheoSoNgayLam.Checked = false;
             }
