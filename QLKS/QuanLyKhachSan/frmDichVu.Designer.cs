@@ -43,6 +43,7 @@ namespace QuanLyKhachSan
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaDV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReport = new System.Windows.Forms.Button();
             this.btnLamMoiDV = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoaDV = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@ namespace QuanLyKhachSan
             this.label14 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.btnReport = new System.Windows.Forms.Button();
             this.tbDichVu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -110,7 +110,7 @@ namespace QuanLyKhachSan
             this.tbDichVu.Controls.Add(this.tbLoaiDichVu);
             this.tbDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDichVu.Location = new System.Drawing.Point(0, 3);
-            this.tbDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.tbDichVu.Name = "tbDichVu";
             this.tbDichVu.SelectedIndex = 0;
             this.tbDichVu.Size = new System.Drawing.Size(1260, 707);
@@ -130,9 +130,9 @@ namespace QuanLyKhachSan
             this.tabPage1.Controls.Add(this.btnThemDV);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1252, 677);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dịch vụ";
@@ -142,9 +142,9 @@ namespace QuanLyKhachSan
             this.groupBox2.Controls.Add(this.dataGridViewDichVu);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(387, 61);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(548, 347);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
@@ -156,7 +156,7 @@ namespace QuanLyKhachSan
             this.dataGridViewDichVu.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDichVu.Location = new System.Drawing.Point(4, 20);
-            this.dataGridViewDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDichVu.Name = "dataGridViewDichVu";
             this.dataGridViewDichVu.RowHeadersWidth = 51;
             this.dataGridViewDichVu.RowTemplate.Height = 24;
@@ -176,9 +176,9 @@ namespace QuanLyKhachSan
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(25, 61);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(356, 347);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
@@ -188,7 +188,7 @@ namespace QuanLyKhachSan
             // 
             this.cbLoaiDichVu.FormattingEnabled = true;
             this.cbLoaiDichVu.Location = new System.Drawing.Point(160, 109);
-            this.cbLoaiDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbLoaiDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.cbLoaiDichVu.Name = "cbLoaiDichVu";
             this.cbLoaiDichVu.Size = new System.Drawing.Size(162, 30);
             this.cbLoaiDichVu.TabIndex = 3;
@@ -196,10 +196,11 @@ namespace QuanLyKhachSan
             // txtGia
             // 
             this.txtGia.Location = new System.Drawing.Point(160, 217);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(2);
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(163, 28);
             this.txtGia.TabIndex = 2;
+            this.txtGia.Click += new System.EventHandler(this.txtGia_Click);
             this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             // 
             // label5
@@ -215,10 +216,11 @@ namespace QuanLyKhachSan
             // txtTenDV
             // 
             this.txtTenDV.Location = new System.Drawing.Point(160, 160);
-            this.txtTenDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenDV.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenDV.Name = "txtTenDV";
             this.txtTenDV.Size = new System.Drawing.Size(163, 28);
             this.txtTenDV.TabIndex = 2;
+            this.txtTenDV.Click += new System.EventHandler(this.txtTenDV_Click);
             this.txtTenDV.TextChanged += new System.EventHandler(this.txtTenDV_TextChanged);
             // 
             // label4
@@ -244,7 +246,7 @@ namespace QuanLyKhachSan
             // txtMaDV
             // 
             this.txtMaDV.Location = new System.Drawing.Point(160, 54);
-            this.txtMaDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaDV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaDV.Name = "txtMaDV";
             this.txtMaDV.Size = new System.Drawing.Size(163, 28);
             this.txtMaDV.TabIndex = 2;
@@ -260,11 +262,23 @@ namespace QuanLyKhachSan
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã dịch vụ:";
             // 
+            // btnReport
+            // 
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(761, 444);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(111, 39);
+            this.btnReport.TabIndex = 25;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // btnLamMoiDV
             // 
             this.btnLamMoiDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoiDV.Location = new System.Drawing.Point(625, 444);
-            this.btnLamMoiDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLamMoiDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoiDV.Name = "btnLamMoiDV";
             this.btnLamMoiDV.Size = new System.Drawing.Size(111, 39);
             this.btnLamMoiDV.TabIndex = 25;
@@ -276,7 +290,7 @@ namespace QuanLyKhachSan
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.Location = new System.Drawing.Point(482, 444);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(111, 39);
             this.btnCapNhat.TabIndex = 25;
@@ -288,7 +302,7 @@ namespace QuanLyKhachSan
             // 
             this.btnXoaDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaDV.Location = new System.Drawing.Point(342, 444);
-            this.btnXoaDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(111, 39);
             this.btnXoaDV.TabIndex = 26;
@@ -312,7 +326,7 @@ namespace QuanLyKhachSan
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Location = new System.Drawing.Point(67, 444);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(111, 39);
             this.btnThoat.TabIndex = 27;
@@ -324,7 +338,7 @@ namespace QuanLyKhachSan
             // 
             this.btnThemDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemDV.Location = new System.Drawing.Point(204, 444);
-            this.btnThemDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemDV.Name = "btnThemDV";
             this.btnThemDV.Size = new System.Drawing.Size(111, 39);
             this.btnThemDV.TabIndex = 28;
@@ -344,9 +358,9 @@ namespace QuanLyKhachSan
             this.tbSĐichVu.Controls.Add(this.btnThoatt);
             this.tbSĐichVu.Controls.Add(this.label10);
             this.tbSĐichVu.Location = new System.Drawing.Point(4, 26);
-            this.tbSĐichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSĐichVu.Margin = new System.Windows.Forms.Padding(2);
             this.tbSĐichVu.Name = "tbSĐichVu";
-            this.tbSĐichVu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSĐichVu.Padding = new System.Windows.Forms.Padding(2);
             this.tbSĐichVu.Size = new System.Drawing.Size(1252, 677);
             this.tbSĐichVu.TabIndex = 1;
             this.tbSĐichVu.Text = "Danh sách sử dụng dịch vụ";
@@ -356,7 +370,7 @@ namespace QuanLyKhachSan
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(282, 583);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(111, 39);
             this.btnThem.TabIndex = 21;
@@ -368,7 +382,7 @@ namespace QuanLyKhachSan
             // 
             this.btnLamMoiDSSDDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoiDSSDDV.Location = new System.Drawing.Point(913, 583);
-            this.btnLamMoiDSSDDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLamMoiDSSDDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoiDSSDDV.Name = "btnLamMoiDSSDDV";
             this.btnLamMoiDSSDDV.Size = new System.Drawing.Size(111, 39);
             this.btnLamMoiDSSDDV.TabIndex = 18;
@@ -380,7 +394,7 @@ namespace QuanLyKhachSan
             // 
             this.btnCapNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhap.Location = new System.Drawing.Point(722, 583);
-            this.btnCapNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCapNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(111, 39);
             this.btnCapNhap.TabIndex = 18;
@@ -392,7 +406,7 @@ namespace QuanLyKhachSan
             // 
             this.btnHuyPhieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyPhieu.Location = new System.Drawing.Point(506, 583);
-            this.btnHuyPhieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuyPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyPhieu.Name = "btnHuyPhieu";
             this.btnHuyPhieu.Size = new System.Drawing.Size(111, 39);
             this.btnHuyPhieu.TabIndex = 19;
@@ -414,9 +428,9 @@ namespace QuanLyKhachSan
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(17, 43);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(328, 481);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
@@ -425,7 +439,7 @@ namespace QuanLyKhachSan
             // txtGiaSD
             // 
             this.txtGiaSD.Location = new System.Drawing.Point(159, 264);
-            this.txtGiaSD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGiaSD.Margin = new System.Windows.Forms.Padding(2);
             this.txtGiaSD.Name = "txtGiaSD";
             this.txtGiaSD.Size = new System.Drawing.Size(148, 24);
             this.txtGiaSD.TabIndex = 6;
@@ -444,7 +458,7 @@ namespace QuanLyKhachSan
             // 
             this.cbMaDatPhong.FormattingEnabled = true;
             this.cbMaDatPhong.Location = new System.Drawing.Point(159, 149);
-            this.cbMaDatPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMaDatPhong.Margin = new System.Windows.Forms.Padding(2);
             this.cbMaDatPhong.Name = "cbMaDatPhong";
             this.cbMaDatPhong.Size = new System.Drawing.Size(148, 25);
             this.cbMaDatPhong.TabIndex = 4;
@@ -454,7 +468,7 @@ namespace QuanLyKhachSan
             // 
             this.cbMaDichVu.FormattingEnabled = true;
             this.cbMaDichVu.Location = new System.Drawing.Point(159, 98);
-            this.cbMaDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMaDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.cbMaDichVu.Name = "cbMaDichVu";
             this.cbMaDichVu.Size = new System.Drawing.Size(148, 25);
             this.cbMaDichVu.TabIndex = 3;
@@ -463,7 +477,7 @@ namespace QuanLyKhachSan
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(159, 202);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(148, 24);
             this.txtSoLuong.TabIndex = 2;
@@ -502,7 +516,7 @@ namespace QuanLyKhachSan
             // txtMaSDDV
             // 
             this.txtMaSDDV.Location = new System.Drawing.Point(159, 46);
-            this.txtMaSDDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaSDDV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaSDDV.Name = "txtMaSDDV";
             this.txtMaSDDV.Size = new System.Drawing.Size(148, 24);
             this.txtMaSDDV.TabIndex = 2;
@@ -523,9 +537,9 @@ namespace QuanLyKhachSan
             this.groupBox4.Controls.Add(this.dgvSuDungDichVu);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(346, 51);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(858, 473);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
@@ -537,7 +551,7 @@ namespace QuanLyKhachSan
             this.dgvSuDungDichVu.BackgroundColor = System.Drawing.Color.White;
             this.dgvSuDungDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSuDungDichVu.Location = new System.Drawing.Point(4, 21);
-            this.dgvSuDungDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSuDungDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSuDungDichVu.Name = "dgvSuDungDichVu";
             this.dgvSuDungDichVu.RowHeadersWidth = 51;
             this.dgvSuDungDichVu.RowTemplate.Height = 24;
@@ -549,7 +563,7 @@ namespace QuanLyKhachSan
             // 
             this.btnThoatt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoatt.Location = new System.Drawing.Point(87, 583);
-            this.btnThoatt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoatt.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoatt.Name = "btnThoatt";
             this.btnThoatt.Size = new System.Drawing.Size(111, 39);
             this.btnThoatt.TabIndex = 20;
@@ -581,9 +595,9 @@ namespace QuanLyKhachSan
             this.tbLoaiDichVu.Controls.Add(this.groupBox6);
             this.tbLoaiDichVu.Controls.Add(this.label14);
             this.tbLoaiDichVu.Location = new System.Drawing.Point(4, 26);
-            this.tbLoaiDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbLoaiDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.tbLoaiDichVu.Name = "tbLoaiDichVu";
-            this.tbLoaiDichVu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbLoaiDichVu.Padding = new System.Windows.Forms.Padding(2);
             this.tbLoaiDichVu.Size = new System.Drawing.Size(1252, 677);
             this.tbLoaiDichVu.TabIndex = 2;
             this.tbLoaiDichVu.Text = "Loại dịch vụ";
@@ -592,7 +606,7 @@ namespace QuanLyKhachSan
             // 
             this.btnLamMoiLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoiLDV.Location = new System.Drawing.Point(879, 420);
-            this.btnLamMoiLDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLamMoiLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoiLDV.Name = "btnLamMoiLDV";
             this.btnLamMoiLDV.Size = new System.Drawing.Size(111, 39);
             this.btnLamMoiLDV.TabIndex = 30;
@@ -604,7 +618,7 @@ namespace QuanLyKhachSan
             // 
             this.btnCapNhatLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhatLDV.Location = new System.Drawing.Point(676, 420);
-            this.btnCapNhatLDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCapNhatLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhatLDV.Name = "btnCapNhatLDV";
             this.btnCapNhatLDV.Size = new System.Drawing.Size(111, 39);
             this.btnCapNhatLDV.TabIndex = 30;
@@ -616,7 +630,7 @@ namespace QuanLyKhachSan
             // 
             this.btnXoaLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaLDV.Location = new System.Drawing.Point(455, 420);
-            this.btnXoaLDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaLDV.Name = "btnXoaLDV";
             this.btnXoaLDV.Size = new System.Drawing.Size(111, 39);
             this.btnXoaLDV.TabIndex = 31;
@@ -628,7 +642,7 @@ namespace QuanLyKhachSan
             // 
             this.btnThoatLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoatLDV.Location = new System.Drawing.Point(25, 420);
-            this.btnThoatLDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoatLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoatLDV.Name = "btnThoatLDV";
             this.btnThoatLDV.Size = new System.Drawing.Size(111, 39);
             this.btnThoatLDV.TabIndex = 32;
@@ -640,7 +654,7 @@ namespace QuanLyKhachSan
             // 
             this.btnThemLDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemLDV.Location = new System.Drawing.Point(242, 420);
-            this.btnThemLDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemLDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemLDV.Name = "btnThemLDV";
             this.btnThemLDV.Size = new System.Drawing.Size(111, 39);
             this.btnThemLDV.TabIndex = 33;
@@ -653,9 +667,9 @@ namespace QuanLyKhachSan
             this.groupBox5.Controls.Add(this.dataGridViewLoaiDichVu);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(380, 38);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(626, 349);
             this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
@@ -667,7 +681,7 @@ namespace QuanLyKhachSan
             this.dataGridViewLoaiDichVu.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewLoaiDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLoaiDichVu.Location = new System.Drawing.Point(4, 22);
-            this.dataGridViewLoaiDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewLoaiDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewLoaiDichVu.Name = "dataGridViewLoaiDichVu";
             this.dataGridViewLoaiDichVu.RowHeadersWidth = 51;
             this.dataGridViewLoaiDichVu.RowTemplate.Height = 24;
@@ -685,9 +699,9 @@ namespace QuanLyKhachSan
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(43, 56);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(310, 282);
             this.groupBox6.TabIndex = 28;
             this.groupBox6.TabStop = false;
@@ -697,7 +711,7 @@ namespace QuanLyKhachSan
             // 
             this.cboMaLoaiPhong.FormattingEnabled = true;
             this.cboMaLoaiPhong.Location = new System.Drawing.Point(141, 201);
-            this.cboMaLoaiPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboMaLoaiPhong.Margin = new System.Windows.Forms.Padding(2);
             this.cboMaLoaiPhong.Name = "cboMaLoaiPhong";
             this.cboMaLoaiPhong.Size = new System.Drawing.Size(130, 25);
             this.cboMaLoaiPhong.TabIndex = 4;
@@ -715,10 +729,11 @@ namespace QuanLyKhachSan
             // txtTenLDV
             // 
             this.txtTenLDV.Location = new System.Drawing.Point(141, 136);
-            this.txtTenLDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenLDV.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenLDV.Name = "txtTenLDV";
             this.txtTenLDV.Size = new System.Drawing.Size(130, 24);
             this.txtTenLDV.TabIndex = 2;
+            this.txtTenLDV.Click += new System.EventHandler(this.txtTenLDV_Click);
             this.txtTenLDV.TextChanged += new System.EventHandler(this.txtTenLDV_TextChanged);
             // 
             // label11
@@ -734,7 +749,7 @@ namespace QuanLyKhachSan
             // txtMaLoaiDV
             // 
             this.txtMaLoaiDV.Location = new System.Drawing.Point(141, 63);
-            this.txtMaLoaiDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaLoaiDV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaLoaiDV.Name = "txtMaLoaiDV";
             this.txtMaLoaiDV.Size = new System.Drawing.Size(130, 24);
             this.txtMaLoaiDV.TabIndex = 2;
@@ -762,18 +777,6 @@ namespace QuanLyKhachSan
             this.label14.TabIndex = 27;
             this.label14.Text = "Loại Dịch Vụ";
             // 
-            // btnReport
-            // 
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.Location = new System.Drawing.Point(761, 444);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(111, 39);
-            this.btnReport.TabIndex = 25;
-            this.btnReport.Text = "Report";
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -781,7 +784,7 @@ namespace QuanLyKhachSan
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(954, 719);
             this.Controls.Add(this.tbDichVu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDichVu";
             this.Text = "frmDichVu";
             this.Load += new System.EventHandler(this.frmDichVu_Load_1);

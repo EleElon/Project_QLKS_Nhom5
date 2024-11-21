@@ -161,6 +161,10 @@ namespace QuanLyKhachSan
             {
                 errorProvider.SetError(txtSDT, "Số điện thoại phải bắt đầu bằng số 0");
             }
+            else if (txtSDT.Text.Length != 10)
+            {
+                errorProvider.SetError(txtSDT, "Số điện thoại phải có đủ 10 số");
+            }
             else
             {
                 errorProvider.SetError(txtSDT, "");

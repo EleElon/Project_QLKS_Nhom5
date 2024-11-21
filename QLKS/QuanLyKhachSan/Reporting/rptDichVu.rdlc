@@ -393,7 +393,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Ngày... Tháng... Năm...</Value>
+                <Value>=Format(Today(), "dd/MM/yyyy")</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -492,7 +492,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.89247in</Height>
+    <Height>4.1633in</Height>
     <Style />
   </Body>
   <Width>10.63046in</Width>

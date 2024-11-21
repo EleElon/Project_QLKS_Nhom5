@@ -100,6 +100,7 @@ namespace QuanLyKhachSan.Reporting
             chkTheoGia.CheckedChanged += (s, ev) => ChonTuyChon();
 
             TheoLuongFieldsLocation();
+            rptViewDichVu.ZoomMode = ZoomMode.PageWidth; // Hiển thị toàn bộ chiều rộng
         }
         private void SetFormSizeAndPosition()
         {

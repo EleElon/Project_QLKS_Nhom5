@@ -129,12 +129,12 @@ namespace QuanLyKhachSan
             }
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
-        {
-            panelFilterOptions.Location = new Point(btnFilter.Left, btnFilter.Bottom);
+        //private void btnFilter_Click(object sender, EventArgs e)
+        //{
+        //    panelFilterOptions.Location = new Point(btnFilter.Left, btnFilter.Bottom);
 
-            panelFilterOptions.Visible = !panelFilterOptions.Visible;
-        }
+        //    panelFilterOptions.Visible = !panelFilterOptions.Visible;
+        //}
 
         private void chkLuongTangDan_CheckedChanged(object sender, EventArgs e)
         {
@@ -208,10 +208,7 @@ namespace QuanLyKhachSan
             btnLamMoi.Left = btnTimKiem.Right + buttonSpacing;
             btnLamMoi.Top = baseTop;
 
-            btnFilter.Left = btnLamMoi.Right + buttonSpacing;
-            btnFilter.Top = baseTop;
-
-            btnQuayLai.Left = btnFilter.Right + buttonSpacing;
+            btnQuayLai.Left = btnLamMoi.Right + buttonSpacing;
             btnQuayLai.Top = baseTop;
 
             txtMaNV.Top = baseTop;
