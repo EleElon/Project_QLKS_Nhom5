@@ -130,9 +130,25 @@ CREATE TABLE TraPhong (
 );
 GO
 
+   
+CREATE TABLE ChamCong (
+    MaChamCong NVARCHAR(100) PRIMARY KEY NOT NULL,
+	TenBangChamCong	NVARCHAR(100) NOT NULL,
+    MaNhanVien NVARCHAR(100) NOT NULL,
+    Thang NVARCHAR(10) NOT NULL,
+    Nam INT NOT NULL,
+    SoNgayLamViec INT,
+	SoGioTangCa FLOAT,
+    NgayChamCong DATE,
+    GhiChu NVARCHAR(200),
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+);
+GO
 
+																								
 CREATE TABLE Luong (
     MaLuong NVARCHAR(100) PRIMARY KEY NOT NULL,
+	MaChamCong NVARCHAR(100) NOT NULL,
     MaNhanVien NVARCHAR(100) NOT NULL,
     Thang INT NOT NULL,
     Nam INT NOT NULL,
@@ -144,21 +160,8 @@ CREATE TABLE Luong (
     KhauTru FLOAT,
     TongLuong FLOAT,
     NgayTinhLuong DATE,
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
-);
-GO
-
-
-CREATE TABLE ChamCong (
-    MaChamCong NVARCHAR(100) PRIMARY KEY NOT NULL,
-    MaNhanVien NVARCHAR(100) NOT NULL,
-    Thang NVARCHAR(10) NOT NULL,
-    Nam INT NOT NULL,
-    SoNgayLamViec INT,
-	SoGioTangCa FLOAT,
-    NgayChamCong DATE,
-    GhiChu NVARCHAR(200),
-    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+    FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien),
+	FOREIGN KEY (MaChamCong) REFERENCES ChamCong(MaChamCong)
 );
 GO
 
@@ -446,28 +449,28 @@ VALUES
 GO
 
 
-INSERT INTO Luong (MaLuong, MaNhanVien, Thang, Nam, SoNgayLamViec, SoGioTangCa, LuongCoBan, PhuCap, Thuong, KhauTru, TongLuong, NgayTinhLuong)
+INSERT INTO ChamCong (MaChamCong, TenBangChamCong, MaNhanVien, Thang, Nam, SoNgayLamViec, SoGioTangCa, NgayChamCong, GhiChu)
 VALUES 
-('L001', 'NV001', 9, 2024, 31, 1, 7000000, 0, 200000, 0, 7950000, '2024-09-18'),
-('L002', 'NV002', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
-('L003', 'NV003', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
-('L004', 'NV004', 9, 2024, 30, 1, 7000000, 0, 0, 0, 7850000, '2024-09-18'),
-('L005', 'NV005', 9, 2024, 28, 1, 7000000, 0, 0, 400000, 7760000, '2024-09-18');
+('CC001', N'AB Thang 9', 'NV001', N'9', 2024, 28, 1, '2024-09-30', 'Lam du cong, khong co tang ca'),
+('CC002', N'Thi BC Thang 9','NV002', N'9', 2024, 26, 2, '2024-09-30', 'Nghi phep 2 ngay'),
+('CC003', N'Van CD Thang 9','NV003', N'9', 2024, 27, 1, '2024-09-30', 'Tang ca 2 gio moi ngay trong 5 ngay'),
+('CC004', N'Thi Dung Thang 9','NV004', N'9', 2024, 29, 0, '2024-09-30', 'Nghi om nhieu, khong co tang ca'),
+('CC005', N'Van Em Thang 9','NV005', N'9', 2024, 30, 0, '2024-09-30', 'Lam them ca cuoi tuan, hieu suat cao'),
+('CC006', N'AB Thang 10','NV001', N'10', 2024, 26, 0, '2024-10-31', 'Lam viec cham chi, nghi 1 ngay le'),
+('CC007', N'Thi BC Thang 10','NV002', N'10', 2024, 28, 2, '2024-10-31', 'Co tang ca 1 ngay, nghi phep 2 ngay'),
+('CC008', N'Van CD Thang 10','NV003', N'10', 2024, 24, 1, '2024-10-31', 'Tang ca lien tuc trong tuan cuoi thang'),
+('CC009', N'Thi Dung Thang 10','NV004', N'10', 2024, 28, 0, '2024-10-31', 'Hoan thanh du cong viec, khong nghi'),
+('CC010', N'Van Em Thang 10','NV005', N'10', 2024, 31, 0, '2024-10-31', 'Hieu suat cao, khong nghi phep');
 GO
 
 
-INSERT INTO ChamCong (MaChamCong, MaNhanVien, Thang, Nam, SoNgayLamViec, SoGioTangCa, NgayChamCong, GhiChu)
+INSERT INTO Luong (MaLuong, MaChamCong, MaNhanVien, Thang, Nam, SoNgayLamViec, SoGioTangCa, LuongCoBan, PhuCap, Thuong, KhauTru, TongLuong, NgayTinhLuong)
 VALUES 
-('CC001', 'NV001', N'9', 2024, 22, 1, '2024-09-30', 'Lam du cong, khong co tang ca'),
-('CC002', 'NV002', N'9', 2024, 20, 2, '2024-09-30', 'Nghi phep 2 ngay'),
-('CC003', 'NV003', N'9', 2024, 25, 1, '2024-09-30', 'Tang ca 2 gio moi ngay trong 5 ngay'),
-('CC004', 'NV004', N'9', 2024, 18, 0, '2024-09-30', 'Nghi om nhieu, khong co tang ca'),
-('CC005', 'NV005', N'9', 2024, 26, 0, '2024-09-30', 'Lam them ca cuoi tuan, hieu suat cao'),
-('CC006', 'NV001', N'10', 2024, 23, 0, '2024-10-31', 'Lam viec cham chi, nghi 1 ngay le'),
-('CC007', 'NV002', N'10', 2024, 21, 2, '2024-10-31', 'Co tang ca 1 ngay, nghi phep 2 ngay'),
-('CC008', 'NV003', N'10', 2024, 24, 1, '2024-10-31', 'Tang ca lien tuc trong tuan cuoi thang'),
-('CC009', 'NV004', N'10', 2024, 22, 0, '2024-10-31', 'Hoan thanh du cong viec, khong nghi'),
-('CC010', 'NV005', N'10', 2024, 27, 0, '2024-10-31', 'Hieu suat cao, khong nghi phep');
+('L001', 'CC001', 'NV001', 9, 2024, 31, 1, 7000000, 0, 200000, 0, 7950000, '2024-09-18'),
+('L002', 'CC002', 'NV002', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
+('L003', 'CC003', 'NV003', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
+('L004', 'CC004', 'NV004', 9, 2024, 30, 1, 7000000, 0, 0, 0, 7850000, '2024-09-18'),
+('L005', 'CC005', 'NV005', 9, 2024, 28, 1, 7000000, 0, 0, 400000, 7760000, '2024-09-18');
 GO
 
 

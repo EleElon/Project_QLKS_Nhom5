@@ -66,5 +66,16 @@ namespace DAO.Properties {
                 return ((string)(this["QLKSConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-IG8LD99\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=T" +
+            "rue;Encrypt=True;TrustServerCertificate=True")]
+        public string QLKSConnectionString4 {
+            get {
+                return ((string)(this["QLKSConnectionString4"]));
+            }
+        }
     }
 }

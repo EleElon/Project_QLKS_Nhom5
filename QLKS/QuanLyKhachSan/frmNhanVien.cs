@@ -250,7 +250,7 @@ namespace QuanLyKhachSan
                 }
                 else
                 {
-                    MessageBox.Show("Mã dịch vụ phải bắt đầu bằng 'dv' hoặc 'DV' và theo sau là số.");
+                    MessageBox.Show("Mã nhân viên phải bắt đầu bằng 'nv' hoặc 'NV' và theo sau là số.");
                     return;
                 }
 

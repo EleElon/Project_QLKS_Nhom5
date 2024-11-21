@@ -151,12 +151,12 @@ namespace QuanLiKhachSan_Nhom5
         {
             try
             {
-                
+
                 string maPhong = ccbMaDP.SelectedValue?.ToString();
                 double giaTien = busPhong.LayGiaTienTheoMaPhong(maPhong);
-            
+
                 txtTienPhong.Text = giaTien.ToString();
-            
+
                 if (!string.IsNullOrEmpty(maPhong))
                 {
                     int soNgayThue = busDatPhong.LaySoNgayThue(maPhong);
@@ -166,19 +166,10 @@ namespace QuanLiKhachSan_Nhom5
                 {
                     txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
                 }
-                if (ccbMaSDDV.SelectedValue != null)
-                {
-                    string maSDDV = ccbMaSDDV.SelectedValue.ToString();
-                   
-                    double gia = busDichVu.LayGiaTuMaSDDV(maSDDV);
-                    txtTienDichVu.Text = gia.ToString(); // Hiển thị giá với 2 chữ số thập phân
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+                string maDV = ccbMaSDDV.Text;
+                txtTienDichVu.Text = busDichVu.LayGiaTuMaSDDV(maDV).ToString();
+                
+            } catch { }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
