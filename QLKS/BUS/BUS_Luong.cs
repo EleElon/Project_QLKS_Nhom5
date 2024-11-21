@@ -31,23 +31,14 @@ namespace BUS
         //{
         //    return dao_luong.ThemLuong(maLuong, maNV, thang, soTien);
         //}
-        public void ThemLuong(TextBox maLuong, ComboBox maCham, ComboBox maNV, TextBox thang, TextBox nam, TextBox soNgayLamViec, TextBox soGioTangCa, TextBox luongCoBan, TextBox phuCap, TextBox thuong, TextBox khauTru, TextBox tongLuong, DateTimePicker ngayTinhLuong)
+        public void ThemLuong(TextBox maLuong, ComboBox maNV, TextBox thang, TextBox soTien)
         {
             Luong l = new Luong
             {
                 MaLuong = maLuong.Text,
-                MaChamCong = maCham.SelectedValue.ToString().Trim(),
                 MaNhanVien = maNV.SelectedValue.ToString().Trim(),
                 Thang = int.Parse(thang.Text),
-                Nam = int.Parse(nam.Text),
-                SoNgayLamViec = int.Parse(soNgayLamViec.Text),
-                SoGioTangCa = int.Parse(soGioTangCa.Text),
-                LuongCoBan = int.Parse(luongCoBan.Text),
-                PhuCap = int.Parse(phuCap.Text),
-                Thuong = int.Parse(thuong.Text),
-                KhauTru = int.Parse(khauTru.Text),
-                TongLuong = int.Parse(tongLuong.Text),
-                NgayTinhLuong = DateTime.Parse(ngayTinhLuong.Text)
+                SoTien = float.Parse(soTien.Text)
             };
             DAO_Luong.Instance.Them(l);
         }
@@ -57,9 +48,9 @@ namespace BUS
             return dao_luong.XoaLuong(maluong);
         }
 
-        public bool SuaLuong(string maLuong, string maCham, string maNV, int thang, int nam, int soNgayLamViec, float soGioTangCa, float luongCoBan, float phuCap, float thuong, float khauTru, float tongLuong, DateTime ngayTinhLuong)
+        public bool SuaLuong(string maLuong, string maNV, int thang, float soTien)
         {
-            return dao_luong.SuaLuong(maLuong, maCham, maNV, thang, nam, soNgayLamViec, soGioTangCa, luongCoBan, phuCap, thuong, khauTru, tongLuong, ngayTinhLuong);
+            return dao_luong.SuaLuong(maLuong, maNV, thang, soTien);
         }
 
         public List<Luong> View()
@@ -73,33 +64,20 @@ namespace BUS
                 return new
                 {
                     t.MaLuong,
-                    t.MaChamCong,
                     t.MaNhanVien,
                     t.Thang,
-                    t.Nam,
-                    t.SoNgayLamViec,
-                    t.SoGioTangCa,
-                    t.LuongCoBan,
-                    t.PhuCap,
-                    t.Thuong,
-                    t.KhauTru,
-                    t.TongLuong,
-                    t.NgayTinhLuong
+                    t.SoTien
                 };
             }).ToList();
             data.DataSource = dv;
         }
-        public void LoadMaCham(ComboBox cb)
+        public void LoadMaNV(ComboBox cb)
         {
-            DAO_Luong.Instance.LoadComBoBoxMaCham(cb);
+            DAO_Luong.Instance.LoadComBoBoxMaNhanVien(cb);
         }
-        public void LoadMaNhanVien(ComboBox cb)
+        public void LoadDGVLenForm(TextBox maLuong, ComboBox maNV, TextBox thang, TextBox soTien, DataGridView data)
         {
-            DAO_Luong.Instance.LoadComBoBoxMaNV(cb);
-        }
-        public void LoadDGVLenForm(TextBox maLuong, ComboBox maCham, ComboBox maNV, TextBox thang, TextBox nam, TextBox soNgayLamViec, TextBox soGioTangCa, TextBox luongCoBan, TextBox phuCap, TextBox thuong, TextBox khauTru, TextBox tongLuong, DateTimePicker ngayTinhLuong, DataGridView data)
-        {
-            DAO_Luong.Instance.LoadDGVForm(maLuong, maCham, maNV, thang, nam, soNgayLamViec, soGioTangCa, luongCoBan, phuCap, thuong, khauTru, tongLuong, ngayTinhLuong, data);
+            DAO_Luong.Instance.LoadDGVForm(maLuong, maNV, thang, soTien, data);
         }
         public bool CheckMaLuongExists(string maLuong)
         {

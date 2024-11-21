@@ -26,20 +26,15 @@ namespace BUS
 
         DAO_NhanVien dao_nv = new DAO_NhanVien();
 
-        public void ThemNhanVien(TextBox maNV, ComboBox maPhong, TextBox tenNV, RadioButton nam, RadioButton nu, DateTimePicker ngaySinh, TextBox SDT, TextBox chucVu, TextBox diaChi)
+        public void ThemNhanVien(TextBox maNV, ComboBox maPhong, TextBox tenNV, TextBox chucVu, TextBox luong)
         {
-            string gioiTinh = nam.Checked ? "Nam" : (nu.Checked ? "Nu" : null);
-
             NhanVien nv = new NhanVien
             {
                 MaNhanVien = maNV.Text,
                 MaPhong = maPhong.SelectedValue.ToString().Trim(),
                 TenNhanVien = tenNV.Text,
-                gioiTinh = gioiTinh,
-                ngaySinh = ngaySinh.Value,
-                SDT = SDT.Text,
                 ChucVu = chucVu.Text,
-                diaChi = diaChi.Text
+                Luong = float.Parse(luong.Text)
             };
             DAO_NhanVien.Instance.Them(nv);
         }
@@ -49,9 +44,9 @@ namespace BUS
             return dao_nv.XoaNhanVien(maNV);
         }
 
-        public bool SuaNhanVien(string maNV, string maPhong, string tenNV, string gioiTinh, DateTime ngaySinh, string SDT, string chucVu, string diaChi)
+        public bool SuaNhanVien(string maNV, string maPhong, string tenNV, string chucVu, float luong)
         {
-            return dao_nv.SuaNhanVien(maNV, maPhong, tenNV, gioiTinh, ngaySinh, SDT, chucVu, diaChi);
+            return dao_nv.SuaNhanVien(maNV, maPhong, tenNV, chucVu, luong);
         }
 
         public List<NhanVien> Vieww()
@@ -67,11 +62,8 @@ namespace BUS
                     t.MaNhanVien,
                     t.MaPhong,
                     t.TenNhanVien,
-                    t.gioiTinh,
-                    t.ngaySinh,
-                    t.SDT,
                     t.ChucVu,
-                    t.diaChi
+                    t.Luong
                 };
             }).ToList();
             data.DataSource = dv;
@@ -81,9 +73,9 @@ namespace BUS
         {
             DAO_NhanVien.Instance.LoadComBoBoxMaPhong(cb);
         }
-        public void LoadDGVLenForm(TextBox maNV, ComboBox maPhong, TextBox tenNV, RadioButton nam, RadioButton nu, DateTimePicker ngaySinh, TextBox SDT, TextBox chucVu, TextBox diaChi, DataGridView data)
+        public void LoadDGVLenForm(TextBox maNV, ComboBox maPhong, TextBox tenNV, TextBox chucVu, TextBox luong, DataGridView data)
         {
-            DAO_NhanVien.Instance.LoadDGVForm(maNV, maPhong, tenNV, nam, nu, ngaySinh, SDT, chucVu, diaChi, data);
+            DAO_NhanVien.Instance.LoadDGVForm(maNV, maPhong, tenNV, chucVu, luong, data);
         }
         public bool CheckMaNVExists(string maNV)
         {

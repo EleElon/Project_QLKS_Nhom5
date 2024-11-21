@@ -183,7 +183,6 @@
             // 
             // txtThanhTien
             // 
-            this.txtThanhTien.Enabled = false;
             this.txtThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThanhTien.Location = new System.Drawing.Point(925, 145);
             this.txtThanhTien.Margin = new System.Windows.Forms.Padding(4);
@@ -204,7 +203,6 @@
             // 
             // txtTienDichVu
             // 
-            this.txtTienDichVu.Enabled = false;
             this.txtTienDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienDichVu.Location = new System.Drawing.Point(925, 32);
             this.txtTienDichVu.Margin = new System.Windows.Forms.Padding(4);
@@ -225,7 +223,6 @@
             // 
             // txtSoNgayThue
             // 
-            this.txtSoNgayThue.Enabled = false;
             this.txtSoNgayThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoNgayThue.Location = new System.Drawing.Point(592, 32);
             this.txtSoNgayThue.Margin = new System.Windows.Forms.Padding(4);

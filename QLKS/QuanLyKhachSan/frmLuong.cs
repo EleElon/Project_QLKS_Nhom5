@@ -1,6 +1,5 @@
 ﻿using BUS;
 using DAO;
-using QuanLyKhachSan.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,22 +25,9 @@ namespace QuanLyKhachSan
         }
         public void FormDataBiding()
         {
-            dtpNgayTinh.MaxDate = DateTime.Now;
-            dtpNgayTinh.MinDate = new DateTime(2000, 1, 1);
-
-            cboMaNV.Enabled = false;
-            txtLuongCoBan.Text = "7000000";
-            txtPhuCap.Text = "0";
-            txtMaLuong.MaxLength = 100;
-            txtThang.Enabled = false;
-            txtNam.Enabled = false;
-            txtSoNgayLam.Enabled = false;
-            txtSoGioTangCa.Enabled = false;
-            txtLuongCoBan.Enabled = false;
-            //txtPhuCap.Enabled = false;
-            txtThuong.Enabled = false;
-            txtKhauTru.Enabled = false;
-            txtTongLuong.Enabled = false;
+            txtMaLuong.MaxLength = 10;
+            txtThang.MaxLength = 2;
+            txtSoTien.MaxLength = 9;
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -52,8 +38,7 @@ namespace QuanLyKhachSan
         {
             //DSLuong(dgvDSLuong);
             LoadDataLuong();
-            LoadComboMaCham();
-            LoadComboMaNV();
+            LoadComboNhanVien();
             FormDataBiding();
         }
 
@@ -61,44 +46,31 @@ namespace QuanLyKhachSan
         {
             BUS_Luong.Instance.Xem(dgvDSLuong);
         }
-        public void LoadComboMaCham()
+        public void LoadComboNhanVien()
         {
-            BUS_Luong.Instance.LoadMaCham(cboMaBangChamCong);
-        }
-        public void LoadComboMaNV()
-        {
-            BUS_Luong.Instance.LoadMaNhanVien(cboMaNV);
+            BUS_Luong.Instance.LoadMaNV(cboMaNhanVien);
         }
         public void ClearFormFields()
         {
             txtMaLuong.Enabled = true;
             txtMaLuong.Text = string.Empty;
-            cboMaBangChamCong.SelectedIndex = 0;
-            cboMaNV.SelectedIndex = 0;
+            cboMaNhanVien.SelectedIndex = 0;
             txtThang.Text = string.Empty;
-            txtNam.Text = string.Empty;
-            txtSoNgayLam.Text = string.Empty;
-            txtSoGioTangCa.Text = string.Empty;
-            txtLuongCoBan.Text = "7000000";
-            txtPhuCap.Text = "0";
-            txtThuong.Text = string.Empty;
-            txtKhauTru.Text = string.Empty;
-            txtTongLuong.Text = string.Empty;
-            dtpNgayTinh.Value = DateTime.UtcNow;
+            txtSoTien.Text = string.Empty;
 
             //set validate == null
             errorProvider.SetError(txtMaLuong, "");
-            //errorProvider.SetError(txtThang, "");
-            //errorProvider.SetError(txtNam, "");
+            errorProvider.SetError(txtThang, "");
+            errorProvider.SetError(txtSoTien, "");
         }
         private bool ValidateForm()
         {
-            //ValidateThang();
-            //ValidateSoTien();
+            ValidateThang();
+            ValidateSoTien();
 
-            return string.IsNullOrEmpty(errorProvider.GetError(txtMaLuong));/*&&*/
-            //    string.IsNullOrEmpty(errorProvider.GetError(txtThang)) &&
-            //    string.IsNullOrEmpty(errorProvider.GetError(txtNam));
+            return string.IsNullOrEmpty(errorProvider.GetError(txtMaLuong)) &&
+                string.IsNullOrEmpty(errorProvider.GetError(txtThang)) &&
+                string.IsNullOrEmpty(errorProvider.GetError(txtSoTien));
         }
         private void ValidateMaLuong()
         {
@@ -142,37 +114,37 @@ namespace QuanLyKhachSan
         }
         private void ValidateSoTien()
         {
-            if (string.IsNullOrEmpty(txtNam.Text))
+            if (string.IsNullOrEmpty(txtSoTien.Text))
             {
-                errorProvider.SetError(txtNam, "Vui lòng nhập số tiền");
+                errorProvider.SetError(txtSoTien, "Vui lòng nhập số tiền");
             }
-            else if (!int.TryParse(txtNam.Text, out int soTien))
+            else if (!int.TryParse(txtSoTien.Text, out int soTien))
             {
-                errorProvider.SetError(txtNam, "Số tiền chỉ có thể nhập bằng ký tự số");
+                errorProvider.SetError(txtSoTien, "Số tiền chỉ có thể nhập bằng ký tự số");
             }
             else if (soTien < 0)
             {
-                errorProvider.SetError(txtNam, "Số tiền không được phép âm");
+                errorProvider.SetError(txtSoTien, "Số tiền không được phép âm");
             }
             else
             {
-                errorProvider.SetError(txtNam, "");
+                errorProvider.SetError(txtSoTien, "");
             }
         }
-        //public void DSLuong(DataGridView data)
-        //{
-        //    using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
-        //    {
-        //        var luong = db.Luongs.Select(a => new
-        //        {
-        //            a.MaLuong,
-        //            a.MaNhanVien,
-        //            a.Thang,
-        //            a.SoTien
-        //        }).ToList();
-        //        data.DataSource = luong;
-        //    }
-        //}
+        public void DSLuong(DataGridView data)
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
+            {
+                var luong = db.Luongs.Select(a => new
+                {
+                    a.MaLuong,
+                    a.MaNhanVien,
+                    a.Thang,
+                    a.SoTien
+                }).ToList();
+                data.DataSource = luong;
+            }
+        }
 
         public void LoadView()
         {
@@ -183,20 +155,7 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                string maNV = txtMaLuong.Text;
-
-                if (System.Text.RegularExpressions.Regex.IsMatch(maNV, @"^(l|L)\d+$"))
-                {
-                    maNV = "L" + maNV.Substring(1);
-                    txtMaLuong.Text = maNV;
-                }
-                else
-                {
-                    MessageBox.Show("Mã lương phải bắt đầu bằng 'l' hoặc 'L' và theo sau là số.");
-                    return;
-                }
-
-                BUS_Luong.Instance.ThemLuong(txtMaLuong, cboMaBangChamCong, cboMaNV, txtThang, txtNam, txtSoNgayLam, txtSoGioTangCa, txtLuongCoBan, txtPhuCap, txtThuong, txtKhauTru, txtTongLuong, dtpNgayTinh);
+                BUS_Luong.Instance.ThemLuong(txtMaLuong, cboMaNhanVien, txtThang, txtSoTien);
                 LoadDataLuong();
                 ClearFormFields();
             }
@@ -226,20 +185,11 @@ namespace QuanLyKhachSan
             if (ValidateForm())
             {
                 string maLuong = txtMaLuong.Text;
-                string maCham = cboMaBangChamCong.SelectedValue.ToString();
-                string tenNV = cboMaNV.SelectedValue.ToString();
+                string maNV = cboMaNhanVien.SelectedValue.ToString();
                 int thang = int.Parse(txtThang.Text);
-                int nam = int.Parse(txtNam.Text);
-                int soNgayLam = int.Parse(txtSoNgayLam.Text);
-                float soGioTangCa = float.Parse(txtSoGioTangCa.Text);
-                float luongCoBan = float.Parse(txtLuongCoBan.Text);
-                float phuCap = float.Parse(txtPhuCap.Text);
-                float thuong = float.Parse(txtThuong.Text);
-                float khauTru = float.Parse(txtKhauTru.Text);
-                float tongLuong = float.Parse(txtTongLuong.Text);
-                DateTime ngayTinh = dtpNgayTinh.Value;
+                float soTien = float.Parse(txtSoTien.Text);
 
-                bool result = bus_luong.SuaLuong(maLuong, maCham, tenNV, thang, nam, soNgayLam, soGioTangCa, luongCoBan, phuCap, thuong, khauTru, tongLuong, ngayTinh);
+                bool result = bus_luong.SuaLuong(maLuong, maNV, thang, soTien);
                 if (result)
                 {
                     MessageBox.Show("Sửa thông tin lương thành công.");
@@ -255,7 +205,7 @@ namespace QuanLyKhachSan
 
         private void dgvDSLuong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            BUS_Luong.Instance.LoadDGVLenForm(txtMaLuong, cboMaBangChamCong, cboMaNV, txtThang, txtNam, txtSoNgayLam, txtSoGioTangCa, txtLuongCoBan, txtPhuCap, txtThuong, txtKhauTru, txtTongLuong, dtpNgayTinh, dgvDSLuong);
+            BUS_Luong.Instance.LoadDGVLenForm(txtMaLuong, cboMaNhanVien, txtThang, txtSoTien, dgvDSLuong);
 
             txtMaLuong.Enabled = false;
             errorProvider.SetError(txtMaLuong, "");
@@ -271,124 +221,14 @@ namespace QuanLyKhachSan
             ValidateMaLuong();
         }
 
-        private void cboMaBangChamCong_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtThang_TextChanged(object sender, EventArgs e)
         {
-            // Lấy mã nhân viên từ ComboBox
-            string maCham = cboMaBangChamCong.SelectedValue.ToString();
-            //string maNhanVien = cboMaBangChamCong.SelectedValue.ToString();
-
-            using (var db = new DBQuanLyKhachSanDataContext()) // Tên context của bạn
-            {
-                // Lấy dữ liệu chấm công của nhân viên
-                var chamCong = db.ChamCongs
-                    .Where(c => c.MaChamCong == maCham)
-                    .OrderByDescending(c => c.Thang) // Lấy tháng gần nhất
-                    .FirstOrDefault();
-                //    var nhanVien = db.NhanViens
-                //.Where(nv => nv.MaNhanVien == maNhanVien)
-                //.FirstOrDefault();
-
-                if (chamCong != null)
-                {
-                    //// Lấy mã nhân viên từ dữ liệu chấm công
-                    //string maNhanVien = chamCong.MaNhanVien; // Lấy mã nhân viên từ chamCong
-
-                    //// Lấy thông tin nhân viên từ bảng nhân viên
-                    //var nhanVien = db.NhanViens
-                    //    .Where(nv => nv.MaNhanVien == maNhanVien)
-                    //    .FirstOrDefault();
-
-                    //// Kiểm tra xem nhân viên có tồn tại không
-                    //if (nhanVien != null)
-                    //{
-                    //    // Điền dữ liệu vào các TextBox
-                    //    txtTenNV.Text = nhanVien.TenNhanVien; // Hiển thị tên nhân viên
-                    //}
-
-                    // Lấy mã nhân viên từ dữ liệu chấm công
-                    string maNhanVien = chamCong.MaNhanVien;
-
-                    // Lấy thông tin nhân viên
-                    var nhanVien = db.NhanViens
-                        .Where(nv => nv.MaNhanVien == maNhanVien)
-                        .FirstOrDefault();
-
-                    if (nhanVien != null)
-                    {
-                        // Gán dữ liệu vào ComboBox mã nhân viên (hiển thị tên)
-                        cboMaNV.DataSource = new List<NhanVien> { nhanVien }; // Tạo danh sách chỉ có một nhân viên
-                        cboMaNV.DisplayMember = "TenNhanVien"; // Hiển thị tên nhân viên
-                        cboMaNV.ValueMember = "MaNhanVien"; // Giữ giá trị là mã nhân viên
-                        //cboMaNV.SelectedValue = nhanVien.MaNhanVien.ToString();
-                    }
-
-                    // Điền dữ liệu vào các TextBox
-                    //cboMaNV.Text = chamCong.MaNhanVien.ToString();
-                    txtThang.Text = chamCong.Thang.ToString();
-                    txtNam.Text = chamCong.Nam.ToString();
-                    txtSoNgayLam.Text = chamCong.SoNgayLamViec.ToString();
-                    txtSoGioTangCa.Text = chamCong.SoGioTangCa.ToString();
-                    txtPhuCap.Text = "0";
-
-                    int soNgayLam;
-                    if (int.TryParse(txtSoNgayLam.Text, out soNgayLam))
-                    {
-                        // Tính thưởng và khấu trừ
-                        float thuong = (soNgayLam - 28) * 200000;
-                        float khauTru = (28 - soNgayLam) * 200000;
-
-                        // Cập nhật TextBox cho thưởng và khấu trừ
-                        txtThuong.Text = thuong > 0 ? thuong.ToString() : "0"; // Nếu thưởng âm, hiển thị 0
-                        txtKhauTru.Text = khauTru > 0 ? khauTru.ToString() : "0"; // Nếu khấu trừ âm, hiển thị 0
-                    }
-
-                    CalculateTotalPrice();
-                }
-                //else
-                //{
-                //    // Nếu không có dữ liệu
-                //    MessageBox.Show("Không tìm thấy dữ liệu chấm công cho nhân viên này!", "Thông báo");
-                //}
-            }
-        }
-        private void CalculateTotalPrice()
-        {
-            if (int.TryParse(txtLuongCoBan.Text, out int luongCoBan) && int.TryParse(txtSoNgayLam.Text, out int soNgayLam) && float.TryParse(txtSoGioTangCa.Text, out float soGioTangCa) && float.TryParse(txtPhuCap.Text, out float phuCap) && float.TryParse(txtThuong.Text, out float thuong) && float.TryParse(txtKhauTru.Text, out float khautru))
-            {
-                float tongLuong = (float)(((luongCoBan / 28) * soNgayLam) + (1.5 * (soGioTangCa * 10000)) + phuCap + thuong - khautru);
-                //txtDonGia.Text = giaSauGiamGia.ToString();
-
-                // Định dạng số để hiển thị đúng trong TextBox
-                //txtTongLuong.Text = tongLuong.ToString("N0"); // "N0" để hiển thị số nguyên, không có dấu phẩy
-                txtTongLuong.Text = tongLuong.ToString();
-            }
+            ValidateThang();
         }
 
-        private void txtPhuCap_TextChanged(object sender, EventArgs e)
+        private void txtSoTien_TextChanged(object sender, EventArgs e)
         {
-            CalculateTotalPrice();
-        }
-        private void MoveCursorToEnd(TextBox txt)
-        {
-            txt.SelectionStart = txt.Text.Length;
-        }
-
-        private void txtPhuCap_Click(object sender, EventArgs e)
-        {
-            if (txtPhuCap.Text == "0")
-            {
-                txtPhuCap.Text = string.Empty;
-            }
-            else
-            {
-                MoveCursorToEnd(txtPhuCap);
-            }
-        }
-
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            frmRptLuong fr = new frmRptLuong();
-            fr.Show();
+            ValidateSoTien();
         }
     }
 }

@@ -129,60 +129,60 @@ namespace QuanLyKhachSan
             }
         }
 
-        //private void btnFilter_Click(object sender, EventArgs e)
-        //{
-        //    panelFilterOptions.Location = new Point(btnFilter.Left, btnFilter.Bottom);
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            panelFilterOptions.Location = new Point(btnFilter.Left, btnFilter.Bottom);
 
-        //    panelFilterOptions.Visible = !panelFilterOptions.Visible;
-        //}
+            panelFilterOptions.Visible = !panelFilterOptions.Visible;
+        }
 
         private void chkLuongTangDan_CheckedChanged(object sender, EventArgs e)
         {
-            //if (chkLuongTangDan.Checked)
-            //{
-            //    chkLuongGiamDan.Checked = false;
-            //    BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, true);
-            //}
-            //else
-            //{
-            //    LoadDataNhanVien();
-            //}
+            if (chkLuongTangDan.Checked)
+            {
+                chkLuongGiamDan.Checked = false;
+                BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, true);
+            }
+            else
+            {
+                LoadDataNhanVien();
+            }
         }
 
         private void chkLuongGiamDan_CheckedChanged(object sender, EventArgs e)
         {
-            //if (chkLuongGiamDan.Checked)
-            //{
-            //    chkLuongTangDan.Checked = false;
-            //    BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, false);
-            //}
-            //else
-            //{
-            //    LoadDataNhanVien();
-            //}
+            if (chkLuongGiamDan.Checked)
+            {
+                chkLuongTangDan.Checked = false;
+                BUS_TimKiemNhanVien.Instance.SapXepNhanVienTheoLuong(dgvTimKiemNV, false);
+            }
+            else
+            {
+                LoadDataNhanVien();
+            }
         }
-        //private void ApplyFilter(List<NhanVien> danhSachNhanVien)
-        //{
-        //    //if (danhSachNhanVien == null || !danhSachNhanVien.Any())
-        //    //{
-        //    //    MessageBox.Show("Không tìm thấy nhân viên khớp.");
-        //    //    dgvTimKiemNV.DataSource = null;
-        //    //    return;
-        //    //}
+        private void ApplyFilter(List<NhanVien> danhSachNhanVien)
+        {
+            //if (danhSachNhanVien == null || !danhSachNhanVien.Any())
+            //{
+            //    MessageBox.Show("Không tìm thấy nhân viên khớp.");
+            //    dgvTimKiemNV.DataSource = null;
+            //    return;
+            //}
 
-        //    if (chkLuongTangDan.Checked)
-        //    {
-        //        dgvTimKiemNV.DataSource = danhSachNhanVien.OrderBy(nv => nv.Luong).ToList();
-        //    }
-        //    else if (chkLuongGiamDan.Checked)
-        //    {
-        //        dgvTimKiemNV.DataSource = danhSachNhanVien.OrderByDescending(nv => nv.Luong).ToList();
-        //    }
-        //    else
-        //    {
-        //        dgvTimKiemNV.DataSource = danhSachNhanVien;
-        //    }
-        //}
+            if (chkLuongTangDan.Checked)
+            {
+                dgvTimKiemNV.DataSource = danhSachNhanVien.OrderBy(nv => nv.Luong).ToList();
+            }
+            else if (chkLuongGiamDan.Checked)
+            {
+                dgvTimKiemNV.DataSource = danhSachNhanVien.OrderByDescending(nv => nv.Luong).ToList();
+            }
+            else
+            {
+                dgvTimKiemNV.DataSource = danhSachNhanVien;
+            }
+        }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
@@ -208,7 +208,10 @@ namespace QuanLyKhachSan
             btnLamMoi.Left = btnTimKiem.Right + buttonSpacing;
             btnLamMoi.Top = baseTop;
 
-            btnQuayLai.Left = btnLamMoi.Right + buttonSpacing;
+            btnFilter.Left = btnLamMoi.Right + buttonSpacing;
+            btnFilter.Top = baseTop;
+
+            btnQuayLai.Left = btnFilter.Right + buttonSpacing;
             btnQuayLai.Top = baseTop;
 
             txtMaNV.Top = baseTop;

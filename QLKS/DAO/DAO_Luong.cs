@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Instrumentation;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,50 +37,41 @@ namespace DAO
                     data.Add(new Luong
                     {
                         MaLuong = item.MaLuong,
-                        MaChamCong = item.MaChamCong,
                         MaNhanVien = item.MaNhanVien,
                         Thang = item.Thang,
-                        Nam = item.Nam,
-                        SoNgayLamViec = item.SoNgayLamViec,
-                        SoGioTangCa = item.SoGioTangCa,
-                        LuongCoBan = item.LuongCoBan,
-                        PhuCap = item.PhuCap,
-                        Thuong = item.Thuong,
-                        KhauTru = item.KhauTru,
-                        TongLuong = item.TongLuong,
-                        NgayTinhLuong = item.NgayTinhLuong
+                        SoTien = item.SoTien
                     });
                 }
             }
             return data;
         }
-        //public bool ThemLuong(string maLuong, string maNV, int thang, int nam, int soNgayLamViec)
-        //{
-        //    try
-        //    {
-        //        if (db.Luongs.Any(a => a.MaLuong == maLuong))
-        //        {
-        //            return false;
-        //        }
+        public bool ThemLuong(string maLuong, string maNV, int thang, float soTien)
+        {
+            try
+            {
+                if (db.Luongs.Any(a => a.MaLuong == maLuong))
+                {
+                    return false;
+                }
 
-        //        Luong luong = new Luong
-        //        {
-        //            MaLuong = maLuong,
-        //            MaNhanVien = maNV,
-        //            Thang = thang,
-        //            SoTien = soTien
-        //        };
+                Luong luong = new Luong
+                {
+                    MaLuong = maLuong,
+                    MaNhanVien = maNV,
+                    Thang = thang,
+                    SoTien = soTien
+                };
 
-        //        db.Luongs.InsertOnSubmit(luong);
-        //        db.SubmitChanges();
+                db.Luongs.InsertOnSubmit(luong);
+                db.SubmitChanges();
 
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void Them(Luong a)
         {
             try
@@ -121,7 +111,7 @@ namespace DAO
             }
         }
 
-        public bool SuaLuong(string maLuong, string maCham, string maNV, int thang, int nam, int soNgayLamViec, float soGioTangCa, float luongCoBan, float phuCap, float thuong, float khauTru, float tongLuong, DateTime ngayTinhLuong)
+        public bool SuaLuong(string maLuong, string maNV, int thang, float soTien)
         {
             try
             {
@@ -129,18 +119,9 @@ namespace DAO
                 if (luong != null)
                 {
                     luong.MaLuong = maLuong;
-                    luong.MaChamCong = maCham;
                     luong.MaNhanVien = maNV;
                     luong.Thang = thang;
-                    luong.Nam = nam;
-                    luong.SoNgayLamViec = soNgayLamViec;
-                    luong.SoGioTangCa = soGioTangCa;
-                    luong.LuongCoBan = luongCoBan;
-                    luong.PhuCap = phuCap;
-                    luong.Thuong = thuong;
-                    luong.KhauTru = khauTru;
-                    luong.TongLuong = tongLuong;
-                    luong.NgayTinhLuong = ngayTinhLuong;
+                    luong.SoTien = soTien;
 
                     db.SubmitChanges();
                     return true;
@@ -159,34 +140,21 @@ namespace DAO
         {
             return db.Luongs.ToList();
         }
-        public void LoadComBoBoxMaCham(ComboBox cb)
+        public void LoadComBoBoxMaNhanVien(ComboBox cb)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                var Cham = db.ChamCongs
-                                    .Select(nv => new { nv.MaChamCong, nv.TenBangChamCong })
-                                    .ToList();
-
-                cb.DataSource = Cham;
-                cb.DisplayMember = "TenBangChamCong";
-                cb.ValueMember = "MaChamCong";
-            }
-        }
-        public void LoadComBoBoxMaNV(ComboBox cb)
-        {
-            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-            {
-                var nhanVien = db.NhanViens
+                var nhanViens = db.NhanViens
                                     .Select(nv => new { nv.MaNhanVien, nv.TenNhanVien })
                                     .ToList();
 
-                cb.DataSource = nhanVien;
+                cb.DataSource = nhanViens;
                 cb.DisplayMember = "TenNhanVien";
                 cb.ValueMember = "MaNhanVien";
             }
         }
 
-        public void LoadDGVForm(TextBox maLuong, ComboBox maCham, ComboBox maNV, TextBox thang, TextBox nam, TextBox soNgayLamViec, TextBox soGioTangCa, TextBox luongCoBan, TextBox phuCap, TextBox thuong, TextBox khauTru, TextBox tongLuong, DateTimePicker ngayTinhLuong, DataGridView data)
+        public void LoadDGVForm(TextBox maLuong, ComboBox maNV, TextBox thang, TextBox soTien, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -196,28 +164,10 @@ namespace DAO
                     var row = data.Rows[rowIndex];
 
                     maLuong.Text = row.Cells[0].Value.ToString().Trim();
-                    string selectedMaCham = row.Cells[1].Value.ToString().Trim();
-                    string selectedMaNV = row.Cells[2].Value.ToString().Trim();
-                    thang.Text = row.Cells[3].Value.ToString().Trim();
-                    nam.Text = row.Cells[4].Value.ToString().Trim();
-                    soNgayLamViec.Text = row.Cells[5].Value.ToString().Trim();
-                    soGioTangCa.Text = row.Cells[6].Value.ToString().Trim();
-                    luongCoBan.Text = row.Cells[7].Value.ToString().Trim();
-                    phuCap.Text = row.Cells[8].Value.ToString().Trim();
-                    thuong.Text = row.Cells[9].Value.ToString().Trim();
-                    khauTru.Text = row.Cells[10].Value.ToString().Trim();
-                    tongLuong.Text = row.Cells[11].Value.ToString().Trim();
-                    ngayTinhLuong.Text = row.Cells[12].Value.ToString().Trim();
+                    string selectedMaNV = row.Cells[1].Value.ToString().Trim();
+                    thang.Text = row.Cells[2].Value.ToString().Trim();
+                    soTien.Text = row.Cells[3].Value.ToString().Trim();
 
-                    foreach (var item in maCham.Items)
-                    {
-                        var chamCong = item as dynamic;
-                        if (chamCong != null && chamCong.MaChamCong == selectedMaCham)
-                        {
-                            maCham.SelectedItem = item;
-                            break;
-                        }
-                    }
                     foreach (var item in maNV.Items)
                     {
                         var nhanVien = item as dynamic;

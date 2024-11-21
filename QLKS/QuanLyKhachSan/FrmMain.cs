@@ -151,17 +151,6 @@ namespace QuanLyKhachSan
             pnMain.Controls.Add(fr);
             fr.Show();
         }
-
-        private void btnChamCong_Click(object sender, EventArgs e)
-        {
-            // Đặt form không phải là form chính
-            pnMain.Controls.Clear();
-
-            frmChamCong fr = new frmChamCong();
-            fr.TopLevel = false;
-            fr.Dock = DockStyle.Fill;
-            pnMain.Controls.Add(fr);
-            fr.Show();
-        }
+        
     }
 }

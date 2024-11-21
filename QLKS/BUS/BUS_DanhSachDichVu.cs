@@ -11,8 +11,7 @@ namespace BUS
 {
     public class BUS_DanhSachDichVu
     {
-        public static BUS_DanhSachDichVu instance;
-        DAO_DanhSachDichVu daoDSDV = new DAO_DanhSachDichVu();
+        private static BUS_DanhSachDichVu instance;
         
         public static BUS_DanhSachDichVu Instance
         {
@@ -25,7 +24,7 @@ namespace BUS
                 return instance;
             }
         }
-        public BUS_DanhSachDichVu() { }
+        private BUS_DanhSachDichVu() { }
 
         public void Xem(DataGridView data)
         {
@@ -36,7 +35,8 @@ namespace BUS
                     t.MaSuDungDichVu,
                     t.MaDichVu,
                     t.MaDatPhong,
-                    t.SoLuong
+                    t.SoLuong,
+                    t.Gia
                 };
             }).ToList();
             data.DataSource = dv;
@@ -100,14 +100,11 @@ namespace BUS
             return DAO_DanhSachDichVu.Instance.CheckMaSDDVExists(maSDDV);
         }
         // Method to call DAL and retrieve the data
-        public double LayGiaTuMaSDDV(string maSDDV)
+        public List<DanhSachSuDungDichVu> LayDanhSachSuDungDichVu()
         {
-            
-            return daoDSDV.LayGiaTheoMaSDDV(maSDDV);
+            // Here, you could add additional business logic if necessary
+            return DAO_DanhSachDichVu.Instance.HienThi();
         }
-        public List<DanhSachSuDungDichVu> Xem()
-        {
-            return daoDSDV.Xem();
-        }
+       
     }
 }

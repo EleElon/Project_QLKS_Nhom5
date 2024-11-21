@@ -40,11 +40,8 @@ namespace DAO
                         MaNhanVien = s.MaNhanVien,
                         MaPhong = s.MaPhong,
                         TenNhanVien = s.TenNhanVien,
-                        gioiTinh = s.gioiTinh,
-                        ngaySinh = s.ngaySinh,
-                        SDT = s.SDT,
                         ChucVu = s.ChucVu,
-                        diaChi = s.diaChi
+                        Luong = s.Luong
                     };
                     list.Add(nv);
                 }
@@ -74,11 +71,8 @@ namespace DAO
                         MaNhanVien = s.MaNhanVien,
                         MaPhong = s.MaPhong,
                         TenNhanVien = s.TenNhanVien,
-                        gioiTinh = s.gioiTinh,
-                        ngaySinh = s.ngaySinh,
-                        SDT = s.SDT,
                         ChucVu = s.ChucVu,
-                        diaChi = s.diaChi
+                        Luong = s.Luong
                     };
                     list.Add(nv);
                 }
@@ -90,33 +84,30 @@ namespace DAO
 
             return list;
         }
-        //public List<NhanVien> TimKiemTheoLuong(bool tangDan)
-        //{
-        //    List<NhanVien> list = new List<NhanVien>();
-        //    using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-        //    {
-        //        // Sắp xếp danh sách nhân viên theo lương
-        //        var nhanViens = tangDan
-        //            ? db.NhanViens.OrderBy(nv => nv.Luong).ToList()
-        //            : db.NhanViens.OrderByDescending(nv => nv.Luong).ToList();
+        public List<NhanVien> TimKiemTheoLuong(bool tangDan)
+        {
+            List<NhanVien> list = new List<NhanVien>();
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            {
+                // Sắp xếp danh sách nhân viên theo lương
+                var nhanViens = tangDan
+                    ? db.NhanViens.OrderBy(nv => nv.Luong).ToList()
+                    : db.NhanViens.OrderByDescending(nv => nv.Luong).ToList();
 
-        //        foreach (var s in nhanViens)
-        //        {
-        //            NhanVien nv = new NhanVien
-        //            {
-        //                MaNhanVien = s.MaNhanVien,
-        //                MaPhong = s.MaPhong,
-        //                TenNhanVien = s.TenNhanVien,
-        //                gioiTinh = s.gioiTinh,
-        //                ngaySinh = s.ngaySinh,
-        //                SDT = s.SDT,
-        //                ChucVu = s.ChucVu,
-        //                diaChi = s.diaChi
-        //            };
-        //            list.Add(nv);
-        //        }
-        //    }
-        //    return list;
-        //}
+                foreach (var s in nhanViens)
+                {
+                    NhanVien nv = new NhanVien
+                    {
+                        MaNhanVien = s.MaNhanVien,
+                        MaPhong = s.MaPhong,
+                        TenNhanVien = s.TenNhanVien,
+                        ChucVu = s.ChucVu,
+                        Luong = s.Luong
+                    };
+                    list.Add(nv);
+                }
+            }
+            return list;
+        }
     }
 }

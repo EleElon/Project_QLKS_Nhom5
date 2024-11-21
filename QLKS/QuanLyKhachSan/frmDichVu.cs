@@ -1,6 +1,5 @@
 ﻿using BUS;
 using DAO;
-using QuanLyKhachSan.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,7 +111,7 @@ namespace QuanLyKhachSan
         private void dgvSuDungDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD, dgvSuDungDichVu);
+            BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
             errorProvider1.SetError(txtMaSDDV, "");
         }
@@ -121,9 +120,9 @@ namespace QuanLyKhachSan
         {
             if (ValidateForm())
             {
-                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
+                BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong,txtGiaSD);
                 LoadDuLieuLenForm();
-                ClearFormFields();
+             
             }
         }
 
@@ -133,7 +132,7 @@ namespace QuanLyKhachSan
             {
                 BUS_DanhSachDichVu.Instance.Xoa(txtMaSDDV);
                 ClearFormFields();
-                LoadDuLieuLenForm();
+                LoadDuLieuLenForm() ;
             }
 
         }
@@ -177,7 +176,7 @@ namespace QuanLyKhachSan
             {
                 BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
-                ClearFormFields();
+           
             }
         }
 
@@ -250,11 +249,11 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaLDV()
         {
-            string pattern = @"^(ldv|LDV)[0-9]+$";
+            string pattern = @"^(dv|DV)[0-9]+$";
 
             if (string.IsNullOrEmpty(txtMaLoaiDV.Text))
             {
-                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ! Mã phải bắt đầu bằng 'ldv / LDV' và theo sau là số giới hạn 10 ký tự");
+                errorProvider1.SetError(txtMaLoaiDV, "Vui lòng nhập mã loại dịch vụ! Mã phải bắt đầu bằng 'dv / DV' và theo sau là số giới hạn 10 ký tự");
             }
             else if (BUS_LoaiDichVu.Instance.CheckMaLDVExists(txtMaLoaiDV.Text))
             {
@@ -262,7 +261,7 @@ namespace QuanLyKhachSan
             }
             else if (!Regex.IsMatch(txtMaLoaiDV.Text, pattern))
             {
-                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'ldv / LDV' và theo sau là số");
+                errorProvider1.SetError(txtMaLoaiDV, "Mã loại dịch vụ không hợp lệ! Mã phải bắt đầu bằng 'dv / DV' và theo sau là số");
             }
             else
             {
@@ -412,9 +411,9 @@ namespace QuanLyKhachSan
                 string tenLDV = txtTenLDV.Text;
 
                 // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
-                if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(ldv|LDV)\d+$"))
+                if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(dv|DV)\d+$"))
                 {
-                    maLDV = "LDV" + maLDV.Substring(3); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
+                    maLDV = "DV" + maLDV.Substring(2); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
                     txtMaLoaiDV.Text = maLDV; // Gán lại giá trị đã chuẩn hóa cho txtMaDV
                 }
                 else
@@ -627,30 +626,28 @@ namespace QuanLyKhachSan
 
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
+        private void txtGiaSD_TextChanged(object sender, EventArgs e)
         {
-            frmRptDichVu fr = new frmRptDichVu();
-            fr.Show();
-        }
-
-        private void txtTenDV_Click(object sender, EventArgs e)
-        {
-            MoveCursorToEnd(txtTenDV);
-        }
-
-        private void MoveCursorToEnd(TextBox textBox)
-        {
-            textBox.SelectionStart = textBox.Text.Length;
-        }
-
-        private void txtGia_Click(object sender, EventArgs e)
-        {
-            MoveCursorToEnd(txtGia);
-        }
-
-        private void txtTenLDV_Click(object sender, EventArgs e)
-        {
-            MoveCursorToEnd(txtTenLDV);
+            if (string.IsNullOrEmpty(txtGiaSD.Text))
+            {
+                errorProvider1.SetError(txtGiaSD, "Vui lòng nhập giá!");
+            }
+            //else if (!int.TryParse(txtGia.Text, out _))
+            //{
+            //    errorProvider1.SetError(txtGia, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
+            //}
+            else if (!int.TryParse(txtGiaSD.Text, out int gia))
+            {
+                errorProvider1.SetError(txtGiaSD, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
+            }
+            else if (gia < 0)
+            {
+                errorProvider1.SetError(txtGiaSD, "Giá không thể là số âm");
+            }
+            else
+            {
+                errorProvider1.SetError(txtGiaSD, "");
+            }
         }
     }
 }
