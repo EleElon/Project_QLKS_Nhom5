@@ -19,7 +19,7 @@ namespace QuanLiKhachSan_Nhom5
         BUS_DSPhong busPhong = new BUS_DSPhong();
         BUS_DatPhong busDatPhong = new BUS_DatPhong();
         BUS_DichVu busDichVu = new BUS_DichVu();
-       
+
         public frmHoaDon()
         {
             InitializeComponent();
@@ -50,11 +50,11 @@ namespace QuanLiKhachSan_Nhom5
             List<DanhSachSuDungDichVu> DSDV = BUS_DanhSachDichVu.Instance.LayDanhSachSuDungDichVu();
             ccbMaSDDV.DataSource = DSDV;
             ccbMaSDDV.DisplayMember = "MaSuDungDichVu"; // Hiển thị tên loại phòng trong ComboBox
-            
+
         }
         public void LengthData()
         {
-            
+
         }
         private bool ValidateInputs()
         {
@@ -89,13 +89,13 @@ namespace QuanLiKhachSan_Nhom5
 
         private void cboPTTT_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
-      
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
-            {           
+            {
                 return;
             }
             try
@@ -147,14 +147,14 @@ namespace QuanLiKhachSan_Nhom5
             {
                 // Lấy mã phòng từ combobox
                 string maPhong = ccbMaDP.SelectedValue?.ToString();
-                
+
 
                 // Gọi BUS để lấy giá tiền
                 double giaTien = busPhong.LayGiaTienTheoMaPhong(maPhong);
 
                 // Hiển thị giá tiền lên TextBox
                 txtTienPhong.Text = giaTien.ToString();
-               
+
                 if (!string.IsNullOrEmpty(maPhong))
                 {
                     int soNgayThue = busDatPhong.LaySoNgayThue(maPhong);
@@ -164,11 +164,11 @@ namespace QuanLiKhachSan_Nhom5
                 {
                     txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
                 }
-               
+
             }
             catch (Exception ex)
             {
-                
+                MessageBox.Show("lỗi " + ex);
             }
         }
 
@@ -224,19 +224,19 @@ namespace QuanLiKhachSan_Nhom5
 
         private void dgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow row = dgvHoaDon.Rows[e.RowIndex];
-                    txtMaHD.Text = row.Cells["MaHoaDon"].Value.ToString();
-                    ccbMaDP.Text = row.Cells["MaDatPhong"].Value.ToString();
-                    txtPhuThu.Text = row.Cells["PhuThu"].Value.ToString();
-                    txtTienPhong.Text = row.Cells["TienPhong"].Value.ToString();
-                    txtTienDichVu.Text = row.Cells["TienDichVu"].Value.ToString();
-                    ccbGiamGia.Text = row.Cells["GiamGiaKH"].Value.ToString();
-                    txtSoNgayThue.Text = row.Cells["SoNgay"].Value.ToString();
-                    cboPTTT.Text = row.Cells["HinhThucThanhToan"].Value.ToString();
-                    txtThanhTien.Text = row.Cells["ThanhTien"].Value.ToString();
-                }
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvHoaDon.Rows[e.RowIndex];
+                txtMaHD.Text = row.Cells["MaHoaDon"].Value.ToString();
+                ccbMaDP.Text = row.Cells["MaDatPhong"].Value.ToString();
+                txtPhuThu.Text = row.Cells["PhuThu"].Value.ToString();
+                txtTienPhong.Text = row.Cells["TienPhong"].Value.ToString();
+                txtTienDichVu.Text = row.Cells["TienDichVu"].Value.ToString();
+                ccbGiamGia.Text = row.Cells["GiamGiaKH"].Value.ToString();
+                txtSoNgayThue.Text = row.Cells["SoNgay"].Value.ToString();
+                cboPTTT.Text = row.Cells["HinhThucThanhToan"].Value.ToString();
+                txtThanhTien.Text = row.Cells["ThanhTien"].Value.ToString();
+            }
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -256,7 +256,7 @@ namespace QuanLiKhachSan_Nhom5
 
         private void txtThanhTien_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtTienPhong_TextChanged(object sender, EventArgs e)
@@ -319,12 +319,12 @@ namespace QuanLiKhachSan_Nhom5
             try
             {
                 string maHoaDon = txtMaHD.Text;
-                bool ketQua =  busHoaDon.XoaChiTietHoaDon(maHoaDon);
+                bool ketQua = busHoaDon.XoaChiTietHoaDon(maHoaDon);
 
                 if (ketQua)
                 {
                     MessageBox.Show("Xóa chi tiết hóa đơn thành công!");
-                    LoadView ();
+                    LoadView();
                 }
                 else
                 {
