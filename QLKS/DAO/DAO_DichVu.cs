@@ -200,19 +200,6 @@ namespace DAO
                 return context.DichVus.Any(dv => dv.MaDichVu == maDV);
             }
         }
-        public double LayGiaTheoMaSDDV(string maSDDV)
-        {
-            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-            {
-                // Truy vấn lấy giá từ MaSDDV
-                var gia = (from ds in db.DanhSachSuDungDichVus
-                           join dv in db.DichVus
-                           on ds.MaDichVu equals dv.MaDichVu
-                           where ds.MaSDDV == maSDDV
-                           select dv.Gia).FirstOrDefault();
-
-                return gia; // Trả về giá, nếu không có thì mặc định là 0.0
-            }
-        }
+      
     }
 }

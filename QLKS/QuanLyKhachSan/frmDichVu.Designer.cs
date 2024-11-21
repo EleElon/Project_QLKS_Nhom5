@@ -85,6 +85,8 @@ namespace QuanLyKhachSan
             this.label14 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.txtGiaSD = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tbDichVu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -129,7 +131,7 @@ namespace QuanLyKhachSan
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1368, 603);
+            this.tabPage1.Size = new System.Drawing.Size(1672, 835);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dịch vụ";
             // 
@@ -393,6 +395,8 @@ namespace QuanLyKhachSan
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtGiaSD);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.cbMaDatPhong);
             this.groupBox3.Controls.Add(this.cbMaDichVu);
             this.groupBox3.Controls.Add(this.txtSoLuong);
@@ -550,7 +554,7 @@ namespace QuanLyKhachSan
             this.tbLoaiDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbLoaiDichVu.Name = "tbLoaiDichVu";
             this.tbLoaiDichVu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbLoaiDichVu.Size = new System.Drawing.Size(1368, 603);
+            this.tbLoaiDichVu.Size = new System.Drawing.Size(1672, 835);
             this.tbLoaiDichVu.TabIndex = 2;
             this.tbLoaiDichVu.Text = "Loại dịch vụ";
             // 
@@ -724,6 +728,23 @@ namespace QuanLyKhachSan
             this.label14.TabIndex = 27;
             this.label14.Text = "Loại Dịch Vụ";
             // 
+            // txtGiaSD
+            // 
+            this.txtGiaSD.Location = new System.Drawing.Point(212, 325);
+            this.txtGiaSD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGiaSD.Name = "txtGiaSD";
+            this.txtGiaSD.Size = new System.Drawing.Size(196, 28);
+            this.txtGiaSD.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(21, 328);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 22);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Giá";
+            // 
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -816,5 +837,7 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Button btnLamMoiLDV;
         private System.Windows.Forms.Button btnLamMoiDSSDDV;
         private System.Windows.Forms.ComboBox cboMaLoaiPhong;
+        private System.Windows.Forms.TextBox txtGiaSD;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -1,5 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKS" Class="DBQuanLyKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-1CIU4QVU;Initial Catalog=QLKS;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLKSConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChamCong" Member="ChamCongs">
+    <Type Name="ChamCong">
+      <Column Name="MaChamCong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNhanVien" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Thang" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayLamViec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoGioTangCa" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayChamCong" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="NhanVien_ChamCong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassWordd" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.ChiTietDatPhong" Member="ChiTietDatPhongs">
     <Type Name="ChiTietDatPhong">
       <Column Name="MaChiTietDatPhong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -18,12 +37,6 @@
       <Association Name="KhachHang_ChiTietDatPhong" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
       <Association Name="LoaiPhong_ChiTietDatPhong" Member="LoaiPhong" ThisKey="MaLoaiPhong" OtherKey="MaLoaiPhong" Type="LoaiPhong" IsForeignKey="true" />
       <Association Name="Phong_ChiTietDatPhong" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="User">
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PassWordd" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.ChiTietHoaDon" Member="ChiTietHoaDons">
@@ -140,8 +153,17 @@
       <Column Name="MaLuong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaNhanVien" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoTien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayLamViec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoGioTangCa" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LuongCoBan" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PhuCap" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Thuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KhauTru" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayTinhLuong" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="NhanVien_Luong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
+      <Association Name="NhanVien_Luong1" Member="NhanVien1" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
@@ -154,7 +176,9 @@
       <Column Name="SDT" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="diaChi" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="NhanVien_ChamCong" Member="ChamCongs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="ChamCong" />
       <Association Name="NhanVien_Luong" Member="Luongs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="Luong" />
+      <Association Name="NhanVien_Luong1" Member="Luongs1" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="Luong" />
       <Association Name="Phong_NhanVien" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
     </Type>
   </Table>
