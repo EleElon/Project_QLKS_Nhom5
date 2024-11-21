@@ -395,8 +395,8 @@ namespace QuanLiKhachSan_Nhom5
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            frmRptHoaDon frmRptHoaDon = new frmRptHoaDon();
-            frmRptHoaDon.ShowDialog();
+            frmRptHoaDonn frmRptHoaDonn = new frmRptHoaDonn();
+            frmRptHoaDonn.ShowDialog();
         }
 
         private void label15_Click(object sender, EventArgs e)

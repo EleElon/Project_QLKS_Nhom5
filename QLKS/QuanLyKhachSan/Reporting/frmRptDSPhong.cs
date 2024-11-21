@@ -39,5 +39,45 @@ namespace QuanLyKhachSan.Reporting
             reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string maPhong = txtMaPhong.Text.Trim();
+
+            if (string.IsNullOrEmpty(maPhong))
+            {
+                MessageBox.Show("Vui lòng nhập mã phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy dữ liệu từ cơ sở dữ liệu (chỉ phòng có MaPhong tương ứng)
+            PhongConText phongConText = new PhongConText();
+            var phong = phongConText.Phongs.FirstOrDefault(p => p.MaPhong == maPhong);
+
+            if (phong != null)
+            {
+                // Chuyển dữ liệu sang danh sách report
+                List<PhongReport> listReport = new List<PhongReport>();
+                PhongReport temp = new PhongReport
+                {
+                    MaLoaiPhong = phong.MaLoaiPhong,
+                    MaPhong = phong.MaPhong,
+                    SoPhong = phong.SoPhong,
+                    TinhTrang = phong.TinhTrang
+                };
+                listReport.Add(temp);
+
+                // Gán dữ liệu vào ReportViewer
+                reportViewer1.LocalReport.ReportPath = "rptPhong.rdlc";
+                var source = new ReportDataSource("PhongDataSet", listReport);
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(source);
+                reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy thông tin phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
