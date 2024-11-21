@@ -6,22 +6,21 @@ namespace QuanLyKhachSan.Reporting.Context
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("HoaDon")]
-    public partial class HoaDon
+    [Table("TraPhong")]
+    public partial class TraPhong
     {
         [Key]
         [StringLength(100)]
-        public string MaHoaDon { get; set; }
+        public string MaTraPhong { get; set; }
 
         [Required]
         [StringLength(100)]
         public string MaDatPhong { get; set; }
 
-        public double TongTien { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime NgayTra { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string TinhTrangThanhToan { get; set; }
+        public double TienDatCoc { get; set; }
 
         public virtual DatPhong DatPhong { get; set; }
     }

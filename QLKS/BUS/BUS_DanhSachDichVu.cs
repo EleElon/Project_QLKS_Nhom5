@@ -35,8 +35,7 @@ namespace BUS
                     t.MaSuDungDichVu,
                     t.MaDichVu,
                     t.MaDatPhong,
-                    t.SoLuong,
-                    t.Gia
+                    t.SoLuong
                 };
             }).ToList();
             data.DataSource = dv;

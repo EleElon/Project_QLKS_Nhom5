@@ -203,7 +203,7 @@ namespace QuanLyKhachSan.Reporting
         }
         private void LoadReport(int? soNgayLam, float? luongMin, float? luongMax)
         {
-            using (QLKSContext context = new QLKSContext())
+            using (QLKSDataset context = new QLKSDataset())
             {
                 // Truy vấn dữ liệu
                 var query = from l in context.Luongs

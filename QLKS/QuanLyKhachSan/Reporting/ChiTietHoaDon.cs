@@ -36,5 +36,9 @@ namespace QuanLyKhachSan.Reporting.Context
         public double? ThanhTien { get; set; }
 
         public virtual DanhSachSuDungDichVu DanhSachSuDungDichVu { get; set; }
+
+        public virtual DatPhong DatPhong { get; set; }
+
+        public virtual HoaDon HoaDon { get; set; }
     }
 }
