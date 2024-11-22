@@ -13,9 +13,20 @@ namespace QuanLyKhachSan
 {
     public partial class FrmMain : Form
     {
+        private int smoothScrollTarget = 0;
+        private Timer smoothScrollTimer;
+
         public FrmMain()
         {
             InitializeComponent();
+
+            // Tạo và cấu hình Timer
+            smoothScrollTimer = new Timer();
+            smoothScrollTimer.Interval = 10; // 10ms, tạo hiệu ứng mượt
+            smoothScrollTimer.Tick += SmoothScrollTimer_Tick;
+
+            // Bắt sự kiện MouseWheel
+            pnlSystemButton.MouseWheel += PnlSystemButton_MouseWheel;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -162,6 +173,57 @@ namespace QuanLyKhachSan
             fr.Dock = DockStyle.Fill;
             pnMain.Controls.Add(fr);
             fr.Show();
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            // Di chuyển các control trong pnlSystemButton theo giá trị của thanh cuộn
+            foreach (Control ctrl in pnlSystemButton.Controls)
+            {
+                ctrl.Top = ctrl.Top - (e.NewValue - e.OldValue); // Di chuyển theo giá trị cuộn
+            }
+        }
+
+        private void pnlSystemButton_Resize(object sender, EventArgs e)
+        {
+            //// Tổng chiều cao của các button trong Panel
+            //int totalHeight = pnlSystemButton.Controls.Cast<Control>().Sum(c => c.Height + c.Margin.Vertical);
+
+            //// Cập nhật giá trị thanh cuộn
+            //vScrollBar1.Maximum = Math.Max(0, totalHeight - pnlSystemButton.ClientSize.Height);
+            //vScrollBar1.LargeChange = pnlSystemButton.ClientSize.Height;
+            //vScrollBar1.SmallChange = 10; // Pixel di chuyển mỗi lần cuộn nhỏ
+            //vScrollBar1.Visible = vScrollBar1.Maximum > 0; // Chỉ hiển thị thanh cuộn khi cần
+        }
+
+        private void pnlSystemButton_Scroll(object sender, ScrollEventArgs e)
+        {
+            //vScrollBar1.Value = pnlSystemButton.VerticalScroll.Value; // Đồng bộ giá trị thanh cuộn
+        }
+
+        private void PnlSystemButton_MouseWheel(object sender, MouseEventArgs e)
+        {
+            // Cập nhật giá trị cuộn đích
+            smoothScrollTarget -= e.Delta / 2; // Giá trị nhỏ để cuộn mượt hơn
+            smoothScrollTarget = Math.Max(0, Math.Min(smoothScrollTarget, pnlSystemButton.VerticalScroll.Maximum));
+
+            // Bắt đầu Timer
+            //smoothScrollTimer.Start();
+        }
+
+        private void SmoothScrollTimer_Tick(object sender, EventArgs e)
+        {
+            int currentScroll = pnlSystemButton.VerticalScroll.Value;
+            int step = (smoothScrollTarget - currentScroll) / 100; // Chia thành 5 bước để mượt
+            if (Math.Abs(step) < 1) // Khi gần đạt giá trị đích
+            {
+                pnlSystemButton.AutoScrollPosition = new Point(0, smoothScrollTarget);
+                smoothScrollTimer.Stop();
+            }
+            else
+            {
+                pnlSystemButton.AutoScrollPosition = new Point(0, currentScroll + step);
+            }
         }
     }
 }
