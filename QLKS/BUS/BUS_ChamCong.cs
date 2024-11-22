@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BUS
 {
-    public class BUS_ChamCong
+    public class BUS_ChamCong       
     {
         public static BUS_ChamCong instance;
         public static BUS_ChamCong Instance
