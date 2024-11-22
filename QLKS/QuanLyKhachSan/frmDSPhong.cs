@@ -57,7 +57,7 @@ namespace QuanLyKhachSan
 
         public void LoadViewPhong()
         {
-            List<Phong> danhSachPhong = bus_Phong.Xem();
+            List<DAO.Phong> danhSachPhong = bus_Phong.Xem();
 
             if (danhSachPhong != null && danhSachPhong.Count > 0)
             {

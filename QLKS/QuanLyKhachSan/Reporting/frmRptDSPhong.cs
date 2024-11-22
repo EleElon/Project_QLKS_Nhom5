@@ -1,4 +1,6 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using DAO;
+using Microsoft.Reporting.WinForms;
+using QuanLyKhachSan.Reporting.Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +22,12 @@ namespace QuanLyKhachSan.Reporting
 
         private void frmDSPhong_Load(object sender, EventArgs e)
         {
-            PhongConText phongConText = new PhongConText();
-            List<DSPhong> listPhong = phongConText.Phongs.ToList();
-            List<PhongReport> listReport = new List<PhongReport>();
-            foreach (DSPhong phong in listPhong)
+            PhongContext phongConText = new PhongContext();
+            List<Phong> listPhong = phongConText.Phongs.ToList();
+            List<Phong> listReport = new List<Phong>();
+            foreach (Phong phong in listPhong)
             {
-                PhongReport temp = new PhongReport();
+                Phong temp = new Phong();
                
                 temp.MaLoaiPhong = phong.MaLoaiPhong;
                 temp.MaPhong = phong.MaPhong;
@@ -51,7 +53,7 @@ namespace QuanLyKhachSan.Reporting
             }
 
             // Lấy dữ liệu từ cơ sở dữ liệu (chỉ phòng có MaPhong tương ứng)
-            PhongConText phongConText = new PhongConText();
+            PhongContext phongConText = new PhongContext();
             var phong = phongConText.Phongs.FirstOrDefault(p => p.MaPhong == maPhong);
 
             if (phong != null)

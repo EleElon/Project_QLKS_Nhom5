@@ -8,11 +8,11 @@ namespace QuanLyKhachSan.Reporting
     public partial class HoaDonContext : DbContext
     {
         public HoaDonContext()
-            : base("name=HoaDonContext1")
+            : base("name=HoaDonContext")
         {
         }
 
-        public virtual DbSet<HoaDonCT> ChiTietHoaDons { get; set; }
+        public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

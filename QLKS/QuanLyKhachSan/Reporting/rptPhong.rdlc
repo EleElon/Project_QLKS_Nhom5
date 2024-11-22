@@ -24,7 +24,7 @@
         <Top>0.23833in</Top>
         <Left>3.46333in</Left>
         <Height>0.39167in</Height>
-        <Width>2.36667in</Width>
+        <Width>2.79374in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -66,7 +66,7 @@
                             <TextRun>
                               <Value>Mã Phòng</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -100,7 +100,7 @@
                             <TextRun>
                               <Value>Mã Loại Phòng</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -134,7 +134,7 @@
                             <TextRun>
                               <Value>Số Phòng</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -168,7 +168,7 @@
                             <TextRun>
                               <Value>Tình Trạng</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -207,7 +207,7 @@
                             <TextRun>
                               <Value>=Fields!MaPhong.Value</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -241,7 +241,7 @@
                             <TextRun>
                               <Value>=Fields!MaLoaiPhong.Value</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -275,7 +275,7 @@
                             <TextRun>
                               <Value>=Fields!SoPhong.Value</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -309,7 +309,7 @@
                             <TextRun>
                               <Value>=Fields!TinhTrang.Value</Value>
                               <Style>
-                                <FontSize>18pt</FontSize>
+                                <FontSize>16pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -473,7 +473,17 @@
       </Textbox>
     </ReportItems>
     <Height>4.425in</Height>
-    <Style />
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+      <LeftBorder>
+        <Width>0.5pt</Width>
+      </LeftBorder>
+      <RightBorder>
+        <Width>0.5pt</Width>
+      </RightBorder>
+    </Style>
   </Body>
   <Width>9.70833in</Width>
   <Page>

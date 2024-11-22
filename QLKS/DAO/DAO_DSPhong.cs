@@ -51,7 +51,7 @@ namespace DAO
                     {
                         return false;
                     }
-                    Phong phong = new Phong();
+                    DAO.Phong phong = new DAO.Phong();
                     phong.MaPhong = maPhong;
                     phong.MaLoaiPhong = maLoaiPhong;
                     phong.SoPhong = soPhong;
@@ -72,7 +72,7 @@ namespace DAO
             {
                 try
                 {
-                    Phong phong = db.Phongs.SingleOrDefault(p => p.MaPhong == maPhong);
+                    DAO.Phong phong = db.Phongs.SingleOrDefault(p => p.MaPhong == maPhong);
                     if (phong == null)
                     {
                         return false;
@@ -94,7 +94,7 @@ namespace DAO
             {
                 try
                 {
-                    Phong phong = db.Phongs.SingleOrDefault(p => p.MaPhong == maPhong);
+                    DAO.Phong phong = db.Phongs.SingleOrDefault(p => p.MaPhong == maPhong);
                     if (phong != null)
                     {
                         phong.MaLoaiPhong = maLoaiPhong;

@@ -192,6 +192,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\ChiTietHoaDon.cs" />
     <Compile Include="Reporting\Context\ChamCong.cs" />
     <Compile Include="Reporting\Context\ChiTietDatPhong.cs" />
     <Compile Include="Reporting\Context\ChiTietHoaDon.cs" />
@@ -240,7 +241,8 @@
     <Compile Include="Reporting\HoaDonCT.cs" />
     <Compile Include="Reporting\HoaDonReport.cs" />
     <Compile Include="Reporting\luongReport.cs" />
-    <Compile Include="Reporting\PhongConText.cs" />
+    <Compile Include="Reporting\Phong.cs" />
+    <Compile Include="Reporting\PhongContext.cs" />
     <Compile Include="Reporting\PhongReport.cs" />
     <Compile Include="ThayDoichuoiKetNoi.cs" />
     <Compile Include="TimKiemKhachHang.cs">
@@ -348,6 +350,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyKhachSan.Reporting.HoaDonReport.datasource" />
     <None Include="QuanLyKhachSanDataSet.xsc">
       <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
     </None>

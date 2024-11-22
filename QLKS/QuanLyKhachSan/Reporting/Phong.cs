@@ -1,4 +1,4 @@
-namespace QuanLyKhachSan.Reporting.Context
+namespace QuanLyKhachSan.Reporting
 {
     using System;
     using System.Collections.Generic;
@@ -9,14 +9,6 @@ namespace QuanLyKhachSan.Reporting.Context
     [Table("Phong")]
     public partial class Phong
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Phong()
-        {
-            ChiTietDatPhongs = new HashSet<ChiTietDatPhong>();
-            CoSoVatChats = new HashSet<CoSoVatChat>();
-            NhanViens = new HashSet<NhanVien>();
-        }
-
         [Key]
         [StringLength(100)]
         public string MaPhong { get; set; }
@@ -31,16 +23,5 @@ namespace QuanLyKhachSan.Reporting.Context
 
         [StringLength(20)]
         public string TinhTrang { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDatPhong> ChiTietDatPhongs { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CoSoVatChat> CoSoVatChats { get; set; }
-
-        public virtual LoaiPhong LoaiPhong { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }

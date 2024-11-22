@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyKhachSan.Reporting
 {
-     class HoaDonReport
+   public  class HoaDonReport
     {
       public  string MaHoaDon {  get; set; }
         public string MaDatPhong { get; set; }

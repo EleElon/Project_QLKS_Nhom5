@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace QuanLyKhachSan.Reporting
 {
-    public partial class PhongConText : DbContext
+    public partial class PhongContext : DbContext
     {
-        public PhongConText()
-            : base("name=PhongConText")
+        public PhongContext()
+            : base("name=PhongContext")
         {
         }
 
-        public virtual DbSet<DSPhong> Phongs { get; set; }
+        public virtual DbSet<Phong> Phongs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

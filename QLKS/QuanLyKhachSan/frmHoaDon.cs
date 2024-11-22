@@ -110,7 +110,7 @@ namespace QuanLiKhachSan_Nhom5
                 float thanhTien = (phuThu + tienDichVu + (tienPhong * soNgay)) * (1 - giamGiaKH / 100);
 
 
-                ChiTietHoaDon chiTietHoaDonMoi = new ChiTietHoaDon
+                DAO.ChiTietHoaDon chiTietHoaDonMoi = new DAO.ChiTietHoaDon
                 {
                     MaHoaDon = txtMaHD.Text,
                     MaDatPhong = ccbMaDP.Text,
@@ -359,7 +359,7 @@ namespace QuanLiKhachSan_Nhom5
                 float thanhTien = (tienPhong * soNgay + tienDichVu + phuThu) * (1 - giamGiaKH / 100);
 
                 // Tạo đối tượng ChiTietHoaDon mới
-                ChiTietHoaDon chiTietHoaDonMoi = new ChiTietHoaDon
+                DAO.ChiTietHoaDon chiTietHoaDonMoi = new DAO.ChiTietHoaDon
                 {
                     MaHoaDon = maHoaDon,
                     MaDatPhong = maDatPhong,
