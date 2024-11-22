@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DAO;
 using QuanLyKhachSan;
+using QuanLyKhachSan.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace QuanLiKhachSan_Nhom5
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
         BUS_DSPhong busPhong = new BUS_DSPhong();
         BUS_DatPhong busDatPhong = new BUS_DatPhong();
-        BUS_DichVu busDichVu = new BUS_DichVu();
+        BUS_DanhSachDichVu busDichVu = new BUS_DanhSachDichVu();
 
         public frmHoaDon()
         {
@@ -164,7 +165,9 @@ namespace QuanLiKhachSan_Nhom5
                 {
                     txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
                 }
-
+                string maDV = ccbMaSDDV.Text;
+                
+                txtTienDichVu.Text = busDichVu.LayGiaDV(maDV).ToString();
             }
             catch (Exception ex)
             {
@@ -391,7 +394,7 @@ namespace QuanLiKhachSan_Nhom5
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            frmRptHoaDonn frmRptHoaDonn = new frmRptHoaDonn();
+           frmRptHoaDonn frmRptHoaDonn = new frmRptHoaDonn();
             frmRptHoaDonn.ShowDialog();
         }
 

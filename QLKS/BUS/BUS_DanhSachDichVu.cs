@@ -11,8 +11,8 @@ namespace BUS
 {
     public class BUS_DanhSachDichVu
     {
-        private static BUS_DanhSachDichVu instance;
-        
+        public static BUS_DanhSachDichVu instance;
+        DAO_DanhSachDichVu daoDV = new DAO_DanhSachDichVu();
         public static BUS_DanhSachDichVu Instance
         {
             get
@@ -24,7 +24,7 @@ namespace BUS
                 return instance;
             }
         }
-        private BUS_DanhSachDichVu() { }
+        public BUS_DanhSachDichVu() { }
 
         public void Xem(DataGridView data)
         {
@@ -105,6 +105,9 @@ namespace BUS
             // Here, you could add additional business logic if necessary
             return DAO_DanhSachDichVu.Instance.HienThi();
         }
-       
+        public double LayGiaDV(string maSDDV)
+        {
+            return daoDV.LayGiaDichVu(maSDDV);
+        }
     }
 }
