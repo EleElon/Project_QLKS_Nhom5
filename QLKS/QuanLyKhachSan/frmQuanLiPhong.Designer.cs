@@ -94,7 +94,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1800, 853);
+            this.tabControl1.Size = new System.Drawing.Size(1800, 885);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -250,7 +250,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1792, 815);
+            this.tabPage2.Size = new System.Drawing.Size(1792, 847);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chi tiết đặt phòng";
             // 
@@ -575,7 +575,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1800, 441);
+            this.groupBox2.Size = new System.Drawing.Size(1800, 476);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Phòng";
@@ -589,7 +589,7 @@
             this.dgvDatPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDatPhong.Name = "dgvDatPhong";
             this.dgvDatPhong.RowHeadersWidth = 51;
-            this.dgvDatPhong.Size = new System.Drawing.Size(1800, 410);
+            this.dgvDatPhong.Size = new System.Drawing.Size(1800, 436);
             this.dgvDatPhong.TabIndex = 0;
             this.dgvDatPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatPhong_CellContentClick_1);
             // 
