@@ -13,6 +13,7 @@ namespace QuanLyKhachSan.Reporting.Context
         public DatPhong()
         {
             ChiTietDatPhongs = new HashSet<ChiTietDatPhong>();
+            ChiTietHoaDons = new HashSet<ChiTietHoaDon>();
             DanhSachSuDungDichVus = new HashSet<DanhSachSuDungDichVu>();
             HoaDons = new HashSet<HoaDon>();
             TraPhongs = new HashSet<TraPhong>();
@@ -27,6 +28,9 @@ namespace QuanLyKhachSan.Reporting.Context
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDatPhong> ChiTietDatPhongs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhSachSuDungDichVu> DanhSachSuDungDichVus { get; set; }

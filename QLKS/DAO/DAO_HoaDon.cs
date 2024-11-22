@@ -61,10 +61,10 @@ namespace DAO
                 }
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-
-                throw ex;
+               
+                return false;
             }
         }
         public bool XoaChiTietHoaDon(string maChiTietHoaDon)

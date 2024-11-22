@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,10 +37,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -74,8 +70,6 @@
     <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -155,6 +149,12 @@
     <Compile Include="frmDSPhong.Designer.cs">
       <DependentUpon>frmDSPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportKhachHang.Designer.cs">
+      <DependentUpon>FrmReportKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThayDoiChuoiKetNoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,7 +187,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reporting\HoaDonCT.cs" />
+    <Compile Include="QuanLyKhachSanDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\Context\ChamCong.cs" />
     <Compile Include="Reporting\Context\ChiTietDatPhong.cs" />
     <Compile Include="Reporting\Context\ChiTietHoaDon.cs" />
@@ -202,21 +206,22 @@
     <Compile Include="Reporting\Context\LoaiPhong.cs" />
     <Compile Include="Reporting\Context\Luong.cs" />
     <Compile Include="Reporting\Context\NhanVien.cs" />
-    <Compile Include="Reporting\Context\DSPhong.cs" />
-    <Compile Include="Reporting\Context\QLKSContext.cs" />
+    <Compile Include="Reporting\Context\Phong.cs" />
+    <Compile Include="Reporting\Context\QLKSDataset.cs" />
     <Compile Include="Reporting\Context\TraPhong.cs" />
     <Compile Include="Reporting\dichVuReport.cs" />
-    <Compile Include="Reporting\frmRptDSPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reporting\frmRptDSPhong.Designer.cs">
-      <DependentUpon>frmRptDSPhong.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Reporting\DSPhong.cs" />
     <Compile Include="Reporting\frmRptDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reporting\frmRptDichVu.Designer.cs">
       <DependentUpon>frmRptDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\frmRptDSPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\frmRptDSPhong.Designer.cs">
+      <DependentUpon>frmRptDSPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Reporting\frmRptHoaDon.cs">
       <SubType>Form</SubType>
@@ -232,9 +237,9 @@
     </Compile>
     <Compile Include="Reporting\HoaDon.cs" />
     <Compile Include="Reporting\HoaDonContext.cs" />
+    <Compile Include="Reporting\HoaDonCT.cs" />
     <Compile Include="Reporting\HoaDonReport.cs" />
     <Compile Include="Reporting\luongReport.cs" />
-    <Compile Include="Reporting\DSPhong.cs" />
     <Compile Include="Reporting\PhongConText.cs" />
     <Compile Include="Reporting\PhongReport.cs" />
     <Compile Include="ThayDoichuoiKetNoi.cs" />
@@ -277,6 +282,9 @@
     <EmbeddedResource Include="frmQuanLiPhong.resx">
       <DependentUpon>frmQuanLiPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportKhachHang.resx">
+      <DependentUpon>FrmReportKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThayDoiChuoiKetNoi.resx">
       <DependentUpon>frmThayDoiChuoiKetNoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +300,7 @@
     <EmbeddedResource Include="frmTimKiemPhong.resx">
       <DependentUpon>frmTimKiemPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InThongKeKhachHang.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -302,11 +311,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reporting\frmRptDSPhong.resx">
-      <DependentUpon>frmRptDSPhong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\frmRptDichVu.resx">
       <DependentUpon>frmRptDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\frmRptDSPhong.resx">
+      <DependentUpon>frmRptDSPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporting\frmRptHoaDon.resx">
       <DependentUpon>frmRptHoaDon.cs</DependentUpon>
@@ -314,25 +323,14 @@
     <EmbeddedResource Include="Reporting\frmRptLuong.resx">
       <DependentUpon>frmRptLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\rptDichVu.rdlc" />
     <EmbeddedResource Include="Reporting\rptHoaDon.rdlc" />
-    <EmbeddedResource Include="Reporting\rptPhong.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporting\rptDichVu.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporting\rptLuong.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\rptLuong.rdlc" />
+    <EmbeddedResource Include="Reporting\rptPhong.rdlc" />
     <EmbeddedResource Include="TimKiemKhachHang.resx">
       <DependentUpon>TimKiemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include=".editorconfig" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.dichVuReport.datasource" />
-    <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.HoaDonReport.datasource" />
-    <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.luongReport.datasource" />
-    <None Include="Properties\DataSources\QuanLyKhachSan.Reporting.PhongReport.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -350,6 +348,17 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyKhachSanDataSet.xsc">
+      <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyKhachSanDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyKhachSanDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="QuanLyKhachSanDataSet.xss">
+      <DependentUpon>QuanLyKhachSanDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\hotel-overview-1685329656.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -366,15 +375,14 @@
       <Name>DAO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
     <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
     <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
   </Target>
   <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
 </Project>

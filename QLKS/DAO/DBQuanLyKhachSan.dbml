@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKS" Class="DBQuanLyKhachSanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IG8LD99\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLKSConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-1CIU4QVU;Initial Catalog=QLKS;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLKSConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChamCong" Member="ChamCongs">
     <Type Name="ChamCong">
       <Column Name="MaChamCong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -53,9 +53,9 @@
       <Column Name="HinhThucThanhToan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="SoNgay" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DanhSachSuDungDichVu_ChiTietHoaDon" Member="DanhSachSuDungDichVu" ThisKey="MaSuDungDichVu" OtherKey="MaSuDungDichVu" Type="DanhSachSuDungDichVu" IsForeignKey="true" />
       <Association Name="DatPhong_ChiTietHoaDon" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" />
       <Association Name="HoaDon_ChiTietHoaDon" Member="HoaDon" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDon" IsForeignKey="true" />
-      <Association Name="DanhSachSuDungDichVu_ChiTietHoaDon" Member="DanhSachSuDungDichVu" ThisKey="MaSuDungDichVu" OtherKey="MaSuDungDichVu" Type="DanhSachSuDungDichVu" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CoSoVatChat" Member="CoSoVatChats">
@@ -67,15 +67,27 @@
       <Association Name="Phong_CoSoVatChat" Member="Phong" ThisKey="MaPhong" OtherKey="MaPhong" Type="Phong" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DanhSachSuDungDichVu" Member="DanhSachSuDungDichVus">
+    <Type Name="DanhSachSuDungDichVu">
+      <Column Name="MaSuDungDichVu" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDichVu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaDatPhong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="DanhSachSuDungDichVu_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="MaSuDungDichVu" OtherKey="MaSuDungDichVu" Type="ChiTietHoaDon" />
+      <Association Name="DatPhong_DanhSachSuDungDichVu" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" />
+      <Association Name="DichVu_DanhSachSuDungDichVu" Member="DichVu" ThisKey="MaDichVu" OtherKey="MaDichVu" Type="DichVu" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.DatPhong" Member="DatPhongs">
     <Type Name="DatPhong">
       <Column Name="MaDatPhong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaKhachHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="DatPhong_ChiTietDatPhong" Member="ChiTietDatPhongs" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="ChiTietDatPhong" />
       <Association Name="DatPhong_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="ChiTietHoaDon" />
+      <Association Name="DatPhong_DanhSachSuDungDichVu" Member="DanhSachSuDungDichVus" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DanhSachSuDungDichVu" />
       <Association Name="DatPhong_HoaDon" Member="HoaDons" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="HoaDon" />
       <Association Name="DatPhong_TraPhong" Member="TraPhongs" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="TraPhong" />
-      <Association Name="DatPhong_DanhSachSuDungDichVu" Member="DanhSachSuDungDichVus" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DanhSachSuDungDichVu" />
       <Association Name="KhachHang_DatPhong" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
@@ -193,18 +205,6 @@
       <Column Name="NgayTra" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="TienDatCoc" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Association Name="DatPhong_TraPhong" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DanhSachSuDungDichVu" Member="DanhSachSuDungDichVus">
-    <Type Name="DanhSachSuDungDichVu">
-      <Column Name="MaSuDungDichVu" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaDichVu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MaDatPhong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Gia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="DanhSachSuDungDichVu_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="MaSuDungDichVu" OtherKey="MaSuDungDichVu" Type="ChiTietHoaDon" />
-      <Association Name="DatPhong_DanhSachSuDungDichVu" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" />
-      <Association Name="DichVu_DanhSachSuDungDichVu" Member="DichVu" ThisKey="MaDichVu" OtherKey="MaDichVu" Type="DichVu" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

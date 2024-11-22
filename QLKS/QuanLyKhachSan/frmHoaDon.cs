@@ -1,7 +1,6 @@
 ﻿using BUS;
 using DAO;
 using QuanLyKhachSan;
-using QuanLyKhachSan.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +18,7 @@ namespace QuanLiKhachSan_Nhom5
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
         BUS_DSPhong busPhong = new BUS_DSPhong();
         BUS_DatPhong busDatPhong = new BUS_DatPhong();
-
-        BUS_DanhSachDichVu busDichVu = new BUS_DanhSachDichVu();
-       
+        BUS_DichVu busDichVu = new BUS_DichVu();
 
         public frmHoaDon()
         {
@@ -45,18 +42,12 @@ namespace QuanLiKhachSan_Nhom5
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
-          
+            txtThanhTien.Enabled = false;
             LoadView();
-            LoadDSDV();
-            ccbMaSDDV.SelectedIndexChanged += ccbMaSDDV_SelectedIndexChanged;
             dgvHoaDon.Columns["DanhSachSuDungDichVu"].Visible = false;
             dgvHoaDon.Columns["DatPhong"].Visible = false;
             dgvHoaDon.Columns["HoaDon"].Visible = false;
-           
-        }
-        public void LoadDSDV()
-        {
-            List<DanhSachSuDungDichVu> DSDV = busDichVu.Xem();
+            List<DanhSachSuDungDichVu> DSDV = BUS_DanhSachDichVu.Instance.LayDanhSachSuDungDichVu();
             ccbMaSDDV.DataSource = DSDV;
             ccbMaSDDV.DisplayMember = "MaSuDungDichVu"; // Hiển thị tên loại phòng trong ComboBox
 
@@ -153,11 +144,15 @@ namespace QuanLiKhachSan_Nhom5
         private void ccbMaSDDV_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
-            { 
-
+            {
+                // Lấy mã phòng từ combobox
                 string maPhong = ccbMaDP.SelectedValue?.ToString();
+
+
+                // Gọi BUS để lấy giá tiền
                 double giaTien = busPhong.LayGiaTienTheoMaPhong(maPhong);
 
+                // Hiển thị giá tiền lên TextBox
                 txtTienPhong.Text = giaTien.ToString();
 
                 if (!string.IsNullOrEmpty(maPhong))
@@ -170,10 +165,11 @@ namespace QuanLiKhachSan_Nhom5
                     txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
                 }
 
-                string maDV = ccbMaSDDV.Text;
-                txtTienDichVu.Text = busDichVu.LayGiaTuMaSDDV(maDV).ToString();
-                
-            } catch { }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("lỗi " + ex);
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

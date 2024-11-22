@@ -10,7 +10,7 @@ namespace DAO
 {
     public class DAO_DanhSachDichVu
     {
-        public static DAO_DanhSachDichVu instance;
+        private static DAO_DanhSachDichVu instance;
         public static DAO_DanhSachDichVu Instance
         {
             get
@@ -22,7 +22,7 @@ namespace DAO
                 return instance;
             }
         }
-        public DAO_DanhSachDichVu() { }
+        private DAO_DanhSachDichVu() { }
 
         public List<DanhSachSuDungDichVu> Xem()
         {
@@ -187,16 +187,18 @@ namespace DAO
                 return db.DanhSachSuDungDichVus.ToList();
             }
         }
-        public double LayGiaTheoMaSDDV(string maSDDV)
+        public float LayGiaDichVu(string maSDDV)
+    {
+        using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
         {
-            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-            {
-                // Lấy giá từ MaSDDV
-                var gia = (from dsdv in db.DanhSachSuDungDichVus
-                           where dsdv.MaSuDungDichVu == maSDDV
-                           select dsdv.Gia).FirstOrDefault();
-                return gia ?? 0; // Trả về giá trị hoặc 0 nếu không tìm thấy
-            }
+            var gia = (from ds in db.DanhSachSuDungDichVus
+                       join dv in db.DichVus
+                       on ds.MaDichVu equals dv.MaDichVu
+                       where ds.MaSuDungDichVu == maSDDV
+                       select dv.Gia).FirstOrDefault();
+
+                return 0; // Trả về 0 nếu không có giá trị
         }
+    }
     }
 }

@@ -60,7 +60,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -457,7 +456,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1482, 732);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.btnXoaPhong);
@@ -523,6 +521,6 @@
 
         private System.Windows.Forms.TextBox txtMaLoaiPhong2;
         private System.Windows.Forms.TextBox txtMaPhong;
-        private System.Windows.Forms.Button button1;
+
     }
 }

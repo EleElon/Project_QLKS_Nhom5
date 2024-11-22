@@ -6,41 +6,34 @@ namespace QuanLyKhachSan.Reporting.Context
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Phong")]
-    public partial class DSPhong
+    [Table("LoaiPhong")]
+    public partial class LoaiPhong
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DSPhong()
+        public LoaiPhong()
         {
             ChiTietDatPhongs = new HashSet<ChiTietDatPhong>();
-            CoSoVatChats = new HashSet<CoSoVatChat>();
-            NhanViens = new HashSet<NhanVien>();
+            LoaiDichVus = new HashSet<LoaiDichVu>();
+            Phongs = new HashSet<Phong>();
         }
 
         [Key]
         [StringLength(100)]
-        public string MaPhong { get; set; }
-
-        [Required]
-        [StringLength(100)]
         public string MaLoaiPhong { get; set; }
 
         [Required]
-        [StringLength(10)]
-        public string SoPhong { get; set; }
+        [StringLength(50)]
+        public string TenLoaiPhong { get; set; }
 
-        [StringLength(20)]
-        public string TinhTrang { get; set; }
+        public double Gia { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDatPhong> ChiTietDatPhongs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CoSoVatChat> CoSoVatChats { get; set; }
-
-        public virtual LoaiPhong LoaiPhong { get; set; }
+        public virtual ICollection<LoaiDichVu> LoaiDichVus { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NhanVien> NhanViens { get; set; }
+        public virtual ICollection<Phong> Phongs { get; set; }
     }
 }
