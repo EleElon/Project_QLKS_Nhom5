@@ -37,31 +37,31 @@ namespace QuanLyKhachSan
         //    UpdateConnectionString("PhongContext", chuoi);
         //}
 
-        //// Hàm cập nhật chuỗi kết nối trong QuanLyKhachSan.exe.Config
-        //private void UpdateConnectionString(string name, string chuoi)
-        //{
-        //    string configFilePath = Application.StartupPath + "\\QuanLyKhachSan.exe.config";
-        //    XmlDocument xmlDoc = new XmlDocument();
-        //    xmlDoc.Load(configFilePath);
+        // Hàm cập nhật chuỗi kết nối trong QuanLyKhachSan.exe.Config
+        private void UpdateConnectionString(string name, string chuoi)
+        {
+            string configFilePath = Application.StartupPath + "\\QuanLyKhachSan.exe.config";
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(configFilePath);
 
-        //    // Tìm kiếm phần tử connectionStrings
-        //    XmlNodeList connectionStrings = xmlDoc.GetElementsByTagName("connectionStrings");
+            // Tìm kiếm phần tử connectionStrings
+            XmlNodeList connectionStrings = xmlDoc.GetElementsByTagName("connectionStrings");
 
-        //    foreach (XmlNode node in connectionStrings)
-        //    {
-        //        foreach (XmlNode childNode in node.ChildNodes)
-        //        {
-        //            if (childNode.Attributes["name"] != null && childNode.Attributes["name"].Value == name)
-        //            {
-        //                // Thay đổi giá trị chuỗi kết nối
-        //                childNode.Attributes["connectionString"].Value = $"Data Source={chuoi};Initial Catalog=QLKS;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True;App=EntityFramework";
-        //                xmlDoc.Save(configFilePath);
-        //                MessageBox.Show("Chuỗi kết nối đã được thay đổi!");
-        //                break;
-        //            }
-        //        }
-        //    }
-        //}
+            foreach (XmlNode node in connectionStrings)
+            {
+                foreach (XmlNode childNode in node.ChildNodes)
+                {
+                    if (childNode.Attributes["name"] != null && childNode.Attributes["name"].Value == name)
+                    {
+                        // Thay đổi giá trị chuỗi kết nối
+                        childNode.Attributes["connectionString"].Value = $"Data Source={chuoi};Initial Catalog=QLKS;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True;App=EntityFramework";
+                        xmlDoc.Save(configFilePath);
+                        //MessageBox.Show("Chuỗi kết nối đã được thay đổi!");
+                        break;
+                    }
+                }
+            }
+        }
 
         //// Xử lý sự kiện thay đổi chuỗi kết nối khi người dùng nhấn nút
         //private void btnThayDoi_Click(object sender, EventArgs e)
@@ -86,6 +86,10 @@ namespace QuanLyKhachSan
 
             // Thông báo thành công
             MessageBox.Show("Chuỗi kết nối đã được thay đổi và áp dụng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            UpdateConnectionString("QLKSDataset", chuoi);
+            UpdateConnectionString("HoaDonContext", chuoi);
+            UpdateConnectionString("PhongContext", chuoi);
         }
 
         /// <summary>
@@ -128,6 +132,8 @@ namespace QuanLyKhachSan
                 //btnThayDoi_Click(sender, e); // Gọi sự kiện tìm kiếm
             }
         }
+
+
 
     }
 }
