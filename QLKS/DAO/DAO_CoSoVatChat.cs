@@ -43,13 +43,11 @@ namespace DAO
             {
                 try
                 {
-                    // Kiểm tra xem mã cơ sở vật chất đã tồn tại chưa
                     if (db.CoSoVatChats.Any(c => c.MaCoSoVatChat == maCSVC))
                     {
-                        return false; // Mã cơ sở vật chất đã tồn tại
+                        return false;
                     }
 
-                    // Tạo mới cơ sở vật chất
                     CoSoVatChat csvc = new CoSoVatChat
                     {
                         MaCoSoVatChat = maCSVC,
@@ -58,14 +56,13 @@ namespace DAO
                         MoTa = moTa
                     };
 
-                    // Thêm cơ sở vật chất vào cơ sở dữ liệu
                     db.CoSoVatChats.InsertOnSubmit(csvc);
                     db.SubmitChanges();
-                    return true; // Thêm thành công
+                    return true;
                 }
                 catch (Exception ex)
                 {
-                    throw ex; // Ném ra lỗi nếu có
+                    throw ex;
                 }
             }
         }
@@ -81,7 +78,7 @@ namespace DAO
                     db.SubmitChanges();
                     return true;
                 }
-                return false; // Không tìm thấy cơ sở vật chất
+                return false;
             }
         }
         public bool SuaCoSoVatChat(CoSoVatChat coSoVatChat)
@@ -98,9 +95,8 @@ namespace DAO
                     db.SubmitChanges();
                     return true;
                 }
-                return false; // Không tìm thấy cơ sở vật chất
+                return false;
             }
         }
-
     }
 }

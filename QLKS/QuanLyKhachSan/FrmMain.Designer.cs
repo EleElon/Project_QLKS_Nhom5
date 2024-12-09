@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSystemButton = new System.Windows.Forms.Panel();
+            this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnDatPhong = new System.Windows.Forms.Button();
+            this.btnKH = new System.Windows.Forms.Button();
             this.btnChamCong = new System.Windows.Forms.Button();
+            this.btnPhong = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDichVu = new System.Windows.Forms.Button();
+            this.btnDoanhThu = new System.Windows.Forms.Button();
             this.btnCSVC = new System.Windows.Forms.Button();
             this.btnLuong = new System.Windows.Forms.Button();
-            this.btnDoanhThu = new System.Windows.Forms.Button();
-            this.btnDichVu = new System.Windows.Forms.Button();
-            this.btnPhong = new System.Windows.Forms.Button();
-            this.btnKH = new System.Windows.Forms.Button();
-            this.btnNhanVien = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.pnlSystemButton = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlSystemButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,6 +73,40 @@
             this.panel1.Size = new System.Drawing.Size(200, 975);
             this.panel1.TabIndex = 2;
             // 
+            // pnlSystemButton
+            // 
+            this.pnlSystemButton.AutoScroll = true;
+            this.pnlSystemButton.Controls.Add(this.btnNhanVien);
+            this.pnlSystemButton.Controls.Add(this.btnDatPhong);
+            this.pnlSystemButton.Controls.Add(this.btnKH);
+            this.pnlSystemButton.Controls.Add(this.btnChamCong);
+            this.pnlSystemButton.Controls.Add(this.btnPhong);
+            this.pnlSystemButton.Controls.Add(this.btnHoaDon);
+            this.pnlSystemButton.Controls.Add(this.btnDichVu);
+            this.pnlSystemButton.Controls.Add(this.btnDoanhThu);
+            this.pnlSystemButton.Controls.Add(this.btnCSVC);
+            this.pnlSystemButton.Controls.Add(this.btnLuong);
+            this.pnlSystemButton.Location = new System.Drawing.Point(3, 142);
+            this.pnlSystemButton.Name = "pnlSystemButton";
+            this.pnlSystemButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pnlSystemButton.Size = new System.Drawing.Size(189, 491);
+            this.pnlSystemButton.TabIndex = 0;
+            this.pnlSystemButton.Scroll += new System.Windows.Forms.ScrollEventHandler(this.pnlSystemButton_Scroll);
+            this.pnlSystemButton.Resize += new System.EventHandler(this.pnlSystemButton_Resize);
+            // 
+            // btnNhanVien
+            // 
+            this.btnNhanVien.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.Location = new System.Drawing.Point(2, 2);
+            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.Size = new System.Drawing.Size(163, 68);
+            this.btnNhanVien.TabIndex = 0;
+            this.btnNhanVien.Text = "Nhân viên";
+            this.btnNhanVien.UseVisualStyleBackColor = false;
+            this.btnNhanVien.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnDatPhong
             // 
             this.btnDatPhong.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -84,6 +119,19 @@
             this.btnDatPhong.Text = "Đặt Phòng";
             this.btnDatPhong.UseVisualStyleBackColor = false;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
+            // 
+            // btnKH
+            // 
+            this.btnKH.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKH.Location = new System.Drawing.Point(2, 73);
+            this.btnKH.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKH.Name = "btnKH";
+            this.btnKH.Size = new System.Drawing.Size(163, 64);
+            this.btnKH.TabIndex = 1;
+            this.btnKH.Text = "Khách Hàng";
+            this.btnKH.UseVisualStyleBackColor = false;
+            this.btnKH.Click += new System.EventHandler(this.btnKH_Click);
             // 
             // btnChamCong
             // 
@@ -98,6 +146,19 @@
             this.btnChamCong.UseVisualStyleBackColor = false;
             this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
             // 
+            // btnPhong
+            // 
+            this.btnPhong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhong.Location = new System.Drawing.Point(2, 140);
+            this.btnPhong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPhong.Name = "btnPhong";
+            this.btnPhong.Size = new System.Drawing.Size(163, 64);
+            this.btnPhong.TabIndex = 5;
+            this.btnPhong.Text = "Phòng";
+            this.btnPhong.UseVisualStyleBackColor = false;
+            this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
+            // 
             // btnHoaDon
             // 
             this.btnHoaDon.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -111,16 +172,31 @@
             this.btnHoaDon.UseVisualStyleBackColor = false;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
-            // pictureBox1
+            // btnDichVu
             // 
-            this.pictureBox1.Image = global::QuanLyKhachSan.Properties.Resources.hotel_overview_16853296561;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(191, 188);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.btnDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDichVu.Location = new System.Drawing.Point(2, 275);
+            this.btnDichVu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDichVu.Name = "btnDichVu";
+            this.btnDichVu.Size = new System.Drawing.Size(163, 64);
+            this.btnDichVu.TabIndex = 5;
+            this.btnDichVu.Text = "Dịch vụ";
+            this.btnDichVu.UseVisualStyleBackColor = false;
+            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
+            // 
+            // btnDoanhThu
+            // 
+            this.btnDoanhThu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanhThu.Location = new System.Drawing.Point(1, 477);
+            this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Size = new System.Drawing.Size(163, 64);
+            this.btnDoanhThu.TabIndex = 6;
+            this.btnDoanhThu.Text = "Thong Ke";
+            this.btnDoanhThu.UseVisualStyleBackColor = false;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
             // 
             // btnCSVC
             // 
@@ -148,70 +224,16 @@
             this.btnLuong.UseVisualStyleBackColor = false;
             this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
             // 
-            // btnDoanhThu
+            // pictureBox1
             // 
-            this.btnDoanhThu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoanhThu.Location = new System.Drawing.Point(1, 477);
-            this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDoanhThu.Name = "btnDoanhThu";
-            this.btnDoanhThu.Size = new System.Drawing.Size(163, 64);
-            this.btnDoanhThu.TabIndex = 6;
-            this.btnDoanhThu.Text = "Doanh Thu";
-            this.btnDoanhThu.UseVisualStyleBackColor = false;
-            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
-            // 
-            // btnDichVu
-            // 
-            this.btnDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDichVu.Location = new System.Drawing.Point(2, 275);
-            this.btnDichVu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Size = new System.Drawing.Size(163, 64);
-            this.btnDichVu.TabIndex = 5;
-            this.btnDichVu.Text = "Dịch vụ";
-            this.btnDichVu.UseVisualStyleBackColor = false;
-            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
-            // 
-            // btnPhong
-            // 
-            this.btnPhong.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhong.Location = new System.Drawing.Point(2, 140);
-            this.btnPhong.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPhong.Name = "btnPhong";
-            this.btnPhong.Size = new System.Drawing.Size(163, 64);
-            this.btnPhong.TabIndex = 5;
-            this.btnPhong.Text = "Phòng";
-            this.btnPhong.UseVisualStyleBackColor = false;
-            this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
-            // 
-            // btnKH
-            // 
-            this.btnKH.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKH.Location = new System.Drawing.Point(2, 73);
-            this.btnKH.Margin = new System.Windows.Forms.Padding(2);
-            this.btnKH.Name = "btnKH";
-            this.btnKH.Size = new System.Drawing.Size(163, 64);
-            this.btnKH.TabIndex = 1;
-            this.btnKH.Text = "Khách Hàng";
-            this.btnKH.UseVisualStyleBackColor = false;
-            this.btnKH.Click += new System.EventHandler(this.btnKH_Click);
-            // 
-            // btnNhanVien
-            // 
-            this.btnNhanVien.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhanVien.Location = new System.Drawing.Point(2, 2);
-            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(163, 68);
-            this.btnNhanVien.TabIndex = 0;
-            this.btnNhanVien.Text = "Nhân viên";
-            this.btnNhanVien.UseVisualStyleBackColor = false;
-            this.btnNhanVien.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.Image = global::QuanLyKhachSan.Properties.Resources.hotel_overview_16853296561;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(191, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // pnMain
             // 
@@ -224,27 +246,6 @@
             this.pnMain.Size = new System.Drawing.Size(753, 857);
             this.pnMain.TabIndex = 4;
             // 
-            // pnlSystemButton
-            // 
-            this.pnlSystemButton.AutoScroll = true;
-            this.pnlSystemButton.Controls.Add(this.btnNhanVien);
-            this.pnlSystemButton.Controls.Add(this.btnDatPhong);
-            this.pnlSystemButton.Controls.Add(this.btnKH);
-            this.pnlSystemButton.Controls.Add(this.btnChamCong);
-            this.pnlSystemButton.Controls.Add(this.btnPhong);
-            this.pnlSystemButton.Controls.Add(this.btnHoaDon);
-            this.pnlSystemButton.Controls.Add(this.btnDichVu);
-            this.pnlSystemButton.Controls.Add(this.btnDoanhThu);
-            this.pnlSystemButton.Controls.Add(this.btnCSVC);
-            this.pnlSystemButton.Controls.Add(this.btnLuong);
-            this.pnlSystemButton.Location = new System.Drawing.Point(3, 195);
-            this.pnlSystemButton.Name = "pnlSystemButton";
-            this.pnlSystemButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.pnlSystemButton.Size = new System.Drawing.Size(189, 438);
-            this.pnlSystemButton.TabIndex = 0;
-            this.pnlSystemButton.Scroll += new System.Windows.Forms.ScrollEventHandler(this.pnlSystemButton_Scroll);
-            this.pnlSystemButton.Resize += new System.EventHandler(this.pnlSystemButton_Resize);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +256,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
@@ -262,8 +264,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlSystemButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

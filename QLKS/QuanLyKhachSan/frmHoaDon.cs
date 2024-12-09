@@ -36,22 +36,17 @@ namespace QuanLiKhachSan_Nhom5
             dgvHoaDon.DataSource = busHoaDon.HienThi();
             var danhSachPhong = busPhong.Xem();
 
-            // Gán dữ liệu vào Combobox
             ccbMaDP.DataSource = danhSachPhong;
-            ccbMaDP.DisplayMember = "MaPhong"; // Cột hiển thị
-            ccbMaDP.ValueMember = "MaPhong";   // Giá trị cần lấy
+            ccbMaDP.DisplayMember = "MaPhong";
+            ccbMaDP.ValueMember = "MaPhong";
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             txtThanhTien.Enabled = false;
             LoadView();
-            dgvHoaDon.Columns["DanhSachSuDungDichVu"].Visible = false;
-            dgvHoaDon.Columns["DatPhong"].Visible = false;
-            dgvHoaDon.Columns["HoaDon"].Visible = false;
             List<DanhSachSuDungDichVu> DSDV = BUS_DanhSachDichVu.Instance.LayDanhSachSuDungDichVu();
             ccbMaSDDV.DataSource = DSDV;
-            ccbMaSDDV.DisplayMember = "MaSuDungDichVu"; // Hiển thị tên loại phòng trong ComboBox
-
+            ccbMaSDDV.DisplayMember = "MaSuDungDichVu";
         }
         public void LengthData()
         {
@@ -62,7 +57,6 @@ namespace QuanLiKhachSan_Nhom5
             bool isValid = true;
             errorProvider.Clear();
 
-            // Tạo danh sách các điều khiển cần kiểm tra
             var controlsToValidate = new Dictionary<Control, string>
     {
         { txtPhuThu, "Phụ thu không được để trống" },
@@ -75,7 +69,6 @@ namespace QuanLiKhachSan_Nhom5
         { cboPTTT, "Hình thức thanh toán không được để trống" }
     };
 
-            // Duyệt qua các điều khiển và thiết lập lỗi nếu trống
             foreach (var control in controlsToValidate)
             {
                 if (string.IsNullOrWhiteSpace(control.Key.Text))
@@ -84,7 +77,6 @@ namespace QuanLiKhachSan_Nhom5
                     isValid = false;
                 }
             }
-
             return isValid;
         }
 
@@ -101,14 +93,12 @@ namespace QuanLiKhachSan_Nhom5
             }
             try
             {
-
                 float phuThu = float.Parse(txtPhuThu.Text);
                 float tienDichVu = float.Parse(txtTienDichVu.Text);
                 float giamGiaKH = float.Parse(ccbGiamGia.Text);
                 float tienPhong = float.Parse(txtTienPhong.Text);
                 float soNgay = float.Parse(txtSoNgayThue.Text);
                 float thanhTien = (phuThu + tienDichVu + (tienPhong * soNgay)) * (1 - giamGiaKH / 100);
-
 
                 DAO.ChiTietHoaDon chiTietHoaDonMoi = new DAO.ChiTietHoaDon
                 {
@@ -146,14 +136,10 @@ namespace QuanLiKhachSan_Nhom5
         {
             try
             {
-                // Lấy mã phòng từ combobox
                 string maPhong = ccbMaDP.SelectedValue?.ToString();
 
-
-                // Gọi BUS để lấy giá tiền
                 double giaTien = busPhong.LayGiaTienTheoMaPhong(maPhong);
 
-                // Hiển thị giá tiền lên TextBox
                 txtTienPhong.Text = giaTien.ToString();
 
                 if (!string.IsNullOrEmpty(maPhong))
@@ -163,10 +149,10 @@ namespace QuanLiKhachSan_Nhom5
                 }
                 else
                 {
-                    txtSoNgayThue.Text = "0"; // Nếu không chọn phòng, hiển thị 0
+                    txtSoNgayThue.Text = "0";
                 }
                 string maDV = ccbMaSDDV.Text;
-                
+
                 txtTienDichVu.Text = busDichVu.LayGiaDV(maDV).ToString();
             }
             catch (Exception ex)
@@ -344,7 +330,6 @@ namespace QuanLiKhachSan_Nhom5
         {
             try
             {
-                // Lấy dữ liệu từ các TextBox và ComboBox
                 string maHoaDon = txtMaHD.Text;
                 string maDatPhong = ccbMaDP.Text;
                 string maSuDungDichVu = ccbMaSDDV.Text;
@@ -355,10 +340,8 @@ namespace QuanLiKhachSan_Nhom5
                 string hinhThucThanhToan = cboPTTT.Text;
                 float soNgay = float.Parse(txtSoNgayThue.Text);
 
-                // Tính ThanhTien
                 float thanhTien = (tienPhong * soNgay + tienDichVu + phuThu) * (1 - giamGiaKH / 100);
 
-                // Tạo đối tượng ChiTietHoaDon mới
                 DAO.ChiTietHoaDon chiTietHoaDonMoi = new DAO.ChiTietHoaDon
                 {
                     MaHoaDon = maHoaDon,
@@ -373,13 +356,12 @@ namespace QuanLiKhachSan_Nhom5
                     ThanhTien = thanhTien
                 };
 
-                // Gọi hàm sửa từ lớp BUS
                 bool ketQua = busHoaDon.SuaChiTietHoaDon(chiTietHoaDonMoi);
 
                 if (ketQua)
                 {
                     MessageBox.Show("Sửa chi tiết hóa đơn thành công!");
-                    LoadView(); // Cập nhật lại dữ liệu trên form nếu cần
+                    LoadView();
                 }
                 else
                 {
@@ -394,7 +376,7 @@ namespace QuanLiKhachSan_Nhom5
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-           frmRptHoaDonn frmRptHoaDonn = new frmRptHoaDonn();
+            frmRptHoaDonn frmRptHoaDonn = new frmRptHoaDonn();
             frmRptHoaDonn.ShowDialog();
         }
 

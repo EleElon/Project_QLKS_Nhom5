@@ -9,25 +9,11 @@ namespace BUS
 {
     public class BUS_DangNhap
     {
-        //private static BUS_DangNhap instance;
-        //public static BUS_DangNhap Instance
-        //{
-        //    get
-        //    {
-        //        if (instance == null)
-        //        {
-        //            instance = new BUS_DangNhap();
-        //        }
-        //        return instance;
-        //    }
-        //}
-        //private BUS_DangNhap() { }
-
         DAO_DangNhap dao_dangNhap = new DAO_DangNhap();
 
-        public bool CheckDangNhap(string usename,string pass)
+        public bool CheckDangNhap(string usename, string pass)
         {
-           return dao_dangNhap.CheckLogin(usename, pass);
+            return dao_dangNhap.CheckLogin(usename, pass);
         }
     }
 }

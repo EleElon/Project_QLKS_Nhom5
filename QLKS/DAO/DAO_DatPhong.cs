@@ -29,21 +29,21 @@ namespace DAO
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var datphong = (from dv in db.ChiTietDatPhongs
-                              select new
-                              {
-                                  dv.MaChiTietDatPhong,
-                                  dv.MaDatPhong,
-                                  dv.MaKhachHang,
-                                  dv.MaPhong,
-                                  dv.MaLoaiPhong,
-                                  dv.TinhTrang,
-                                  dv.GiaMoiDem,
-                                  dv.SoLuongPhong,
-                                  dv.TongGia,
-                                  dv.PhuongThucThanhToan,
-                                  dv.NgayNhanPhong,
-                                  dv.NgayTraPhong
-                              }).ToList();
+                                select new
+                                {
+                                    dv.MaChiTietDatPhong,
+                                    dv.MaDatPhong,
+                                    dv.MaKhachHang,
+                                    dv.MaPhong,
+                                    dv.MaLoaiPhong,
+                                    dv.TinhTrang,
+                                    dv.GiaMoiDem,
+                                    dv.SoLuongPhong,
+                                    dv.TongGia,
+                                    dv.PhuongThucThanhToan,
+                                    dv.NgayNhanPhong,
+                                    dv.NgayTraPhong
+                                }).ToList();
 
                 foreach (var item in datphong)
                 {
@@ -54,9 +54,9 @@ namespace DAO
                     datp.MaPhong = item.MaPhong;
                     datp.MaLoaiPhong = item.MaLoaiPhong;
                     datp.TinhTrang = item.TinhTrang;
-                    datp.GiaMoiDem = item.GiaMoiDem;    
+                    datp.GiaMoiDem = item.GiaMoiDem;
                     datp.SoLuongPhong = item.SoLuongPhong;
-                    datp.TongGia = item.TongGia;    
+                    datp.TongGia = item.TongGia;
                     datp.PhuongThucThanhToan = item.PhuongThucThanhToan;
                     datp.NgayNhanPhong = item.NgayNhanPhong;
                     datp.NgayTraPhong = item.NgayTraPhong;
@@ -65,36 +65,30 @@ namespace DAO
                 }
             }
             return data;
-           
         }
         public List<DatPhong> XemDatPhong()
         {
-
             List<DatPhong> data = new List<DatPhong>();
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var datphong = (from dv in db.DatPhongs
                                 select new
                                 {
-                                 
                                     dv.MaDatPhong,
                                     dv.MaKhachHang,
-                                   
                                 }).ToList();
 
                 foreach (var item in datphong)
                 {
                     DatPhong datp = new DatPhong();
-                  
+
                     datp.MaDatPhong = item.MaDatPhong;
                     datp.MaKhachHang = item.MaKhachHang;
-                
 
                     data.Add(datp);
                 }
             }
             return data;
-
         }
 
         public void LoadTenKhachhangODatPhong(ComboBox cb)
@@ -109,7 +103,6 @@ namespace DAO
                                ma.TenKhachHang
                            };
 
-
                 foreach (var item in maKH)
                 {
                     dp.Add(item.MaKhachHang, item.TenKhachHang);
@@ -123,7 +116,7 @@ namespace DAO
 
         public void LoadComBoBoxDatPhong(ComboBox cb)
         {
-            cb.Items.Clear(); // Clear existing items to avoid duplication
+            cb.Items.Clear();
 
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -132,7 +125,7 @@ namespace DAO
 
                 foreach (var item in maDPhong)
                 {
-                    cb.Items.Add(item); // Add each item individually
+                    cb.Items.Add(item);
                 }
             }
         }
@@ -146,49 +139,41 @@ namespace DAO
                 {
                     var tkh = db.KhachHangs.FirstOrDefault(x => x.TenKhachHang == tenKH);
                     b = tkh.MaKhachHang;
-                }                  
+                }
                 return b;
-
             }
         }
 
 
-        public void LoadDGVFormDatPhong( TextBox maDatPhong, ComboBox maKH, DataGridView data)
+        public void LoadDGVFormDatPhong(TextBox maDatPhong, ComboBox maKH, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var rowIndex = data.SelectedCells[0].RowIndex;
                 var row = data.Rows[rowIndex];
-                  maDatPhong.Text = row.Cells[0].Value.ToString().Trim();
+                maDatPhong.Text = row.Cells[0].Value.ToString().Trim();
                 maKH.SelectedValue = row.Cells[1].Value.ToString().Trim();
-             
-             
             }
         }
-
 
         public void ThemDP(DatPhong dv)
         {
             try
             {
-                // Kiểm tra mã khách hàng đã tồn tại hay chưa
                 if (CheckMaSDDVExists(dv.MaDatPhong))
                 {
                     MessageBox.Show("Mã su dung vu đã tồn tại. Vui lòng nhập mã khác.");
-                    return; // Không thực hiện thêm nếu mã đã tồn tại
+                    return;
                 }
 
                 using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-
                     db.DatPhongs.InsertOnSubmit(dv);
                     db.SubmitChanges();
-                  
                 }
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Thêm vào bị lỗi ");
             }
         }
@@ -217,8 +202,6 @@ namespace DAO
                 var maSDDV = db.DatPhongs.SingleOrDefault(a => a.MaDatPhong == maDPP.MaDatPhong);
                 if (maSDDV != null)
                 {
-
-                    
                     maSDDV.MaDatPhong = maDPP.MaDatPhong;
                     maSDDV.MaKhachHang = maDPP.MaKhachHang;
                     db.SubmitChanges();
@@ -230,9 +213,8 @@ namespace DAO
         }
         public bool CheckMaSDDVExists(string maDP)
         {
-            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
+            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                // Sử dụng LINQ để kiểm tra trùng mã
                 return context.DatPhongs.Any(dv => dv.MaDatPhong == maDP);
             }
         }
@@ -247,44 +229,32 @@ namespace DAO
                 return customer ?? "Not Found";
             }
         }
-
-
-
-
         public void LoadComBoBoxLoaiPhongg(ComboBox cb, string maphong, TextBox tinhtrang, TextBox gia)
         {
-            // Initialize the dictionary for data binding.
             Dictionary<string, string> dp = new Dictionary<string, string>();
 
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                // Query the database to get room details.
                 var result = (from dp1 in db.ChiTietDatPhongs
                               join kh in db.Phongs on dp1.MaPhong equals kh.MaPhong
                               join loai in db.LoaiPhongs on kh.MaLoaiPhong equals loai.MaLoaiPhong
                               where dp1.MaPhong == maphong
                               select new { loai.TenLoaiPhong, kh.TinhTrang, loai.MaLoaiPhong, loai.Gia }).FirstOrDefault();
 
-                // Check if a result was found.
                 if (result != null)
                 {
-                    // Add the result to the dictionary.
                     dp.Add(result.MaLoaiPhong, result.TenLoaiPhong);
 
-                    // Bind the dictionary to the ComboBox.
                     cb.DataSource = new BindingSource(dp, null);
                     cb.DisplayMember = "Value";
                     cb.ValueMember = "Key";
 
-                    // Set the TextBox value for room status.
                     tinhtrang.Text = result.TinhTrang;
 
-                    // Set the TextBox value for room price.
-                    gia.Text = result.Gia.ToString(); // Format the price as currency
+                    gia.Text = result.Gia.ToString();
                 }
                 else
                 {
-                    // If no result is found, clear the ComboBox and TextBox.
                     cb.DataSource = null;
                     tinhtrang.Clear();
                     gia.Clear();
@@ -299,11 +269,10 @@ namespace DAO
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var maDPhong = from ma in db.Phongs
-                                select ma.MaPhong;
-                // Loại bỏ các phần tử trùng lặp
+                               select ma.MaPhong;
                 dp = maDPhong.Distinct().ToList();
-                cb.DataSource = dp;  // Gán trực tiếp List<string> vào DataSource
-                                     // Set SelectedIndex to 0 only if there are items in the list
+                cb.DataSource = dp;
+
                 if (dp.Count > 0)
                 {
                     cb.SelectedIndex = 0;
@@ -311,7 +280,7 @@ namespace DAO
             }
         }
 
-        public void LoadDGVFormCTDatPhong(TextBox ma, ComboBox maDP, ComboBox maKH, ComboBox maP, ComboBox maL, TextBox tinhTrang,TextBox gia,TextBox soLuong,TextBox tong,ComboBox pttt,DateTimePicker ngayNhan,DateTimePicker ngayTra, DataGridView data)
+        public void LoadDGVFormCTDatPhong(TextBox ma, ComboBox maDP, ComboBox maKH, ComboBox maP, ComboBox maL, TextBox tinhTrang, TextBox gia, TextBox soLuong, TextBox tong, ComboBox pttt, DateTimePicker ngayNhan, DateTimePicker ngayTra, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -323,21 +292,21 @@ namespace DAO
                 var mkh = row.Cells[2].Value.ToString();
                 var a = db.KhachHangs.FirstOrDefault(x => x.MaKhachHang == mkh);
                 maKH.Text = a.TenKhachHang.ToString();
-                maP.Text = row.Cells[3].Value.ToString().Trim() ;
+                maP.Text = row.Cells[3].Value.ToString().Trim();
                 maL.Text = row.Cells[4].Value != null ? row.Cells[4].Value.ToString().Trim() : null;
                 tinhTrang.Text = row.Cells[5].Value.ToString().Trim();
                 gia.Text = row.Cells[6].Value.ToString().Trim();
                 soLuong.Text = row.Cells[7].Value.ToString().Trim();
                 tong.Text = row.Cells[8].Value.ToString().Trim();
                 pttt.Text = row.Cells[9].Value.ToString().Trim();
-                // Parse the date fields safely
+
                 if (DateTime.TryParse(row.Cells[10].Value?.ToString(), out DateTime ngayNhanValue))
                 {
                     ngayNhan.Value = ngayNhanValue;
                 }
                 else
                 {
-                    ngayNhan.Value = DateTime.Now; // Set a default date if parsing fails
+                    ngayNhan.Value = DateTime.Now;
                 }
 
                 if (DateTime.TryParse(row.Cells[11].Value?.ToString(), out DateTime ngayTraValue))
@@ -357,16 +326,13 @@ namespace DAO
             {
                 using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-                   
-                    // Thêm chi tiết đặt phòng vào cơ sở dữ liệu
                     db.ChiTietDatPhongs.InsertOnSubmit(chiTiet);
                     db.SubmitChanges();
-                  
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-                MessageBox.Show("Thêm chi tiết đặt phòng bị lỗi: " );
+                MessageBox.Show("Thêm chi tiết đặt phòng bị lỗi: ");
             }
         }
         public void Xoa(string maCTDP)
@@ -392,22 +358,21 @@ namespace DAO
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 string b = "";
-                var a = db.KhachHangs.FirstOrDefault(x=> x.TenKhachHang == tenKH);
+                var a = db.KhachHangs.FirstOrDefault(x => x.TenKhachHang == tenKH);
                 b = a.MaKhachHang;
                 return b;
             }
         }
 
-        // Method to get room status by room ID
         public string GetRoomStatusById(string maPhong)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var room = db.Phongs.FirstOrDefault(p => p.MaPhong == maPhong);
-                return room?.TinhTrang;  // Returns the room status or null if not found
+                return room?.TinhTrang;
             }
         }
-        // Phương thức lấy giá phòng từ mã loại phòng
+
         public decimal GetRoomPrice(string roomCode)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
@@ -416,39 +381,36 @@ namespace DAO
                              .Where(p => p.MaLoaiPhong == roomCode)
                              .FirstOrDefault();
 
-                return room != null ? (decimal)room.Gia : 0; // Trả về 0 nếu không tìm thấy
+                return room != null ? (decimal)room.Gia : 0;
             }
         }
-        // Tính tổng giá bằng cách nhân giá phòng với số lượng phòng
+
         public decimal CalculateTotalPrice(string roomCode, int quantity)
         {
-            decimal roomPrice = decimal.Parse(roomCode); // Lấy giá phòng từ phương thức GetRoomPrice
-            return roomPrice * quantity; // Tính tổng giá
+            decimal roomPrice = decimal.Parse(roomCode);
+            return roomPrice * quantity;
         }
         public bool Sua(ChiTietDatPhong ct)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                
                 var ctdp = db.ChiTietDatPhongs.SingleOrDefault(a => a.MaChiTietDatPhong == ct.MaChiTietDatPhong);
                 if (ctdp != null)
                 {
-
                     ctdp.MaDatPhong = ct.MaDatPhong;
                     ctdp.MaKhachHang = ct.MaKhachHang;
                     ctdp.MaPhong = ct.MaPhong;
                     ctdp.MaLoaiPhong = ct.MaLoaiPhong;
                     ctdp.TinhTrang = ct.TinhTrang;
-                    ctdp.GiaMoiDem  = ct.GiaMoiDem;
+                    ctdp.GiaMoiDem = ct.GiaMoiDem;
                     ctdp.SoLuongPhong = ct.SoLuongPhong;
-                    ctdp.TongGia=ct.TongGia;
+                    ctdp.TongGia = ct.TongGia;
                     ctdp.PhuongThucThanhToan = ct.PhuongThucThanhToan;
                     ctdp.NgayNhanPhong = ct.NgayNhanPhong;
                     ctdp.NgayTraPhong = ct.NgayTraPhong;
 
-                   
                     db.SubmitChanges();
-                     MessageBox.Show("Sửa thành công");
+                    MessageBox.Show("Sửa thành công");
                     return true;
                 }
                 else
@@ -480,15 +442,11 @@ namespace DAO
 
                 if (chiTiet != null)
                 {
-                    // Tính số ngày thuê (Ngày trả - Ngày bắt đầu)
-                    TimeSpan soNgayThue = (TimeSpan)(chiTiet.NgayTra - chiTiet.NgayBatDau); // Không dùng .Date
-                    return soNgayThue.Days > 0 ? soNgayThue.Days : 0; // Trả về số ngày (nếu âm, trả về 0)
+                    TimeSpan soNgayThue = (TimeSpan)(chiTiet.NgayTra - chiTiet.NgayBatDau);
+                    return soNgayThue.Days > 0 ? soNgayThue.Days : 0;
                 }
-                return 0; // Nếu không tìm thấy dữ liệu, trả về 0
+                return 0;
             }
         }
-
-
-
     }
 }

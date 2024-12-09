@@ -33,16 +33,15 @@ namespace QuanLyKhachSan
 
             cboThang.SelectedItem = 0;
 
-            nudNam.Minimum = 1900; // Năm nhỏ nhất
-            nudNam.Maximum = DateTime.Now.Year; // Năm lớn nhất là năm hiện tại
-            nudNam.Value = DateTime.Now.Year; // Mặc định là năm hiện tại
-            nudNam.Increment = 1; // Tăng/giảm từng năm
+            nudNam.Minimum = 1900;
+            nudNam.Maximum = DateTime.Now.Year;
+            nudNam.Value = DateTime.Now.Year;
+            nudNam.Increment = 1;
 
             dtpNgayCham.MaxDate = DateTime.Now;
             dtpNgayCham.MinDate = new DateTime(2000, 1, 1);
 
             nudSoNgayLam.Minimum = 0;
-            //nudSoNgayLam.Maximum = 31;
             nudSoNgayLam.Value = 0;
             nudSoNgayLam.Increment = 1;
         }
@@ -68,7 +67,6 @@ namespace QuanLyKhachSan
             dtpNgayCham.Text = string.Empty;
             txtGhiChu.Text = string.Empty;
 
-            //set validate == null
             errorProvider.SetError(txtMaChamCong, "");
             errorProvider.SetError(txtTenBangChamCong, "");
             errorProvider.SetError(nudSoNgayLam, "");
@@ -345,10 +343,8 @@ namespace QuanLyKhachSan
 
         private void cboThang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Lấy giá trị tháng được chọn trong ComboBox
             int selectedMonth = Convert.ToInt32(cboThang.SelectedItem);
 
-            // Thiết lập Maximum cho NumericUpDown theo tháng được chọn
             switch (selectedMonth)
             {
                 case 1:
@@ -373,7 +369,7 @@ namespace QuanLyKhachSan
                     break;
 
                 default:
-                    nudSoNgayLam.Maximum = 30; // Giá trị mặc định nếu tháng không hợp lệ
+                    nudSoNgayLam.Maximum = 30;
                     break;
             }
         }

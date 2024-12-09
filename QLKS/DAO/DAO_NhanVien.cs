@@ -169,10 +169,6 @@ namespace DAO
                     {
                         ngaySinh.Value = parsedNgaySinh;
                     }
-                    //else
-                    //{
-                    //    ngaySinh.Value = DateTime.Now; // Hoặc giá trị mặc định nếu không hợp lệ
-                    //}
 
                     SDT.Text = row.Cells[5].Value.ToString().Trim();
                     chucVu.Text = row.Cells[6].Value.ToString().Trim();

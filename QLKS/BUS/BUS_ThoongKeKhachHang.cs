@@ -26,7 +26,7 @@ namespace BUS
 
         public void HienThi(DataGridView data, string ngay, string den)
         {
-            data.DataSource = DAO_ThongKeKhachHang.Instance.Xem(ngay,den);
+            data.DataSource = DAO_ThongKeKhachHang.Instance.Xem(ngay, den);
         }
     }
 }

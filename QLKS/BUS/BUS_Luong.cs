@@ -27,10 +27,6 @@ namespace BUS
 
         DAO_Luong dao_luong = new DAO_Luong();
 
-        //public bool ThemLuong(string maLuong, string maNV, int thang, float soTien)
-        //{
-        //    return dao_luong.ThemLuong(maLuong, maNV, thang, soTien);
-        //}
         public void ThemLuong(TextBox maLuong, ComboBox maCham, ComboBox maNV, TextBox thang, TextBox nam, TextBox soNgayLamViec, TextBox soGioTangCa, TextBox luongCoBan, TextBox phuCap, TextBox thuong, TextBox khauTru, TextBox tongLuong, DateTimePicker ngayTinhLuong)
         {
             Luong l = new Luong

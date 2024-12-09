@@ -49,13 +49,12 @@ namespace BUS
         {
             DAO_DanhSachDichVu.Instance.LoadComBoBoxDichVu(cb);
         }
-        public void LoadDGVLenForm(TextBox ma, ComboBox maDV, ComboBox maDP, TextBox soLuong,TextBox gia, DataGridView data)
+        public void LoadDGVLenForm(TextBox ma, ComboBox maDV, ComboBox maDP, TextBox soLuong, TextBox gia, DataGridView data)
         {
-            DAO_DanhSachDichVu.Instance.LoadDGVForm(ma, maDV, maDP, soLuong,gia, data);
+            DAO_DanhSachDichVu.Instance.LoadDGVForm(ma, maDV, maDP, soLuong, gia, data);
         }
-        public void Them(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong,TextBox gia)
+        public void Them(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong, TextBox gia)
         {
-
             DanhSachSuDungDichVu sd = new DanhSachSuDungDichVu
             {
                 MaSuDungDichVu = maSDDichVu.Text,
@@ -63,10 +62,7 @@ namespace BUS
                 MaDatPhong = maDatPhong.Text,
                 SoLuong = int.Parse(soLuong.Text),
                 Gia = float.Parse(gia.Text)
-
-
             };
-
             DAO_DanhSachDichVu.Instance.Them(sd);
         }
         public void Xoa(TextBox maSD)
@@ -81,10 +77,10 @@ namespace BUS
                 MaDichVu = maDichVu.SelectedValue.ToString(),
                 MaDatPhong = maDatPhong.Text,
                 SoLuong = int.Parse(soLuong.Text),
-                Gia=float.Parse(gia.Text)
+                Gia = float.Parse(gia.Text)
             };
 
-            bool result = DAO_DanhSachDichVu.Instance.Sua(dsdv); // Capture the result
+            bool result = DAO_DanhSachDichVu.Instance.Sua(dsdv);
             if (result)
             {
                 MessageBox.Show("Sửa thành công!");
@@ -94,15 +90,14 @@ namespace BUS
                 MessageBox.Show("Danh sach sử dụng dịch vụ không tồn tại hoặc sửa thất bại!");
             }
         }
-        // Phương thức gọi DAL để kiểm tra trùng mã sử dụng dịch vụ
+
         public bool CheckMaSDDVExists(string maSDDV)
         {
             return DAO_DanhSachDichVu.Instance.CheckMaSDDVExists(maSDDV);
         }
-        // Method to call DAL and retrieve the data
+
         public List<DanhSachSuDungDichVu> LayDanhSachSuDungDichVu()
         {
-            // Here, you could add additional business logic if necessary
             return DAO_DanhSachDichVu.Instance.HienThi();
         }
         public double LayGiaDV(string maSDDV)

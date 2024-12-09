@@ -427,6 +427,21 @@ VALUES
 ('SDDV015', 'DV003', 'DP006', 1,3000000);
 GO
 
+select * from ChiTietHoaDon
+INSERT INTO ChiTietHoaDon(MaHoaDon,MaDatPhong,MaSuDungDichVu,PhuThu,TienPhong,TienDichVu,GiamGiaKH,HinhThucThanhToan,SoNgay,ThanhTien)
+VALUES 
+('HD02','P001','SDDV002',1000,500000,1200000,0,'Tien Mat',3,3099888),
+('HD03', 'P002', 'SDDV003', 2000, 800000, 3600000, 50000, 'Tien Mat', 2, 5192000),
+('HD04', 'P003', 'SDDV004', 1500, 500000, 1200000, 100000, 'Tin Dung Ngan Hang', 4, 2215000),
+('HD05', 'P004', 'SDDV005', 1000, 1500000, 3000000, 0, 'Tien Mat', 3, 7501000),
+('HD06', 'P005', 'SDDV006', 3000, 800000, 300000, 20000, 'Tin Dung Ngan Hang', 5, 4303000),
+('HD07', 'P006', 'SDDV007', 2500, 1500000, 300000, 5000, 'Tien Mat', 1, 1802500),
+('HD08', 'P007', 'SDDV008', 4000, 1200000, 300000, 100000, 'Tien Mat', 6, 7594000),
+('HD09', 'P008', 'SDDV009', 500, 2500000, 300000, 20000, 'Tin Dung Ngan Hang', 2, 5299500),
+('HD10', 'P009', 'SDDV010', 2000, 1200000, 300000, 50000, 'Tien Mat', 7, 8907000);
+
+
+
 
 INSERT INTO CoSoVatChat (MaPhong, MaCoSoVatChat, TenCoSoVatChat, MoTa)
 VALUES 
@@ -464,7 +479,17 @@ VALUES
 ('L002', 'CC002', 'NV002', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
 ('L003', 'CC003', 'NV003', 9, 2024, 29, 2, 7000000, 0, 0, 200000, 7920000, '2024-09-18'),
 ('L004', 'CC004', 'NV004', 9, 2024, 30, 1, 7000000, 0, 0, 0, 7850000, '2024-09-18'),
-('L005', 'CC005', 'NV005', 9, 2024, 28, 1, 7000000, 0, 0, 400000, 7760000, '2024-09-18');
+('L005', 'CC005', 'NV005', 9, 2024, 28, 1, 7000000, 0, 0, 400000, 7760000, '2024-09-18'),
+('L006', 'CC006', 'NV006', 9, 2024, 25, 0, 8000000, 500000, 300000, 100000, 8700000, '2024-09-20'),
+('L007', 'CC007', 'NV007', 9, 2024, 27, 3, 7500000, 300000, 100000, 200000, 7950000, '2024-09-21'),
+('L008', 'CC008', 'NV008', 9, 2024, 30, 4, 8000000, 0, 500000, 100000, 8600000, '2024-09-22'),
+('L009', 'CC009', 'NV009', 9, 2024, 29, 2, 7000000, 200000, 0, 0, 7400000, '2024-09-23'),
+('L010', 'CC010', 'NV010', 9, 2024, 28, 0, 6500000, 100000, 200000, 150000, 6750000, '2024-09-24'),
+('L011', 'CC007', 'NV001', 10, 2024, 31, 1, 7500000, 0, 300000, 500000, 7300000, '2024-10-18'),
+('L012', 'CC001', 'NV002', 10, 2024, 30, 2, 8000000, 400000, 100000, 300000, 8200000, '2024-10-19'),
+('L013', 'CC003', 'NV003', 10, 2024, 29, 1, 7000000, 0, 200000, 100000, 7100000, '2024-10-20'),
+('L014', 'CC002', 'NV004', 10, 2024, 30, 3, 8000000, 500000, 300000, 200000, 8700000, '2024-10-21'),
+('L015', 'CC006', 'NV005', 10, 2024, 28, 0, 7500000, 200000, 100000, 0, 7800000, '2024-10-22');
 GO
 
 
@@ -499,4 +524,20 @@ join LoaiPhong as lp on ctdp.MaLoaiPhong = lp.MaLoaiPhong
 --join DichVu as dv on ldv.MaLoaiDichVu = dv.MaLoaiDichVu
 where ctdp.NgayNhanPhong BETWEEN '2024-09-19' AND '2024-11-12'
 
+select kh.MaKhachHang,kh.TenKhachHang,kh.Email,kh.DiaChi,kh.CCCD,kh.SDT,ctdp.GiaMoiDem,ctdp.SoLuongPhong,ctdp.TongGia,ctdp.NgayNhanPhong,ctdp.NgayTraPhong from ChiTietDatPhong as ctdp
+join KhachHang as kh on ctdp.MaKhachHang = kh.MaKhachHang
+join Phong as p on ctdp.MaPhong = p.MaPhong
+where ctdp.NgayTraPhong  between '2024-09-19' AND '2024-11-12'
+go
 
+Create Procedure [dbo].[HienThiThongKeKhachHang]
+@TuNgay date,
+@DenNgay date
+as
+begin
+select kh.MaKhachHang,kh.TenKhachHang,kh.Email,kh.DiaChi,kh.CCCD,kh.SDT,ctdp.GiaMoiDem,ctdp.SoLuongPhong,ctdp.TongGia,ctdp.NgayNhanPhong,ctdp.NgayTraPhong from ChiTietDatPhong as ctdp
+join KhachHang as kh on ctdp.MaKhachHang = kh.MaKhachHang
+join Phong as p on ctdp.MaPhong = p.MaPhong
+where ctdp.NgayTraPhong  between @TuNgay  AND @DenNgay
+end
+Go

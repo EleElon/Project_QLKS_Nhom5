@@ -21,8 +21,8 @@ Nguyen Van Than
 After cloning the project, just need to do a few procedures:
 
 
-* Installing the setup file `setup.exe`
-* set database `database QLKS.sql`
-* create `Image` folder in installed folder
+* Installing the setup file `setup.exe` in folder `QLKS_setup/Debug`
+* Set database `database QLKS.sql` -> copy server name
+* Run the application just have been installed -> enter (paste) the server name
 
 Enjoys the app!

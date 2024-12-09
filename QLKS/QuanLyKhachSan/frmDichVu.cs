@@ -16,7 +16,7 @@ namespace QuanLyKhachSan
 {
     public partial class frmDichVu : Form
     {
-        private ErrorProvider errorProvider1 = new ErrorProvider(); // Khai báo ErrorProvider
+        private ErrorProvider errorProvider1 = new ErrorProvider();
         BUS_LoaiDichVu bus_ldv = new BUS_LoaiDichVu();
         BUS_DichVu bus_dv = new BUS_DichVu();
 
@@ -37,12 +37,8 @@ namespace QuanLyKhachSan
 
         private void FormLoaiDichVuDataBinding()
         {
-            txtMaLoaiDV.MaxLength = 10;  // MaLoaiDichVu chỉ cho phép tối đa 10 ký tự
-            txtTenLDV.MaxLength = 50;    // TenLoaiDichVu chỉ cho phép tối đa 50 ký tự
-
-            //txtGia.Validating += new CancelEventHandler(ValidateGia);
-            //txtMaSDDV.Validating += new CancelEventHandler(ValidateMaSDDV);
-            //txtSoLuong.Validating += new CancelEventHandler(ValidateSoLuong);
+            txtMaLoaiDV.MaxLength = 10;
+            txtTenLDV.MaxLength = 50;
         }
 
         private void FormDichVuDataBinding()
@@ -83,9 +79,6 @@ namespace QuanLyKhachSan
         }
         public void LoadDuLieuDV()
         {
-            //var data = bus_dv.View();
-            //dataGridViewDichVu.DataSource = data; // Gán lại nguồn dữ liệu
-            //dataGridViewDichVu.Refresh(); // Làm mới DataGridView
             BUS_DichVu.Instance.Xem(dataGridViewDichVu);
         }
 
@@ -111,7 +104,6 @@ namespace QuanLyKhachSan
         }
         private void dgvSuDungDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             BUS_DanhSachDichVu.Instance.LoadDGVLenForm(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD, dgvSuDungDichVu);
             txtMaSDDV.Enabled = false;
             errorProvider1.SetError(txtMaSDDV, "");
@@ -123,7 +115,6 @@ namespace QuanLyKhachSan
             {
                 BUS_DanhSachDichVu.Instance.Them(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
-                ClearFormFields();
             }
         }
 
@@ -132,41 +123,32 @@ namespace QuanLyKhachSan
             if (ValidateForm())
             {
                 BUS_DanhSachDichVu.Instance.Xoa(txtMaSDDV);
-                ClearFormFields();
                 LoadDuLieuLenForm();
             }
-
         }
-        // Hàm để làm sạch các trường trong form
         private void ClearFormFields()
         {
-            // Form DSLDV
             txtMaSDDV.Enabled = true;
             txtMaSDDV.Text = string.Empty;
             cbMaDichVu.SelectedIndex = 0;
             cbMaDatPhong.SelectedIndex = 0;
             txtSoLuong.Text = string.Empty;
 
-            // Clear các trường khác nếu cần
-            // Form LoaiDichVu
             txtMaLoaiDV.Enabled = true;
             txtMaLoaiDV.Text = string.Empty;
             txtTenLDV.Text = string.Empty;
             cboMaLoaiPhong.SelectedIndex = 0;
 
-            // Form DichVu
             txtMaDV.Enabled = true;
             txtMaDV.Text = string.Empty;
             cbLoaiDichVu.SelectedIndex = 0;
             txtTenDV.Text = string.Empty;
             txtGia.Text = string.Empty;
 
-            // Set null Validate DichVu
             errorProvider1.SetError(txtMaDV, "");
             errorProvider1.SetError(txtTenDV, "");
             errorProvider1.SetError(txtGia, "");
 
-            // Set null Validate LoaiDichVu
             errorProvider1.SetError(txtMaLoaiDV, "");
             errorProvider1.SetError(txtTenLDV, "");
         }
@@ -177,7 +159,6 @@ namespace QuanLyKhachSan
             {
                 BUS_DanhSachDichVu.Instance.Sua(txtMaSDDV, cbMaDichVu, cbMaDatPhong, txtSoLuong, txtGiaSD);
                 LoadDuLieuLenForm();
-                ClearFormFields();
             }
         }
 
@@ -190,59 +171,46 @@ namespace QuanLyKhachSan
         {
             ValidateMaSDDV();
         }
-        // Hàm kiểm tra toàn bộ form
         private bool ValidateForm()
         {
-            ValidateSoLuong(); // Kiểm tra số lượng
-            //ValidateMaSDDV(); // Kiểm tra mã sử dụng dịch vụ
+            ValidateSoLuong();
 
-            // Nếu cả hai không có lỗi thì trả về true, ngược lại là false
             return string.IsNullOrEmpty(errorProvider1.GetError(txtSoLuong)) &&
                    string.IsNullOrEmpty(errorProvider1.GetError(txtMaSDDV));
         }
-        // Hàm kiểm tra giá trị trong txtSoLuong
         private void ValidateSoLuong()
         {
-            if (string.IsNullOrEmpty(txtSoLuong.Text)) // Nếu rỗng
+            if (string.IsNullOrEmpty(txtSoLuong.Text))
             {
-                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số lượng!"); // Đặt lỗi
+                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số lượng!");
             }
-            else if (!int.TryParse(txtSoLuong.Text, out _)) // Nếu không phải là số
+            else if (!int.TryParse(txtSoLuong.Text, out _))
             {
-                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số hợp lệ!"); // Đặt lỗi nếu không phải số
+                errorProvider1.SetError(txtSoLuong, "Vui lòng nhập số hợp lệ!");
             }
             else
             {
-                errorProvider1.SetError(txtSoLuong, ""); // Xóa lỗi nếu hợp lệ
+                errorProvider1.SetError(txtSoLuong, "");
             }
         }
 
-        // Hàm kiểm tra giá trị trong txtMaSDDV
         private void ValidateMaSDDV()
         {
-            if (string.IsNullOrEmpty(txtMaSDDV.Text)) // Nếu rỗng
+            if (string.IsNullOrEmpty(txtMaSDDV.Text))
             {
-                errorProvider1.SetError(txtMaSDDV, "Vui lòng nhập mã sử dụng dịch vụ!"); // Đặt lỗi
+                errorProvider1.SetError(txtMaSDDV, "Vui lòng nhập mã sử dụng dịch vụ!");
             }
-            else if (BUS_DanhSachDichVu.Instance.CheckMaSDDVExists(txtMaSDDV.Text)) // Gọi BUS để kiểm tra trùng mã
+            else if (BUS_DanhSachDichVu.Instance.CheckMaSDDVExists(txtMaSDDV.Text))
             {
-                errorProvider1.SetError(txtMaSDDV, "Mã sử dụng dịch vụ đã tồn tại, vui lòng nhập mã khác!"); // Đặt lỗi khi mã bị trùng
+                errorProvider1.SetError(txtMaSDDV, "Mã sử dụng dịch vụ đã tồn tại, vui lòng nhập mã khác!");
             }
             else
             {
-                errorProvider1.SetError(txtMaSDDV, ""); // Xóa lỗi nếu hợp lệ
+                errorProvider1.SetError(txtMaSDDV, "");
             }
         }
-        /// <summary>
-        /// Validate Form LoaiDichVu
-        /// </summary>
-        /// 
         private bool ValidateFormLoaiDV()
         {
-            //if (txtMaLoaiDV.Enabled)
-            //{
-            //    ValidateMaLDV();
-            //}
             ValidateTenLDV();
 
             return string.IsNullOrEmpty(errorProvider1.GetError(txtMaLoaiDV)) &&
@@ -286,19 +254,8 @@ namespace QuanLyKhachSan
                 errorProvider1.SetError(txtTenLDV, "");
             }
         }
-        //
-        //
-        //
-        /***/
-        /// <summary>
-        /// Validate Form DichVu
-        /// </summary>
         private bool ValidateFormDV()
         {
-            //if (txtMaDV.Enabled)
-            //{
-            //    ValidateMaDV();
-            //}
             ValidateTenDV();
             ValidateGia();
 
@@ -308,12 +265,6 @@ namespace QuanLyKhachSan
         }
         private void ValidateMaDV()
         {
-            //if (!txtMaDV.Enabled)
-            //{
-            //    errorProvider1.SetError(txtMaDV, "");
-            //    return;
-            //}
-
             string pattern = @"^(dv|DV)[0-9]+$";
 
             if (string.IsNullOrEmpty(txtMaDV.Text))
@@ -356,10 +307,6 @@ namespace QuanLyKhachSan
             {
                 errorProvider1.SetError(txtGia, "Vui lòng nhập giá!");
             }
-            //else if (!int.TryParse(txtGia.Text, out _))
-            //{
-            //    errorProvider1.SetError(txtGia, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
-            //}
             else if (!int.TryParse(txtGia.Text, out int gia))
             {
                 errorProvider1.SetError(txtGia, "Vui lòng nhập số hợp lệ từ 0 - 999999999");
@@ -373,9 +320,6 @@ namespace QuanLyKhachSan
                 errorProvider1.SetError(txtGia, "");
             }
         }
-        //
-        //
-        //
         private void btnThoatt_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -390,48 +334,19 @@ namespace QuanLyKhachSan
         {
             if (ValidateFormLoaiDV())
             {
-                //txtMaLoaiDV.ReadOnly = true;
-                //string maLDV = txtMaLoaiDV.Text;
-                //string tenLDV = txtMaLoaiDV.Text;
-                //string maLoaiPhong = txtMaLoaiPhong.Text;
-
-                //bool result = bus_ldv.ThemLDV(maLDV, tenLDV, maLoaiPhong);
-                //if (result)
-                //{
-                //    MessageBox.Show("Thêm loại dịch vụ thành công.");
-                //    LoadDuLieuLDV();
-                //    //ClearTextBoxes();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Thêm loại dịch không thành công. Loại dịch đã tồn tại.");
-                //}
-
-                // Chuẩn hóa txtMaDV trước khi gọi phương thức ThemDV
                 string maLDV = txtMaLoaiDV.Text;
                 string tenLDV = txtTenLDV.Text;
 
-                // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
                 if (System.Text.RegularExpressions.Regex.IsMatch(maLDV, @"^(ldv|LDV)\d+$"))
                 {
-                    maLDV = "LDV" + maLDV.Substring(3); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
-                    txtMaLoaiDV.Text = maLDV; // Gán lại giá trị đã chuẩn hóa cho txtMaDV
+                    maLDV = "LDV" + maLDV.Substring(3);
+                    txtMaLoaiDV.Text = maLDV;
                 }
                 else
                 {
                     MessageBox.Show("Mã loại dịch vụ phải bắt đầu bằng 'dv' hoặc 'DV' và theo sau là số.");
-                    return; // Thoát khỏi sự kiện nếu không hợp lệ
+                    return;
                 }
-
-                //if (System.Text.RegularExpressions.Regex.IsMatch(tenLDV, @"^(lp|LP)\d+$"))
-                //{
-                //    tenLDV = "LP" + tenLDV.Substring(2);
-                //    txtTenLDV.Text = tenLDV;
-                //}
-                //else
-                //{
-                //    return;
-                //}
 
                 BUS_LoaiDichVu.Instance.ThemLDV(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
@@ -444,18 +359,6 @@ namespace QuanLyKhachSan
         {
             if (ValidateFormLoaiDV())
             {
-                //string maLDV = txtMaLoaiDV.Text;
-                //bool result = bus_ldv.XoaLDV(maLDV);
-                //if (result)
-                //{
-                //    MessageBox.Show("Xóa loại dịch vụ thành công.");
-                //    LoadDuLieuLDV();
-                //    //ClearTextBoxes();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Xóa loại dịch vụ không thành công. Không tìm thấy loại dịch vụ.");
-                //}
                 BUS_LoaiDichVu.Instance.XoaLDV(txtMaLoaiDV);
                 LoadDuLieuLDV();
                 ClearFormFields();
@@ -467,21 +370,6 @@ namespace QuanLyKhachSan
         {
             if (ValidateFormLoaiDV())
             {
-                //string maLDV = txtMaLoaiDV.Text;
-                //string tenLDV = txtTenLDV.Text;
-                //string maLoaiPhong = txtMaLoaiPhong.Text;
-
-                //bool result = bus_ldv.SuaLDV(maLDV, tenLDV, maLoaiPhong);
-                //if (result)
-                //{
-                //    MessageBox.Show("Sửa thông tin loại dịch vụ thành công.");
-                //    LoadDuLieuLDV();
-                //    //ClearTextBoxes();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Sửa thông tin loại dịch vụ không thành công. Không tìm thấy loại dịch vụ.");
-                //}
                 BUS_LoaiDichVu.Instance.Sua(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong);
                 LoadDuLieuLDV();
                 ClearFormFields();
@@ -491,13 +379,6 @@ namespace QuanLyKhachSan
 
         private void dataGridViewLoaiDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //DataGridViewRow row = dataGridViewLoaiDichVu.Rows[e.RowIndex];
-
-            //// Hiển thị thông tin của dòng được chọn lên các TextBox tương ứng
-            //txtMaLoaiDV.Text = row.Cells[0].Value.ToString();
-            //txtTenLDV.Text = row.Cells[1].Value.ToString();
-            //txtMaLoaiPhong.Text = row.Cells[2].Value.ToString();
-
             BUS_LoaiDichVu.Instance.LoadDGVLenForm(txtMaLoaiDV, txtTenLDV, cboMaLoaiPhong, dataGridViewLoaiDichVu);
 
             txtMaLoaiDV.Enabled = false;
@@ -511,19 +392,17 @@ namespace QuanLyKhachSan
 
         private void btnThemDV_Click(object sender, EventArgs e)
         {
-            // Chuẩn hóa txtMaDV trước khi gọi phương thức ThemDV
             string maDV = txtMaDV.Text;
 
-            // Kiểm tra và chuẩn hóa thành 'DV' theo sau là số
             if (System.Text.RegularExpressions.Regex.IsMatch(maDV, @"^(dv|DV)\d+$"))
             {
-                maDV = "DV" + maDV.Substring(2); // Thay thế 'dv' hoặc 'DV' bằng 'DV'
-                txtMaDV.Text = maDV; // Gán lại giá trị đã chuẩn hóa cho txtMaDV
+                maDV = "DV" + maDV.Substring(2);
+                txtMaDV.Text = maDV;
             }
             else
             {
                 MessageBox.Show("Mã dịch vụ phải bắt đầu bằng 'dv' hoặc 'DV' và theo sau là số.");
-                return; // Thoát khỏi sự kiện nếu không hợp lệ
+                return;
             }
 
             if (ValidateFormDV())
@@ -563,11 +442,10 @@ namespace QuanLyKhachSan
         }
         private void CheckEmptyFields()
         {
-            // Nếu các trường khác trống thì enable txtMaDV lại và kiểm tra validate
             if (string.IsNullOrEmpty(txtTenDV.Text) || string.IsNullOrEmpty(txtGia.Text))
             {
-                txtMaDV.ReadOnly = false;  // Enable lại txtMaDV
-                ValidateFormDV();  // Kích hoạt lại quá trình validate
+                txtMaDV.ReadOnly = false;
+                ValidateFormDV();
             }
         }
 
@@ -651,6 +529,11 @@ namespace QuanLyKhachSan
         private void txtTenLDV_Click(object sender, EventArgs e)
         {
             MoveCursorToEnd(txtTenLDV);
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

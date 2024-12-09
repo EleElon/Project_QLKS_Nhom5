@@ -31,14 +31,16 @@ namespace QuanLiKhachSan_Nhom5
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-         
             dtpDen.Value = DateTime.Now;
             dtpTu.Value = DateTime.Now;
         }
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            FrmReportKhachHang frm = new FrmReportKhachHang();
+            FrmReportKhachHang frm = new FrmReportKhachHang(dtpTu.Text, dtpDen.Text);
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.TopLevel = true;
+            frm.Dock = DockStyle.None;
             frm.Show();
         }
     }

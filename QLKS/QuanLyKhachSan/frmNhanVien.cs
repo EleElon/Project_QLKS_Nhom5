@@ -39,7 +39,6 @@ namespace QuanLyKhachSan
             txtChucVu.Text = string.Empty;
             txtDiaChi.Text = string.Empty;
 
-            //Set error == null
             errorProvider.SetError(txtMaNV, "");
             errorProvider.SetError(txtTenNV, "");
             errorProvider.SetError(txtChucVu, "");
@@ -224,11 +223,6 @@ namespace QuanLyKhachSan
             }
         }
 
-        //public void LoadView()
-        //{
-        //    dgvNhanVien.DataSource = bus_nv.View();
-        //}
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -338,31 +332,26 @@ namespace QuanLyKhachSan
 
         public void btnTimKiem_Click(object sender, EventArgs e)
         {
-            //mainForm.pnMain.Controls.Clear();
             frmTimKiemNhanVien frTimKiem = new frmTimKiemNhanVien(mainForm);
             frTimKiem.TopLevel = false;
             frTimKiem.Dock = DockStyle.Fill;
             mainForm.pnMain.Controls.Add(frTimKiem);
             frTimKiem.Show();
-            //this.Close();
             this.Hide();
         }
 
         private void frmNhanVien_Resize(object sender, EventArgs e)
         {
-            // Tổng chiều rộng của form (trừ đi khoảng cách từ cạnh trái và phải)
             int formWidth = this.ClientSize.Width;
-            int leftRightMargin = 20; // Khoảng cách từ cạnh trái và phải của form
-            int buttonWidth = btnThoat.Width; // Giả sử tất cả các nút có cùng kích thước
+            int leftRightMargin = 20;
+            int buttonWidth = btnThoat.Width;
             int groupBoxWidth = groupBox1.Width;
-            int buttonSpacing = (formWidth - 2 * leftRightMargin - 6 * buttonWidth) / 5; // Khoảng cách giữa các nút
+            int buttonSpacing = (formWidth - 2 * leftRightMargin - 6 * buttonWidth) / 5;
             int groupBoxSpacing = (formWidth - 2 * leftRightMargin - 2 * groupBoxWidth) / 1;
 
-            // Điều chỉnh vị trí dọc của các nút
-            int baseTop = 700; // Vị trí top cơ bản của các nút
-            int additionalOffset = 10; // Khoảng cách hạ thấp thêm (có thể điều chỉnh)
+            int baseTop = 700;
+            int additionalOffset = 10;
 
-            // Đặt vị trí của các nút dựa trên khoảng cách tính được và độ hạ thấp
             btnThoat.Left = leftRightMargin;
             btnThoat.Top = baseTop + additionalOffset;
 
@@ -380,13 +369,9 @@ namespace QuanLyKhachSan
 
             btnTimKiem.Left = btnLamMoi.Right + buttonSpacing;
             btnTimKiem.Top = baseTop + additionalOffset;
-
-            //groupBox1.Left = leftRightMargin;
-            //groupBox2.Left = groupBox1.Right + groupBoxSpacing;
         }
         private void txtTenNV_Click_1(object sender, EventArgs e)
         {
-            //txtTenNV.SelectionStart = txtTenNV.Text.Length;
             MoveCursorToEnd(txtTenNV);
         }
 

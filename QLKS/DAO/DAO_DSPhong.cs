@@ -10,8 +10,6 @@ namespace DAO
     public class DAO_DSPhong
     {
         public DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString());
-
-
         public List<Phong> Xem()
         {
             List<Phong> data = new List<Phong>();
@@ -39,8 +37,6 @@ namespace DAO
             }
             return data;
         }
-
-
         public bool themPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
@@ -102,7 +98,6 @@ namespace DAO
                         phong.TinhTrang = tinhTrang;
                         db.SubmitChanges();
                         return true;
-
                     }
                     return false;
                 }
@@ -116,14 +111,13 @@ namespace DAO
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                // Truy vấn MaPhong từ bảng Phong và lấy giá từ bảng LoaiPhong
                 var giaTien = (from p in db.Phongs
                                join lp in db.LoaiPhongs on p.MaLoaiPhong equals lp.MaLoaiPhong
                                where p.MaPhong == maPhong
-                               select lp.Gia) // Gia là kiểu float
+                               select lp.Gia)
                               .FirstOrDefault();
 
-                return giaTien; // Giá trị mặc định của float là 0.0 nếu không có giá trị phù hợp
+                return giaTien;
             }
         }
     }

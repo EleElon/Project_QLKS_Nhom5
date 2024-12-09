@@ -24,17 +24,14 @@ namespace BUS
             return loaiPhongDAO.ThemLoaiPhong(maLoaiPhong, tenLoaiPhong, gia);
         }
 
-        // Hàm sửa LoaiPhong
         public bool SuaLoaiPhong(string maLoaiPhong, string tenLoaiPhong, float gia)
         {
             return loaiPhongDAO.SuaLoaiPhong(maLoaiPhong, tenLoaiPhong, gia);
         }
 
-        // Hàm xóa LoaiPhong
         public bool XoaLoaiPhong(string maLoaiPhong)
         {
             return loaiPhongDAO.XoaLoaiPhong(maLoaiPhong);
         }
-
     }
 }

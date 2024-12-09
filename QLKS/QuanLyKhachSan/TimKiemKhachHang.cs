@@ -16,14 +16,9 @@ namespace QuanLyKhachSan
         public TimKiemKhachHang()
         {
             InitializeComponent();
-
-
-            // Gán sự kiện KeyDown cho các TextBox
             txtMaKH.KeyDown += new KeyEventHandler(txtMaKH_KeyDown);
             txtTenKH.KeyDown += new KeyEventHandler(txtTenKH_KeyDown);
         }
-
-       
 
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
@@ -31,20 +26,15 @@ namespace QuanLyKhachSan
             {
                 txtTenKH.ReadOnly = true;
                 txtTenKH.Text = "";
-               
             }
-           
         }
-        //Làm mới
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtMaKH.Text = "";
             txtTenKH.Text = "";
             txtMaKH.ReadOnly = false;
             txtTenKH.ReadOnly = false;
-
         }
-        //Tìm kiếm
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             if (txtTenKH.ReadOnly == true)
@@ -59,7 +49,7 @@ namespace QuanLyKhachSan
 
         private void txtTenKH_TextChanged(object sender, EventArgs e)
         {
-          if (txtTenKH.Text.Length > 0)
+            if (txtTenKH.Text.Length > 0)
             {
                 txtMaKH.ReadOnly = true;
                 txtMaKH.Text = "";
@@ -70,7 +60,7 @@ namespace QuanLyKhachSan
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnTimKiem_Click(sender, e); // Gọi sự kiện tìm kiếm
+                btnTimKiem_Click(sender, e);
             }
         }
 
@@ -78,7 +68,7 @@ namespace QuanLyKhachSan
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnTimKiem_Click(sender, e); // Gọi sự kiện tìm kiếm
+                btnTimKiem_Click(sender, e);
             }
         }
     }

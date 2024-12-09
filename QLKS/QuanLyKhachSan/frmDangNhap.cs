@@ -21,8 +21,6 @@ namespace QuanLyKhachSan
             InitializeComponent();
             txtMatKhau.PasswordChar = '*';
 
-
-            // Gán sự kiện KeyDown cho các TextBox
             txtMatKhau.KeyDown += new KeyEventHandler(txtMatKhau_KeyDown);
         }
 
@@ -55,7 +53,7 @@ namespace QuanLyKhachSan
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //btnDangNhap_Click(sender, e); // Gọi sự kiện tìm kiếm
+                //btnDangNhap_Click(sender, e);
             }
         }
 

@@ -32,27 +32,6 @@ namespace BUS
         {
             data.DataSource = DAO_TimKiemNhanVien.Instance.TimKiemTheoTenNV(tenNV.Text);
         }
-        //public List<NhanVien> TimKiemMaNV(string maNV)
-        //{
-        //    return DAO_TimKiemNhanVien.Instance.TimKiemTheoMaNV(maNV);
-        //}
-
-        //public List<NhanVien> TimKiemTenNV(string tenNV)
-        //{
-        //    return DAO_TimKiemNhanVien.Instance.TimKiemTheoTenNV(tenNV);
-        //}
-        //public void SapXepNhanVienTheoLuong(DataGridView data, bool tangDan)
-        //{
-        //    var sortedList = DAO_TimKiemNhanVien.Instance.TimKiemTheoLuong(tangDan);
-        //    data.DataSource = sortedList.Select(t => new
-        //    {
-        //        t.MaNhanVien,
-        //        t.MaPhong,
-        //        t.TenNhanVien,
-        //        t.ChucVu,
-        //        t.Luong
-        //    }).ToList();
-        //}
         public void View(DataGridView data)
         {
             var dv = DAO_NhanVien.Instance.Xem().Select(t =>

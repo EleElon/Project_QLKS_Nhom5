@@ -27,20 +27,16 @@ namespace QuanLyKhachSan
         {
             try
             {
-                // Lấy mã hóa đơn từ TextBox
                 string maHoaDon = ccbMaHD.Text;
 
-                // Kiểm tra nếu mã hóa đơn trống thì hiển thị thông báo và dừng tìm kiếm
                 if (string.IsNullOrWhiteSpace(maHoaDon))
                 {
                     MessageBox.Show("Vui lòng nhập mã hóa đơn.");
                     return;
                 }
 
-                // Gọi hàm tìm kiếm từ lớp BUS
                 List<ChiTietHoaDon> danhSachHoaDon = busHoaDon.TimKiemHoaDonTheoMa(maHoaDon);
 
-                // Kiểm tra và hiển thị kết quả tìm kiếm
                 if (danhSachHoaDon != null && danhSachHoaDon.Count > 0)
                 {
                     dgvTimKiemHoaDon.DataSource = danhSachHoaDon;
@@ -66,8 +62,8 @@ namespace QuanLyKhachSan
         private void frmTimKiemHoaDon_Load(object sender, EventArgs e)
         {
             List<ChiTietHoaDon> DSDV = busHoaDon.HienThi();
-           ccbMaHD .DataSource = DSDV;
-            ccbMaHD.DisplayMember = "MaHoaDon"; // Hiển thị tên loại phòng trong ComboBox
+            ccbMaHD.DataSource = DSDV;
+            ccbMaHD.DisplayMember = "MaHoaDon";
         }
     }
 }

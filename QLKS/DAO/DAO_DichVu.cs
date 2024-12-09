@@ -45,42 +45,12 @@ namespace DAO
             }
             return data;
         }
-
-
-        //public void Them(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia)
-        //{
-        //    try
-        //    {
-        //        using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-        //        {
-        //            DichVu dv = new DichVu();
-        //            dv.MaDichVu = maDV.Text;
-        //            dv.MaLoaiDichVu = maLDV.Text;
-        //            dv.TenDichVu = tenDV.Text;
-        //            dv.Gia = float.Parse(gia.Text);
-
-        //            db.DichVus.InsertOnSubmit(dv);
-        //            db.SubmitChanges();
-        //            MessageBox.Show("Thêm thành công");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Thêm không thành công " + ex);
-        //    }
-        //}
         public void Them(DichVu dv)
         {
             try
             {
                 using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-                    //DichVu dv = new DichVu();
-                    //dv.MaDichVu = maDV.Text;
-                    //dv.MaLoaiDichVu = maLDV.Text;
-                    //dv.TenDichVu = tenDV.Text;
-                    //dv.Gia = float.Parse(gia.Text);
-
                     db.DichVus.InsertOnSubmit(dv);
                     db.SubmitChanges();
                     MessageBox.Show("Thêm thành công");
@@ -134,25 +104,6 @@ namespace DAO
         {
             return db.DichVus.ToList();
         }
-        //public void LoadComBoBoxLoaiDichVu(ComboBox cb)
-        //{
-        //    Dictionary<string, string> dp = new Dictionary<string, string>();
-        //    using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
-        //    {
-        //        var tenLDV = from ma in db.LoaiDichVus
-        //                     select (
-        //                         ma.MaLoaiDichVu);
-
-        //        foreach (var item in tenLDV)
-        //        {
-        //            dp.Add(item, item);
-        //        }
-
-        //        cb.DataSource = new BindingSource(dp, null);
-        //        cb.DisplayMember = "Value";
-        //        cb.ValueMember = "Key";
-        //    }
-        //}
         public void LoadComBoBoxLoaiDichVu(ComboBox cb)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
@@ -208,14 +159,13 @@ namespace DAO
                            where dv.MaDichVu == maDichVu
                            select dv.Gia).FirstOrDefault();
 
-                // Kiểm tra giá trị đã lấy được, nếu không có giá trị sẽ trả về 0
-                if (gia == 0)  // Giả sử giá trị mặc định là 0 nếu không tìm thấy
+                if (gia == 0)
                 {
-                    return 0;  // Hoặc có thể xử lý tùy vào logic của bạn (vd: throw exception hoặc khác)
+                    return 0;
                 }
 
-                return gia;  // Trả về giá trị
+                return gia;
             }
-            }
+        }
     }
 }

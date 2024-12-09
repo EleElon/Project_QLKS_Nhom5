@@ -34,7 +34,7 @@ namespace DAO
             public string pttt { get; set; }
             public string tenloaiphong { get; set; }
         }
-        public List<ThongKeKhachHangDTO> Xem(string ngay,string den)
+        public List<ThongKeKhachHangDTO> Xem(string ngay, string den)
         {
             List<ThongKeKhachHangDTO> data = new List<ThongKeKhachHangDTO>();
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
@@ -45,14 +45,14 @@ namespace DAO
                                 where ctdp.NgayNhanPhong >= DateTime.Parse(ngay) && ctdp.NgayTraPhong <= DateTime.Parse(den)
                                 select new
                                 {
-                                   dv.TenKhachHang,
-                                   ctdp.NgayNhanPhong,
-                                   ctdp.NgayTraPhong,
-                                   ctdp.GiaMoiDem,
-                                   ctdp.SoLuongPhong,
-                                   ctdp.TongGia,
-                                   ctdp.PhuongThucThanhToan,
-                                   lp.TenLoaiPhong
+                                    dv.TenKhachHang,
+                                    ctdp.NgayNhanPhong,
+                                    ctdp.NgayTraPhong,
+                                    ctdp.GiaMoiDem,
+                                    ctdp.SoLuongPhong,
+                                    ctdp.TongGia,
+                                    ctdp.PhuongThucThanhToan,
+                                    lp.TenLoaiPhong
                                 }).ToList();
 
                 foreach (var item in datphong)
@@ -67,13 +67,10 @@ namespace DAO
                     thongKe.pttt = item.PhuongThucThanhToan;
                     thongKe.tenloaiphong = item.TenLoaiPhong;
 
-
-
                     data.Add(thongKe);
                 }
             }
             return data;
-
         }
     }
 }

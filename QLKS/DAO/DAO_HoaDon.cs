@@ -61,9 +61,8 @@ namespace DAO
                 }
                 return true;
             }
-            catch (Exception )
+            catch (Exception)
             {
-               
                 return false;
             }
         }
@@ -134,7 +133,6 @@ namespace DAO
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
             {
-                // Tìm kiếm hóa đơn theo mã
                 var danhSachHoaDon = db.ChiTietHoaDons
                                         .Where(hd => hd.MaHoaDon == maHoaDon)
                                         .ToList();
@@ -142,6 +140,5 @@ namespace DAO
                 return danhSachHoaDon;
             }
         }
-
     }
 }

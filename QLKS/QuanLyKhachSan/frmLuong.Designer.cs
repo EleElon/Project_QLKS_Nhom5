@@ -87,7 +87,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dtpNgayTinh);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cboMaNV);
@@ -123,6 +123,7 @@
             // 
             // dtpNgayTinh
             // 
+            this.dtpNgayTinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpNgayTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayTinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayTinh.Location = new System.Drawing.Point(911, 187);
@@ -132,6 +133,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(497, 33);
@@ -142,6 +144,7 @@
             // 
             // cboMaNV
             // 
+            this.cboMaNV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cboMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaNV.FormattingEnabled = true;
@@ -154,6 +157,7 @@
             // 
             // cboMaBangChamCong
             // 
+            this.cboMaBangChamCong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cboMaBangChamCong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaBangChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaBangChamCong.FormattingEnabled = true;
@@ -166,6 +170,7 @@
             // 
             // txtTongLuong
             // 
+            this.txtTongLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTongLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongLuong.Location = new System.Drawing.Point(489, 243);
             this.txtTongLuong.Name = "txtTongLuong";
@@ -174,6 +179,7 @@
             // 
             // txtLuongCoBan
             // 
+            this.txtLuongCoBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLuongCoBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLuongCoBan.Location = new System.Drawing.Point(556, 189);
             this.txtLuongCoBan.Name = "txtLuongCoBan";
@@ -182,6 +188,7 @@
             // 
             // txtThang
             // 
+            this.txtThang.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThang.Location = new System.Drawing.Point(173, 189);
             this.txtThang.Name = "txtThang";
@@ -190,6 +197,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(810, 192);
@@ -200,6 +208,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(371, 249);
@@ -210,6 +219,7 @@
             // 
             // txtPhuCap
             // 
+            this.txtPhuCap.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPhuCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhuCap.Location = new System.Drawing.Point(911, 30);
             this.txtPhuCap.Name = "txtPhuCap";
@@ -220,6 +230,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(824, 33);
@@ -230,6 +241,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(428, 192);
@@ -240,6 +252,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(816, 139);
@@ -250,6 +263,7 @@
             // 
             // txtNam
             // 
+            this.txtNam.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNam.Location = new System.Drawing.Point(556, 30);
             this.txtNam.Name = "txtNam";
@@ -258,6 +272,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(417, 142);
@@ -268,6 +283,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(42, 140);
@@ -278,6 +294,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(826, 88);
@@ -288,6 +305,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(102, 192);
@@ -298,6 +316,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(435, 88);
@@ -308,6 +327,7 @@
             // 
             // txtKhauTru
             // 
+            this.txtKhauTru.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtKhauTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKhauTru.Location = new System.Drawing.Point(911, 136);
             this.txtKhauTru.Name = "txtKhauTru";
@@ -316,6 +336,7 @@
             // 
             // txtThuong
             // 
+            this.txtThuong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtThuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThuong.Location = new System.Drawing.Point(911, 85);
             this.txtThuong.Name = "txtThuong";
@@ -324,6 +345,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 87);
@@ -334,6 +356,7 @@
             // 
             // txtSoGioTangCa
             // 
+            this.txtSoGioTangCa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSoGioTangCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoGioTangCa.Location = new System.Drawing.Point(556, 137);
             this.txtSoGioTangCa.Name = "txtSoGioTangCa";
@@ -342,6 +365,7 @@
             // 
             // txtSoNgayLam
             // 
+            this.txtSoNgayLam.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSoNgayLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoNgayLam.Location = new System.Drawing.Point(556, 85);
             this.txtSoNgayLam.Name = "txtSoNgayLam";
@@ -350,6 +374,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(76, 33);
@@ -360,6 +385,7 @@
             // 
             // txtMaLuong
             // 
+            this.txtMaLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMaLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaLuong.Location = new System.Drawing.Point(173, 30);
             this.txtMaLuong.Name = "txtMaLuong";
@@ -369,7 +395,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgvDSLuong);
             this.groupBox2.Location = new System.Drawing.Point(12, 357);
             this.groupBox2.Name = "groupBox2";
@@ -382,6 +408,7 @@
             // 
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDSLuong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDSLuong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSLuong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSLuong.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

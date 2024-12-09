@@ -38,7 +38,6 @@ namespace QuanLyKhachSan
             txtSoNgayLam.Enabled = false;
             txtSoGioTangCa.Enabled = false;
             txtLuongCoBan.Enabled = false;
-            //txtPhuCap.Enabled = false;
             txtThuong.Enabled = false;
             txtKhauTru.Enabled = false;
             txtTongLuong.Enabled = false;
@@ -50,7 +49,6 @@ namespace QuanLyKhachSan
 
         private void frmLuong_Load(object sender, EventArgs e)
         {
-            //DSLuong(dgvDSLuong);
             LoadDataLuong();
             LoadComboMaCham();
             LoadComboMaNV();
@@ -86,19 +84,11 @@ namespace QuanLyKhachSan
             txtTongLuong.Text = string.Empty;
             dtpNgayTinh.Value = DateTime.UtcNow;
 
-            //set validate == null
             errorProvider.SetError(txtMaLuong, "");
-            //errorProvider.SetError(txtThang, "");
-            //errorProvider.SetError(txtNam, "");
         }
         private bool ValidateForm()
         {
-            //ValidateThang();
-            //ValidateSoTien();
-
-            return string.IsNullOrEmpty(errorProvider.GetError(txtMaLuong));/*&&*/
-            //    string.IsNullOrEmpty(errorProvider.GetError(txtThang)) &&
-            //    string.IsNullOrEmpty(errorProvider.GetError(txtNam));
+            return string.IsNullOrEmpty(errorProvider.GetError(txtMaLuong));
         }
         private void ValidateMaLuong()
         {
@@ -159,20 +149,6 @@ namespace QuanLyKhachSan
                 errorProvider.SetError(txtNam, "");
             }
         }
-        //public void DSLuong(DataGridView data)
-        //{
-        //    using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext())
-        //    {
-        //        var luong = db.Luongs.Select(a => new
-        //        {
-        //            a.MaLuong,
-        //            a.MaNhanVien,
-        //            a.Thang,
-        //            a.SoTien
-        //        }).ToList();
-        //        data.DataSource = luong;
-        //    }
-        //}
 
         public void LoadView()
         {
@@ -273,57 +249,29 @@ namespace QuanLyKhachSan
 
         private void cboMaBangChamCong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Lấy mã nhân viên từ ComboBox
             string maCham = cboMaBangChamCong.SelectedValue.ToString();
-            //string maNhanVien = cboMaBangChamCong.SelectedValue.ToString();
 
-            using (var db = new DBQuanLyKhachSanDataContext()) // Tên context của bạn
+            using (var db = new DBQuanLyKhachSanDataContext(ThayDoichuoiKetNoi.GetConnectionString()))
             {
-                // Lấy dữ liệu chấm công của nhân viên
                 var chamCong = db.ChamCongs
-                    .Where(c => c.MaChamCong == maCham)
-                    .OrderByDescending(c => c.Thang) // Lấy tháng gần nhất
-                    .FirstOrDefault();
-                //    var nhanVien = db.NhanViens
-                //.Where(nv => nv.MaNhanVien == maNhanVien)
-                //.FirstOrDefault();
+                .Where(c => c.MaChamCong == maCham)
+                .FirstOrDefault();
 
                 if (chamCong != null)
                 {
-                    //// Lấy mã nhân viên từ dữ liệu chấm công
-                    //string maNhanVien = chamCong.MaNhanVien; // Lấy mã nhân viên từ chamCong
-
-                    //// Lấy thông tin nhân viên từ bảng nhân viên
-                    //var nhanVien = db.NhanViens
-                    //    .Where(nv => nv.MaNhanVien == maNhanVien)
-                    //    .FirstOrDefault();
-
-                    //// Kiểm tra xem nhân viên có tồn tại không
-                    //if (nhanVien != null)
-                    //{
-                    //    // Điền dữ liệu vào các TextBox
-                    //    txtTenNV.Text = nhanVien.TenNhanVien; // Hiển thị tên nhân viên
-                    //}
-
-                    // Lấy mã nhân viên từ dữ liệu chấm công
                     string maNhanVien = chamCong.MaNhanVien;
 
-                    // Lấy thông tin nhân viên
                     var nhanVien = db.NhanViens
                         .Where(nv => nv.MaNhanVien == maNhanVien)
                         .FirstOrDefault();
 
                     if (nhanVien != null)
                     {
-                        // Gán dữ liệu vào ComboBox mã nhân viên (hiển thị tên)
-                        cboMaNV.DataSource = new List<NhanVien> { nhanVien }; // Tạo danh sách chỉ có một nhân viên
-                        cboMaNV.DisplayMember = "TenNhanVien"; // Hiển thị tên nhân viên
-                        cboMaNV.ValueMember = "MaNhanVien"; // Giữ giá trị là mã nhân viên
-                        //cboMaNV.SelectedValue = nhanVien.MaNhanVien.ToString();
+                        cboMaNV.DataSource = new List<NhanVien> { nhanVien };
+                        cboMaNV.DisplayMember = "TenNhanVien";
+                        cboMaNV.ValueMember = "MaNhanVien";
                     }
 
-                    // Điền dữ liệu vào các TextBox
-                    //cboMaNV.Text = chamCong.MaNhanVien.ToString();
                     txtThang.Text = chamCong.Thang.ToString();
                     txtNam.Text = chamCong.Nam.ToString();
                     txtSoNgayLam.Text = chamCong.SoNgayLamViec.ToString();
@@ -333,22 +281,15 @@ namespace QuanLyKhachSan
                     int soNgayLam;
                     if (int.TryParse(txtSoNgayLam.Text, out soNgayLam))
                     {
-                        // Tính thưởng và khấu trừ
                         float thuong = (soNgayLam - 28) * 200000;
                         float khauTru = (28 - soNgayLam) * 200000;
 
-                        // Cập nhật TextBox cho thưởng và khấu trừ
-                        txtThuong.Text = thuong > 0 ? thuong.ToString() : "0"; // Nếu thưởng âm, hiển thị 0
-                        txtKhauTru.Text = khauTru > 0 ? khauTru.ToString() : "0"; // Nếu khấu trừ âm, hiển thị 0
+                        txtThuong.Text = thuong > 0 ? thuong.ToString() : "0";
+                        txtKhauTru.Text = khauTru > 0 ? khauTru.ToString() : "0";
                     }
 
                     CalculateTotalPrice();
                 }
-                //else
-                //{
-                //    // Nếu không có dữ liệu
-                //    MessageBox.Show("Không tìm thấy dữ liệu chấm công cho nhân viên này!", "Thông báo");
-                //}
             }
         }
         private void CalculateTotalPrice()
@@ -356,10 +297,7 @@ namespace QuanLyKhachSan
             if (int.TryParse(txtLuongCoBan.Text, out int luongCoBan) && int.TryParse(txtSoNgayLam.Text, out int soNgayLam) && float.TryParse(txtSoGioTangCa.Text, out float soGioTangCa) && float.TryParse(txtPhuCap.Text, out float phuCap) && float.TryParse(txtThuong.Text, out float thuong) && float.TryParse(txtKhauTru.Text, out float khautru))
             {
                 float tongLuong = (float)(((luongCoBan / 28) * soNgayLam) + (1.5 * (soGioTangCa * 10000)) + phuCap + thuong - khautru);
-                //txtDonGia.Text = giaSauGiamGia.ToString();
 
-                // Định dạng số để hiển thị đúng trong TextBox
-                //txtTongLuong.Text = tongLuong.ToString("N0"); // "N0" để hiển thị số nguyên, không có dấu phẩy
                 txtTongLuong.Text = tongLuong.ToString();
             }
         }

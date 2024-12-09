@@ -29,7 +29,7 @@ namespace QuanLyKhachSan.Reporting
             foreach (Phong phong in listPhong)
             {
                 Phong temp = new Phong();
-               
+
                 temp.MaLoaiPhong = phong.MaLoaiPhong;
                 temp.MaPhong = phong.MaPhong;
                 temp.SoPhong = phong.SoPhong;
@@ -37,7 +37,7 @@ namespace QuanLyKhachSan.Reporting
                 listReport.Add(temp);
             }
             reportViewer1.LocalReport.ReportPath = "rptPhong.rdlc";
-            var source = new ReportDataSource("PhongDataSet",listReport);
+            var source = new ReportDataSource("PhongDataSet", listReport);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(source);
             this.reportViewer1.RefreshReport();
@@ -53,13 +53,11 @@ namespace QuanLyKhachSan.Reporting
                 return;
             }
 
-            // Lấy dữ liệu từ cơ sở dữ liệu (chỉ phòng có MaPhong tương ứng)
             PhongContext phongConText = new PhongContext();
             var phong = phongConText.Phongs.FirstOrDefault(p => p.MaPhong == maPhong);
 
             if (phong != null)
             {
-                // Chuyển dữ liệu sang danh sách report
                 List<PhongReport> listReport = new List<PhongReport>();
                 PhongReport temp = new PhongReport
                 {
@@ -70,7 +68,6 @@ namespace QuanLyKhachSan.Reporting
                 };
                 listReport.Add(temp);
 
-                // Gán dữ liệu vào ReportViewer
                 reportViewer1.LocalReport.ReportPath = "rptPhong.rdlc";
                 var source = new ReportDataSource("PhongDataSet", listReport);
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -81,6 +78,11 @@ namespace QuanLyKhachSan.Reporting
             {
                 MessageBox.Show("Không tìm thấy thông tin phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txtMaPhong.Text = null;
         }
     }
 }

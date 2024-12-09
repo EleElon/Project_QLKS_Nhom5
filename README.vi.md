@@ -21,9 +21,8 @@ Nguyễn Văn Thân
 Sau khi nhân bản dự án, chỉ cần thực hiện một số thủ tục:
 
 
-* Cài đặt file `setup.exe`
-* Thiết lập cơ sở dữ liệu `database QLKS.sql`
-* Tạo 1 thư mục tên `Image` trong thư mục "DoAn"
-
+* Cài đặt file `setup.exe` trong folder `QLKS_setup/Debug`
+* Thiết lập cơ sở dữ liệu `database QLKS.sql` -> copy tên server
+* Mở ứng dụng đã được cài đặt -> nhập tên server vửa copy
 
 Trải nghiệm ứng dụng

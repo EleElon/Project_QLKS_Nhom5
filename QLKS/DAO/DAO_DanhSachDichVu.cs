@@ -84,7 +84,6 @@ namespace DAO
                                 ma.TenDichVu
                             };
 
-
                 foreach (var item in tenDV)
                 {
                     dp.Add(item.MaDichVu, item.TenDichVu);
@@ -95,7 +94,7 @@ namespace DAO
                 cb.ValueMember = "Key";
             }
         }
-        public void LoadDGVForm(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong,TextBox gia, DataGridView data)
+        public void LoadDGVForm(TextBox maSDDichVu, ComboBox maDichVu, ComboBox maDatPhong, TextBox soLuong, TextBox gia, DataGridView data)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
@@ -113,16 +112,14 @@ namespace DAO
         {
             try
             {
-                // Kiểm tra mã khách hàng đã tồn tại hay chưa
                 if (CheckMaSDDVExists(dv.MaSuDungDichVu))
                 {
                     MessageBox.Show("Mã su dung vu đã tồn tại. Vui lòng nhập mã khác.");
-                    return; // Không thực hiện thêm nếu mã đã tồn tại
+                    return;
                 }
 
                 using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
                 {
-
                     db.DanhSachSuDungDichVus.InsertOnSubmit(dv);
                     db.SubmitChanges();
                     MessageBox.Show("Thêm thành công");
@@ -130,7 +127,6 @@ namespace DAO
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Thêm vào bị lỗi ");
             }
         }
@@ -159,7 +155,6 @@ namespace DAO
                 var maSDDV = db.DanhSachSuDungDichVus.SingleOrDefault(a => a.MaSuDungDichVu == daDV.MaSuDungDichVu);
                 if (maSDDV != null)
                 {
-
                     maSDDV.MaDichVu = daDV.MaDichVu;
                     maSDDV.MaDatPhong = daDV.MaDatPhong;
                     maSDDV.SoLuong = daDV.SoLuong;
@@ -173,9 +168,8 @@ namespace DAO
         }
         public bool CheckMaSDDVExists(string maSDDV)
         {
-            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString())) // Giả sử đây là context của Entity Framework
+            using (var context = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                // Sử dụng LINQ để kiểm tra trùng mã
                 return context.DanhSachSuDungDichVus.Any(dv => dv.MaSuDungDichVu == maSDDV);
             }
         }
@@ -183,20 +177,19 @@ namespace DAO
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-                // Return all records from the DanhSachSuDungDichVus table
                 return db.DanhSachSuDungDichVus.ToList();
             }
         }
         public double LayGiaDichVu(string maSDDV)
-      {
-        using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+        {
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
-            var gia = (from ds in db.DanhSachSuDungDichVus
-                       where ds.MaSuDungDichVu == maSDDV
-                       select ds.Gia).FirstOrDefault();
+                var gia = (from ds in db.DanhSachSuDungDichVus
+                           where ds.MaSuDungDichVu == maSDDV
+                           select ds.Gia).FirstOrDefault();
 
-                return gia ?? 0; // Trả về 0 nếu không có giá trị
+                return gia ?? 0;
+            }
         }
-    }
     }
 }

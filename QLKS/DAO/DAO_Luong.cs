@@ -55,33 +55,6 @@ namespace DAO
             }
             return data;
         }
-        //public bool ThemLuong(string maLuong, string maNV, int thang, int nam, int soNgayLamViec)
-        //{
-        //    try
-        //    {
-        //        if (db.Luongs.Any(a => a.MaLuong == maLuong))
-        //        {
-        //            return false;
-        //        }
-
-        //        Luong luong = new Luong
-        //        {
-        //            MaLuong = maLuong,
-        //            MaNhanVien = maNV,
-        //            Thang = thang,
-        //            SoTien = soTien
-        //        };
-
-        //        db.Luongs.InsertOnSubmit(luong);
-        //        db.SubmitChanges();
-
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
         public void Them(Luong a)
         {
             try

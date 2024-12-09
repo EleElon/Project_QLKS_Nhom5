@@ -1177,10 +1177,6 @@ namespace DAO
 		
 		private EntityRef<DanhSachSuDungDichVu> _DanhSachSuDungDichVu;
 		
-		private EntityRef<DatPhong> _DatPhong;
-		
-		private EntityRef<HoaDon> _HoaDon;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1210,8 +1206,6 @@ namespace DAO
 		public ChiTietHoaDon()
 		{
 			this._DanhSachSuDungDichVu = default(EntityRef<DanhSachSuDungDichVu>);
-			this._DatPhong = default(EntityRef<DatPhong>);
-			this._HoaDon = default(EntityRef<HoaDon>);
 			OnCreated();
 		}
 		
@@ -1226,10 +1220,6 @@ namespace DAO
 			{
 				if ((this._MaHoaDon != value))
 				{
-					if (this._HoaDon.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaHoaDonChanging(value);
 					this.SendPropertyChanging();
 					this._MaHoaDon = value;
@@ -1250,10 +1240,6 @@ namespace DAO
 			{
 				if ((this._MaDatPhong != value))
 				{
-					if (this._DatPhong.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaDatPhongChanging(value);
 					this.SendPropertyChanging();
 					this._MaDatPhong = value;
@@ -1457,74 +1443,6 @@ namespace DAO
 						this._MaSuDungDichVu = default(string);
 					}
 					this.SendPropertyChanged("DanhSachSuDungDichVu");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatPhong_ChiTietHoaDon", Storage="_DatPhong", ThisKey="MaDatPhong", OtherKey="MaDatPhong", IsForeignKey=true)]
-		public DatPhong DatPhong
-		{
-			get
-			{
-				return this._DatPhong.Entity;
-			}
-			set
-			{
-				DatPhong previousValue = this._DatPhong.Entity;
-				if (((previousValue != value) 
-							|| (this._DatPhong.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DatPhong.Entity = null;
-						previousValue.ChiTietHoaDons.Remove(this);
-					}
-					this._DatPhong.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietHoaDons.Add(this);
-						this._MaDatPhong = value.MaDatPhong;
-					}
-					else
-					{
-						this._MaDatPhong = default(string);
-					}
-					this.SendPropertyChanged("DatPhong");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDon_ChiTietHoaDon", Storage="_HoaDon", ThisKey="MaHoaDon", OtherKey="MaHoaDon", IsForeignKey=true)]
-		public HoaDon HoaDon
-		{
-			get
-			{
-				return this._HoaDon.Entity;
-			}
-			set
-			{
-				HoaDon previousValue = this._HoaDon.Entity;
-				if (((previousValue != value) 
-							|| (this._HoaDon.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._HoaDon.Entity = null;
-						previousValue.ChiTietHoaDon = null;
-					}
-					this._HoaDon.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietHoaDon = this;
-						this._MaHoaDon = value.MaHoaDon;
-					}
-					else
-					{
-						this._MaHoaDon = default(string);
-					}
-					this.SendPropertyChanged("HoaDon");
 				}
 			}
 		}
@@ -2005,8 +1923,6 @@ namespace DAO
 		
 		private EntitySet<ChiTietDatPhong> _ChiTietDatPhongs;
 		
-		private EntitySet<ChiTietHoaDon> _ChiTietHoaDons;
-		
 		private EntitySet<DanhSachSuDungDichVu> _DanhSachSuDungDichVus;
 		
 		private EntitySet<HoaDon> _HoaDons;
@@ -2028,7 +1944,6 @@ namespace DAO
 		public DatPhong()
 		{
 			this._ChiTietDatPhongs = new EntitySet<ChiTietDatPhong>(new Action<ChiTietDatPhong>(this.attach_ChiTietDatPhongs), new Action<ChiTietDatPhong>(this.detach_ChiTietDatPhongs));
-			this._ChiTietHoaDons = new EntitySet<ChiTietHoaDon>(new Action<ChiTietHoaDon>(this.attach_ChiTietHoaDons), new Action<ChiTietHoaDon>(this.detach_ChiTietHoaDons));
 			this._DanhSachSuDungDichVus = new EntitySet<DanhSachSuDungDichVu>(new Action<DanhSachSuDungDichVu>(this.attach_DanhSachSuDungDichVus), new Action<DanhSachSuDungDichVu>(this.detach_DanhSachSuDungDichVus));
 			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
 			this._TraPhongs = new EntitySet<TraPhong>(new Action<TraPhong>(this.attach_TraPhongs), new Action<TraPhong>(this.detach_TraPhongs));
@@ -2090,19 +2005,6 @@ namespace DAO
 			set
 			{
 				this._ChiTietDatPhongs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DatPhong_ChiTietHoaDon", Storage="_ChiTietHoaDons", ThisKey="MaDatPhong", OtherKey="MaDatPhong")]
-		public EntitySet<ChiTietHoaDon> ChiTietHoaDons
-		{
-			get
-			{
-				return this._ChiTietHoaDons;
-			}
-			set
-			{
-				this._ChiTietHoaDons.Assign(value);
 			}
 		}
 		
@@ -2206,18 +2108,6 @@ namespace DAO
 		}
 		
 		private void detach_ChiTietDatPhongs(ChiTietDatPhong entity)
-		{
-			this.SendPropertyChanging();
-			entity.DatPhong = null;
-		}
-		
-		private void attach_ChiTietHoaDons(ChiTietHoaDon entity)
-		{
-			this.SendPropertyChanging();
-			entity.DatPhong = this;
-		}
-		
-		private void detach_ChiTietHoaDons(ChiTietHoaDon entity)
 		{
 			this.SendPropertyChanging();
 			entity.DatPhong = null;
@@ -2587,8 +2477,6 @@ namespace DAO
 		
 		private string _TinhTrangThanhToan;
 		
-		private EntityRef<ChiTietHoaDon> _ChiTietHoaDon;
-		
 		private EntityRef<DatPhong> _DatPhong;
 		
     #region Extensibility Method Definitions
@@ -2607,7 +2495,6 @@ namespace DAO
 		
 		public HoaDon()
 		{
-			this._ChiTietHoaDon = default(EntityRef<ChiTietHoaDon>);
 			this._DatPhong = default(EntityRef<DatPhong>);
 			OnCreated();
 		}
@@ -2692,35 +2579,6 @@ namespace DAO
 					this._TinhTrangThanhToan = value;
 					this.SendPropertyChanged("TinhTrangThanhToan");
 					this.OnTinhTrangThanhToanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDon_ChiTietHoaDon", Storage="_ChiTietHoaDon", ThisKey="MaHoaDon", OtherKey="MaHoaDon", IsUnique=true, IsForeignKey=false)]
-		public ChiTietHoaDon ChiTietHoaDon
-		{
-			get
-			{
-				return this._ChiTietHoaDon.Entity;
-			}
-			set
-			{
-				ChiTietHoaDon previousValue = this._ChiTietHoaDon.Entity;
-				if (((previousValue != value) 
-							|| (this._ChiTietHoaDon.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ChiTietHoaDon.Entity = null;
-						previousValue.HoaDon = null;
-					}
-					this._ChiTietHoaDon.Entity = value;
-					if ((value != null))
-					{
-						value.HoaDon = this;
-					}
-					this.SendPropertyChanged("ChiTietHoaDon");
 				}
 			}
 		}

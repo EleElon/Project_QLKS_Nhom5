@@ -10,7 +10,6 @@ namespace BUS
 {
     public class BUS_DichVu
     {
-
         public static BUS_DichVu instance;
         DAO_DichVu DAO_DichVu = new DAO_DichVu();
         public static BUS_DichVu Instance
@@ -27,10 +26,7 @@ namespace BUS
         public BUS_DichVu() { }
 
         private DAO_DichVu dao_dv = new DAO_DichVu();
-        //public void ThemDV(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia)
-        //{
-        //    DAO_DichVu.Instance.Them(maDV, maLDV, tenDV, gia);
-        //}
+
         public void ThemDV(TextBox maDV, ComboBox maLDV, TextBox tenDV, TextBox gia)
         {
             DichVu dv = new DichVu

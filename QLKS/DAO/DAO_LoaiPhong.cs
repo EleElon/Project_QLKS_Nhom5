@@ -41,23 +41,20 @@ namespace DAO
             {
                 try
                 {
-                    // Kiểm tra nếu mã loại phòng đã tồn tại
                     if (db.LoaiPhongs.Any(lp => lp.MaLoaiPhong == maLoaiPhong))
                     {
-                        return false; // Trả về false nếu đã tồn tại
+                        return false;
                     }
 
-                    // Tạo đối tượng LoaiPhong mới
                     LoaiPhong loaiPhong = new LoaiPhong();
                     loaiPhong.MaLoaiPhong = maLoaiPhong;
                     loaiPhong.TenLoaiPhong = tenLoaiPhong;
                     loaiPhong.Gia = gia;
 
-                    // Thêm và lưu thay đổi
                     db.LoaiPhongs.InsertOnSubmit(loaiPhong);
                     db.SubmitChanges();
 
-                    return true; // Trả về true nếu thêm thành công
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -66,14 +63,12 @@ namespace DAO
             }
         }
 
-        // Hàm sửa LoaiPhong
         public bool SuaLoaiPhong(string maLoaiPhong, string tenLoaiPhong, float gia)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 try
                 {
-
                     LoaiPhong loaiPhong = db.LoaiPhongs.SingleOrDefault(lp => lp.MaLoaiPhong == maLoaiPhong);
                     if (loaiPhong != null)
                     {
@@ -91,24 +86,21 @@ namespace DAO
             }
         }
 
-        // Hàm xóa LoaiPhong
         public bool XoaLoaiPhong(string maLoaiPhong)
         {
             using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 try
                 {
-                    // Tìm loại phòng theo mã
                     LoaiPhong loaiPhong = db.LoaiPhongs.SingleOrDefault(lp => lp.MaLoaiPhong == maLoaiPhong);
 
                     if (loaiPhong != null)
                     {
-                        // Xóa và lưu thay đổi
                         db.LoaiPhongs.DeleteOnSubmit(loaiPhong);
                         db.SubmitChanges();
                         return true;
                     }
-                    return false; // Trả về false nếu không tìm thấy mã loại phòng
+                    return false;
                 }
                 catch (Exception ex)
                 {
@@ -116,9 +108,5 @@ namespace DAO
                 }
             }
         }
-       
-
     }
-
-
 }

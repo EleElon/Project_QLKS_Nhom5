@@ -54,8 +54,6 @@
       <Column Name="SoNgay" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ThanhTien" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="DanhSachSuDungDichVu_ChiTietHoaDon" Member="DanhSachSuDungDichVu" ThisKey="MaSuDungDichVu" OtherKey="MaSuDungDichVu" Type="DanhSachSuDungDichVu" IsForeignKey="true" />
-      <Association Name="DatPhong_ChiTietHoaDon" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" />
-      <Association Name="HoaDon_ChiTietHoaDon" Member="HoaDon" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDon" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CoSoVatChat" Member="CoSoVatChats">
@@ -84,7 +82,6 @@
       <Column Name="MaDatPhong" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaKhachHang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="DatPhong_ChiTietDatPhong" Member="ChiTietDatPhongs" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="ChiTietDatPhong" />
-      <Association Name="DatPhong_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="ChiTietHoaDon" />
       <Association Name="DatPhong_DanhSachSuDungDichVu" Member="DanhSachSuDungDichVus" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DanhSachSuDungDichVu" />
       <Association Name="DatPhong_HoaDon" Member="HoaDons" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="HoaDon" />
       <Association Name="DatPhong_TraPhong" Member="TraPhongs" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="TraPhong" />
@@ -114,7 +111,6 @@
       <Column Name="MaDatPhong" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="TongTien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="TinhTrangThanhToan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="HoaDon_ChiTietHoaDon" Member="ChiTietHoaDon" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="ChiTietHoaDon" Cardinality="One" />
       <Association Name="DatPhong_HoaDon" Member="DatPhong" ThisKey="MaDatPhong" OtherKey="MaDatPhong" Type="DatPhong" IsForeignKey="true" />
     </Type>
   </Table>

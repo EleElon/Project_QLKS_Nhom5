@@ -738,7 +738,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.52917cm</Top>
+        <Top>0.56445cm</Top>
+        <Left>0.01389in</Left>
         <Height>1.93236cm</Height>
         <Width>29.56587cm</Width>
         <Style>
@@ -747,14 +748,182 @@
           </Border>
         </Style>
       </Tablix>
+      <Line Name="Line3">
+        <Top>2.49681cm</Top>
+        <Left>0cm</Left>
+        <Height>0cm</Height>
+        <Width>29.56587cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line5">
+        <Top>0.52917cm</Top>
+        <Left>0cm</Left>
+        <Height>0cm</Height>
+        <Width>29.56587cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line6">
+        <Top>0.56445cm</Top>
+        <Left>29.60115cm</Left>
+        <Height>1.93236cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line9">
+        <Top>0.50906cm</Top>
+        <Left>2.56328cm</Left>
+        <Height>1.98775cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line12">
+        <Top>0.56198cm</Top>
+        <Left>7.53745cm</Left>
+        <Height>1.93483cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line13">
+        <Top>0.4826cm</Top>
+        <Left>4.99745cm</Left>
+        <Height>2.01421cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line15">
+        <Top>0.56198cm</Top>
+        <Left>9.99808cm</Left>
+        <Height>1.89955cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line16">
+        <Top>0.56198cm</Top>
+        <Left>12.51162cm</Left>
+        <Height>1.93483cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line18">
+        <Top>0.56198cm</Top>
+        <Left>15.07808cm</Left>
+        <Height>1.93483cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line20">
+        <Top>0.50906cm</Top>
+        <Left>17.51224cm</Left>
+        <Height>1.95247cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line21">
+        <Top>0.50906cm</Top>
+        <Left>20.02578cm</Left>
+        <Height>1.98775cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line22">
+        <Top>0.56445cm</Top>
+        <Left>23.49182cm</Left>
+        <Height>1.93236cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line24">
+        <Top>0.45614cm</Top>
+        <Left>25.95245cm</Left>
+        <Height>2.04066cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line26">
+        <Top>1.51448cm</Top>
+        <Left>29.6037cm</Left>
+        <Height>0cm</Height>
+        <Width>-29.56842cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
-    <Height>3.15in</Height>
+    <Height>1.71597in</Height>
     <Style />
   </Body>
-  <Width>11.64011in</Width>
+  <Width>11.69033in</Width>
   <Page>
     <PageHeader>
-      <Height>5.97887cm</Height>
+      <Height>6.2611cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -763,9 +932,9 @@
           <Value>unnamed</Value>
           <Sizing>FitProportional</Sizing>
           <Top>1.92503cm</Top>
-          <Left>13.246cm</Left>
-          <Height>2.47367cm</Height>
-          <Width>2.36783cm</Width>
+          <Left>13.85137cm</Left>
+          <Height>2.73728cm</Height>
+          <Width>2.68533cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -780,17 +949,20 @@
               <TextRuns>
                 <TextRun>
                   <Value>TRƯỜNG CAO ĐẲNG CÔNG NGHỆ THỦ ĐỨC   </Value>
-                  <Style />
+                  <Style>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.60537cm</Top>
-          <Left>10.4902cm</Left>
-          <Height>0.54328cm</Height>
-          <Width>7.58cm</Width>
+          <Top>0.36724cm</Top>
+          <Left>9.9314cm</Left>
+          <Height>0.78141cm</Height>
+          <Width>12.18375cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -810,7 +982,11 @@
               <TextRuns>
                 <TextRun>
                   <Value>KHOA CÔNG NGHỆ THÔNG TIN</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -818,9 +994,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>1.14864cm</Top>
-          <Left>11.6332cm</Left>
-          <Height>0.6cm</Height>
-          <Width>5.25167cm</Width>
+          <Left>11.92107cm</Left>
+          <Height>0.67056cm</Height>
+          <Width>7.3508cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -840,7 +1016,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>BÁO CÁO THỐNG KÊ KHÁCH HÀNG</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>18pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -848,9 +1026,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
           <Top>4.73287cm</Top>
-          <Left>11.6332cm</Left>
-          <Height>0.6cm</Height>
-          <Width>7.3508cm</Width>
+          <Left>10.28787cm</Left>
+          <Height>0.9175cm</Height>
+          <Width>11.02851cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -870,7 +1048,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.62983cm</Height>
+      <Height>2.66171cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <Style>

@@ -24,14 +24,13 @@ namespace BUS
         }
         private BUS_TimKiemKhachHang() { }
 
-        public void TimKiemMaKH(TextBox maKH,DataGridView data)
+        public void TimKiemMaKH(TextBox maKH, DataGridView data)
         {
-           data.DataSource = DAO_TimKiemKhachHang.Instance.TimKiemTheoMaKH(maKH.Text);
+            data.DataSource = DAO_TimKiemKhachHang.Instance.TimKiemTheoMaKH(maKH.Text);
         }
         public void TimKiemTenKH(TextBox tenKH, DataGridView data)
         {
             data.DataSource = DAO_TimKiemKhachHang.Instance.TimKiemTheoTenKH(tenKH.Text);
         }
-
     }
 }

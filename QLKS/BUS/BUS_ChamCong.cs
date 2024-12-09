@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BUS
 {
-    public class BUS_ChamCong       
+    public class BUS_ChamCong
     {
         public static BUS_ChamCong instance;
         public static BUS_ChamCong Instance
@@ -26,10 +26,6 @@ namespace BUS
 
         DAO_ChamCong dao_cc = new DAO_ChamCong();
 
-        //public bool ThemLuong(string maLuong, string maNV, int thang, float soTien)
-        //{
-        //    return dao_luong.ThemLuong(maLuong, maNV, thang, soTien);
-        //}
         public void ThemChamCong(TextBox maCham, TextBox tenBangChamCong, ComboBox maNV, ComboBox thang, NumericUpDown nam, NumericUpDown soNgayLam, TextBox soGioTangCa, DateTimePicker ngayCham, TextBox ghiChu)
         {
             ChamCong c = new ChamCong

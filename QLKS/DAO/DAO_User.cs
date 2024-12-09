@@ -24,7 +24,7 @@ namespace DAO
         private DAO_User() { }
         public bool KiemTraNhapMKDungSai(string tenTK, string matKhau)
         {
-            using(DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
+            using (DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString()))
             {
                 var matKhauDaLuu = (from ds in db.Users
                                     where ds.UserName == tenTK

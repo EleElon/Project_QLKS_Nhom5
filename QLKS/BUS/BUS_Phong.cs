@@ -10,9 +10,6 @@ namespace BUS
     public class BUS_DSPhong
     {
         public DAO_DSPhong phongDAO = new DAO_DSPhong();
-      
-
-
 
         public List<Phong> Xem()
         {
@@ -26,8 +23,6 @@ namespace BUS
         {
             return phongDAO.xoaPhong(maPhong);
         }
-
-        // Gọi hàm sửa phòng
         public bool suaPhong(string maPhong, string maLoaiPhong, string soPhong, string tinhTrang)
         {
             return phongDAO.suaPhong(maPhong, maLoaiPhong, soPhong, tinhTrang);
@@ -38,7 +33,6 @@ namespace BUS
             {
                 throw new ArgumentException("Mã phòng không được để trống.");
             }
-
             return phongDAO.LayGiaTienTheoMaPhong(maPhong);
         }
     }

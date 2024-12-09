@@ -202,15 +202,12 @@ namespace DAO
                     var rowIndex = data.SelectedCells[0].RowIndex;
                     var row = data.Rows[rowIndex];
 
-                    // Kiểm tra giá trị null trước khi gán
                     maCham.Text = row.Cells[0].Value?.ToString().Trim() ?? string.Empty;
                     tenBangChamCong.Text = row.Cells[1].Value?.ToString().Trim() ?? string.Empty;
 
-                    // Xử lý MaNV
                     string selectedMaNV = row.Cells[2].Value?.ToString().Trim() ?? string.Empty;
                     thang.Text = row.Cells[3].Value?.ToString().Trim() ?? string.Empty;
 
-                    // Chuyển đổi giá trị cho NumericUpDown
                     if (int.TryParse(row.Cells[4].Value?.ToString().Trim(), out int namValue))
                     {
                         nam.Value = namValue;
@@ -223,7 +220,6 @@ namespace DAO
 
                     soGioTangCa.Text = row.Cells[6].Value?.ToString().Trim() ?? string.Empty;
 
-                    // Xử lý DateTimePicker
                     if (DateTime.TryParse(row.Cells[7].Value?.ToString().Trim(), out DateTime parsedNgayCham))
                     {
                         ngayCham.Value = parsedNgayCham;
@@ -231,7 +227,6 @@ namespace DAO
 
                     ghiChu.Text = row.Cells[8].Value?.ToString().Trim() ?? string.Empty;
 
-                    // Gán giá trị cho ComboBox maNV
                     foreach (var item in maNV.Items)
                     {
                         var nhanVien = item as dynamic;

@@ -21,14 +21,12 @@ namespace DAO
                 return instance;
             }
         }
-        //Tìm kiếm theo mã khách hàng
         private DAO_TimKiemKhachHang() { }
         public List<KhachHang> TimKiemTheoMaKH(string MaKH)
         {
-
             List<KhachHang> list = new List<KhachHang>();
             DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString());
-            // Tìm tất cả khách hàng có mã chứa từ khóa
+
             var khachHangs = db.KhachHangs.Where(kh => kh.MaKhachHang.Contains(MaKH)).ToList();
 
             if (khachHangs.Any())
@@ -54,14 +52,11 @@ namespace DAO
             }
             return list;
         }
-        //Tìm kiếm theo tên khách hàng
         public List<KhachHang> TimKiemTheoTenKH(string TenKH)
         {
-
             List<KhachHang> list = new List<KhachHang>();
             DBQuanLyKhachSanDataContext db = new DBQuanLyKhachSanDataContext(ThayDoiChuoi.GetConnectionString());
-       
-            // Tìm tất cả khách hàng có tên chứa từ khóa
+
             var khachHangs = db.KhachHangs.Where(kh => kh.TenKhachHang.Contains(TenKH.ToLower())).ToList();
 
             if (khachHangs.Any())
@@ -85,7 +80,6 @@ namespace DAO
             {
                 MessageBox.Show("Không tìm thấy khách hàng có tên khớp.");
             }
-
             return list;
         }
     }
